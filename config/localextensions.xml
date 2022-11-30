@@ -37,17 +37,19 @@
 		<extension name='droolsruleengineservices' />
 		<extension name='rulebuilderbackoffice' />
 
+		<extension name='electronicsstore' />
+
 		<extension name='configurablebundleaddon' />
 		<extension name='configurablebundlebackoffice' />
 		<extension name='configurablebundlefacades' />
 		<extension name='configurablebundleservices' />
 		<extension name='configurablebundlecockpits' />
     
-    <extension name='demogroup2core' />
-    <extension name='demogroup2facades' />
-    <extension name='demogroup2backoffice' />
-    <extension name='demogroup2fulfilmentprocess' />
-    <extension name='demogroup2initialdata' />
-    <extension name='demogroup2storefront' />
+		<extension name='demogroup2core' />
+		<extension name='demogroup2facades' />
+		<extension name='demogroup2backoffice' />
+		<extension name='demogroup2fulfilmentprocess' />
+		<extension name='demogroup2initialdata' />
+		<extension name='demogroup2storefront' />
   </extensions>
 </hybrisconfig>

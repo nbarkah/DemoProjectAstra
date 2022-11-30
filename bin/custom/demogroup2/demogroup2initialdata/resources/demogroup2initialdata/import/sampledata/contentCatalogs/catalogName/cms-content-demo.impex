@@ -1,0 +1,48 @@
+$contentCatalog = electronicsContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+##task-fe-1
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; name                              ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
+                          ;                          ; StorefrontTrainingTaskPageTemplate ; Storefront Training Task Page Template ; layout/storefronttrainingtask ; ContentPage
+
+##task-fe-2
+UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;                          ; StorefrontTrainingTaskPageTemplate ; ; $jarResourceCms/structure-view/structure_StorefrontTrainingTaskPageTemplate.vm
+
+##task-fe-3
+INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'StorefrontTrainingTaskPageTemplate']; validComponentTypes(code)       ; compTypeGroup(code)
+                             ; SiteLogo               ;                                                                                      ;                                 ; logo
+                             ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
+                             ; SearchBox              ;                                                                                      ;                                 ; searchbox
+                             ; MiniCart               ;                                                                                      ;                                 ; minicart
+                             ; NavigationBar          ;                                                                                      ;                                 ; navigation
+                             ; Section1-TitleSection  ;                                                                                      ; SimpleResponsiveBannerComponent ; wide
+                             ; Section2-sideSection   ;                                                                                      ; CMSParagraphComponent           ; narrow
+                             ; Section3-topSection   ;                                                                                      ; CMSTabParagraphComponent         ; narrow
+                             ; Section4-mainSection  ;                                                                                      ; JspIncludeComponent              ; narrow
+                             ; Section5-downSection  ;                                                                                      ; SimpleBannerComponent            ; narrow
+                             ; Footer                 ;                                                                                      ;                                 ; footer
+                             ; TopHeaderSlot          ;                                                                                      ;                                 ; wide
+                             ; BottomHeaderSlot       ;                                                                                      ;                                 ; wide
+                             ; PlaceholderContentSlot ;                                                                                      ;                                 ; wide
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                                         ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'StorefrontTrainingTaskPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+                                    ;                          ; SiteLogo-StorefrontTrainingTaskPageTemplate               ; SiteLogo               ;                                                                                          ; SiteLogoSlot                               ; true
+                                    ;                          ; Footer-StorefrontTrainingTaskPageTemplate                 ; Footer                 ;                                                                                          ; FooterSlot                                 ; true
+                                    ;                          ; NavigationBar-StorefrontTrainingTaskPageTemplate          ; NavigationBar          ;                                                                                          ; NavigationBarSlot                          ; true
+                                    ;                          ; MiniCart-StorefrontTrainingTaskPageTemplate               ; MiniCart               ;                                                                                          ; MiniCartSlot                               ; true
+                                    ;                          ; HeaderLinks-StorefrontTrainingTaskPageTemplate            ; HeaderLinks            ;                                                                                          ; HeaderLinksSlot                            ; true
+                                    ;                          ; SearchBox-StorefrontTrainingTaskPageTemplate              ; SearchBox              ;                                                                                          ; SearchBoxSlot                              ; true
+                                    ;                          ; TopHeaderSlot-StorefrontTrainingTaskPageTemplate          ; TopHeaderSlot          ;                                                                                          ; TopHeaderSlot                              ; true
+                                    ;                          ; BottomHeaderSlot-StorefrontTrainingTaskPageTemplate       ; BottomHeaderSlot       ;                                                                                          ; BottomHeaderSlot                           ; true
+                                    ;                          ; PlaceholderContentSlot-StorefrontTrainingTaskPageTemplate ; PlaceholderContentSlot ;                                                                                          ; PlaceholderContentSlot                     ; true
+
+
+######################### impex controller #########################
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
+                         ;                          ; storefrontTrainingTaskPage ; Storefront Training Task Page ; StorefrontTrainingTaskPageTemplate ; storefrontTrainingTaskPage
