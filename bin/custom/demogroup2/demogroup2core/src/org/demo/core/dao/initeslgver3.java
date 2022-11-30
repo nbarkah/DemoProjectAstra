@@ -1,4 +1,4 @@
 package org.demo.core.dao;
 
-public class initeslg {
+public class initeslgver3 {
 }
