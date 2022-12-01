@@ -13,6 +13,11 @@ public class Eksperimen {
         System.out.println("lg ngerjain");
         System.out.println("lg ngerjain");
 
+
+
+
+        System.out.println("ini buatan aku");
+
         //new
         System.out.println("new");
         System.out.println("new");
