@@ -6,5 +6,11 @@ public class Eksperimen {
         System.out.println("ahuy");
         System.out.println("ahuy");
         System.out.println("ahuy");
+        System.out.println("lg ngerjain");
+        System.out.println("lg ngerjain");
+        System.out.println("lg ngerjain");
+        System.out.println("lg ngerjain");
+        System.out.println("lg ngerjain");
+        System.out.println("lg ngerjain");
     }
 }
