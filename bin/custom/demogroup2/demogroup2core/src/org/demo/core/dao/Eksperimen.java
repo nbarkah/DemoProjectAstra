@@ -12,5 +12,14 @@ public class Eksperimen {
         System.out.println("lg ngerjain");
         System.out.println("lg ngerjain");
         System.out.println("lg ngerjain");
+
+        //new
+        System.out.println("new");
+        System.out.println("new");
+        System.out.println("new");
+        System.out.println("new");
+        System.out.println("new");
+        System.out.println("new");
+        System.out.println("new");
     }
 }
