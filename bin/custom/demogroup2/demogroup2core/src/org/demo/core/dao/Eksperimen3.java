@@ -1,7 +1,7 @@
 package org.demo.core.dao;
 
-public class Eksperimen2 {
+public class Eksperimen3 {
     public static void main(String[] args) {
-        System.out.println("hehehehe");
+        System.out.println("eksperimen3");
     }
 }
