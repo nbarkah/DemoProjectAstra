@@ -1,0 +1,713 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImPex for Importing Product Media
+
+# Macros / Replacement Parameter definitions
+$productCatalog=demoGroup2ProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/sampledata/productCatalogs/catalogName/images/product
+
+# Create Media
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+; 1200Wx1200H           ; media-INTHEBOX-101-90-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-90-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-90-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-90-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-90-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-90-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-101-100-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-100-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-100-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-100-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-100-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-100-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-101-120-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-120-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-120-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-120-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-120-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-120-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-101-140-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-140-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-140-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-140-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-140-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-140-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-101-160-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-160-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-160-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-160-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-160-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-160-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-101-180-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-180-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-180-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-180-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-180-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-180-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-101-200-picture      ; $siteResource/INTHEBOX-101/INTHEBOX-101-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-101-200-thumbnail    ; $siteResource/INTHEBOX-101/INTHEBOX-101-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-101-200-detail       ; $siteResource/INTHEBOX-101/INTHEBOX-101-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-101-200-other        ; $siteResource/INTHEBOX-101/INTHEBOX-101-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-101-200-normal       ; $siteResource/INTHEBOX-101/INTHEBOX-101-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-101-200-thumbnails   ; $siteResource/INTHEBOX-101/INTHEBOX-101-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-90-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-90-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-90-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-90-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-90-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-90-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-100-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-100-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-100-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-100-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-100-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-100-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-120-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-120-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-120-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-120-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-120-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-120-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-140-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-140-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-140-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-140-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-140-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-140-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-160-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-160-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-160-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-160-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-160-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-160-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-180-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-180-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-180-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-180-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-180-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-180-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-ALPHA-200-picture      ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-ALPHA-200-thumbnail    ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-ALPHA-200-detail       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-ALPHA-200-other        ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-ALPHA-200-normal       ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-ALPHA-200-thumbnails   ; $siteResource/INTHEBOX-ALPHA/INTHEBOX-ALPHA-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-DASH-90-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-90-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-90-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-90-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-90-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-90-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-DASH-100-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-100-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-100-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-100-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-100-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-100-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-DASH-120-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-120-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-120-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-120-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-120-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-120-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-DASH-140-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-140-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-140-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-140-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-140-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-140-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-DASH-160-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-160-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-160-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-160-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-160-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-160-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-DASH-180-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-180-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-180-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-180-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-180-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-180-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-DASH-200-picture      ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-DASH-200-thumbnail    ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-DASH-200-detail       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-DASH-200-other        ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-DASH-200-normal       ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-DASH-200-thumbnails   ; $siteResource/INTHEBOX-DASH/INTHEBOX-DASH-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-90-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-90-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-90-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-90-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-90-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-90-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-100-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-100-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-100-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-100-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-100-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-100-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-120-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-120-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-120-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-120-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-120-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-120-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-140-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-140-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-140-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-140-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-140-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-140-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-160-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-160-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-160-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-160-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-160-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-160-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-180-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-180-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-180-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-180-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-180-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-180-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-FLIP-Z-200-picture      ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-FLIP-Z-200-thumbnail    ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-FLIP-Z-200-detail       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-FLIP-Z-200-other        ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-FLIP-Z-200-normal       ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-FLIP-Z-200-thumbnails   ; $siteResource/INTHEBOX-FLIP-Z/INTHEBOX-FLIP-Z-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-90-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-90-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-90-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-90-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-90-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-90-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-100-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-100-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-100-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-100-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-100-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-100-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-120-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-120-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-120-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-120-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-120-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-120-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-140-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-140-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-140-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-140-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-140-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-140-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-160-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-160-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-160-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-160-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-160-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-160-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-180-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-180-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-180-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-180-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-180-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-180-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-200-picture      ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-200-thumbnail    ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-200-detail       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-200-other        ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-200-normal       ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-200-thumbnails   ; $siteResource/INTHEBOX-HYBRID/INTHEBOX-HYBRID-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-90-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-90-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-90-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-90-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-90-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-90-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-100-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-100-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-100-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-100-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-100-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-100-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-120-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-120-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-120-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-120-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-120-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-120-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-140-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-140-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-140-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-140-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-140-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-140-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-160-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-160-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-160-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-160-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-160-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-160-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-180-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-180-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-180-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-180-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-180-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-180-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-HYBRID-15-200-picture      ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-HYBRID-15-200-thumbnail    ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-HYBRID-15-200-detail       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-HYBRID-15-200-other        ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-HYBRID-15-200-normal       ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-HYBRID-15-200-thumbnails   ; $siteResource/INTHEBOX-HYBRID-15/INTHEBOX-HYBRID-15-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-90-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-90-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-90-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-90-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-90-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-90-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-100-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-100-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-100-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-100-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-100-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-100-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-120-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-120-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-120-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-120-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-120-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-120-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-140-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-140-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-140-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-140-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-140-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-140-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-160-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-160-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-160-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-160-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-160-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-160-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-180-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-180-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-180-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-180-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-180-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-180-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PLUS-200-picture      ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PLUS-200-thumbnail    ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PLUS-200-detail       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PLUS-200-other        ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PLUS-200-normal       ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PLUS-200-thumbnails   ; $siteResource/INTHEBOX-PLUS/INTHEBOX-PLUS-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-PRO-90-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-90-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-90-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-90-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-90-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-90-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PRO-100-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-100-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-100-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-100-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-100-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-100-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PRO-120-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-120-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-120-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-120-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-120-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-120-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PRO-140-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-140-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-140-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-140-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-140-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-140-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PRO-160-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-160-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-160-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-160-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-160-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-160-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PRO-180-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-180-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-180-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-180-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-180-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-180-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-PRO-200-picture      ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-PRO-200-thumbnail    ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-PRO-200-detail       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-PRO-200-other        ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-PRO-200-normal       ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-PRO-200-thumbnails   ; $siteResource/INTHEBOX-PRO/INTHEBOX-PRO-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-INTHEBOX-X-90-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-90-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-90-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-90-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-90-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-90-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-X-100-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-100-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-100-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-100-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-100-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-100-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-X-120-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-120-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-120-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-120-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-120-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-120-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-X-140-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-140-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-140-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-140-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-140-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-140-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-X-160-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-160-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-160-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-160-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-160-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-160-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-X-180-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-180-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-180-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-180-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-180-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-180-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-INTHEBOX-X-200-picture      ; $siteResource/INTHEBOX-X/INTHEBOX-X-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-INTHEBOX-X-200-thumbnail    ; $siteResource/INTHEBOX-X/INTHEBOX-X-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-INTHEBOX-X-200-detail       ; $siteResource/INTHEBOX-X/INTHEBOX-X-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-INTHEBOX-X-200-other        ; $siteResource/INTHEBOX-X/INTHEBOX-X-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-INTHEBOX-X-200-normal       ; $siteResource/INTHEBOX-X/INTHEBOX-X-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-INTHEBOX-X-200-thumbnails   ; $siteResource/INTHEBOX-X/INTHEBOX-X-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-90-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-90-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-90-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-90-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-90-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-90-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-100-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-100-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-100-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-100-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-100-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-100-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-120-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-120-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-120-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-120-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-120-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-120-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-140-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-140-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-140-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-140-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-140-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-140-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-160-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-160-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-160-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-160-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-160-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-160-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-180-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-180-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-180-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-180-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-180-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-180-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-KASUR-INTHEBOX-200-picture      ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-INTHEBOX-200-thumbnail    ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-INTHEBOX-200-detail       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-INTHEBOX-200-other        ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-INTHEBOX-200-normal       ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-INTHEBOX-200-thumbnails   ; $siteResource/KASUR-INTHEBOX/KASUR-INTHEBOX-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-KASUR-LIPAT-picture      ; $siteResource/KASUR-LIPAT/KASUR-LIPAT.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-KASUR-LIPAT-thumbnail    ; $siteResource/KASUR-LIPAT/KASUR-LIPAT.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-KASUR-LIPAT-detail       ; $siteResource/KASUR-LIPAT/KASUR-LIPAT.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-KASUR-LIPAT-other        ; $siteResource/KASUR-LIPAT/KASUR-LIPAT.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-KASUR-LIPAT-normal       ; $siteResource/KASUR-LIPAT/KASUR-LIPAT.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-KASUR-LIPAT-thumbnails   ; $siteResource/KASUR-LIPAT/KASUR-LIPAT.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-90-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-90-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-90-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-90-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-90-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-90-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-100-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-100-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-100-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-100-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-100-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-100-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-120-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-120-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-120-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-120-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-120-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-120-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-140-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-140-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-140-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-140-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-140-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-140-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-160-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-160-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-160-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-160-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-160-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-160-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-180-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-180-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-180-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-180-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-180-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-180-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-HYBRID-200-picture      ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-HYBRID-200-thumbnail    ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-HYBRID-200-detail       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-HYBRID-200-other        ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-HYBRID-200-normal       ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-HYBRID-200-thumbnails   ; $siteResource/ORGANIX-HYBRID/ORGANIX-HYBRID-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-ORGANIX-LITE-90-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-90-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-90-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-90-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-90-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-90-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-LITE-100-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-100-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-100-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-100-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-100-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-100-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-LITE-120-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-120-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-120-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-120-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-120-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-120-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-LITE-140-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-140-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-140-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-140-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-140-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-140-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-LITE-160-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-160-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-160-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-160-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-160-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-160-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-LITE-180-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-180-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-180-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-180-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-180-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-180-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-LITE-200-picture      ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-LITE-200-thumbnail    ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-LITE-200-detail       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-LITE-200-other        ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-LITE-200-normal       ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-LITE-200-thumbnails   ; $siteResource/ORGANIX-LITE/ORGANIX-LITE-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-90-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-90-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-90-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-90-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-90-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-90-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-100-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-100-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-100-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-100-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-100-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-100-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-120-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-120-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-120-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-120-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-120-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-120-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-140-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-140-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-140-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-140-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-140-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-140-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-160-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-160-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-160-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-160-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-160-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-160-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-180-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-180-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-180-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-180-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-180-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-180-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-ORGANIX-PLUSH-200-picture      ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-ORGANIX-PLUSH-200-thumbnail    ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-ORGANIX-PLUSH-200-detail       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-ORGANIX-PLUSH-200-other        ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-ORGANIX-PLUSH-200-normal       ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-ORGANIX-PLUSH-200-thumbnails   ; $siteResource/ORGANIX-PLUSH/ORGANIX-PLUSH-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-BANTAL-picture      ; $siteResource/PERLENGKAPAN/BANTAL.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-BANTAL-thumbnail    ; $siteResource/PERLENGKAPAN/BANTAL.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-BANTAL-detail       ; $siteResource/PERLENGKAPAN/BANTAL.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-BANTAL-other        ; $siteResource/PERLENGKAPAN/BANTAL.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-BANTAL-normal       ; $siteResource/PERLENGKAPAN/BANTAL.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-BANTAL-thumbnails   ; $siteResource/PERLENGKAPAN/BANTAL.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-GULING-picture      ; $siteResource/PERLENGKAPAN/GULING.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-GULING-thumbnail    ; $siteResource/PERLENGKAPAN/GULING.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-GULING-detail       ; $siteResource/PERLENGKAPAN/GULING.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-GULING-other        ; $siteResource/PERLENGKAPAN/GULING.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-GULING-normal       ; $siteResource/PERLENGKAPAN/GULING.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-GULING-thumbnails   ; $siteResource/PERLENGKAPAN/GULING.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-SOFA-1-picture      ; $siteResource/SOFA/SOFA-1.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SOFA-1-thumbnail    ; $siteResource/SOFA/SOFA-1.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SOFA-1-detail       ; $siteResource/SOFA/SOFA-1.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SOFA-1-other        ; $siteResource/SOFA/SOFA-1.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SOFA-1-normal       ; $siteResource/SOFA/SOFA-1.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SOFA-1-thumbnails   ; $siteResource/SOFA/SOFA-1.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SOFA-2-picture      ; $siteResource/SOFA/SOFA-2.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SOFA-2-thumbnail    ; $siteResource/SOFA/SOFA-2.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SOFA-2-detail       ; $siteResource/SOFA/SOFA-2.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SOFA-2-other        ; $siteResource/SOFA/SOFA-2.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SOFA-2-normal       ; $siteResource/SOFA/SOFA-2.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SOFA-2-thumbnails   ; $siteResource/SOFA/SOFA-2.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SOFA-BED-picture      ; $siteResource/SOFA/SOFA-BED.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SOFA-BED-thumbnail    ; $siteResource/SOFA/SOFA-BED.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SOFA-BED-detail       ; $siteResource/SOFA/SOFA-BED.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SOFA-BED-other        ; $siteResource/SOFA/SOFA-BED.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SOFA-BED-normal       ; $siteResource/SOFA/SOFA-BED.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SOFA-BED-thumbnails   ; $siteResource/SOFA/SOFA-BED.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-SPACEJAM-90-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-90-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-90-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-90-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-90-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-90-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-100-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-100-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-100-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-100-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-100-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-100-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-120-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-120-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-120-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-120-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-120-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-120-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-140-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-140-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-140-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-140-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-140-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-140-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-160-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-160-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-160-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-160-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-160-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-160-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-180-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-180-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-180-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-180-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-180-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-180-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-200-picture      ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-200-thumbnail    ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-200-detail       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-200-other        ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-200-normal       ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-200-thumbnails   ; $siteResource/SPACEJAM-COLLECTION/SPACEJAM-200.jpg  ;                             ;                ; images ;
+
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-90-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-90.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-90-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-90.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-90-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-90.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-90-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-90.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-90-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-90.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-90-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-90.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-100-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-100.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-100-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-100.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-100-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-100.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-100-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-100.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-100-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-100.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-100-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-100.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-120-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-120.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-120-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-120.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-120-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-120.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-120-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-120.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-120-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-120.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-120-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-120.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-140-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-140.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-140-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-140.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-140-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-140.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-140-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-140.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-140-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-140.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-140-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-140.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-160-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-160.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-160-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-160.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-160-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-160.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-160-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-160.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-160-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-160.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-160-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-160.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-180-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-180.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-180-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-180.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-180-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-180.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-180-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-180.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-180-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-180.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-180-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-180.jpg  ;                             ;                ; images ;
+; 1200Wx1200H           ; media-SPACEJAM-PLUSH-TOP-200-picture      ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-200.jpg  ;                             ;                ; images
+; 515Wx515H             ; media-SPACEJAM-PLUSH-TOP-200-thumbnail    ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-200.jpg  ;                             ;                ; images ;
+; 300Wx300H             ; media-SPACEJAM-PLUSH-TOP-200-detail       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-200.jpg  ;                             ;                ; images ;
+; 96Wx96H               ; media-SPACEJAM-PLUSH-TOP-200-other        ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-200.jpg  ;                             ;                ; images ;
+; 65Wx65H               ; media-SPACEJAM-PLUSH-TOP-200-normal       ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-200.jpg  ;                             ;                ; images ;
+; 30Wx30H               ; media-SPACEJAM-PLUSH-TOP-200-thumbnails   ; $siteResource/SPACEJAM-PLUSH-TOP/SPACEJAM-PLUSH-TOP-200.jpg  ;                             ;                ; images ;
+
+# Create Media Containers
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias
+;INTHEBOX-101-medias;
+
+# Update Products with Media and Media Containers
+UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
