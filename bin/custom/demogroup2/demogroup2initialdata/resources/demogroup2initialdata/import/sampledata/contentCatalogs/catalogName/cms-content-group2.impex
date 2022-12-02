@@ -17,14 +17,14 @@ $mediaContainer=media(qualifier, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
 $product=product(code, $productCV)
 $category=category(code, $productCV)
-$siteResource=jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/contentCatalogs/$contentCatalog
-$productResource=jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/productCatalogs/$productCatalog
-$jarResourceCms=jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/cockpits/cmscockpit
+$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/contentCatalogs/$contentCatalog
+$productResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/cockpits/cmscockpit
 
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
-              ;training;FASHION;PB-SHIRT-1;$productCatalog
+              ;demoGroup2;FASHION;PB-SHIRT-1;$productCatalog
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
@@ -165,9 +165,9 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
                          ;;ProductLeftRefinements;RefinementFacetComponent
 
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#                   ;;CamerasPagePreview;text/png;CamerasPage.png;$jarResourceCms/preview-images/training/CamerasPage.png
-#                   ;;DigitalCamerasPagePreview;text/png;DigitalCamerasPage.png;$jarResourceCms/preview-images/training/DigitalCamerasPage.png
-#                   ;;CameraAccessoriesPagePreview;text/png;CameraAccessoriesPage.png;$jarResourceCms/preview-images/training/CameraAccessoriesPage.png
+#                   ;;CamerasPagePreview;text/png;CamerasPage.png;$jarResourceCms/preview-images/demoGroup2/CamerasPage.png
+#                   ;;DigitalCamerasPagePreview;text/png;DigitalCamerasPage.png;$jarResourceCms/preview-images/demoGroup2/DigitalCamerasPage.png
+#                   ;;CameraAccessoriesPagePreview;text/png;CameraAccessoriesPage.png;$jarResourceCms/preview-images/demoGroup2/CameraAccessoriesPage.png
 
 # Category Pages
 INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];previewImage(code, $contentCV)
@@ -187,7 +187,7 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;ch
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
                                ;SiteRootNode;;SiteRootNode;root;;SiteRootNode
 #                               ;ElectronicsNavNode;;Electronics Site;SiteRootNode;HomepageNavLink;ElectronicsNavNode
-                               ;DemoNavNode;;trainings Site;SiteRootNode;HomepageNavLink;trainingNavNode
+                               ;DemoNavNode;;demoGroup2s Site;SiteRootNode;HomepageNavLink;demoGroup2NavNode
                                ;AllBedsNavNode;;Beds Links;DemoNavNode;AllBedsCategoryLink;AllBedsNavNode
                                ;BrandsNavNode;;Brand Links;DemoNavNode;AllBrandsCategoryLink;BrandsNavNode
                                ;AboutUsNavNode;;About Us Links;DemoNavNode;AboutUsLink;AboutUsNavNode
@@ -218,29 +218,29 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
 
 # Preview Image for use in the CMS Cockpit for special ContentPages
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#                   ;;addEditAddressPagePreview;text/png;AddEditAddressPage.png;$jarResourceCms/preview-images/training/AddEditAddressPage.png
-#                   ;;addressBookPagePreview;text/png;AddressBook.png;$jarResourceCms/preview-images/training/AddressBookPage.png
-#                   ;;cartPagePreview;text/png;CartPage.png;$jarResourceCms/preview-images/training/CartPage.png
-#                   ;;checkoutLoginPagePreview;text/png;CheckoutLoginPage.png;$jarResourceCms/preview-images/training/CheckoutLoginPage.png
-#                   ;;multiStepCheckoutSummaryPagePreview;text/png;MultiStepCheckoutSummaryPage.png;$jarResourceCms/preview-images/training/MultiStepCheckoutSummaryPage.png
-#                   ;;frequentlyAskedQuestionsPage;text/png;FrequentlyAskedQuestionsPage.png;$jarResourceCms/preview-images/training/FrequentlyAskedQuestionsPage.png;;;
-#                   ;;termsAndConditionsPage;text/png;TermsAndConditionsPage.png;$jarResourceCms/preview-images/training/TermsAndConditionsPage.png;;;
-#                   ;;homepagePreview;text/png;Homepage.png;$jarResourceCms/preview-images/training/Homepage.png
-#                   ;;loginPagePreview;text/png;LoginPage.png;$jarResourceCms/preview-images/training/LoginPage.png
-#                   ;;notFoundPagePreview;text/png;NotFoundPage.png;$jarResourceCms/preview-images/training/NotFoundPage.png
-#                   ;;orderConfirmationPagePreview;text/png;OrderConfirmationPage.png;$jarResourceCms/preview-images/training/OrderConfirmationPage.png
-#                   ;;orderDetailsPagePreview;text/png;OrderDetailsPage.png;$jarResourceCms/preview-images/training/OrderDetailsPage.png
-#                   ;;orderHistoryPagePreview;text/png;OrderHistoryPage.png;$jarResourceCms/preview-images/training/OrderHistoryPage.png
-#                   ;;paymentDetailsPagePreview;text/png;PaymentDetailsPage.png;$jarResourceCms/preview-images/training/PaymentDetailsPage.png
-#                   ;;productDetailsPagePreview;text/png;ProductDetailsPage.png;$jarResourceCms/preview-images/training/ProductDetailsPage.png
-#                   ;;productListPagePreview;text/png;ProductListPage.png;$jarResourceCms/preview-images/training/ProductListPage.png
-#                   ;;searchResultsEmptyPagePreview;text/png;SearchResultsEmptyPage.png;$jarResourceCms/preview-images/training/SearchResultsEmptyPage.png
-#                   ;;searchResultsPagePreview;text/png;SearchResultsPage.png;$jarResourceCms/preview-images/training/SearchResultsPage.png
-#                   ;;storefinderPagePreview;text/png;StoreFinderPage.png;$jarResourceCms/preview-images/training/StoreFinderPage.png
-#                   ;;updateForgottenPasswordPagePreview;text/png;UpdateForgottenPasswordPage.png;$jarResourceCms/preview-images/training/UpdateForgottenPasswordPage.png
-#                   ;;productGridPagePreview;text/png;ProductGridPage.png;$jarResourceCms/preview-images/training/ProductGridPage.png
-#                   ;;defaultCategoryPagePreview;text/png;DefaultCategoryPage.png;$jarResourceCms/preview-images/training/DefaultCategoryPage.png
-#                   ;;orderExpiredPagePreview;text/png;OrderExpiredPage.png;$jarResourceCms/preview-images/training/OrderExpiredPage.png;;;
+#                   ;;addEditAddressPagePreview;text/png;AddEditAddressPage.png;$jarResourceCms/preview-images/demoGroup2/AddEditAddressPage.png
+#                   ;;addressBookPagePreview;text/png;AddressBook.png;$jarResourceCms/preview-images/demoGroup2/AddressBookPage.png
+#                   ;;cartPagePreview;text/png;CartPage.png;$jarResourceCms/preview-images/demoGroup2/CartPage.png
+#                   ;;checkoutLoginPagePreview;text/png;CheckoutLoginPage.png;$jarResourceCms/preview-images/demoGroup2/CheckoutLoginPage.png
+#                   ;;multiStepCheckoutSummaryPagePreview;text/png;MultiStepCheckoutSummaryPage.png;$jarResourceCms/preview-images/demoGroup2/MultiStepCheckoutSummaryPage.png
+#                   ;;frequentlyAskedQuestionsPage;text/png;FrequentlyAskedQuestionsPage.png;$jarResourceCms/preview-images/demoGroup2/FrequentlyAskedQuestionsPage.png;;;
+#                   ;;termsAndConditionsPage;text/png;TermsAndConditionsPage.png;$jarResourceCms/preview-images/demoGroup2/TermsAndConditionsPage.png;;;
+#                   ;;homepagePreview;text/png;Homepage.png;$jarResourceCms/preview-images/demoGroup2/Homepage.png
+#                   ;;loginPagePreview;text/png;LoginPage.png;$jarResourceCms/preview-images/demoGroup2/LoginPage.png
+#                   ;;notFoundPagePreview;text/png;NotFoundPage.png;$jarResourceCms/preview-images/demoGroup2/NotFoundPage.png
+#                   ;;orderConfirmationPagePreview;text/png;OrderConfirmationPage.png;$jarResourceCms/preview-images/demoGroup2/OrderConfirmationPage.png
+#                   ;;orderDetailsPagePreview;text/png;OrderDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/OrderDetailsPage.png
+#                   ;;orderHistoryPagePreview;text/png;OrderHistoryPage.png;$jarResourceCms/preview-images/demoGroup2/OrderHistoryPage.png
+#                   ;;paymentDetailsPagePreview;text/png;PaymentDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/PaymentDetailsPage.png
+#                   ;;productDetailsPagePreview;text/png;ProductDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/ProductDetailsPage.png
+#                   ;;productListPagePreview;text/png;ProductListPage.png;$jarResourceCms/preview-images/demoGroup2/ProductListPage.png
+#                   ;;searchResultsEmptyPagePreview;text/png;SearchResultsEmptyPage.png;$jarResourceCms/preview-images/demoGroup2/SearchResultsEmptyPage.png
+#                   ;;searchResultsPagePreview;text/png;SearchResultsPage.png;$jarResourceCms/preview-images/demoGroup2/SearchResultsPage.png
+#                   ;;storefinderPagePreview;text/png;StoreFinderPage.png;$jarResourceCms/preview-images/demoGroup2/StoreFinderPage.png
+#                   ;;updateForgottenPasswordPagePreview;text/png;UpdateForgottenPasswordPage.png;$jarResourceCms/preview-images/demoGroup2/UpdateForgottenPasswordPage.png
+#                   ;;productGridPagePreview;text/png;ProductGridPage.png;$jarResourceCms/preview-images/demoGroup2/ProductGridPage.png
+#                   ;;defaultCategoryPagePreview;text/png;DefaultCategoryPage.png;$jarResourceCms/preview-images/demoGroup2/DefaultCategoryPage.png
+#                   ;;orderExpiredPagePreview;text/png;OrderExpiredPage.png;$jarResourceCms/preview-images/demoGroup2/OrderExpiredPage.png;;;
 
 # Site-wide Homepage
 UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);linkComponents(&linkRef)
@@ -1094,7 +1094,7 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
                                  ;;ImportCSVSavedCartComponent;Import CSV as Saved Cart Component;csv/importCSVSavedCartPage.jsp;;ImportCSVSavedCartComponent
 
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#                   ;;importCSVSavedCartPagePreview;text/png;OrderHistoryPage.png;$jarResourceCms/preview-images/training/OrderHistoryPage.png
+#                   ;;importCSVSavedCartPagePreview;text/png;OrderHistoryPage.png;$jarResourceCms/preview-images/demoGroup2/OrderHistoryPage.png
 
 UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
                   ;;importCSVSavedCartPage;
@@ -1120,7 +1120,7 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
 
 # Preview image
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#                   ;;savedCartDetailsPagePreview;text/png;SavedCartDetailsPage.png;$jarResourceCms/preview-images/training/SavedCartDetailsPage.png
+#                   ;;savedCartDetailsPagePreview;text/png;SavedCartDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/SavedCartDetailsPage.png
 
 UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
                   ;;savedCartDetailsPage;
@@ -1130,7 +1130,7 @@ UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $
 ######## Account Saved Carts Page Start #######
 
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#                   ;;savedCartsPagePreview;text/png;SavedCartsPage.png;$jarResourceCms/preview-images/training/SavedCartsPage.png
+#                   ;;savedCartsPagePreview;text/png;SavedCartsPage.png;$jarResourceCms/preview-images/demoGroup2/SavedCartsPage.png
 
 UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
                   ;;saved-carts;
@@ -1276,19 +1276,19 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
                                 ;TwitterNavNodeEntry;;Twitter Navigation Node Entry;TwitterNavNode;TwitterLink;
 ###### Footer Component Refactor End ######
 
-###  Training Page #######
+###  DemoGroup2 Page #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;TrainingParagraphComponent;Training Paragraph Component;TrainingParagraphComponent
-                                   ;;TrainingParagraphComponent2;Training Paragraph 2 Component;TrainingParagraphComponent2
+                                   ;;DemoGroup2ParagraphComponent;DemoGroup2 Paragraph Component;DemoGroup2ParagraphComponent
+                                   ;;DemoGroup2ParagraphComponent2;DemoGroup2 Paragraph 2 Component;DemoGroup2ParagraphComponent2
 # Create ContentSlots
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-                         ;;MiddleContent-TrainingPage;Middle Content Slot for Training Page;true;TrainingParagraphComponent;;;
-                         ;;BottomContent-TrainingPage;Bottom Content Slot for Training Page;true;TrainingParagraphComponent2;;;
+                         ;;MiddleContent-DemoGroup2Page;Middle Content Slot for DemoGroup2 Page;true;DemoGroup2ParagraphComponent;;;
+                         ;;BottomContent-DemoGroup2Page;Bottom Content Slot for DemoGroup2 Page;true;DemoGroup2ParagraphComponent2;;;
 
 # Create Content Slots for Page
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='training-page'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;MiddleContent-TrainingPage;MiddleContent;;MiddleContent-TrainingPage
-                                ;;BottomContent-TrainingPage;BottomContent;;BottomContent-TrainingPage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='demoGroup2-page'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;MiddleContent-DemoGroup2Page;MiddleContent;;MiddleContent-DemoGroup2Page
+                                ;;BottomContent-DemoGroup2Page;BottomContent;;BottomContent-DemoGroup2Page
 
 # Testing page
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
