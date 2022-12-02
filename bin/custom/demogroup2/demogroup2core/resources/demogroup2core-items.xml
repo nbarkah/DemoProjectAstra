@@ -25,6 +25,16 @@
             <value code="WHITE"/>
             <value code="YELLOW"/>
         </enumtype>
+        
+        <enumtype code="SizeEnum" generate="true" autocreate="true" dynamic="true">
+            <value code="SINGLESIZE"/>
+            <value code="SUPERSINGLESIZE"/>
+            <value code="FULLSIZE"/>
+            <value code="CUSTOMSIZE"/>
+            <value code="KINGSIZE"/>
+            <value code="SUPERKINGSIZE"/>
+            <value code="QUEENSIZE"/>
+        </enumtype>
     </enumtypes>
 
     <itemtypes>
@@ -99,6 +109,32 @@
                         <description>Color of the product.</description>
                         <modifiers/>
                         <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+        <typegroup name="DemoGroup2">
+            <itemtype code="DemoProduct" autocreate="true" generate="true" extends="Product">
+                <attributes>
+                    <attribute qualifier="brand" type="java.lang.String">
+                        <description>Is Brand Product</description>
+                        <modifiers />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
+                <attributes>
+                    <attribute qualifier="sizeDimension" type="java.lang.String" >
+                        <description>Size Dimension Product</description>
+                        <modifiers optional="true" initial="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="sizeType" type="SizeEnum" >
+                        <description>Size Type Product</description>
+                        <modifiers optional="true" initial="true" />
+                        <persistence type="property" />
                     </attribute>
                 </attributes>
             </itemtype>
