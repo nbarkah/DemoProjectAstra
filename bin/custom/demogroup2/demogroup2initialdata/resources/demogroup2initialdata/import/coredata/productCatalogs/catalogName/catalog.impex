@@ -6,7 +6,7 @@
 #
 
 $productCatalog=demoGroup2ProductCatalog
-$classificationCatalog=DemoGroup2Classification
+$classificationCatalog=demoGroup2ClassificationCatalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $languages=en,id
 

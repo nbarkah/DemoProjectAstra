@@ -24,19 +24,45 @@ $targetContentCV=targetVersion(catalog(id[default=$contentCatalog]),version[defa
 $sourceProductCV=sourceVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
 $targetProductCV=targetVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default='$productCatalog:Online']
 
+INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceProductCV;$targetProductCV;
+;sync demoGroup2ProductCatalog:Staged->Online;;;;
+INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceContentCV;$targetContentCV;
+;sync demoGroup2ContentCatalog:Staged->Online;;;;
+
 # Languages
 INSERT_UPDATE Language;isocode[unique=true];fallbackLanguages(isocode);active[default=true]
 ;en;;;
+;de;en;;
+;ja;en;;
+;zh;en;;
 ;id;en;;
 
 # Currencies
 INSERT_UPDATE Currency;isocode[unique=true];conversion;digits;symbol
+;GBP;1;2;£
+;EUR;1;2;€
 ;USD;1,4;2;$
+;JPY;120;0;¥
 ;IDR;1;0;Rp.
 
 # SiteMap Language Currencies
 INSERT_UPDATE SiteMapLanguageCurrency;&siteMapLanguageCurrency;language(isoCode)[unique=true];currency(isocode)[unique=true];
 ;enUsd;en;USD
+;enJpy;en;JPY
+;enGbp;en;GBP
+;enEur;en;EUR
+;jaUsd;ja;USD
+;jaJpy;ja;JPY
+;jaGbp;ja;GBP
+;jaEur;ja;EUR
+;deUsd;de;USD
+;deJpy;de;JPY
+;deGbp;de;GBP
+;deEur;de;EUR
+;zhUsd;zh;USD
+;zhJpy;zh;JPY
+;zhGbp;zh;GBP
+;zhEur;zh;EUR
 ;idIdr;id;IDR
 
 # Vendor
@@ -108,7 +134,3 @@ INSERT_UPDATE ServicelayerJob;code[unique=true];springId[unique=true]
 ;cartRemovalJob;cartRemovalJob
 ;siteMapMediaJob;siteMapMediaJob
 
-INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceProductCV;$targetProductCV;
-                                   ;sync productCatalog:Staged->Online;;;;
-INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceContentCV;$targetContentCV;
-                                   ;sync contentCatalog:Staged->Online;;;;

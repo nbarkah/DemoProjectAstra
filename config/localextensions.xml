@@ -37,13 +37,13 @@
 		<extension name='droolsruleengineservices' />
 		<extension name='rulebuilderbackoffice' />
 
-		<extension name='electronicsstore' />
-
 		<extension name='configurablebundleaddon' />
 		<extension name='configurablebundlebackoffice' />
 		<extension name='configurablebundlefacades' />
 		<extension name='configurablebundleservices' />
 		<extension name='configurablebundlecockpits' />
+
+		<extension name='electronicsstore' />
     
 		<extension name='demogroup2core' />
 		<extension name='demogroup2facades' />

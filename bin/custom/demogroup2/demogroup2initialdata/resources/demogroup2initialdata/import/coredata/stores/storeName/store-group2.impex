@@ -6,10 +6,10 @@
 #
 
 $productCatalog=demoGroup2ProductCatalog
-$classificationCatalog=DemoGroup2Classification
+$classificationCatalog=demoGroup2ClassificationCatalog
 $currencies=IDR
 $net=false
-$storeUid=demogroup2
+$storeUid=demoGroup2
 $defaultCurrency=IDR
 $languages=en,id
 $defaultLanguage=id
@@ -31,9 +31,9 @@ INSERT_UPDATE BaseStore;uid[unique=true];catalogs(id);currencies(isocode);net;ta
                        ;$storeUid;$productCatalog,$classificationCatalog;$currencies;$net;jp-taxes;km;$defaultCurrency;$languages;$defaultLanguage;$deliveryCountries;$billingCountries;$orderProcessCode;$pickupInStoreMode;$customerAllowedToIgnoreSuggestions;$paymentProvider;$checkoutFlowGroup;
 
 INSERT_UPDATE BaseStore2DeliveryModeRel;source(uid)[unique=true];target(code)[unique=true]
-                                       ;demogroup2;premium-net
-                                       ;demogroup2;standard-net
-                                       ;demogroup2;premium-gross
-                                       ;demogroup2;standard-gross
-                                       ;demogroup2;pickup
-                                       ;demogroup2;free-standard-shipping
+                                       ;demoGroup2;premium-net
+                                       ;demoGroup2;standard-net
+                                       ;demoGroup2;premium-gross
+                                       ;demoGroup2;standard-gross
+                                       ;demoGroup2;pickup
+                                       ;demoGroup2;free-standard-shipping
