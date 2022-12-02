@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 2, 2022, 7:10:58 AM                     ---
+ * --- Generated at Dec 2, 2022, 10:21:06 AM                    ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -20,6 +20,8 @@ import org.demo.core.constants.Demogroup2CoreConstants;
 import org.demo.core.jalo.ApparelProduct;
 import org.demo.core.jalo.ApparelSizeVariantProduct;
 import org.demo.core.jalo.ApparelStyleVariantProduct;
+import org.demo.core.jalo.DemoProduct;
+import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.jalo.ElectronicsColorVariantProduct;
 
 /**
@@ -122,6 +124,58 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 	public ApparelStyleVariantProduct createApparelStyleVariantProduct(final Map attributeValues)
 	{
 		return createApparelStyleVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public DemoProduct createDemoProduct(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( Demogroup2CoreConstants.TC.DEMOPRODUCT );
+			return (DemoProduct)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating DemoProduct : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public DemoProduct createDemoProduct(final Map attributeValues)
+	{
+		return createDemoProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public DemoVariantProduct createDemoVariantProduct(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( Demogroup2CoreConstants.TC.DEMOVARIANTPRODUCT );
+			return (DemoVariantProduct)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating DemoVariantProduct : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public DemoVariantProduct createDemoVariantProduct(final Map attributeValues)
+	{
+		return createDemoVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)
