@@ -4,8 +4,8 @@
 # ImpEx for Importing Products
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$productCatalogName=__PRODUCT_CATALOG_FULL_NAME__
+$productCatalog=demoGroup2ProductCatalog
+$productCatalogName=Demo Group2 Product Catalog
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $supercategories=supercategories(code, $catalogVersion)
@@ -13,4 +13,163 @@ $baseProduct=baseProduct(code,$catalogVersion)
 $approved=approvalstatus(code)[default='check']
 
 # Insert Products
-INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
+INSERT_UPDATE DemoProduct    ; code[unique = true]        ; name                                             ;height; $supercategories; varianttype(code)[default = 'DemoVariantProduct']    ; $approved; unit(code)[default = pieces]; $catalogVersion ; description;
+                             ;INTHEBOX-FLIP-Z             ; INTHEBOX FLIP Z                                  ;12 cm; "BED"         ;                                                      ;          ;                             ;                    ; Kasur lipat lantai terbaru dari IN THE BOX;
+                             ;INTHEBOX-X                  ; INTHEBOX X                                       ;27 cm; "BED"         ;                                                      ;          ;                             ;
+                             ;INTHEBOX-ALPHA              ; INTHEBOX ALPHA                                   ;21 cm; "BED"         ;                                                      ;          ;                             ;
+                             ;INTHEBOX-PRO                ; INTHEBOX PRO                                     ;24 cm; "BED"         ;                                                      ;          ;                             ;
+                             ;SPACEJAM-COLLECTION         ;'SPACE JAM: A NEW LEGACY' COLLECTION              ;23 cm; "BED"         ; ;;;;;
+                             ;SPACEJAM-PLUSH-TOP          ;'SPACE JAM: A NEW LEGACY' COLLECTION PLUSH TOP    ;27 cm; "BED"         ; ;;;;;
+                             ;INTHEBOX-DASH               ;INTHEBOX DASH                                     ;27 cm; "BED"         ; ;;;;;
+                             ;INTHEBOX-101                ;INTHEBOX 101                                      ;24 cm; "BED"         ; ;;;;;
+                             ;INTHEBOX-HYBRID             ;INTHEBOX HYBRID                                   ;20 cm; "BED"         ; ;;;;;
+                             ;INTHEBOX-HYBRID-15          ;INTHEBOX HYBRID 15                                ;15 cm; "BED"         ; ;;;;;
+                             ;KASUR-INTHEBOX              ;KASUR INTHEBOX                                    ;23 cm; "BED"         ; ;;;;;
+                             ;INTHEBOX-PLUS               ;INTHEBOX PLUS                                     ;28 cm; "BED"         ; ;;;;;
+                             ;ORGANIX-HYBRID              ;ORGANIX HYBRID                                    ;28 cm; "BED"         ; ;;;;;
+                             ;ORGANIX-LITE                ;ORGANIX LITE                                      ;28 cm; "BED"         ; ;;;;;
+                             ;ORGANIX-PLUSH               ;ORGANIX PLUSH                                     ;32 cm; "BED"         ; ;;;;;
+                             ;KASUR-LIPAT                 ;KASUR LIPAT                                       ;; "BED"              ; ;;;;;
+                             ;SOFA                        ;SOFA                                              ;; "SOFA"               ; ;;;;;
+                             ;SOFA-BED                    ;SOFA BED                                          ;; "SOFA"               ; ;;;;;
+                             ;BANTAL                      ;BANTAL                                            ;; "PROPS"       ; ;;;;;
+                             ;GULING                      ;GULING                                            ;; "PROPS"       ; ;;;;;
+
+INSERT_UPDATE DemoSizeProduct; code[unique=true];name                 ; dimension;
+                            ;SingleSize           ;Single Size          ;90 x 200  ;
+                            ;SuperSingleSize      ;Super Single Size    ;100 x 200 ;
+                            ;FullSize             ;Full Size            ;120 x 200 ;
+                            ;CustomSize           ;Custom Size          ;140 x 200 ;
+                            ;QueenSize            ;Queen Size           ;160 x 200 ;
+                            ;KingSize             ;King Size            ;180 x 200 ;
+                            ;SuperKingSize        ;Super King Size      ;200 x 200
+
+
+INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]            ;name                       ;sizeDimension(code);$supercategories    ; description        ; unit(code)[default = pieces]; $approved; $catalogVersion;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-900            ;INTHEBOX Flip Z 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-100            ;INTHEBOX Flip Z 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-120            ;INTHEBOX Flip Z 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-140            ;INTHEBOX Flip Z 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-160            ;INTHEBOX Flip Z 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-180            ;INTHEBOX Flip Z 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-200            ;INTHEBOX Flip Z 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-X   ; INTHEBOX-X-900            ;INTHEBOX X 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-X   ; INTHEBOX-X-100            ;INTHEBOX X 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-X   ; INTHEBOX-X-120            ;INTHEBOX X 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-X   ; INTHEBOX-X-140            ;INTHEBOX X 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-X   ; INTHEBOX-X-160            ;INTHEBOX X 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-X   ; INTHEBOX-X-180            ;INTHEBOX X 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-X   ; INTHEBOX-X-200            ;INTHEBOX X 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-900            ;INTHEBOX Alpha 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-100            ;INTHEBOX Alpha 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-120            ;INTHEBOX Alpha 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-140            ;INTHEBOX Alpha 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-160            ;INTHEBOX Alpha 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-180            ;INTHEBOX Alpha 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-ALPHA   ; INTHEBOX-ALPHA-200            ;INTHEBOX Alpha 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-900            ;INTHEBOX Pro 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-100            ;INTHEBOX Pro 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-120            ;INTHEBOX Pro 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-140            ;INTHEBOX Pro 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-160            ;INTHEBOX Pro 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-180            ;INTHEBOX Pro 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PRO   ; INTHEBOX-PRO-200            ;INTHEBOX Pro 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-900            ;INTHEBOX "Space Jam: A New Legacy" Collection 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-100            ;INTHEBOX "Space Jam: A New Legacy" Collection 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-120            ;INTHEBOX "Space Jam: A New Legacy" Collection 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-140            ;INTHEBOX "Space Jam: A New Legacy" Collection 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-160            ;INTHEBOX "Space Jam: A New Legacy" Collection 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-180            ;INTHEBOX "Space Jam: A New Legacy" Collection 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-COLLECTION   ; SPACEJAM-COLLECTION-200            ;INTHEBOX "Space Jam: A New Legacy" Collection 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-900            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-100            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-120            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-140            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-160            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-180            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; SPACEJAM-PLUSH-TOP   ; SPACEJAM-PLUSH-TOP-200            ;INTHEBOX "Space Jam: A New Legacy" Collection Plush Top 90x200 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-900            ;INTHEBOX Dash 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-100            ;INTHEBOX Dash 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-120            ;INTHEBOX Dash 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-140            ;INTHEBOX Dash 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-160            ;INTHEBOX Dash 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-180            ;INTHEBOX Dash 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-DASH   ; INTHEBOX-DASH-200            ;INTHEBOX Dash 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-101   ; INTHEBOX-101-900            ;INTHEBOX 101 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-101   ; INTHEBOX-101-100            ;INTHEBOX 101 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-101   ; INTHEBOX-101-120            ;INTHEBOX 101 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-101   ; INTHEBOX-101-140            ;INTHEBOX 101 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-101   ; INTHEBOX-101-160            ;INTHEBOX 101 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-101   ; INTHEBOX-101-180            ;INTHEBOX 101 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-101   ; INTHEBOX-101-200            ;INTHEBOX 101 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-900            ;INTHEBOX Hybrid 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-100            ;INTHEBOX Hybrid 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-120            ;INTHEBOX Hybrid 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-140            ;INTHEBOX Hybrid 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-160            ;INTHEBOX Hybrid 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-180            ;INTHEBOX Hybrid 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID   ; INTHEBOX-HYBRID-200            ;INTHEBOX Hybrid 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-900            ;INTHEBOX Hybrid 15 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-100            ;INTHEBOX Hybrid 15 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-120            ;INTHEBOX Hybrid 15 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-140            ;INTHEBOX Hybrid 15 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-160            ;INTHEBOX Hybrid 15 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-180            ;INTHEBOX Hybrid 15 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-HYBRID-15   ; INTHEBOX-HYBRID-15-200            ;INTHEBOX Hybrid 15 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-900            ;Kasur INTHEBOX 900 x 200     ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-100            ;Kasur INTHEBOX 100 x 200     ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-120            ;Kasur INTHEBOX 15 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-140            ;Kasur INTHEBOX 15 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-160            ;Kasur INTHEBOX 15 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-180            ;Kasur INTHEBOX 15 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-INTHEBOX   ; KASUR-INTHEBOX-200            ;Kasur INTHEBOX 15 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-900            ;INTHEBOX Plus 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-100            ;INTHEBOX Plus 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-120            ;INTHEBOX Plus 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-140            ;INTHEBOX Plus 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-160            ;INTHEBOX Plus 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-180            ;INTHEBOX Plus 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; INTHEBOX-PLUS   ; INTHEBOX-PLUS-200            ;INTHEBOX Plus 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-900            ;INTHEBOX Organix Hybrid 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-100            ;INTHEBOX Organix Hybrid 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-120            ;INTHEBOX Organix Hybrid 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-140            ;INTHEBOX Organix Hybrid 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-160            ;INTHEBOX Organix Hybrid 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-180            ;INTHEBOX Organix Hybrid 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-HYBRID   ; ORGANIX-HYBRID-200            ;INTHEBOX Organix Hybrid 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-900            ;INTHEBOX Organix Lite 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-100            ;INTHEBOX Organix Lite 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-120            ;INTHEBOX Organix Lite 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-140            ;INTHEBOX Organix Lite 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-160            ;INTHEBOX Organix Lite 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-180            ;INTHEBOX Organix Lite 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-LITE   ; ORGANIX-LITE-200            ;INTHEBOX Organix Lite 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-900            ;INTHEBOX Organix Plush 900 x 200  ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-100            ;INTHEBOX Organix Plush 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-120            ;INTHEBOX Organix Plush 120 x 200  ;FullSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-140            ;INTHEBOX Organix Plush 140 x 200  ;CustomSize         ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-160            ;INTHEBOX Organix Plush 160 x 200  ;QueenSize          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-180            ;INTHEBOX Organix Plush 180 x 200  ;KingSize           ;"BED"             ;                    ;                             ;          ;                ;
+                                ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-200            ;INTHEBOX Organix Plush 200 x 200  ;SuperKingSize      ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-LIPAT     ; KASUR-LIPAT-80               ;Kasur Busa Lipat Travel Mattress 80 x 200  ;          ;"BED"             ;                    ;                             ;          ;                ;
+
+                                ; SOFA          ; SOFA-3-SEATER                  ;INTHEBOX Sofa 3 Seater        ;         ;"SOFA"             ;                    ;                             ;          ;                ;
+                                ; SOFA          ; SOFA-3-SEATER-BLACK            ;INTHEBOX Sofa 3 Seater BLACK  ;         ;"SOFA"             ;                    ;                             ;          ;                ;
+                                ; SOFA-BED      ; SOFA-BED-100                   ;SOFA BED Super Single                  ;SuperSingleSize         ;"SOFA"             ;                    ;                             ;          ;                ;
+
+                                ; BANTAL ; BANTAL-INTHEBOX                  ;BANTAL INTHEBOX  ;         ;"PROPS"             ;                    ;                             ;          ;                ;
+                                ; GULING ; GULING-INTHEBOX                  ;Guling INTHEBOX  ;         ;"PROPS"             ;                    ;                             ;          ;                ;
