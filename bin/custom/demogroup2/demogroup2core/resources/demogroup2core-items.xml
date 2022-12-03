@@ -113,32 +113,47 @@
                 </attributes>
             </itemtype>
         </typegroup>
+
         <typegroup name="DemoGroup2">
             <itemtype code="DemoProduct" autocreate="true" generate="true" extends="Product">
                 <attributes>
-                    <attribute qualifier="brand" type="java.lang.String">
-                        <description>Is Brand Product</description>
+                    <attribute qualifier="height" type="java.lang.String">
+                        <description>Is Height Product</description>
                         <modifiers />
                         <persistence type="property" />
                     </attribute>
                 </attributes>
             </itemtype>
-
             <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
                 <attributes>
-                    <attribute qualifier="sizeDimension" type="java.lang.String" >
+                    <attribute qualifier="sizeDimension" type="DemoSizeProduct" >
                         <description>Size Dimension Product</description>
-                        <modifiers optional="true" initial="true" />
-                        <persistence type="property" />
-                    </attribute>
-                    <attribute qualifier="sizeType" type="SizeEnum" >
-                        <description>Size Type Product</description>
                         <modifiers optional="true" initial="true" />
                         <persistence type="property" />
                     </attribute>
                 </attributes>
             </itemtype>
-        </typegroup>
 
+            <itemtype code="DemoSizeProduct"  autocreate="true" generate="true">
+                <deployment table="DemoSizeProduct" typecode="12321" />
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String" >
+                        <description>Size Code Product</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <description>Size Name Product</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="dimension" type="java.lang.String">
+                        <description>Size Dimension Product</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
     </itemtypes>
 </items>

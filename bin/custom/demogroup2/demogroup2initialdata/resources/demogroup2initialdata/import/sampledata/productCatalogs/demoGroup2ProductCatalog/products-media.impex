@@ -4,7 +4,7 @@
 # ImPex for Importing Product Media
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=demoGroup2ProductCatalog
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
 $media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
@@ -17,7 +17,7 @@ $others=others(code, $catalogVersion)
 $data_sheet=data_sheet(code, $catalogVersion)
 $medias=medias(code, $catalogVersion)
 $galleryImages=galleryImages(qualifier, $catalogVersion)
-$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/productCatalogs/$productCatalog
+$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/productCatalogs/catalogName/images
 
 # Create Media
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)

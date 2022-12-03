@@ -4,15 +4,17 @@
 # ImpEx for Importing Categories
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$productCatalogName=__PRODUCT_CATALOG_FULL_NAME__
+$productCatalog = demoGroup2ProductCatalog
+$productCatalogName = Demo Group2 Content Catalog
 
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
-$supercategories=source(code, $catalogVersion)[unique=true]
-$categories=target(code, $catalogVersion)[unique=true]
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+$supercategories = source(code, $catalogVersion)[unique=true]
+$categories = target(code, $catalogVersion)[unique=true]
 
 # Insert Categories
-INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];$catalogVersion
+INSERT_UPDATE Category; code[unique = true];name          ; $catalogVersion; supercategories(code, $catalogVersion); allowedPrincipals(uid)[default = 'customergroup']; order
+                      ; INTHEBOX           ;INTHEBOX      ;                ;                                       ;                                                  ;
+                      ; BED                ;BED INTHEBOX  ;                ; INTHEBOX                              ;                                                  ; 1
+                      ; SOFA               ;SOFA INTHEBOX ;                ; INTHEBOX                              ;                                                  ; 2
+                      ; PROPS              ;PROPS INTHEBOX;                ; INTHEBOX                              ;                                                  ; 3
 
-# Insert Category Structure
-INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
