@@ -125,7 +125,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		if (importCoreData) {
 			getCoreDataImportService().execute(this, context, importData);
 
-			importTrainingCoreData(context);
+			importDemoGroup2CoreData(context);
 
 			getEventService().publishEvent(new CoreDataImportedEvent(context, importData));
 			getCoreDataImportService().synchronizeContentCatalog(this, context, DEMOGROUP2, true);
@@ -137,7 +137,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		if (importSampleData) {
 			getSampleDataImportService().execute(this, context, importData);
 
-			importTrainingSampleData(context);
+			importDemoGroup2SampleData(context);
 
 			getEventService().publishEvent(new SampleDataImportedEvent(context, importData));
 			getSampleDataImportService().synchronizeContentCatalog(this, context, DEMOGROUP2, true);
@@ -210,7 +210,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	 *
 	 * @param context context
 	 */
-	private void importTrainingCoreData(final SystemSetupContext context) {
+	private void importDemoGroup2CoreData(final SystemSetupContext context) {
 		final String extensionName = context.getExtensionName();
 		final String impexFiles = Config.getParameter(DEMO_GROUP_2_CORE_DATA_IMPEXES);
 		if (impexFiles != null) {
@@ -219,12 +219,12 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 				if (impexFile != null) {
 					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/common/%s",
 							extensionName, impexFile), false);
-					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/contentCatalogs/catalogName/%s",
-							extensionName, impexFile), false);
-					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/productCatalogs/catalogName/%s",
-							extensionName, impexFile), false);
-					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/stores/storeName/%s",
-							extensionName, impexFile), false);
+					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/contentCatalogs/%sContentCatalog/%s",
+							extensionName, DEMOGROUP2, impexFile), false);
+					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/productCatalogs/%sProductCatalog/%s",
+							extensionName, DEMOGROUP2, impexFile), false);
+					getSetupImpexService().importImpexFile(String.format("/%s/import/coredata/stores/%s/%s",
+							extensionName, DEMOGROUP2, impexFile), false);
 				}
 			}
 		}
@@ -235,19 +235,19 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	 *
 	 * @param context the context
 	 */
-	private void importTrainingSampleData(final SystemSetupContext context) {
+	private void importDemoGroup2SampleData(final SystemSetupContext context) {
 		final String extensionName = context.getExtensionName();
 		final String impexFiles = Config.getParameter(DEMO_GROUP_2_SAMPLE_DATA_IMPEXES);
 		if (impexFiles != null) {
 			final String[] impexFileArray = impexFiles.split(",");
 			for (final String impexFile : impexFileArray) {
 				if (impexFile != null) {
-					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/catalogName/%s",
-							extensionName, impexFile), false);
-					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/productCatalogs/catalogName/%s",
-							extensionName, impexFile), false);
-					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/stores/storeName/%s",
-							extensionName, impexFile), false);
+					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/%sContentCatalog/%s",
+							extensionName, DEMOGROUP2, impexFile), false);
+					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/productCatalogs/%sProductCatalog/%s",
+							extensionName, DEMOGROUP2, impexFile), false);
+					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/stores/%s/%s",
+							extensionName, DEMOGROUP2, impexFile), false);
 
 				}
 			}
