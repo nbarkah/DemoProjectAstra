@@ -5,3 +5,4 @@ roles/**
 bin/modules/**
 bin/platform/**
 *.class/
+/bin/custom/demogroup2/demogroup2storefront/web/node_modules/**
