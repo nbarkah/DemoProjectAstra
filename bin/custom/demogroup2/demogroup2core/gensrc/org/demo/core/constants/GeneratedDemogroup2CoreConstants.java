@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 1, 2022, 7:42:33 AM                     ---
+ * --- Generated at Dec 3, 2022, 10:20:39 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.constants;
@@ -20,6 +20,7 @@ public class GeneratedDemogroup2CoreConstants
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String DEMOPRODUCT = "DemoProduct".intern();
+		public static final String DEMOSIZEPRODUCT = "DemoSizeProduct".intern();
 		public static final String DEMOVARIANTPRODUCT = "DemoVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
 		public static final String SIZEENUM = "SizeEnum".intern();

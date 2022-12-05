@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 2, 2022, 7:47:55 AM                     ---
+ * --- Generated at Dec 3, 2022, 10:20:39 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -20,13 +20,13 @@ import org.demo.core.constants.Demogroup2CoreConstants;
 @SuppressWarnings({"deprecation","unused","cast"})
 public abstract class GeneratedDemoProduct extends Product
 {
-	/** Qualifier of the <code>DemoProduct.brand</code> attribute **/
-	public static final String BRAND = "brand";
+	/** Qualifier of the <code>DemoProduct.height</code> attribute **/
+	public static final String HEIGHT = "height";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>(Product.DEFAULT_INITIAL_ATTRIBUTES);
-		tmp.put(BRAND, AttributeMode.INITIAL);
+		tmp.put(HEIGHT, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -36,39 +36,39 @@ public abstract class GeneratedDemoProduct extends Product
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>DemoProduct.brand</code> attribute.
-	 * @return the brand - Is Brand Product
+	 * <i>Generated method</i> - Getter of the <code>DemoProduct.height</code> attribute.
+	 * @return the height - Is Height Product
 	 */
-	public String getBrand(final SessionContext ctx)
+	public String getHeight(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, BRAND);
+		return (String)getProperty( ctx, HEIGHT);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>DemoProduct.brand</code> attribute.
-	 * @return the brand - Is Brand Product
+	 * <i>Generated method</i> - Getter of the <code>DemoProduct.height</code> attribute.
+	 * @return the height - Is Height Product
 	 */
-	public String getBrand()
+	public String getHeight()
 	{
-		return getBrand( getSession().getSessionContext() );
+		return getHeight( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>DemoProduct.brand</code> attribute. 
-	 * @param value the brand - Is Brand Product
+	 * <i>Generated method</i> - Setter of the <code>DemoProduct.height</code> attribute. 
+	 * @param value the height - Is Height Product
 	 */
-	public void setBrand(final SessionContext ctx, final String value)
+	public void setHeight(final SessionContext ctx, final String value)
 	{
-		setProperty(ctx, BRAND,value);
+		setProperty(ctx, HEIGHT,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>DemoProduct.brand</code> attribute. 
-	 * @param value the brand - Is Brand Product
+	 * <i>Generated method</i> - Setter of the <code>DemoProduct.height</code> attribute. 
+	 * @param value the height - Is Height Product
 	 */
-	public void setBrand(final String value)
+	public void setHeight(final String value)
 	{
-		setBrand( getSession().getSessionContext(), value );
+		setHeight( getSession().getSessionContext(), value );
 	}
 	
 }
