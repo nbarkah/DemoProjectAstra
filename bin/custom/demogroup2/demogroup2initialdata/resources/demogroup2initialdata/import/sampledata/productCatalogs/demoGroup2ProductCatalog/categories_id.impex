@@ -1,0 +1,20 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Categories
+
+# Macros / Replacement Parameter definitions
+$productCatalog=demoGroup2ProductCatalog
+$productCatalogName=Demo Group2 Content Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Language
+$lang=id
+
+# Create Categories
+UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+               ;INTHEBOX   ;               ;INTHEBOX
+               ;BED        ;               ;Kasur
+               ;SOFA       ;               ;Sofa
+               ;PROPS      ;               ;Perlengkapan
