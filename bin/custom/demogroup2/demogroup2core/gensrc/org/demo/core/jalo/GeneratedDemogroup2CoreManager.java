@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 2, 2022, 10:21:06 AM                    ---
+ * --- Generated at Dec 1, 2022, 7:42:33 AM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -20,8 +20,6 @@ import org.demo.core.constants.Demogroup2CoreConstants;
 import org.demo.core.jalo.ApparelProduct;
 import org.demo.core.jalo.ApparelSizeVariantProduct;
 import org.demo.core.jalo.ApparelStyleVariantProduct;
-import org.demo.core.jalo.DemoProduct;
-import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.jalo.ElectronicsColorVariantProduct;
 
 /**
@@ -146,12 +144,12 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 			throw new JaloSystemException( e ,"error creating DemoProduct : "+e.getMessage(), 0 );
 		}
 	}
-	
+
 	public DemoProduct createDemoProduct(final Map attributeValues)
 	{
 		return createDemoProduct( getSession().getSessionContext(), attributeValues );
 	}
-	
+
 	public DemoVariantProduct createDemoVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
@@ -172,12 +170,12 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 			throw new JaloSystemException( e ,"error creating DemoVariantProduct : "+e.getMessage(), 0 );
 		}
 	}
-	
+
 	public DemoVariantProduct createDemoVariantProduct(final Map attributeValues)
 	{
 		return createDemoVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
-	
+
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
