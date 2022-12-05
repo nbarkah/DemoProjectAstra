@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Product Localisations
+
+# Macros / Replacement Parameter definitions
+$productCatalog=demoGroup2ProductCatalog
+$productCatalogName=Demo Group2 Product Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Language
+$lang=id
+
+# Update allProducts with localisations
+UPDATE DemoProduct; code[unique = true]     ; $catalogVersion; name[lang = $lang]     ; description[lang = $lang]
+                  ;INTHEBOX-FLIP-Z      ;       ; INTHEBOX FLIP Z                                  ; Kasur lipat lantai terbaru dari IN THE BOX;
+                  ;INTHEBOX-X           ;       ; INTHEBOX X                                       ; Kasur dengan tambahan plush top atau lapisan tambahan di bagian atas kasur, yang menambah keempukan dan kenyamanan pada kasur. Dilengkapi material premium dan desain elegan dari Raffi Ahmad.
+                  ;INTHEBOX-ALPHA       ;       ; INTHEBOX ALPHA                                   ; Kasur INTHEBOX Alpha ialah kasur spring bed, yang menggunakan per bonnell. Selain itu, busa premium dengan kepadatan tinggi yang dilapisi kain supersoft menambah kenyamanan tidur anda dan cocok untuk digunakan sehari-hari.
+                  ;INTHEBOX-PRO         ;       ; INTHEBOX PRO                                     ; Kasur dengan tambahan plush top atau lapisan tambahan di bagian atas kasur, yang menambah keempukan dan kenyamanan pada kasur. Dilengkapi material premium dan desain elegan dari Raffi Ahmad.
+                  ;SPACEJAM-COLLECTION  ;       ;'SPACE JAM: A NEW LEGACY' COLLECTION              ; Berkolaborasi dengan Warner Bros, INTHEBOX mengeluarkan produk terbaru yaitu INTHEBOX 'Space Jam: A New Legacy' Collection.
+                  ;SPACEJAM-PLUSH-TOP   ;       ;'SPACE JAM: A NEW LEGACY' COLLECTION PLUSH TOP    ; Kasur dengan tambahan plush top atau lapisan tambahan di bagian atas kasur, yang menambah keempukan dan kenyamanan pada kasur.
+                  ;INTHEBOX-DASH        ;       ;INTHEBOX DASH                                     ; Kasur INTHEBOX terbaru yang hadir sebagai solusi bagi orang-orang yang mencari kasur orthopedic atau memiliki masalah tulang belakang.
+                  ;INTHEBOX-101         ;       ;INTHEBOX 101                                      ; Hadir dengan desain yang unik, tampak lebih fresh, dan modern dengan tampilan waterfall.
+                  ;INTHEBOX-HYBRID      ;       ;INTHEBOX HYBRID                                   ; INTHEBOX Hybrid terdiri dari memory foam dan busa yang tidak mudah kempes. Kasur ini menggunakan kain jenis jacquard yang membuat tampilan kasur terlihat lebih cantik dan mewah.
+                  ;INTHEBOX-HYBRID-15   ;       ;INTHEBOX HYBRID 15                                ; INTHEBOX Hybrid 15 terdiri dari memory foam dan busa yang tidak mudah kempes. Kasur ini menggunakan kain jenis jacquard yang membuat tampilan kasur terlihat lebih cantik dan mewah.
+                  ;KASUR-INTHEBOX       ;       ;KASUR INTHEBOX                                    ; Kasur spring bed pertama dari INTHEBOX. Dapatkan tidur yang nyaman dengan harga terjangkau. Dilengkapi material premium agar tidur lebih nyenyak.
+                  ;INTHEBOX-PLUS        ;       ;INTHEBOX PLUS                                     ; Inovasi terbaru untuk istirahat yang nyaman dan tetap sejuk. Tidur tidak lagi gerah dengan extra cool gel dan sirkulasi udara yang baik.
+                  ;ORGANIX-HYBRID       ;       ;ORGANIX HYBRID                                    ;INTHEBOX Organix Hybrid merupakan kasur busa terbaru dari INTHEBOX yang didesain dengan bahan natural serta lapisan latex dan memory foam yang dapat mengikuti lekuk tubuh sehingga dapat menopang tubuh dengan maksimal.
+                  ;ORGANIX-LITE         ;       ;ORGANIX LITE                                      ;INTHEBOX Organix Lite merupakan kasur spring bed dari INTHEBOX terbaru dengan bahan natural serta lapisan latex. Setiap lapisan kasur ini dibuat menggunakan bahan premium demi menghadirkan pengalaman tidur yang nyaman;
+                  ;ORGANIX-PLUSH        ;       ;ORGANIX PLUSH                                     ;INTHEBOX Organix Plush merupakan tipe tertinggi dari seri Organix yang hadir dengan bahan-bahan natural seperti lapisan latex dan memiliki lapisan paling lengkap yang memberikan dukungan optimal demi menghadirkan pengalaman tidur senyaman mungkin.;
+                  ;KASUR-LIPAT          ;       ;KASUR LIPAT                                       ;Kasur lipat yang nyaman, sangat praktis, simple, dan mudah dibawa bepergian, dengan kemasan dalam tas yang memudahkan penyimpanan.;
+                  ;SOFA                 ;       ;SOFA                                              ;Sofa 3 Seater yang minimalis, dengan rangka besi dan dudukan pocket spring yang memberikan kenyamanan lebih.;
+                  ;SOFA-BED             ;       ;SOFA BED                                          ;Cocok digunakan istirahat dan bersantai di rumah. Dilengkapi material premium yang empuk dan nyaman dengan desain elegan dari Raffi Ahmad.;
+                  ;BANTAL               ;       ;BANTAL                                            ;Bantal premium dengan komposisi kapas organik, virgin fiber, dan hollow fiber. Ukuran bantal pas untuk menopang leher dengan baik dan nyaman.;
+                  ;GULING               ;       ;GULING                                            ;Guling premium dengan komposisi kapas organik, virgin fiber, dan hollow fiber. Ukuran guling pas untuk memberikan kenyamanan saat memeluknya.;
