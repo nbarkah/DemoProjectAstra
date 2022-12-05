@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/testimoni")
+@RequestMapping("/testimoniPage")
 public class TestimoniController extends AbstractPageController {
     private static final String TEMPLATE_PAGE = "testimoniPage";
 

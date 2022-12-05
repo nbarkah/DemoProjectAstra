@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 1, 2022, 7:42:33 AM                     ---
+ * --- Generated at 5 Des 2022 08.20.18                         ---
  * ----------------------------------------------------------------
  */
 package org.demo.initialdata.constants;
