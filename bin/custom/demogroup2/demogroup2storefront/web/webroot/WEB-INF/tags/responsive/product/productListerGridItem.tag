@@ -30,6 +30,18 @@
 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.name)}" />
 				</a>
 			</ycommerce:testId>
+
+			<ycommerce:testId code="product_productName">
+				<a class="name" href="${fn:escapeXml(productUrl)}">
+					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
+				</a>
+			</ycommerce:testId>
+
+			<ycommerce:testId code="product_productName">
+				<a class="name" href="${fn:escapeXml(productUrl)}">
+					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" />
+				</a>
+			</ycommerce:testId>
 		
 			<c:if test="${not empty product.potentialPromotions}">
 				<div class="promo">

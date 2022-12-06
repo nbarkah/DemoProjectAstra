@@ -16,8 +16,8 @@ $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='
 $picture=media(code, $contentCV);
 $medias=medias(code, $contentCV);
 $mediaContainer=media(qualifier, $contentCV)[lang=$lang];
-$siteResource=jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/contentCatalogs/$contentCatalog
-$productResource=jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/productCatalogs/$productCatalog
+$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/sampledata/productCatalogs/$productCatalog
 
 # Language
 $lang=id
@@ -29,21 +29,23 @@ $Image=image(code, $contentCV)
 
 # Site Logo Component
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-                            ;;SiteLogoComponent;/images/theme/logo-hybris.png;
+                            ;;SiteLogoComponent;/images/inthebox/Navbar/header-logo-white.png;
 
 # CMS Link Components
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
                        ;;AboutSAPCommerceLink;"About SAP Commerce Cloud"
                        ;;AgileCommerceBlogLink;"Agile Commerce Blog"
                        ;;AllBrandsCategoryLink;"Brands"
-                       ;;AllBedsCategoryLink;"Fashion"
-                       ;;SpringBedCategoryLink;"Shirt"
-                       ;;SofaBedCategoryLink;"Trouser"
+                       ;;AllBedsCategoryLink;"PRODUCT IN THE BOX"
+                       ;;SofaBedCategoryLink;"SOFA"
+                       ;;SpringBedCategoryLink;"PROPS"
                        ;;AboutUsLink;"About Us"
                        ;;BlogsLink;"Blogs"
                        ;;GuaranteeLink;"Garansi"
                        ;;ConfirmationLink;"Konfirmasi"
                        ;;RecommendationLink;"Rekomendasi"
+                       ;;RecommendationLink1;"Rekomendasi 1"
+                       ;;RecommendationLink2;"Rekomendasi 2"
                        ;;ContactUsLink;"Contact Us"
                        ;;CommunityLink;"Community"
                        ;;DocumentationLink;"Documentation"
@@ -116,7 +118,7 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 #                        ;;SuppliesNavNode;"Supplies"
 #                        ;;WebcamsNavNode;"Webcams"
 #
-                        ;;AboutUsNavNode;"About Us"
+                        ;;AboutUsNavNode;"Tentang Kami"
                         ;;BlogsNavNode;"Blogs"
                         ;;GuaranteeNavNode;"Garansi"
                         ;;ConfirmationNavNode;"Konfirmasi"
@@ -239,47 +241,49 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
                             ;;HelpParagraphComponent;"<strong>Need Help with your checkout process?</strong> <span>Contact Us or Call phone number.</span>"
 
 #above is the desktop data, below is the responsive data
-#UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-#                               ;;NewElectronicsHomepageProductCarouselComponent;What's New
 
 # Home Page Splash
 
 # Media Content
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-                   ;widescreen;;banner-demo-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;widescreen;;banner-2-demo-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;widescreen;;banner-3-demo-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;widescreen;;banner-4-demo-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;widescreen;;discount-banner-1400.png;$siteResource/images/banners/homepage/responsive/discount-banner-1400.png;;discount-banner-1400.png;;"Save Big on Select Camera Accessories & Supplies"
-                   ;mobile;;banner-demo-480x320.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-480x320.jpg;;banner-demo-480x320.jpg;;"Save Big on Select Camera Accessories & Supplies"
-                   ;mobile;;banner-2-demo-480x320.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-480x320.jpg;;banner-demo-480x320.jpg;;"Save Big on Select Camera Accessories & Supplies"
-                   ;mobile;;banner-3-demo-480x320.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-480x320.jpg;;banner-demo-480x320.jpg;;"Save Big on Select Camera Accessories & Supplies"
-                   ;mobile;;banner-4-demo-480x320.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-480x320.jpg;;banner-demo-480x320.jpg;;"Save Big on Select Camera Accessories & Supplies"
-                   ;mobile;;discount-banner-480.png;$siteResource/images/banners/homepage/responsive/discount-banner-480.png;;discount-banner-480.png;;"Save Big On Select SLR & DSLR Cameras"
-                   ;tablet;;banner-demo-770x350.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-770x350.jpg;;banner-demo-770x350.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;tablet;;banner-2-demo-770x350.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-770x350.jpg;;banner-demo-770x350.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;tablet;;banner-3-demo-770x350.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-770x350.jpg;;banner-demo-770x350.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;tablet;;banner-4-demo-770x350.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-770x350.jpg;;banner-demo-770x350.jpg;;"Save Big On Select SLR & DSLR Cameras"
-                   ;tablet;;discount-banner-770.png;$siteResource/images/banners/homepage/responsive/discount-banner-770.png;;discount-banner-770.png;;"Save Big on Select Camera Accessories & Supplies"
-                   ;desktop;;banner-demo-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Save Big On Select SLR & DSLR Cameras"
-                   ;desktop;;banner-2-demo-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Save Big On Select SLR & DSLR Cameras"
-                   ;desktop;;banner-3-demo-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Save Big On Select SLR & DSLR Cameras"
-                   ;desktop;;banner-4-demo-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Save Big On Select SLR & DSLR Cameras"
-                   ;desktop;;discount-banner-960.png;$siteResource/images/banners/homepage/responsive/discount-banner-960.png;;discount-banner-960.png;;"Save Big on Select Camera Accessories & Supplies"
+                   ;widescreen;;banner-homepage-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
+                   ;widescreen;;banner-homepage-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-1400x440.png;;banner-homepage-1400x440.png;;"IN THE BOX 2"
+#                   ;widescreen;;banner-homepage-3-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
+#                   ;widescreen;;banner-homepage-4-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
+                   ;widescreen;;discount-banner-1400.png;$siteResource/images/banners/homepage/responsive/discount-banner-1400.png;;discount-banner-1400.png;;"IN THE BOX"
+                   ;mobile;;banner-homepage-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
+                   ;mobile;;banner-homepage-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-480x320.png;;banner-homepage-480x320.png;;"IN THE BOX2"
+#                   ;mobile;;banner-homepage-2-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
+#                   ;mobile;;banner-homepage-4-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
+                   ;mobile;;discount-banner-480.png;$siteResource/images/banners/homepage/responsive/discount-banner-480.png;;discount-banner-480.png;;"IN THE BOX"
+                   ;tablet;;banner-homepage-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
+                   ;tablet;;banner-homepage-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-770x350.png;;banner-homepage-770x350.png;;"IN THE BOX 2"
+#                   ;tablet;;banner-homepage-3-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
+#                   ;tablet;;banner-homepage-4-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
+                   ;tablet;;discount-banner-770.png;$siteResource/images/banners/homepage/responsive/discount-banner-770.png;;discount-banner-770.png;;"IN THE BOX"
+                   ;desktop;;banner-homepage-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
+                   ;desktop;;banner-homepage-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-960x330.png;;banner-homepage-960x330.png;;"IN THE BOX 2"
+#                   ;desktop;;banner-homepage-3-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
+#                   ;desktop;;banner-homepage-4-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
+                   ;desktop;;discount-banner-960.png;$siteResource/images/banners/homepage/responsive/discount-banner-960.png;;discount-banner-960.png;;"IN THE BOX"
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
                             ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
-                            ;demo-homepage-spalsh-1-en;banner-demo-1400x440.jpg,banner-demo-480x320.jpg,banner-demo-770x350.jpg,banner-demo-960x330.png
-                            ;demo-homepage-spalsh-2-en;banner-2-demo-1400x440.jpg,banner-2-demo-480x320.jpg,banner-2-demo-770x350.jpg,banner-2-demo-960x330.png
-                            ;demo-homepage-spalsh-3-en;banner-3-demo-1400x440.jpg,banner-3-demo-480x320.jpg,banner-3-demo-770x350.jpg,banner-3-demo-960x330.png
-                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
+                            ;demo-homepage-spalsh-1-en;banner-homepage-2-1400x440.png,banner-homepage-2-480x320.png,banner-homepage-2-770x350.png,banner-homepage-2-960x330.png
+                            ;demo-homepage-spalsh-2-en;banner-homepage-1400x440.png,banner-homepage-480x320.png,banner-homepage-770x350.png,banner-homepage-960x330.png
+#                            ;demo-homepage-spalsh-3-en;banner-3-demo-1400x440.jpg,banner-3-demo-480x320.jpg,banner-3-demo-770x350.jpg,banner-3-demo-960x330.png
+#                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
                                              ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
                                              ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
-                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
-                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
+#                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
+#                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
+
+#UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+#                               ;;NewDemoGroup2HomepageProductCarouselComponent;What's New
+
 # Home page slot 2A
 
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
@@ -566,6 +570,19 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
                                 ;;FooterNavigationComponent;"Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
 
-UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
-                            ;;TrainingParagraphComponent;"Test Training Page";
-                            ;;TrainingParagraphComponent2;"Test Training Page - Bottom Slot";
+# Traning Paragraph Component
+UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en]
+                            ;;DemoGroup2ParagraphComponent;"Test DemoGroup2 Page"
+                            ;;DemoGroup2ParagraphComponent2;"Test DemoGroup2 Page - Bottom Slot"
+
+# Media Content
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;banner-testing-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Testing Banner"
+                   ;desktop;;banner-testing-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Testing Banner"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;testing-banner-en;banner-testing-1400x440.jpg,banner-testing-960x330.png
+
+UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                      ;;TestingBannerComponent-1;testing-banner-en
+
