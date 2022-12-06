@@ -3,14 +3,9 @@
  */
 package org.demo.storefront.controllers.cms;
 
-import de.hybris.platform.acceleratorfacades.productcarousel.ProductCarouselFacade;
-import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
-import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
-import de.hybris.platform.commercefacades.search.ProductSearchFacade;
-import de.hybris.platform.commercefacades.search.data.SearchQueryData;
-import de.hybris.platform.commercefacades.search.data.SearchStateData;
-import de.hybris.platform.commerceservices.search.pagedata.PageableData;
+import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.servicelayer.dto.converter.Converter;
 import org.demo.core.model.HomepageCardProductCarouselComponentModel;
 import org.demo.storefront.controllers.ControllerConstants;
 import org.springframework.stereotype.Controller;
@@ -19,10 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 
 /**
@@ -32,10 +23,12 @@ import java.util.List;
 @RequestMapping(value = ControllerConstants.Actions.Cms.HomepageCardProductCarouselComponent)
 public class HomepageCardProductCarouselComponentController extends AbstractAcceleratorCMSComponentController<HomepageCardProductCarouselComponentModel>
 {
+    @Resource(name = "productConverter")
+    private Converter <ProductModel, ProductData> productConverter;
 
     @Override
     protected void fillModel(HttpServletRequest request, Model model, HomepageCardProductCarouselComponentModel component) {
         model.addAttribute("title", component.getTitle());
-        model.addAttribute("productData", component.getProducts());
+        model.addAttribute("productData", productConverter.convertAll(component.getProducts()));
     }
 }

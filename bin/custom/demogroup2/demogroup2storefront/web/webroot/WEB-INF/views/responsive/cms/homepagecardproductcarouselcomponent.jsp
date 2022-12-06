@@ -15,7 +15,7 @@
 
 			<c:choose>
 				<c:when test="${component.popup}">
-					<div class="carousel__component--carousel js-owl-carousel js-owl-lazy-reference js-owl-carousel-reference">
+					<div class="carousel__component--carousel homepage-card-product ">
 						<div id="quickViewTitle" class="quickView-header display-none">
 							<div class="headline">
 								<span class="headline-text"><spring:theme code="popup.quick.view.select"/></span>
@@ -37,20 +37,20 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="carousel__component--carousel js-owl-carousel js-owl-default">
+					<div class="carousel__component--carousel homepage-card-product">
 						<c:forEach items="${productData}" var="product">
-
-							<c:url value="${product.url}" var="productUrl"/>
-
-							<div class="carousel__item">
-								<a href="${productUrl}">
-									<div class="carousel__item--thumb">
-										<product:productPrimaryImage product="${product}" format="product"/>
-									</div>
-									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
-									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-								</a>
-							</div>
+                            <div>
+                                <c:url value="${product.url}" var="productUrl"/>
+                                    <div class="carousel__item">
+                                        <a href="${productUrl}">
+                                            <div class="carousel__item--thumb">
+                                                <product:productPrimaryImage  product="${product}" format="product"/>
+                                            </div>
+                                            <div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
+                                            <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+                                        </a>
+                                    </div>
+                            </div>
 						</c:forEach>
 					</div>
 				</c:otherwise>
