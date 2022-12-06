@@ -29,8 +29,6 @@
         font-weight:600;
         text-align:center;
     }
-
-
 </style>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
