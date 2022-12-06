@@ -2,5 +2,5 @@ UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.Co
 
 
 
-INSERT_UPDATE Testimoni;idTestimoni[unique=true];name;heading;rating(code);message;date
+INSERT_UPDATE Testimoni;idTestimoni[unique=true];name;heading;rating(code);message;date;
                        ;01  ;BaimWong;Mantep;BINTANGSATU;Tess;Hem
