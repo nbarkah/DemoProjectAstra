@@ -181,8 +181,8 @@ UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$l
 #                      ;;SonyCybershotBannerComponent;Sony Cybershot DSC-S930;1992695-Sony-DSC-S930P-11441.jpg;"Compact, easy to use and amazingly affordable."
 #                      ;;SonyDSCBannerComponent;Sony DSC-H20;1978440-Sony-DSC-H20-114081.jpg;"Perfect for serious performance in a compact design."
 
-UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-                               ;;ElectronicsHomepageProductCarouselComponent;Our Bestselling Products
+#UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+#                               ;;ElectronicsHomepageProductCarouselComponent;Our Bestselling Products
 
 # Electronics Camera Accessories and Supplies Category Landing Page
 
@@ -241,30 +241,28 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
                             ;;HelpParagraphComponent;"<strong>Need Help with your checkout process?</strong> <span>Contact Us or Call phone number.</span>"
 
 #above is the desktop data, below is the responsive data
-UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-                               ;;NewElectronicsHomepageProductCarouselComponent;What's New
 
 # Home Page Splash
 
 # Media Content
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
                    ;widescreen;;banner-homepage-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
-#                   ;widescreen;;banner-homepage-2-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
+                   ;widescreen;;banner-homepage-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-1400x440.png;;banner-homepage-1400x440.png;;"IN THE BOX 2"
 #                   ;widescreen;;banner-homepage-3-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
 #                   ;widescreen;;banner-homepage-4-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
                    ;widescreen;;discount-banner-1400.png;$siteResource/images/banners/homepage/responsive/discount-banner-1400.png;;discount-banner-1400.png;;"IN THE BOX"
                    ;mobile;;banner-homepage-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
-#                   ;mobile;;banner-homepage-3-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
+                   ;mobile;;banner-homepage-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-480x320.png;;banner-homepage-480x320.png;;"IN THE BOX2"
 #                   ;mobile;;banner-homepage-2-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
 #                   ;mobile;;banner-homepage-4-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
                    ;mobile;;discount-banner-480.png;$siteResource/images/banners/homepage/responsive/discount-banner-480.png;;discount-banner-480.png;;"IN THE BOX"
                    ;tablet;;banner-homepage-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
-#                   ;tablet;;banner-homepage-2-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
+                   ;tablet;;banner-homepage-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-770x350.png;;banner-homepage-770x350.png;;"IN THE BOX 2"
 #                   ;tablet;;banner-homepage-3-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
 #                   ;tablet;;banner-homepage-4-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
                    ;tablet;;discount-banner-770.png;$siteResource/images/banners/homepage/responsive/discount-banner-770.png;;discount-banner-770.png;;"IN THE BOX"
                    ;desktop;;banner-homepage-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
-#                   ;desktop;;banner-homepage-2-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
+                   ;desktop;;banner-homepage-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-960x330.png;;banner-homepage-960x330.png;;"IN THE BOX 2"
 #                   ;desktop;;banner-homepage-3-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
 #                   ;desktop;;banner-homepage-4-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
                    ;desktop;;discount-banner-960.png;$siteResource/images/banners/homepage/responsive/discount-banner-960.png;;discount-banner-960.png;;"IN THE BOX"
@@ -272,16 +270,19 @@ INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=t
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
                             ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
                             ;demo-homepage-spalsh-1-en;banner-homepage-2-1400x440.png,banner-homepage-2-480x320.png,banner-homepage-2-770x350.png,banner-homepage-2-960x330.png
-#                            ;demo-homepage-spalsh-2-en;banner-2-demo-1400x440.jpg,banner-2-demo-480x320.jpg,banner-2-demo-770x350.jpg,banner-2-demo-960x330.png
+                            ;demo-homepage-spalsh-2-en;banner-homepage-1400x440.png,banner-homepage-480x320.png,banner-homepage-770x350.png,banner-homepage-960x330.png
 #                            ;demo-homepage-spalsh-3-en;banner-3-demo-1400x440.jpg,banner-3-demo-480x320.jpg,banner-3-demo-770x350.jpg,banner-3-demo-960x330.png
 #                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
                                              ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
-#                                             ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
+                                             ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
 #                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
 #                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+                               ;;NewDemoGroup2HomepageProductCarouselComponent;What's New
 
 # Home page slot 2A
 
