@@ -27,9 +27,11 @@
         </div>
     </div>
 
-    <cms:pageSlot position="Section3" var="feature" element="div" class="row no-margin" >
-        <cms:component component="${feature}" element="div" class="no-space yComponentWrapper"/>
-    </cms:pageSlot>
+    <div class="homepage-card-product" style="background-color:#6086c2;">
+        <cms:pageSlot position="Section3" var="feature" >
+            <cms:component component="${feature}" element="div" class="card-product"/>
+        </cms:pageSlot>
+    </div>
 
     <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
         <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
