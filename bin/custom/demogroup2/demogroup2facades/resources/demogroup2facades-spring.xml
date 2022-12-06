@@ -193,6 +193,17 @@
 		<property name="add" ref="demoSearchResultProductPopulator"/>
 	</bean>
 
+	<bean id="demoGroup2ProductPopulator" class="org.demo.facades.populators.DemoGroup2ProductPopulator" >
+	</bean>
+
+	<!-- Add the apparelProductPopulator to the productConverter -->
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="productConverter"/>
+		<property name="add" ref="demoGroup2ProductPopulator"/>
+	</bean>
+
 	<!-- END FOR DEMO GROUP 2 -->
+
+
 
 </beans>

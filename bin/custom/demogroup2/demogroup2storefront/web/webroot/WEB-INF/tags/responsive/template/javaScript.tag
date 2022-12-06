@@ -85,6 +85,7 @@
 		<script src="${commonResourcePathHtml}/js/acc.cookienotification.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.closeaccount.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.slickbanner.js"></script>
+		<script src="${commonResourcePathHtml}/js/acc.slickcardproduct.js"></script>
 
 
 		<script src="${commonResourcePathHtml}/js/acc.csv-import.js"></script>
