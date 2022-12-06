@@ -28,13 +28,32 @@ $jarResourceCms=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; name                              ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
                           ;                          ; TestimoniPage         ; Testimoni Page Template    ; layout/testimoniPage        ; ContentPage;
 
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; name                              ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
+                          ;                          ; AboutUsPage         ; About Us Page Template    ; layout/aboutUsPage        ; ContentPage;
+
 
 ##training-fe-2
 UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
                    ;                          ; TestimoniPage              ;                ; $jarResourceCms/structure-view/structure_tentangPageTemplate.vm
 
+UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;                          ; AboutUsPage             ;                ; $jarResourceCms/structure-view/structure_aboutUsPageTemplate.vm
+
+
 ##training-fe-3
 INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'TestimoniPage']; validComponentTypes(code)       ; compTypeGroup(code)
+                             ; SiteLogo               ;                                                                                      ;                                 ; logo
+                             ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
+                             ; SearchBox              ;                                                                                      ;                                 ; searchbox
+                             ; MiniCart               ;                                                                                      ;                                 ; minicart
+                             ; NavigationBar          ;                                                                                      ;                                 ; navigation
+                             ; Footer                 ;                                                                                      ;                                 ; footer
+                             ; TopHeaderSlot          ;                                                                                      ;                                 ; wide
+                             ; BottomHeaderSlot       ;                                                                                      ;                                 ; wide
+                             ; PlaceholderContentSlot ;                                                                                      ;                                 ; wide
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'AboutUsPage']; validComponentTypes(code)       ; compTypeGroup(code)
                              ; SiteLogo               ;                                                                                      ;                                 ; logo
                              ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
                              ; SearchBox              ;                                                                                      ;                                 ; searchbox
@@ -58,8 +77,24 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; PlaceholderContentSlot-TestimoniPage ; PlaceholderContentSlot ;                                                                                          ; PlaceholderContentSlot                     ; true
 
 
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                                     ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'AboutUsPage']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+                                    ;                          ; SiteLogo-AboutUsPage               ; SiteLogo               ;                                                                                          ; SiteLogoSlot                               ; true
+                                    ;                          ; Footer-AboutUsPage                 ; Footer                 ;                                                                                          ; FooterSlot                                 ; true
+                                    ;                          ; NavigationBar-AboutUsPage          ; NavigationBar          ;                                                                                          ; NavigationBarSlot                          ; true
+                                    ;                          ; MiniCart-AboutUsPage               ; MiniCart               ;                                                                                          ; MiniCartSlot                               ; true
+                                    ;                          ; HeaderLinks-AboutUsPage            ; HeaderLinks            ;                                                                                          ; HeaderLinksSlot                            ; true
+                                    ;                          ; SearchBox-AboutUsPage              ; SearchBox              ;                                                                                          ; SearchBoxSlot                              ; true
+                                    ;                          ; TopHeaderSlot-AboutUsPage          ; TopHeaderSlot          ;                                                                                          ; TopHeaderSlot                              ; true
+                                    ;                          ; BottomHeaderSlot-AboutUsPage       ; BottomHeaderSlot       ;                                                                                          ; BottomHeaderSlot                           ; true
+                                    ;                          ; PlaceholderContentSlot-AboutUsPage ; PlaceholderContentSlot ;                                                                                          ; PlaceholderContentSlot                     ; true
+
+
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; testimoniPage ; Testimoni Page ; TestimoniPage ; testimoniPage
+                         ;                          ; testimoniPage ; Testimonioni Page ; TestimoniPage ; testimoniPage
+
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
+                         ;                          ; aboutUsPage ; About Us Page ; AboutUsPage ; aboutUsPage
 
 
 
