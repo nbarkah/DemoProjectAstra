@@ -34,6 +34,8 @@
                             class="star" alt="Star">
                             <img src="https://inthebox.net/images/star-full.png"
                             class="star" alt="Star">
+                           <img src="https://inthebox.net/images/star-full.png"
+                            class="star" alt="Star">
                         </div>
                         <p class="testi-bold">Mantap Banget</p>
                         <p class="testi-msg">
@@ -57,6 +59,8 @@
                             class="star" alt="Star">
                             <img src="https://inthebox.net/images/star-full.png"
                             class="star" alt="Star">
+                            <img src="https://inthebox.net/images/star-full.png"
+                            class="star" alt="Star">
                         </div>
                         <p class="testi-bold">Pilih kasur INTHEBOX aja!</p>
                         <p class="testi-msg">
@@ -72,6 +76,8 @@
                             <img src="https://inthebox.net/images/review-avatar.png" data-src="https://inthebox.net/images/review-avatar.png" class="avatar" alt="Avatar">
                         </div>
                         <div class="bintang">
+                            <img src="https://inthebox.net/images/star-full.png"
+                            class="star" alt="Star">
                             <img src="https://inthebox.net/images/star-full.png"
                             class="star" alt="Star">
                             <img src="https://inthebox.net/images/star-full.png"
