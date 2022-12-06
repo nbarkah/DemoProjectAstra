@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 6 Des 2022 08.41.52                         ---
+ * --- Generated at Dec 5, 2022, 6:17:33 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.constants;
@@ -23,10 +23,8 @@ public class GeneratedDemogroup2CoreConstants
 		public static final String DEMOSIZEPRODUCT = "DemoSizeProduct".intern();
 		public static final String DEMOVARIANTPRODUCT = "DemoVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
-		public static final String RATINGENUM = "RatingEnum".intern();
 		public static final String SIZEENUM = "SizeEnum".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
-		public static final String TESTIMONI = "Testimoni".intern();
 	}
 	public static class Attributes
 	{
@@ -34,14 +32,6 @@ public class GeneratedDemogroup2CoreConstants
 	}
 	public static class Enumerations
 	{
-		public static class RatingEnum
-		{
-			public static final String BINTANGSATU = "BINTANGSATU".intern();
-			public static final String BINTANGDUA = "BINTANGDUA".intern();
-			public static final String BINTANGTIGA = "BINTANGTIGA".intern();
-			public static final String BINTANGEMPAT = "BINTANGEMPAT".intern();
-			public static final String BINTANGLIMA = "BINTANGLIMA".intern();
-		}
 		public static class SizeEnum
 		{
 			public static final String SINGLESIZE = "SINGLESIZE".intern();

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 6 Des 2022 08.41.52                         ---
+ * --- Generated at Dec 5, 2022, 6:17:33 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -24,7 +24,6 @@ import org.demo.core.jalo.DemoProduct;
 import org.demo.core.jalo.DemoSizeProduct;
 import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.jalo.ElectronicsColorVariantProduct;
-import org.demo.core.jalo.Testimoni;
 
 /**
  * Generated class for type <code>Demogroup2CoreManager</code>.
@@ -230,32 +229,6 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
-	}
-	
-	public Testimoni createTestimoni(final SessionContext ctx, final Map attributeValues)
-	{
-		try
-		{
-			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( Demogroup2CoreConstants.TC.TESTIMONI );
-			return (Testimoni)type.newInstance( ctx, attributeValues );
-		}
-		catch( JaloGenericCreationException e)
-		{
-			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ?
-			(RuntimeException)cause
-			:
-			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
-		}
-		catch( JaloBusinessException e )
-		{
-			throw new JaloSystemException( e ,"error creating Testimoni : "+e.getMessage(), 0 );
-		}
-	}
-	
-	public Testimoni createTestimoni(final Map attributeValues)
-	{
-		return createTestimoni( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

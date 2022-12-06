@@ -66,7 +66,7 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
-              ;demoGroup2;BED;PB-SHIRT-1;$productCatalog
+              ;demoGroup2;BED;INTHEBOX-FLIP-Z;$productCatalog
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
@@ -362,7 +362,7 @@ INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];n
                                      ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
 
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;SUPERKINGX,KINGX,QUEENSIZEX,FULLSIZEX,SUPERSINGLEX,SINGLESIZEX;allVisible;false;ElectronicsHomepageProductCarouselComponent
+                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
                          ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
@@ -377,7 +377,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
                                 ;;Section2A-Homepage;Section2A;;Section2ASlot-Homepage
-#                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
+                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
                                 ;;Section3A-Homepage;Section3A;;Section3ASlot-Homepage
 #                                ;;Section3B-Homepage;Section3B;;Section3BSlot-Homepage
 #                                ;;Section3C-Homepage;Section3C;;Section3CSlot-Homepage
@@ -769,16 +769,16 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 ###  Home page splash Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;Electronics Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
+                                             ;;DemoHompageSplashBannerComponent-1;D Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
                                              ;;DemoHompageSplashBannerComponent-2;Electronics Homepage Splash Banner Component 2;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-2
-                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
-                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
+#                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
+#                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
                                              ;;DemoHompageDiscountBannerComponent;Electronics Homepage Discount Banner Component;/Bed/Springbed/c/SPRINGBED;DemoHompageDiscountBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2,DemoHompageSplashBannerComponent-3,DemoHompageSplashBannerComponent-4
+                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
 #                         ;;Section1Slot-Homepage;true;DemoHompageDiscountBannerComponent
 
 
@@ -791,13 +791,13 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 # Home section 2B
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-                                      ;;ElectronicsHomepageProductCarouselComponent;ElectronicsHomepageProductCarouselComponent
+                                      ;;DemoGroup2HomepageProductCarouselComponent;DemoGroup2HomepageProductCarouselComponent
 
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;NewElectronicsHomepageProductCarouselComponent;What's New Electronics Homepage Product Carousel;SUPERKING,KING,QUEENSIZE,FULLSIZE,SUPERSINGLE,SINGLESIZE;allVisible;false;NewElectronicsHomepageProductCarouselComponent
+                                      ;;NewDemoGroup2HomepageProductCarouselComponent;What's New Demo Group2 Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;NewDemoGroup2HomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section2BSlot-Homepage;ElectronicsHomepageProductCarouselComponent,NewElectronicsHomepageProductCarouselComponent
+                         ;;Section2BSlot-Homepage;DemoGroup2HomepageProductCarouselComponent,NewDemoGroup2HomepageProductCarouselComponent
 
 ## Home section 3A
 
@@ -833,11 +833,11 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 #### Section 4
 
 ###  Home page slot 4A  ####
-INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section4Slot-Homepage;AstraVideoLink
+#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
+#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section4Slot-Homepage;AstraVideoLink
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
