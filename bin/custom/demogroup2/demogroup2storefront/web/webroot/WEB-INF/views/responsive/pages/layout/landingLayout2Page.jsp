@@ -6,10 +6,9 @@
 <template:page pageTitle="${pageTitle}">
     <div class="homepage-banner">
         <cms:pageSlot position="Section1" var="feature">
-            <cms:component component="${feature}" element="div" class="banner"/>
+                <cms:component component="${feature}" element="div" class="banner"/>
         </cms:pageSlot>
     </div>
-
     <div class="row no-margin">
         <div class="col-xs-12 col-md-6 no-space">
             <cms:pageSlot position="Section2A" var="feature" element="div" class="row no-margin">

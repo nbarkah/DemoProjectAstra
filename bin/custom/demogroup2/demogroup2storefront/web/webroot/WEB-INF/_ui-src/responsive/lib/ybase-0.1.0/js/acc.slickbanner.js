@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".main__inner-wrapper").slick({
+    $(".homepage-banner").slick({
       dots: true,
       infinite: true,
       speed: 300,
@@ -7,4 +7,3 @@ $(document).ready(function(){
       adaptiveHeight: true
     });
 });
-

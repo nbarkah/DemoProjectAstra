@@ -361,17 +361,17 @@ INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&com
 INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;scroll(code);popup;&componentRef
                                         ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;allVisible;false;HomepageCardProductCarouselComponent
 
-INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
-                                     ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
-
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;ElectronicsHomepageProductCarouselComponent
+#INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
+#                                     ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
+#
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+#                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
                          ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
                          ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
                          ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;HomepageCardProductCarouselComponent
+                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
                          ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
                          ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
                          ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
@@ -793,14 +793,14 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
                          ;;Section2ASlot-Homepage;IntheBoxTagParagraphComponent
 
 # Home section 2B
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-                                      ;;DemoGroup2HomepageProductCarouselComponent;DemoGroup2HomepageProductCarouselComponent
-
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;NewDemoGroup2HomepageProductCarouselComponent;What's New Demo Group2 Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;NewDemoGroup2HomepageProductCarouselComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section2BSlot-Homepage;DemoGroup2HomepageProductCarouselComponent,NewDemoGroup2HomepageProductCarouselComponent
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
+#                                      ;;DemoGroup2HomepageProductCarouselComponent;DemoGroup2HomepageProductCarouselComponent
+#
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+#                                      ;;NewDemoGroup2HomepageProductCarouselComponent;What's New Demo Group2 Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;NewDemoGroup2HomepageProductCarouselComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section2BSlot-Homepage;DemoGroup2HomepageProductCarouselComponent,NewDemoGroup2HomepageProductCarouselComponent
 
 ## Home section 3A
 
