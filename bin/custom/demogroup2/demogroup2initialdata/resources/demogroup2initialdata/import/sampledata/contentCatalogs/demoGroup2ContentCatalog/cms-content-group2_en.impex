@@ -568,7 +568,7 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
-                                ;;FooterNavigationComponent;"Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
+                                ;;FooterNavigationComponent;"Copyright © 2019-2022 PT Duta Mas Mandiri."
 
 # Traning Paragraph Component
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en]

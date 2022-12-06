@@ -66,7 +66,7 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
-              ;demoGroup2;BED;INTHEBOX-FLIP-Z;$productCatalog
+              ;demoGroup2;INTHEBOX;INTHEBOX-FLIP-Z;$productCatalog
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
@@ -82,11 +82,11 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;HomepageNavLink;Home Page Nav Link;/;HomepageNavLink;HomepageNavLink;;;;
                               ;;StoreFinderLink;Store Finder Link;/store-finder;StoreFinderLink;StoreFinderLink;;;;
                               ;;LoginLink;Login Link;/login;LoginLink;LoginLink;;;;
-                              ;;AllBrandsCategoryLink;All Brands Category Link;/c/BED;AllBrandsCategoryLink;AllBrandsCategoryLink;;BED;;
-                              ;;AllBedsCategoryLink;All Beds Link;/c/BED;AllBedsCategoryLink;AllBedsCategoryLink;;BED;;
-                              ;;SofaBedCategoryLink;Sofa Link;/c/TROUSER;SofaBedCategoryLink;SofaBedCategoryLink;;SOFA;;
-                              ;;SpringBedCategoryLink;Spring Bed Link;/c/SHIRT;SpringBedCategoryLink;SpringBedCategoryLink;;PROPS;;
-                              ;;AboutUsLink;About us Link;/Bed/Sofa/c/SOFA;AboutUsLink;AboutUsLink;;;;
+                              ;;AllBrandsCategoryLink;All Brands Category Link;/c/INTHEBOX;AllBrandsCategoryLink;AllBrandsCategoryLink;;INTHEBOX;;
+                              ;;AllBedsCategoryLink;All Beds Link;/c/INTHEBOX;AllBedsCategoryLink;AllBedsCategoryLink;;INTHEBOX;;
+                              ;;SpringBedCategoryLink;Spring Bed Link;/c/PROPS;SpringBedCategoryLink;SpringBedCategoryLink;;PROPS;;
+                              ;;SofaBedCategoryLink;Sofa Link;/c/SOFA;SofaBedCategoryLink;SofaBedCategoryLink;;SOFA;;
+                              ;;AboutUsLink;About us Link;/testimoniPage;AboutUsLink;AboutUsLink;;;;
                               ;;BlogsLink;Blogs Link;/Bed/Sofa/c/SOFA;BlogsLink;BlogsLink;;;;
                               ;;GuaranteeLink;Guarantee Link;/Bed/Sofa/c/SOFA;GuaranteeLink;GuaranteeLink;;;;
                               ;;ConfirmationLink;Guarantee Link;/Bed/Sofa/c/SOFA;ConfirmationLink;ConfirmationLink;;;;
@@ -162,7 +162,7 @@ INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true
 
 # CMS PurchasedCategorySuggestion Components
 INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
-                                                  ;;PurchasedCategorySuggestions;Purchased Category Suggestions;OTHERS;2;true;BED;PurchasedCategorySuggestions
+                                                  ;;PurchasedCategorySuggestions;Purchased Category Suggestions;OTHERS;2;true;INTHEBOX;PurchasedCategorySuggestions
 
 # CMS CartSuggestion Components
 INSERT_UPDATE CartSuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;&componentRef
@@ -237,9 +237,9 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
                                ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
                                ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode
 
-                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SofaBedCategoryLink,SpringBedCategoryLink;BedLinksNavNode
-                               ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
+                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SpringBedCategoryLink,SofaBedCategoryLink;BedLinksNavNode
                                ;SpringbedNavNode;;Springbed Links;BedLinksNavNode;SpringBedCategoryLink;SpringbedNavNode
+                               ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
 
 
 #                                ;AccessoryBrandLinksNavNode;;Accessory Brand Links;BrandsNavNode;KingstonBrandCategoryLink,IciduBrandCategoryLink,TDKBrandCategoryLink,SweexBrandCategoryLink;AccessoryBrandLinksNavNode
@@ -358,8 +358,8 @@ INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&com
                              ;;CarouselCamcorderBanner;Carousel Camcorder Banner;CarouselCamcorderBanner;Open-Catalogue/Cameras/Hand-held-Camcorders/LEGRIA-HF-S100/p/1986316
                              ;;CarouselFunBanner;Carousel Fun Banner;CarouselFunBanner;/Open-Catalogue/Cameras/Film-cameras/FUN-Flash-Single-Use-Camera%2C-27%2B12-pic/p/779841
 
-INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;scroll(code);popup;&componentRef
-                                        ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;allVisible;false;HomepageCardProductCarouselComponent
+#INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;scroll(code);popup;&componentRef
+#                                        ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;allVisible;false;HomepageCardProductCarouselComponent
 
 #INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
 #                                     ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
@@ -367,15 +367,15 @@ INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[u
 #INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
 #                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
-                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
-                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
-                         ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
-                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
-                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+#                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
+#                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
+#                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
+#                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
+#                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
+#                         ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
+#                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
+#                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
@@ -1272,8 +1272,8 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-                                ;SofabedNavNodeEntry;;Sofabed Brand Navigation Node Entry;SofabedNavNode;SofaBedCategoryLink;
                                 ;SpringbedNavNodeEntry;;Springbed Navigation Node Entry;SpringbedNavNode;SpringBedCategoryLink;
+                                ;SofabedNavNodeEntry;;Sofabed Brand Navigation Node Entry;SofabedNavNode;SofaBedCategoryLink;
                                 ;Rec1NavNodeEntry;;Sofabed Brand Navigation Node Entry;RecNavNode1;RecommendationLink1;
                                 ;Rec2NavNodeEntry;;Sofabed Brand Navigation Node Entry;RecNavNode2;RecommendationLink2;
 ##### Navigation Component Refactor End ######
@@ -1337,7 +1337,7 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 
 # Testing page
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;TestingBannerComponent-1;Banner Component 1;/c/BED;TestingBannerComponent-1
+                                             ;;TestingBannerComponent-1;Banner Component 1;/c/INTHEBOX;TestingBannerComponent-1
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
                          ;;MiddleContent-TestingPage;Middle Content Slot for Testing Page;true;TestingBannerComponent-1
