@@ -41,6 +41,13 @@
         <property name="priceService" ref="priceService"/>
     </bean>
 
+	<!-- NEW Solr Field value providers for DEMO GROUP 2 -->
+
+	<bean id="sizeValueProvider" class="org.demo.core.provider.SizeValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
+	<!-- END FOR DEMO GROUP 2 -->
 
 	<bean id="electronicsCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="1"/>
