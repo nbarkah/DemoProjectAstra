@@ -2,5 +2,27 @@ UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.Co
 
 
 
-INSERT_UPDATE Testimoni;idTestimoni[unique=true];name;heading;rating(code);message;date;
-                       ;01  ;BaimWong;Mantep;BINTANGSATU;Tess;Hem
+
+INSERT_UPDATE TestiPerson;idPerson[unique=true];personName;rating(code);
+                         ;01         ;Baim Wong ;BINTANGLIMA;
+                         ;02         ;Rafii Ahmad ;BINTANGLIMA;
+                         ;03         ;Melaney Ricardo ;BINTANGLIMA;
+                         ;04         ;novika stefani ;BINTANGLIMA;
+                         ;05         ;Rahmatullah Rahmatullah ;BINTANGLIMA;
+                         ;06         ;Diana Veronica ;BINTANGLIMA;
+                         ;07         ;Andika R ;BINTANGLIMA;
+                         ;08         ;rinaldo fitra ;BINTANGEMPAT;
+                         ;09         ;Yunni Hikmah  ;BINTANGLIMA;
+
+INSERT_UPDATE Testimoni;idTesti[unique=true];person;headMsg;message;date;
+                        ;01;8796093069977;Mantap Banget;Kasur baru yang packing nya simple banget, masuk ke dalam box! Kasur @inthebox.id dengan teknologi Pocket Springbed ini enak banget, nyaman dan empuk! Ada Free Bantal dan Free Ongkirnya juga lhoo! Mantap banget;9 Sep 2020 - 6:22 pm;
+                        ;02;8796125837977;Pilih kasur INTHEBOX aja!;Pokoknya kalau mau beli spring bed yang bagus, materialnya berkualitas, nyaman, dan harganya murah, langsung pilih kasur INTHEBOX aja. Apalagi INTHEBOX+ ini nih bagus banget. Selama gue pakai kasur INTHEBOX di rumah itu bikin tinya.;27 Sep 2018 - 1:28 pm;
+                        ;03;8796125870745;Terima kasih Inthebox!;Produk memuaskaan sekalii.. dan seru waktu unboxing ya :-D Nyaman sekalii. Pas dapet harga ﬂash sale lagi. Mantap banget sihh klo ini Semoga aweet ya. Trimakasih Inthebox. Trimakasih Tokopedia.;8 Jun 2020 - 8:00 pm;
+                        ;04;8796125903513;worth the quality, worth the price;awalnya bingung mau beli spring bedng ga jelas better langsung aja beli in the box.;6 Mar 2019 - 11:37 am;
+                        ;05;8796125936281;Bed In The Box;Sangat senang dan unik, pengalaman beli kasur pertama kali langsung penasaran kepada in.the.box. Kemudian saya cari2 info produk, rata2 memuaskan. Beli dapet harga promo 1.349k (160x180) dan gratis ongkir. Sangat memuaskan dan unik saat unboxing. :D;23 Nov 2018 - 11:02 am;
+                        ;06;8796125969049;Love in the box;Awalny sempet ragu , ternyata pas brg dtg plastiknya dibuka.. Langsung ngembang keren bgt;9 Oct 2018 - 9:19 am;
+                        ;07;8796126001817;Mantap!!;Kasur dan bantalnya empuk...Dan sejauh ini hanya in.the.box yang menyediakan kasur dengan teknologi pocket spring dengan harga yang sangat terjangkau.;7 Oct 2018 - 12:34 pm;
+                        ;08;8796126034585;Matras lembut, bantal empuk;matras busa, empuk lembut, enak dipakai tidur, tapi jangan duduk karena langsung terbenam. di dalam matrasnya ada per jadieli king size, ternyatah;27 Sep 2018 - 1:28 pm;
+                        ;09;8796126067353;Ga pake ribet;Bingung cari matras yang nyaman....pas nemu bedinthebox...langsung pesan...praktis, cepat sampai, gratis ongkir....ga pakai ribet....;24 Aug 2018 - 4:46 pm;
+
+

@@ -182,4 +182,47 @@
 	</bean>
 
 	<bean id="genderData" class="org.demo.facades.product.data.GenderData" scope="prototype"/>
+
+	<alias name="personBasicPopulator" alias="personBasicPopulator"/>
+	<bean id="personBasicPopulator" class="org.demo.facades.populators.PersonBasicPopulator"/>
+
+	<alias name="personPopulator" alias="personPopulator"/>
+	<bean id="personPopulator" class="org.demo.facades.populators.PersonPopulator" parent="personBasicPopulator"/>
+
+	<alias name="testimoniPopulator" alias="testimoniPopulator"/>
+	<bean id="testimoniPopulator" class="org.demo.facades.populators.TestimoniPopulator"/>
+
+	<bean id="personBasicConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="personBasicPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="personConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="personPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="testiConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.testi.data.TestiData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="testimoniPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultPersonFacade" alias="defaultPersonFacade"/>
+	<bean id="defaultPersonFacade" class="org.demo.facades.person.DefaultPersonFacade" />
+
+	<alias name="defaultTestiFacade" alias="defaultTestiFacade"/>
+	<bean id="defaultTestiFacade" class="org.demo.facades.testimoni.DefaultTestiFacade" />
+
 </beans>

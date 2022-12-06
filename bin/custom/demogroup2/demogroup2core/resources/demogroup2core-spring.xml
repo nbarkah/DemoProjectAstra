@@ -538,4 +538,21 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<!--	Testimoni Person-->
+	<alias name="defaultPersonDao" alias="personDao"/>
+	<bean id="defaultPersonDao" class="org.demo.core.testimoni.person.dao.DefaultPersonDao">
+	</bean>
+	<alias name="defaultPersonService" alias="personService"/>
+	<bean id="defaultPersonService" class="org.demo.core.testimoni.person.service.DefaultPersonService">
+	</bean>
+
+	<!--	Message Testimoni-->
+	<alias name="defaultTestiDao" alias="testiDao"/>
+	<bean id="defaultTestiDao" class="org.demo.core.testimoni.message.dao.DefaultTestiDao">
+	</bean>
+	<alias name="defaultTestiService" alias="testiService"/>
+	<bean id="defaultTestiService" class="org.demo.core.testimoni.message.service.DefaultTestiService">
+	</bean>
+
 </beans>

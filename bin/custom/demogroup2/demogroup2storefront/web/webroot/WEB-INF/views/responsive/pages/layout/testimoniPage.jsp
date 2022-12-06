@@ -6,6 +6,8 @@
  <template:page pageTitle="${pageTitle}">
 
  <div class="container-md">
+
+
         <div class="heading">
             <div class="header text-center">
                 <h1>TESTIMONI PEMBELI INTHEBOX</h1>

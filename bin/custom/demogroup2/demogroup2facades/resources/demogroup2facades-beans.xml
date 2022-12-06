@@ -12,4 +12,19 @@
 		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 	</bean>
+
+	<bean class="org.demo.facades.person.data.PersonData">
+		<property name="id" type="Integer"/>
+		<property name="personName" type="String"/>
+		<property name="rating" type="org.demo.core.enums.RatingEnum"/>
+		<property name="testi" type="java.util.List&lt;org.demo.facades.testi.data.TestiData>"/>
+	</bean>
+
+	<bean class="org.demo.facades.testi.data.TestiData">
+		<property name="idTesti" type="Integer"/>
+		<property name="headMsg" type="String"/>
+		<property name="message" type="String"/>
+		<property name="date" type="String"/>
+		<property name="person" type="org.demo.facades.person.data.PersonData"/>
+	</bean>
 </beans>

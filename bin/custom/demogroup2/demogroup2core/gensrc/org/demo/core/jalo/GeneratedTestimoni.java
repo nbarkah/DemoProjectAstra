@@ -1,19 +1,24 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 6 Des 2022 08.41.52                         ---
+ * --- Generated at 6 Des 2022 14.10.13                         ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
 
 import de.hybris.platform.jalo.GenericItem;
+import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.SessionContext;
-import de.hybris.platform.jalo.enumeration.EnumerationValue;
+import de.hybris.platform.jalo.type.CollectionType;
+import de.hybris.platform.jalo.type.ComposedType;
+import de.hybris.platform.util.BidirectionalOneToManyHandler;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import org.demo.core.constants.Demogroup2CoreConstants;
+import org.demo.core.jalo.TestiPerson;
 
 /**
  * Generated class for type {@link de.hybris.platform.jalo.GenericItem Testimoni}.
@@ -21,34 +26,50 @@ import org.demo.core.constants.Demogroup2CoreConstants;
 @SuppressWarnings({"deprecation","unused","cast"})
 public abstract class GeneratedTestimoni extends GenericItem
 {
-	/** Qualifier of the <code>Testimoni.idTestimoni</code> attribute **/
-	public static final String IDTESTIMONI = "idTestimoni";
-	/** Qualifier of the <code>Testimoni.name</code> attribute **/
-	public static final String NAME = "name";
-	/** Qualifier of the <code>Testimoni.heading</code> attribute **/
-	public static final String HEADING = "heading";
-	/** Qualifier of the <code>Testimoni.rating</code> attribute **/
-	public static final String RATING = "rating";
+	/** Qualifier of the <code>Testimoni.idTesti</code> attribute **/
+	public static final String IDTESTI = "idTesti";
+	/** Qualifier of the <code>Testimoni.headMsg</code> attribute **/
+	public static final String HEADMSG = "headMsg";
 	/** Qualifier of the <code>Testimoni.message</code> attribute **/
 	public static final String MESSAGE = "message";
 	/** Qualifier of the <code>Testimoni.date</code> attribute **/
 	public static final String DATE = "date";
+	/** Qualifier of the <code>Testimoni.person</code> attribute **/
+	public static final String PERSON = "person";
+	/**
+	* {@link BidirectionalOneToManyHandler} for handling 1:n PERSON's relation attributes from 'one' side.
+	**/
+	protected static final BidirectionalOneToManyHandler<GeneratedTestimoni> PERSONHANDLER = new BidirectionalOneToManyHandler<GeneratedTestimoni>(
+	Demogroup2CoreConstants.TC.TESTIMONI,
+	false,
+	"person",
+	null,
+	false,
+	true,
+	CollectionType.COLLECTION
+	);
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
-		tmp.put(IDTESTIMONI, AttributeMode.INITIAL);
-		tmp.put(NAME, AttributeMode.INITIAL);
-		tmp.put(HEADING, AttributeMode.INITIAL);
-		tmp.put(RATING, AttributeMode.INITIAL);
+		tmp.put(IDTESTI, AttributeMode.INITIAL);
+		tmp.put(HEADMSG, AttributeMode.INITIAL);
 		tmp.put(MESSAGE, AttributeMode.INITIAL);
 		tmp.put(DATE, AttributeMode.INITIAL);
+		tmp.put(PERSON, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
 	protected Map<String, AttributeMode> getDefaultAttributeModes()
 	{
 		return DEFAULT_INITIAL_ATTRIBUTES;
+	}
+	
+	@Override
+	protected Item createItem(final SessionContext ctx, final ComposedType type, final ItemAttributeMap allAttributes) throws JaloBusinessException
+	{
+		PERSONHANDLER.newInstance(ctx, allAttributes);
+		return super.createItem( ctx, type, allAttributes );
 	}
 	
 	/**
@@ -88,112 +109,112 @@ public abstract class GeneratedTestimoni extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.heading</code> attribute.
-	 * @return the heading
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.headMsg</code> attribute.
+	 * @return the headMsg
 	 */
-	public String getHeading(final SessionContext ctx)
+	public String getHeadMsg(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, HEADING);
+		return (String)getProperty( ctx, HEADMSG);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.heading</code> attribute.
-	 * @return the heading
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.headMsg</code> attribute.
+	 * @return the headMsg
 	 */
-	public String getHeading()
+	public String getHeadMsg()
 	{
-		return getHeading( getSession().getSessionContext() );
+		return getHeadMsg( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.heading</code> attribute. 
-	 * @param value the heading
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.headMsg</code> attribute. 
+	 * @param value the headMsg
 	 */
-	public void setHeading(final SessionContext ctx, final String value)
+	public void setHeadMsg(final SessionContext ctx, final String value)
 	{
-		setProperty(ctx, HEADING,value);
+		setProperty(ctx, HEADMSG,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.heading</code> attribute. 
-	 * @param value the heading
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.headMsg</code> attribute. 
+	 * @param value the headMsg
 	 */
-	public void setHeading(final String value)
+	public void setHeadMsg(final String value)
 	{
-		setHeading( getSession().getSessionContext(), value );
+		setHeadMsg( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTestimoni</code> attribute.
-	 * @return the idTestimoni
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTesti</code> attribute.
+	 * @return the idTesti
 	 */
-	public Integer getIdTestimoni(final SessionContext ctx)
+	public Integer getIdTesti(final SessionContext ctx)
 	{
-		return (Integer)getProperty( ctx, IDTESTIMONI);
+		return (Integer)getProperty( ctx, IDTESTI);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTestimoni</code> attribute.
-	 * @return the idTestimoni
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTesti</code> attribute.
+	 * @return the idTesti
 	 */
-	public Integer getIdTestimoni()
+	public Integer getIdTesti()
 	{
-		return getIdTestimoni( getSession().getSessionContext() );
+		return getIdTesti( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTestimoni</code> attribute. 
-	 * @return the idTestimoni
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTesti</code> attribute. 
+	 * @return the idTesti
 	 */
-	public int getIdTestimoniAsPrimitive(final SessionContext ctx)
+	public int getIdTestiAsPrimitive(final SessionContext ctx)
 	{
-		Integer value = getIdTestimoni( ctx );
+		Integer value = getIdTesti( ctx );
 		return value != null ? value.intValue() : 0;
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTestimoni</code> attribute. 
-	 * @return the idTestimoni
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.idTesti</code> attribute. 
+	 * @return the idTesti
 	 */
-	public int getIdTestimoniAsPrimitive()
+	public int getIdTestiAsPrimitive()
 	{
-		return getIdTestimoniAsPrimitive( getSession().getSessionContext() );
+		return getIdTestiAsPrimitive( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTestimoni</code> attribute. 
-	 * @param value the idTestimoni
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTesti</code> attribute. 
+	 * @param value the idTesti
 	 */
-	public void setIdTestimoni(final SessionContext ctx, final Integer value)
+	public void setIdTesti(final SessionContext ctx, final Integer value)
 	{
-		setProperty(ctx, IDTESTIMONI,value);
+		setProperty(ctx, IDTESTI,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTestimoni</code> attribute. 
-	 * @param value the idTestimoni
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTesti</code> attribute. 
+	 * @param value the idTesti
 	 */
-	public void setIdTestimoni(final Integer value)
+	public void setIdTesti(final Integer value)
 	{
-		setIdTestimoni( getSession().getSessionContext(), value );
+		setIdTesti( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTestimoni</code> attribute. 
-	 * @param value the idTestimoni
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTesti</code> attribute. 
+	 * @param value the idTesti
 	 */
-	public void setIdTestimoni(final SessionContext ctx, final int value)
+	public void setIdTesti(final SessionContext ctx, final int value)
 	{
-		setIdTestimoni( ctx,Integer.valueOf( value ) );
+		setIdTesti( ctx,Integer.valueOf( value ) );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTestimoni</code> attribute. 
-	 * @param value the idTestimoni
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.idTesti</code> attribute. 
+	 * @param value the idTesti
 	 */
-	public void setIdTestimoni(final int value)
+	public void setIdTesti(final int value)
 	{
-		setIdTestimoni( getSession().getSessionContext(), value );
+		setIdTesti( getSession().getSessionContext(), value );
 	}
 	
 	/**
@@ -233,75 +254,39 @@ public abstract class GeneratedTestimoni extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.name</code> attribute.
-	 * @return the name
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.person</code> attribute.
+	 * @return the person
 	 */
-	public String getName(final SessionContext ctx)
+	public TestiPerson getPerson(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, NAME);
+		return (TestiPerson)getProperty( ctx, PERSON);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.name</code> attribute.
-	 * @return the name
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.person</code> attribute.
+	 * @return the person
 	 */
-	public String getName()
+	public TestiPerson getPerson()
 	{
-		return getName( getSession().getSessionContext() );
+		return getPerson( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.name</code> attribute. 
-	 * @param value the name
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.person</code> attribute. 
+	 * @param value the person
 	 */
-	public void setName(final SessionContext ctx, final String value)
+	public void setPerson(final SessionContext ctx, final TestiPerson value)
 	{
-		setProperty(ctx, NAME,value);
+		PERSONHANDLER.addValue( ctx, value, this  );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.name</code> attribute. 
-	 * @param value the name
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.person</code> attribute. 
+	 * @param value the person
 	 */
-	public void setName(final String value)
+	public void setPerson(final TestiPerson value)
 	{
-		setName( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.rating</code> attribute.
-	 * @return the rating
-	 */
-	public EnumerationValue getRating(final SessionContext ctx)
-	{
-		return (EnumerationValue)getProperty( ctx, RATING);
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimoni.rating</code> attribute.
-	 * @return the rating
-	 */
-	public EnumerationValue getRating()
-	{
-		return getRating( getSession().getSessionContext() );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.rating</code> attribute. 
-	 * @param value the rating
-	 */
-	public void setRating(final SessionContext ctx, final EnumerationValue value)
-	{
-		setProperty(ctx, RATING,value);
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimoni.rating</code> attribute. 
-	 * @param value the rating
-	 */
-	public void setRating(final EnumerationValue value)
-	{
-		setRating( getSession().getSessionContext(), value );
+		setPerson( getSession().getSessionContext(), value );
 	}
 	
 }

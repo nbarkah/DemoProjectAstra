@@ -44,6 +44,12 @@
             <value code="BINTANGLIMA"/>
         </enumtype>
     </enumtypes>
+    <relations>
+        <relation code="Person2Testimoni" localized="false" autocreate="true" generate="true">
+            <sourceElement type="TestiPerson" qualifier="person" cardinality="one" />
+            <targetElement qualifier="testimoni" type="Testimoni" cardinality="many" />
+        </relation>
+    </relations>
 
     <itemtypes>
 
@@ -165,23 +171,35 @@
         </typegroup>
 
         <typegroup name="TestimoniProduct">
-            <itemtype code="Testimoni">
-                <deployment table="Testimoni" typecode="15000"/>
+
+            <itemtype code="TestiPerson">
+                <deployment table="TestiPerson" typecode="15001"/>
                 <attributes>
-                    <attribute qualifier="idTestimoni" type="java.lang.Integer">
+                    <attribute qualifier="idPerson" type="java.lang.Integer">
                         <defaultvalue>Integer.valueOf(0000)</defaultvalue>
                         <modifiers optional="false"  unique="true" read="true"  write="true" />
                         <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="name" type="java.lang.String">
-                        <modifiers optional="true"  unique="false" read="true"  write="true" />
-                        <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="heading" type="java.lang.String">
+                    <attribute qualifier="personName" type="java.lang.String">
                         <modifiers optional="true"  unique="false" read="true"  write="true" />
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="rating" type="RatingEnum">
+                        <modifiers optional="true"  unique="false" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="Testimoni">
+                <deployment table="Testimoni" typecode="15000"/>
+                <attributes>
+                    <attribute qualifier="idTesti" type="java.lang.Integer">
+                        <defaultvalue>Integer.valueOf(0000)</defaultvalue>
+                        <modifiers optional="false"  unique="true" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="headMsg" type="java.lang.String">
                         <modifiers optional="true"  unique="false" read="true"  write="true" />
                         <persistence type="property"/>
                     </attribute>
