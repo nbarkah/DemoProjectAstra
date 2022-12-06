@@ -66,7 +66,7 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
-              ;demoGroup2;BED;PB-SHIRT-1;$productCatalog
+              ;demoGroup2;BED;INTHEBOX-FLIP-Z;$productCatalog
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
@@ -240,7 +240,6 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
                                ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SofaBedCategoryLink,SpringBedCategoryLink;BedLinksNavNode
                                ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
                                ;SpringbedNavNode;;Springbed Links;BedLinksNavNode;SpringBedCategoryLink;SpringbedNavNode
-                               ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
 
 
 #                                ;AccessoryBrandLinksNavNode;;Accessory Brand Links;BrandsNavNode;KingstonBrandCategoryLink,IciduBrandCategoryLink,TDKBrandCategoryLink,SweexBrandCategoryLink;AccessoryBrandLinksNavNode
@@ -365,24 +364,23 @@ INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[u
 INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
                                      ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
 
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-#                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;SUPERKINGX,KINGX,QUEENSIZEX,FULLSIZEX,SUPERSINGLEX,SINGLESIZEX;allVisible;false;ElectronicsHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-#;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;HomepageCardProductCarouselComponent
-#                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
-#                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-#                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;HomepageCardProductCarouselComponent
-#                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
-#                         ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
-#                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
-#                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
+                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
+                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
+                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
+                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
+                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
+                         ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
+                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
+                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
                                 ;;Section2A-Homepage;Section2A;;Section2ASlot-Homepage
-#                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
+                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
                                 ;;Section3A-Homepage;Section3A;;Section3ASlot-Homepage
 #                                ;;Section3B-Homepage;Section3B;;Section3BSlot-Homepage
 #                                ;;Section3C-Homepage;Section3C;;Section3CSlot-Homepage
@@ -774,16 +772,16 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 ###  Home page splash Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;Electronics Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
+                                             ;;DemoHompageSplashBannerComponent-1;D Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
                                              ;;DemoHompageSplashBannerComponent-2;Electronics Homepage Splash Banner Component 2;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-2
-                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
-                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
+#                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
+#                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
                                              ;;DemoHompageDiscountBannerComponent;Electronics Homepage Discount Banner Component;/Bed/Springbed/c/SPRINGBED;DemoHompageDiscountBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2,DemoHompageSplashBannerComponent-3,DemoHompageSplashBannerComponent-4
+                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
 #                         ;;Section1Slot-Homepage;true;DemoHompageDiscountBannerComponent
 
 
@@ -794,15 +792,15 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];nam
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
                          ;;Section2ASlot-Homepage;IntheBoxTagParagraphComponent
 
-## Home section 2B
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-#                                      ;;ElectronicsHomepageProductCarouselComponent;ElectronicsHomepageProductCarouselComponent
-#
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-#                                      ;;NewElectronicsHomepageProductCarouselComponent;What's New Electronics Homepage Product Carousel;SUPERKING,KING,QUEENSIZE,FULLSIZE,SUPERSINGLE,SINGLESIZE;allVisible;false;NewElectronicsHomepageProductCarouselComponent
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section2BSlot-Homepage;ElectronicsHomepageProductCarouselComponent,NewElectronicsHomepageProductCarouselComponent
+# Home section 2B
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
+                                      ;;DemoGroup2HomepageProductCarouselComponent;DemoGroup2HomepageProductCarouselComponent
+
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+                                      ;;NewDemoGroup2HomepageProductCarouselComponent;What's New Demo Group2 Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;NewDemoGroup2HomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+                         ;;Section2BSlot-Homepage;DemoGroup2HomepageProductCarouselComponent,NewDemoGroup2HomepageProductCarouselComponent
 
 ## Home section 3A
 
@@ -838,11 +836,11 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 #### Section 4
 
 ###  Home page slot 4A  ####
-INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section4Slot-Homepage;AstraVideoLink
+#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
+#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section4Slot-Homepage;AstraVideoLink
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
@@ -1274,8 +1272,8 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-                                ;SpringbedNavNodeEntry;;Springbed Navigation Node Entry;SpringbedNavNode;SpringBedCategoryLink;
                                 ;SofabedNavNodeEntry;;Sofabed Brand Navigation Node Entry;SofabedNavNode;SofaBedCategoryLink;
+                                ;SpringbedNavNodeEntry;;Springbed Navigation Node Entry;SpringbedNavNode;SpringBedCategoryLink;
                                 ;Rec1NavNodeEntry;;Sofabed Brand Navigation Node Entry;RecNavNode1;RecommendationLink1;
                                 ;Rec2NavNodeEntry;;Sofabed Brand Navigation Node Entry;RecNavNode2;RecommendationLink2;
 ##### Navigation Component Refactor End ######
