@@ -130,6 +130,10 @@
         </typegroup>
 
         <typegroup name="DemoGroup2">
+            <itemtype code="DemoProduct" autocreate="true" generate="true" extends="Product">
+
+            </itemtype>
+
             <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
                 <attributes>
                     <attribute qualifier="height" type="java.lang.String">
