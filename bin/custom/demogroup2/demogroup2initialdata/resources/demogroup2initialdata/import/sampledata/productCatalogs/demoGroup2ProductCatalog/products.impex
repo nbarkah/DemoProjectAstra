@@ -13,6 +13,7 @@ $baseProduct=baseProduct(code,$catalogVersion)
 $approved=approvalstatus(code)[default='check']
 
 # Insert Products
+
 INSERT_UPDATE DemoProduct    ; code[unique = true]        ; name                                             ;height; $supercategories; varianttype(code)[default = 'DemoVariantProduct']    ; $approved; unit(code)[default = pieces]; $catalogVersion ; description;
                              ;INTHEBOX-FLIP-Z             ; INTHEBOX FLIP Z                                  ;12 cm; "BED"         ;                                                      ;          ;                             ;                    ; Kasur lipat lantai terbaru dari IN THE BOX;
                              ;INTHEBOX-X                  ; INTHEBOX X                                       ;27 cm; "BED"         ;                                                      ;          ;                             ;                    ; Kasur dengan tambahan plush top atau lapisan tambahan di bagian atas kasur, yang menambah keempukan dan kenyamanan pada kasur. Dilengkapi material premium dan desain elegan dari Raffi Ahmad.

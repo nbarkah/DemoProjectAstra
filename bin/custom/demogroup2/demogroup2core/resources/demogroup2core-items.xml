@@ -35,6 +35,14 @@
             <value code="SUPERKINGSIZE"/>
             <value code="QUEENSIZE"/>
         </enumtype>
+
+        <enumtype code="RatingEnum" generate="true" autocreate="true" dynamic="true">
+            <value code="BINTANGSATU"/>
+            <value code="BINTANGDUA"/>
+            <value code="BINTANGTIGA"/>
+            <value code="BINTANGEMPAT"/>
+            <value code="BINTANGLIMA"/>
+        </enumtype>
     </enumtypes>
 
     <itemtypes>
@@ -155,5 +163,40 @@
                 </attributes>
             </itemtype>
         </typegroup>
+
+        <typegroup name="TestimoniProduct">
+            <itemtype code="Testimoni">
+                <deployment table="Testimoni" typecode="15000"/>
+                <attributes>
+                    <attribute qualifier="idTestimoni" type="java.lang.Integer">
+                        <defaultvalue>Integer.valueOf(0000)</defaultvalue>
+                        <modifiers optional="false"  unique="true" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <modifiers optional="true"  unique="false" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="heading" type="java.lang.String">
+                        <modifiers optional="true"  unique="false" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="rating" type="RatingEnum">
+                        <modifiers optional="true"  unique="false" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="message" type="java.lang.String">
+                        <modifiers optional="true"  unique="false" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="date" type="java.lang.String">
+                        <modifiers optional="true"  unique="false" read="true"  write="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
+
     </itemtypes>
 </items>
