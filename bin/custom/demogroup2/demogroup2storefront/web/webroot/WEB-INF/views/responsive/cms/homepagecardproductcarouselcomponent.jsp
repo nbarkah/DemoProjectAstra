@@ -25,13 +25,13 @@
 
 							<c:url value="${product.url}/quickView" var="productQuickViewUrl"/>
 							<div class="carousel__item">
-								<a href="${productQuickViewUrl}" class="js-reference-item">
+								<div href="${productQuickViewUrl}" class="js-reference-item">
 									<div class="carousel__item--thumb">
 										<product:productPrimaryReferenceImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-								</a>
+								</div>
 							</div>
 						</c:forEach>
 					</div>
@@ -42,13 +42,15 @@
                             <div>
                                 <c:url value="${product.url}" var="productUrl"/>
                                     <div class="carousel__item">
-                                        <a href="${productUrl}">
+                                        <div href="${productUrl}">
                                             <div class="carousel__item--thumb">
                                                 <product:productPrimaryImage  product="${product}" format="product"/>
                                             </div>
                                             <div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
-                                            <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-                                        </a>
+                                            <div class="carousel__item--price">
+                                                <format:fromPrice priceData="${product.price}"/>
+                                            </div>
+                                        </div>
                                     </div>
                             </div>
 						</c:forEach>
