@@ -59,7 +59,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; testimoniPage ; Testimonioni Page ; TestimoniPage ; testimoniPage
+                         ;                          ; testimoniPage ; Testimoni Page ; TestimoniPage ; testimoniPage
 
 
 
@@ -358,13 +358,17 @@ INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&com
                              ;;CarouselCamcorderBanner;Carousel Camcorder Banner;CarouselCamcorderBanner;Open-Catalogue/Cameras/Hand-held-Camcorders/LEGRIA-HF-S100/p/1986316
                              ;;CarouselFunBanner;Carousel Fun Banner;CarouselFunBanner;/Open-Catalogue/Cameras/Film-cameras/FUN-Flash-Single-Use-Camera%2C-27%2B12-pic/p/779841
 
+INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;scroll(code);popup;&componentRef
+                                        ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;allVisible;false;HomepageCardProductCarouselComponent
+
 INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
                                      ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
 
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-#                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;SUPERKINGX,KINGX,QUEENSIZEX,FULLSIZEX,SUPERSINGLEX,SINGLESIZEX;allVisible;false;ElectronicsHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;SUPERKINGX,KINGX,QUEENSIZEX,FULLSIZEX,SUPERSINGLEX,SINGLESIZEX;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;Section3Slot-Homepage;Section3 Slot for Homepage;true;HomepageCardProductCarouselComponent
 #                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
 #                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
 #                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
@@ -378,7 +382,7 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
                                 ;;Section2A-Homepage;Section2A;;Section2ASlot-Homepage
 #                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
-                                ;;Section3A-Homepage;Section3A;;Section3ASlot-Homepage
+                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
 #                                ;;Section3B-Homepage;Section3B;;Section3BSlot-Homepage
 #                                ;;Section3C-Homepage;Section3C;;Section3CSlot-Homepage
                                 ;;Section4-Homepage;Section4;;Section4Slot-Homepage

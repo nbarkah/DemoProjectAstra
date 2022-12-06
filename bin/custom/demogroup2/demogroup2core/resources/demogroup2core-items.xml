@@ -37,6 +37,7 @@
         </enumtype>
     </enumtypes>
 
+
     <itemtypes>
 
         <!-- Add your item definitions here -->
@@ -153,6 +154,9 @@
                         <persistence type="property" />
                     </attribute>
                 </attributes>
+            </itemtype>
+
+            <itemtype code="HomepageCardProductCarouselComponent" generate="true" autocreate="true" extends="ProductCarouselComponent">
             </itemtype>
         </typegroup>
     </itemtypes>
