@@ -36,7 +36,7 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
                        ;;AboutSAPCommerceLink;"About SAP Commerce Cloud"
                        ;;AgileCommerceBlogLink;"Agile Commerce Blog"
                        ;;AllBrandsCategoryLink;"Brands"
-                       ;;AllBedsCategoryLink;"Bed"
+                       ;;AllBedsCategoryLink;"PRODUCT IN THE BOX"
                        ;;SofaBedCategoryLink;"SOFA"
                        ;;SpringBedCategoryLink;"PROPS"
                        ;;AboutUsLink;"About Us"
@@ -120,8 +120,8 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 #
                         ;;AboutUsNavNode;"About Us"
                         ;;BlogsNavNode;"Blogs"
-                        ;;GuaranteeNavNode;"Garansi"
-                        ;;ConfirmationNavNode;"Konfirmasi"
+                        ;;GuaranteeNavNode;"Guarantee"
+                        ;;ConfirmationNavNode;"Confirmation"
 
 #Bottom Header Slot
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
@@ -281,8 +281,8 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 #                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
 #                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
 
-UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-                               ;;NewDemoGroup2HomepageProductCarouselComponent;What's New
+#UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+#                               ;;NewDemoGroup2HomepageProductCarouselComponent;What's New
 
 # Home page slot 2A
 
