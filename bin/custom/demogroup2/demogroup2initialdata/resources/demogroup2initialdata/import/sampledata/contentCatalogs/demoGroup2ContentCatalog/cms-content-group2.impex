@@ -70,7 +70,7 @@ UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);default
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
-                   ;;/images/theme/logo-hybris.png;logo-hybris.png;$siteResource/images/theme/logo-hybris.png;image/png;hybris Accelerator;
+                   ;;/images/inthebox/Navbar/header-logo-white.png;header-logo-white.png;$siteResource/images/inthebox/Navbar/header-logo-white.png;image/png;hybris In The Box;
                    ;;/images/theme/logo-hybris_zh.png;logo-hybris_zh.png;$siteResource/images/theme/logo-hybris_zh.png;image/png;hybris Accelerator;
 
 # Site Logo Component
@@ -84,8 +84,8 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;LoginLink;Login Link;/login;LoginLink;LoginLink;;;;
                               ;;AllBrandsCategoryLink;All Brands Category Link;/c/BED;AllBrandsCategoryLink;AllBrandsCategoryLink;;BED;;
                               ;;AllBedsCategoryLink;All Beds Link;/c/BED;AllBedsCategoryLink;AllBedsCategoryLink;;BED;;
-                              ;;SpringBedCategoryLink;Spring Bed Link;/c/SHIRT;SpringBedCategoryLink;SpringBedCategoryLink;;SHIRT;;
-                              ;;SofaBedCategoryLink;Sofa Link;/c/TROUSER;SofaBedCategoryLink;SofaBedCategoryLink;;TROUSER;;
+                              ;;SofaBedCategoryLink;Sofa Link;/c/TROUSER;SofaBedCategoryLink;SofaBedCategoryLink;;SOFA;;
+                              ;;SpringBedCategoryLink;Spring Bed Link;/c/SHIRT;SpringBedCategoryLink;SpringBedCategoryLink;;PROPS;;
                               ;;AboutUsLink;About us Link;/Bed/Sofa/c/SOFA;AboutUsLink;AboutUsLink;;;;
                               ;;BlogsLink;Blogs Link;/Bed/Sofa/c/SOFA;BlogsLink;BlogsLink;;;;
                               ;;GuaranteeLink;Guarantee Link;/Bed/Sofa/c/SOFA;GuaranteeLink;GuaranteeLink;;;;
@@ -213,8 +213,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 # Category Pages
 INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];previewImage(code, $contentCV)
-                          ;;Springbed;Springbed;ProductGridPageTemplate;false;;
-                          ;;Sofabed;Sofabed;ProductGridPageTemplate;false;;
+                            ;;Sofabed;Sofabed;ProductGridPageTemplate;false;;
+                            ;;Springbed;Springbed;ProductGridPageTemplate;false;;
 
 # Category Page Restrictions
 #INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
@@ -237,7 +237,8 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
                                ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
                                ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode
 
-                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SpringBedCategoryLink,SofaBedCategoryLink;BedLinksNavNode
+                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SofaBedCategoryLink,SpringBedCategoryLink;BedLinksNavNode
+                               ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
                                ;SpringbedNavNode;;Springbed Links;BedLinksNavNode;SpringBedCategoryLink;SpringbedNavNode
                                ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
 
@@ -364,8 +365,8 @@ INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[u
 INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
                                      ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
 
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;SUPERKINGX,KINGX,QUEENSIZEX,FULLSIZEX,SUPERSINGLEX,SINGLESIZEX;allVisible;false;ElectronicsHomepageProductCarouselComponent
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+#                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;SUPERKINGX,KINGX,QUEENSIZEX,FULLSIZEX,SUPERSINGLEX,SINGLESIZEX;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
 ;;Section3Slot-Homepage;Section3 Slot for Homepage;true;HomepageCardProductCarouselComponent
