@@ -11,6 +11,7 @@ import de.hybris.platform.commercefacades.search.ProductSearchFacade;
 import de.hybris.platform.commercefacades.search.data.SearchQueryData;
 import de.hybris.platform.commercefacades.search.data.SearchStateData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
+import org.demo.core.model.HomepageCardProductCarouselComponentModel;
 import org.demo.storefront.controllers.ControllerConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +29,13 @@ import java.util.List;
  * Controller for CMS ProductReferencesComponent.
  */
 @Controller("HomepageCardProductCarouselComponentController")
-@RequestMapping(value = ControllerConstants.Actions.Cms.ProductCarouselComponent)
-public class HomepageCardProductCarouselComponentController extends ProductCarouselComponentController
+@RequestMapping(value = ControllerConstants.Actions.Cms.HomepageCardProductCarouselComponent)
+public class HomepageCardProductCarouselComponentController extends AbstractAcceleratorCMSComponentController<HomepageCardProductCarouselComponentModel>
 {
 
+    @Override
+    protected void fillModel(HttpServletRequest request, Model model, HomepageCardProductCarouselComponentModel component) {
+        model.addAttribute("title", component.getTitle());
+        model.addAttribute("productData", component.getProducts());
+    }
 }
