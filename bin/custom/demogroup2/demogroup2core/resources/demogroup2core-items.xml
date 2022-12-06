@@ -51,6 +51,7 @@
         </relation>
     </relations>
 
+
     <itemtypes>
 
         <!-- Add your item definitions here -->
@@ -129,17 +130,13 @@
         </typegroup>
 
         <typegroup name="DemoGroup2">
-            <itemtype code="DemoProduct" autocreate="true" generate="true" extends="Product">
+            <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
                 <attributes>
                     <attribute qualifier="height" type="java.lang.String">
                         <description>Is Height Product</description>
                         <modifiers />
                         <persistence type="property" />
                     </attribute>
-                </attributes>
-            </itemtype>
-            <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
-                <attributes>
                     <attribute qualifier="sizeDimension" type="DemoSizeProduct" >
                         <description>Size Dimension Product</description>
                         <modifiers optional="true" initial="true" />
@@ -167,6 +164,9 @@
                         <persistence type="property" />
                     </attribute>
                 </attributes>
+            </itemtype>
+
+            <itemtype code="HomepageCardProductCarouselComponent" generate="true" autocreate="true" extends="ProductCarouselComponent">
             </itemtype>
         </typegroup>
 
