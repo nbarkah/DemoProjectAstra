@@ -19,14 +19,14 @@ import javax.annotation.Resource;
 
 
 @Controller
-@RequestMapping("/testimoniPage")
+@RequestMapping("/testimony")
 public class TestimoniController extends AbstractPageController {
     @Resource(name = "defaultTestiFacade")
     private TestiFacade testiFacade;
 
     @Resource(name = "defaultPersonFacade")
     private PersonFacade personFacade;
-    private static final String TEMPLATE_PAGE = "testimoniPage";
+    private static final String TEMPLATE_PAGE = "testimony";
     private static final String LOGOUT = "logout";
     private static final String ACCOUNT_CONFIRMATION_SIGNOUT_TITLE = "account.confirmation.signout.title";
     private static final String ACCOUNT_CONFIRMATION_CLOSE_TITLE = "account.confirmation.close.title";

@@ -4,22 +4,14 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
 <template:page pageTitle="${pageTitle}">
-    <div class="homepage-banner">
-        <cms:pageSlot position="Section1" var="feature">
-                <cms:component component="${feature}" element="div" class="banner"/>
-        </cms:pageSlot>
-    </div>
+
+
+    <cms:pageSlot position="Section1" var="feature">
+        <cms:component component="${feature}" />
+    </cms:pageSlot>
     <div class="row no-margin">
+
         <div class="col-xs-12 col-md-6 no-space">
-            <div class="test">
-                 <p>tess</p>
-                        <c:set var="count" value="1"/>
-                             <c:set var="count" value="1"/>
-                             <c:forEach var="person" items="${testimoni}">
-                             <span>${count}</span>
-                             <p>${person.headMsg}</p>
-                      </c:forEach>
-            </div>
             <cms:pageSlot position="Section2A" var="feature" element="div" class="row no-margin">
                 <cms:component component="${feature}" element="div" class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>
             </cms:pageSlot>
@@ -36,11 +28,9 @@
         </div>
     </div>
 
-    <div class="homepage-card-product" style="background-color:#6086c2;">
-        <cms:pageSlot position="Section3" var="feature" >
-            <cms:component component="${feature}" element="div" class="card-product"/>
-        </cms:pageSlot>
-    </div>
+    <cms:pageSlot position="Section3" var="feature" element="div" class="row no-margin" >
+        <cms:component component="${feature}" element="div" class="no-space yComponentWrapper"/>
+    </cms:pageSlot>
 
     <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
         <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
