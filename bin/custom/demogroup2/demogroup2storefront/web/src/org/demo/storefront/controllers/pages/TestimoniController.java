@@ -18,7 +18,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 
 
-
 @Controller
 @RequestMapping("/testimoniPage")
 public class TestimoniController extends AbstractPageController {
@@ -28,7 +27,6 @@ public class TestimoniController extends AbstractPageController {
     @Resource(name = "defaultPersonFacade")
     private PersonFacade personFacade;
     private static final String TEMPLATE_PAGE = "testimoniPage";
-
     private static final String LOGOUT = "logout";
     private static final String ACCOUNT_CONFIRMATION_SIGNOUT_TITLE = "account.confirmation.signout.title";
     private static final String ACCOUNT_CONFIRMATION_CLOSE_TITLE = "account.confirmation.close.title";
@@ -56,7 +54,6 @@ public class TestimoniController extends AbstractPageController {
         model.addAttribute("testimoni",testiFacade.getAllTestimoni());
         return getViewForPage(model);
     }
-
     protected void updatePageTitle(final Model model, final AbstractPageModel cmsPage)
     {
         storeContentPageTitleInModel(model, getPageTitleResolver().resolveHomePageTitle(cmsPage.getTitle()));

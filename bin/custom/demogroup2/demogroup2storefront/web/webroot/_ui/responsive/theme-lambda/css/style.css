@@ -11382,7 +11382,8 @@ fieldset[disabled] .btn-primary.active {
   .banner__component {
     margin-left: -10px;
     margin-right: -10px;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 .simple-banner-component a,
@@ -13068,7 +13069,8 @@ a.product__listing .product__listing--promo:focus {
 .cart__content {
   margin-left: -10px;
   margin-right: -10px;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .cart__top--totals {
   text-align: right;
@@ -14705,7 +14707,8 @@ form .forgotten-password {
   .checkout__new-account {
     margin-left: -10px;
     margin-right: -10px;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -16194,7 +16197,8 @@ a.price ins:focus {
   .account-section div.responsive-table {
     margin-left: -10px;
     margin-right: -10px;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 .account-section .addressBackBtn,
@@ -18816,18 +18820,21 @@ select[multiple].input-sm {
     height: 320px;
   }
 }
-.container-md {
+.container-testimoni {
   margin: 0 auto;
-  width: 70%;
+  width: 60%;
 }
 @media only screen and (min-width: 1238px) {
-  .container-md {
-    width: 70%;
+  .container-testimoni {
+    width: 60%;
   }
 }
 @media only screen and (max-width: 1241px) {
-  .container-md {
+  .container-testimoni {
     width: 90%;
+  }
+  .main-testi {
+    width: 100%;
   }
 }
 p {
@@ -18840,7 +18847,7 @@ p {
 .nama {
   margin: 0;
   color: #6086c2;
-  font-size: 1.4rem;
+  font-size: 18.2px;
   font-weight: 700;
 }
 .avatar {
@@ -18856,31 +18863,18 @@ p {
   font-size: 18px;
 }
 .main-testi {
-  padding: 0;
+  padding: 10px 0px;
 }
-.testi-container1 {
+.testi-container {
   margin: 10px;
   border: 1px solid #ebedf2;
-  height: 372.875px;
-  border-radius: 16px;
-  padding: 15px;
-}
-.testi-container2 {
-  margin: 10px;
-  border: 1px solid #ebedf2;
-  height: 632.88px;
+  height: 100%;
   border-radius: 16px;
   padding: 15px;
 }
 .row {
-  height: 100%;
-}
-.testi-container3 {
-  margin: 10px;
-  border: 1px solid #ebedf2;
-  height: 452.88px;
-  border-radius: 16px;
-  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .testi-bold {
   font-weight: bold;
@@ -18895,6 +18889,7 @@ p {
 }
 .next-page {
   text-align: center;
+  margin: 20px 0 50px 0px;
 }
 .next-page button {
   padding: 13px 19.5px;
@@ -22206,7 +22201,8 @@ hidden-sm .cpq-overview-messages {
 .cpq-overview-filter-item {
   margin-left: -10px;
   margin-right: -10px;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .cpq-overview-facet .facet .facet__list .facet__list__mark {
   margin-top: 0px;

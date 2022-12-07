@@ -38,10 +38,16 @@
 
         <enumtype code="RatingEnum" generate="true" autocreate="true" dynamic="true">
             <value code="BINTANGSATU"/>
+            <value code="BINTANGSATUSTG"/>
             <value code="BINTANGDUA"/>
+            <value code="BINTANGDUASTG"/>
             <value code="BINTANGTIGA"/>
+            <value code="BINTANGTIGASTG"/>
             <value code="BINTANGEMPAT"/>
+            <value code="BINTANGSEMPATSTG"/>
             <value code="BINTANGLIMA"/>
+
+
         </enumtype>
     </enumtypes>
     <relations>
