@@ -8,6 +8,7 @@
 		<property name="genders" type="java.util.List&lt;org.demo.facades.product.data.GenderData>"/>
 		<property name="sizeDimension" type="String"/>
 		<property name="sizeType" type="String"/>
+		<property name="brands" type="String"/>
 	</bean>
 
 	<bean class="org.demo.facades.product.data.GenderData">
