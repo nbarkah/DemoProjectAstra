@@ -273,7 +273,10 @@ INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=t
                    ;desktop;;discount-banner-960.png;$siteResource/images/banners/homepage/responsive/discount-banner-960.png;;discount-banner-960.png;;"IN THE BOX"
 
 UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang];$picture[lang=$lang];description[lang=$lang]
-                               ;;BlackAndWhiteFilmsFeatureComponent;Black & White Films;Elec_96x96_CatBWFilm_EN_01.jpg;"Find the right film for authentic photo art"
+                               ;;UnboxingITB1Component;Keluarkan;unboxing-itb-1.png;"Keluarkan Kasur INTHEBOX dari kemasannya secara perlahan-lahan"
+                               ;;UnboxingITB2Component;Posisikan;unboxing-itb-2.png;"Keluarkan Kasur INTHEBOX dari kemasannya secara perlahan-lahan"
+                               ;;UnboxingITB3Component;Buka Plastik;unboxing-itb-3.png;"Lepaskan Plastik Pembungkus dan Pastikan logo INTHEBOX ada di bawah"
+                               ;;UnboxingITB4Component;Tunggu Mengembang;unboxing-itb-4.png;"Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan"
 #                               ;;BlankVideoTapesFeatureComponent;Blank Video Tapes;Elec_96x96_CatVTapes_EN_01.jpg;"High quality VHS and 8mm Camcorder Tapes"
 #                               ;;CameraFlashesFeatureComponent;Camera Flashes;Elec_96x96_CatFlash_EN_01.jpg;"Bring extra quality to your pictures with a Flashgun..."
 #                               ;;CameraLensesFeatureComponent;Camera Lenses;Elec_96x96_CatLenses_EN_01.jpg;"Change lenses to suit a huge range of scenes & situations"
@@ -295,7 +298,10 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
                                              ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
                                              ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
-                                             ;;DemoHompageUnboxingITBComponent;demo-homepage-unboxing-itb-en
+                                             ;;DemoHompageUnboxingITBComponent-1;demo-homepage-unboxing-itb-1-en
+                                             ;;DemoHompageUnboxingITBComponent-2;demo-homepage-unboxing-itb-2-en
+                                             ;;DemoHompageUnboxingITBComponent-3;demo-homepage-unboxing-itb-3-en
+                                             ;;DemoHompageUnboxingITBComponent-4;demo-homepage-unboxing-itb-4-en
 #                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
 #                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
 

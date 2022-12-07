@@ -406,7 +406,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
                          ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
                          ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
+                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;HomepageCardProductCarouselComponent
                          ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
                          ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
                          ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
@@ -432,8 +432,8 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
 #                                    ;;CamerasAccessoriesAndSupplies-LandingPageRestriction;Restriction for Cameras Accessories And Supplies;585;CamerasAccessoriesAndSuppliesCategoryPage
 #
-#INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;category(code, $productCV);&componentRef
-#                                      ;;CameraFlashesFeatureComponent;CameraFlashesFeatureComponent;586;CameraFlashesFeatureComponent
+INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;category(code, $productCV);&componentRef
+                                      ;;CameraFlashesFeatureComponent;CameraFlashesFeatureComponent;586;CameraFlashesFeatureComponent
 #                                      ;;TripodFeatureComponent;TripodFeatureComponent;587;TripodFeatureComponent
 #                                      ;;CameraLensesFeatureComponent;CameraLensesFeatureComponent;588;CameraLensesFeatureComponent
 #                                      ;;ColourFilmsFeatureComponent;ColourFilmsFeatureComponent;597;ColourFilmsFeatureComponent
@@ -873,13 +873,20 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 ###  Home page slot 4A  ####
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                            ;;DemoHompageUnboxingITBComponent;Demo Homepage Unboxing ITB Component;;DemoHompageUnboxingITBComponent
+                                            ;;DemoHompageUnboxingITBComponent-1;Demo Homepage Unboxing ITB 1 Component;;DemoHompageUnboxingITBComponent-1
+                                            ;;DemoHompageUnboxingITBComponent-2;Demo Homepage Unboxing ITB 2 Component;;DemoHompageUnboxingITBComponent-2
+                                            ;;DemoHompageUnboxingITBComponent-3;Demo Homepage Unboxing ITB 3 Component;;DemoHompageUnboxingITBComponent-3
+                                            ;;DemoHompageUnboxingITBComponent-4;Demo Homepage Unboxing ITB 4 Component;;DemoHompageUnboxingITBComponent-4
 
-#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-#
+INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+                                      ;;UnboxingITB1Component;UnboxingITB1Component;UnboxingITB1Component
+                                      ;;UnboxingITB2Component;UnboxingITB2Component;UnboxingITB2Component
+                                      ;;UnboxingITB3Component;UnboxingITB3Component;UnboxingITB3Component
+                                      ;;UnboxingITB4Component;UnboxingITB4Component;UnboxingITB4Component
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section4Slot-Homepage;DemoHompageUnboxingITBComponent
+#                         ;;Section4Slot-Homepage;UnboxingITB1Component,UnboxingITB2Component,UnboxingITB3Component,UnboxingITB4Component
+                         ;;Section4Slot-Homepage;DemoHompageUnboxingITBComponent-1,DemoHompageUnboxingITBComponent-2,DemoHompageUnboxingITBComponent-3,DemoHompageUnboxingITBComponent-4
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef

@@ -16,7 +16,7 @@
         </cms:pageSlot>
     </div>
 
-    <div class="homepage-unboxing-itb" >
+    <div class="homepage-unboxing-itb">
     <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
         <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
     </cms:pageSlot>
