@@ -117,7 +117,14 @@
 
         <typegroup name="DemoGroup2">
             <itemtype code="DemoProduct" autocreate="true" generate="true" extends="Product">
-
+                <attributes>
+                    <attribute qualifier="searchable" type="java.lang.Boolean">
+                        <description>Is searchable Product</description>
+                        <modifiers />
+                        <defaultvalue>Boolean.valueOf(true)</defaultvalue>
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
             </itemtype>
 
             <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
