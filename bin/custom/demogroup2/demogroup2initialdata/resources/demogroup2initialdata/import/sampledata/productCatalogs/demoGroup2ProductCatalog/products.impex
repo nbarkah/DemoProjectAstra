@@ -35,7 +35,7 @@ INSERT_UPDATE DemoProduct    ; code[unique = true]        ; name                
                              ;BANTAL                      ;BANTAL                                            ; "PROPS"       ;                                                      ;          ;                             ;                    ;Bantal premium dengan komposisi kapas organik, virgin fiber, dan hollow fiber. Ukuran bantal pas untuk menopang leher dengan baik dan nyaman.;
                              ;GULING                      ;GULING                                            ; "PROPS"       ;                                                      ;          ;                             ;                    ;Guling premium dengan komposisi kapas organik, virgin fiber, dan hollow fiber. Ukuran guling pas untuk memberikan kenyamanan saat memeluknya.;
 
-INSERT_UPDATE DemoSizeProduct; code[unique=true]        ;name                 ; dimension;
+INSERT_UPDATE DemoSizeProduct; code[unique=true]        ;name                ;dimension ;
                             ;SingleSize           ;Single Size          ;90 x 200  ;
                             ;SuperSingleSize      ;Super Single Size    ;100 x 200 ;
                             ;FullSize             ;Full Size            ;120 x 200 ;

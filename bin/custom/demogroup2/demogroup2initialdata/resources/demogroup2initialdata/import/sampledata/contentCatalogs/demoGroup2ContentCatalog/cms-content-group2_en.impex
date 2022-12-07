@@ -248,11 +248,16 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
                    ;widescreen;;banner-homepage-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
                    ;widescreen;;banner-homepage-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-1400x440.png;;banner-homepage-1400x440.png;;"IN THE BOX 2"
+                   ;widescreen;;unboxing-itb-1.png;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
+                   ;widescreen;;unboxing-itb-2.png;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
+                   ;widescreen;;unboxing-itb-3.png;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
+                   ;widescreen;;unboxing-itb-4.png;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
 #                   ;widescreen;;banner-homepage-3-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
 #                   ;widescreen;;banner-homepage-4-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
                    ;widescreen;;discount-banner-1400.png;$siteResource/images/banners/homepage/responsive/discount-banner-1400.png;;discount-banner-1400.png;;"IN THE BOX"
                    ;mobile;;banner-homepage-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
                    ;mobile;;banner-homepage-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-480x320.png;;banner-homepage-480x320.png;;"IN THE BOX2"
+
 #                   ;mobile;;banner-homepage-2-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
 #                   ;mobile;;banner-homepage-4-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
                    ;mobile;;discount-banner-480.png;$siteResource/images/banners/homepage/responsive/discount-banner-480.png;;discount-banner-480.png;;"IN THE BOX"
@@ -271,6 +276,7 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
                             ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
                             ;demo-homepage-spalsh-1-en;banner-homepage-2-1400x440.png,banner-homepage-2-480x320.png,banner-homepage-2-770x350.png,banner-homepage-2-960x330.png
                             ;demo-homepage-spalsh-2-en;banner-homepage-1400x440.png,banner-homepage-480x320.png,banner-homepage-770x350.png,banner-homepage-960x330.png
+                            ;demo-homepage-unboxing-itb-en;unboxing-itb-1.png,unboxing-itb-2.png,unboxing-itb-3.png,unboxing-itb-1.png
 #                            ;demo-homepage-spalsh-3-en;banner-3-demo-1400x440.jpg,banner-3-demo-480x320.jpg,banner-3-demo-770x350.jpg,banner-3-demo-960x330.png
 #                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
 
@@ -278,6 +284,7 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
                                              ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
                                              ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
+                                             ;;DemoHompageUnboxingITBComponent;demo-homepage-unboxing-itb-en
 #                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
 #                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
 

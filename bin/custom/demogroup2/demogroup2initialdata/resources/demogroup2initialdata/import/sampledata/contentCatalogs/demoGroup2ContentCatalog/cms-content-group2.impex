@@ -871,11 +871,15 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 #### Section 4
 
 ###  Home page slot 4A  ####
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                            ;;DemoHompageUnboxingITBComponent;Demo Homepage Unboxing ITB Component;;DemoHompageUnboxingITBComponent
+
 #INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
 #                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
 #
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section4Slot-Homepage;AstraVideoLink
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+                         ;;Section4Slot-Homepage;DemoHompageUnboxingITBComponent
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
