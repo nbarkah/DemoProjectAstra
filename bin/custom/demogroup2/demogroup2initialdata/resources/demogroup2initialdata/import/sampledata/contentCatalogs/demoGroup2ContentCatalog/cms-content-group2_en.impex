@@ -284,7 +284,7 @@ UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];title[l
 #                               ;;TripodFeatureComponent;Tripods;Elec_96x96_CatTripod_EN_01.jpg;"The photo and film enthusiasts 3-legged friend"
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-                            ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
+#                            ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
                             ;demo-homepage-spalsh-1-en;banner-homepage-2-1400x440.png,banner-homepage-2-480x320.png,banner-homepage-2-770x350.png,banner-homepage-2-960x330.png
                             ;demo-homepage-spalsh-2-en;banner-homepage-1400x440.png,banner-homepage-480x320.png,banner-homepage-770x350.png,banner-homepage-960x330.png
                             ;demo-homepage-unboxing-itb-1-en;unboxing-itb-1.png
@@ -295,7 +295,7 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
 #                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-                                             ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
+ #                                            ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
                                              ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
                                              ;;DemoHompageUnboxingITBComponent-1;demo-homepage-unboxing-itb-1-en

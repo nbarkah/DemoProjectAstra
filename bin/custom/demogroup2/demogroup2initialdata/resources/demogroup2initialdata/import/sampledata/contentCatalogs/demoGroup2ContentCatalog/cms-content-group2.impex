@@ -918,6 +918,7 @@ INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
 #                         ;;Section4Slot-Homepage;UnboxingITB1Component,UnboxingITB2Component,UnboxingITB3Component,UnboxingITB4Component
+#                         ;;Section4Slot-Homepage;UnboxingITB1Component,UnboxingITB2Component,DemoHompageUnboxingITBComponent-3,DemoHompageUnboxingITBComponent-4
                          ;;Section4Slot-Homepage;DemoHompageUnboxingITBComponent-1,DemoHompageUnboxingITBComponent-2,DemoHompageUnboxingITBComponent-3,DemoHompageUnboxingITBComponent-4
 
 #### Home section 5 #######
