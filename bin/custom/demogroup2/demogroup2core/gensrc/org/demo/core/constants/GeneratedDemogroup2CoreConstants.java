@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 7, 2022, 7:03:02 AM                     ---
+ * --- Generated at 7 Des 2022 13.49.09                         ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.constants;
@@ -24,8 +24,11 @@ public class GeneratedDemogroup2CoreConstants
 		public static final String DEMOVARIANTPRODUCT = "DemoVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
 		public static final String HOMEPAGECARDPRODUCTCAROUSELCOMPONENT = "HomepageCardProductCarouselComponent".intern();
+		public static final String RATINGENUM = "RatingEnum".intern();
 		public static final String SIZEENUM = "SizeEnum".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
+		public static final String TESTIMONI = "Testimoni".intern();
+		public static final String TESTIPERSON = "TestiPerson".intern();
 	}
 	public static class Attributes
 	{
@@ -33,6 +36,18 @@ public class GeneratedDemogroup2CoreConstants
 	}
 	public static class Enumerations
 	{
+		public static class RatingEnum
+		{
+			public static final String BINTANGSATU = "BINTANGSATU".intern();
+			public static final String BINTANGSATUSTG = "BINTANGSATUSTG".intern();
+			public static final String BINTANGDUA = "BINTANGDUA".intern();
+			public static final String BINTANGDUASTG = "BINTANGDUASTG".intern();
+			public static final String BINTANGTIGA = "BINTANGTIGA".intern();
+			public static final String BINTANGTIGASTG = "BINTANGTIGASTG".intern();
+			public static final String BINTANGEMPAT = "BINTANGEMPAT".intern();
+			public static final String BINTANGSEMPATSTG = "BINTANGSEMPATSTG".intern();
+			public static final String BINTANGLIMA = "BINTANGLIMA".intern();
+		}
 		public static class SizeEnum
 		{
 			public static final String SINGLESIZE = "SINGLESIZE".intern();
@@ -58,6 +73,10 @@ public class GeneratedDemogroup2CoreConstants
 			public static final String WHITE = "WHITE".intern();
 			public static final String YELLOW = "YELLOW".intern();
 		}
+	}
+	public static class Relations
+	{
+		public static final String PERSON2TESTIMONI = "Person2Testimoni".intern();
 	}
 	
 	protected GeneratedDemogroup2CoreConstants()

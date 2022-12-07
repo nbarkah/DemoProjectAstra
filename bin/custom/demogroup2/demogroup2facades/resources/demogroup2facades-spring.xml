@@ -183,27 +183,46 @@
 
 	<bean id="genderData" class="org.demo.facades.product.data.GenderData" scope="prototype"/>
 
-	<!-- NEW FOR DEMO GROUP 2 -->
-	<alias name="defaultDemoSearchResultProductPopulator" alias="demoSearchResultProductPopulator"/>
-	<bean id="defaultDemoSearchResultProductPopulator" class="org.demo.facades.populators.DemoSearchResultProductPopulator" parent="defaultCommerceSearchResultProductPopulator">
+	<alias name="personBasicPopulator" alias="personBasicPopulator"/>
+	<bean id="personBasicPopulator" class="org.demo.facades.populators.PersonBasicPopulator"/>
+
+	<alias name="personPopulator" alias="personPopulator"/>
+	<bean id="personPopulator" class="org.demo.facades.populators.PersonPopulator" parent="personBasicPopulator"/>
+
+	<alias name="testimoniPopulator" alias="testimoniPopulator"/>
+	<bean id="testimoniPopulator" class="org.demo.facades.populators.TestimoniPopulator"/>
+
+	<bean id="personBasicConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="personBasicPopulator"/>
+			</list>
+		</property>
 	</bean>
 
-	<bean parent="modifyPopulatorList">
-		<property name="list" ref="commerceSearchResultProductConverter"/>
-		<property name="add" ref="demoSearchResultProductPopulator"/>
+	<bean id="personConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="personPopulator"/>
+			</list>
+		</property>
 	</bean>
 
-	<bean id="demoGroup2ProductPopulator" class="org.demo.facades.populators.DemoGroup2ProductPopulator" >
+	<bean id="testiConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.testi.data.TestiData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="testimoniPopulator"/>
+			</list>
+		</property>
 	</bean>
 
-	<!-- Add the apparelProductPopulator to the productConverter -->
-	<bean parent="modifyPopulatorList">
-		<property name="list" ref="productConverter"/>
-		<property name="add" ref="demoGroup2ProductPopulator"/>
-	</bean>
+	<alias name="defaultPersonFacade" alias="defaultPersonFacade"/>
+	<bean id="defaultPersonFacade" class="org.demo.facades.person.DefaultPersonFacade" />
 
-	<!-- END FOR DEMO GROUP 2 -->
-
-
+	<alias name="defaultTestiFacade" alias="defaultTestiFacade"/>
+	<bean id="defaultTestiFacade" class="org.demo.facades.testimoni.DefaultTestiFacade" />
 
 </beans>

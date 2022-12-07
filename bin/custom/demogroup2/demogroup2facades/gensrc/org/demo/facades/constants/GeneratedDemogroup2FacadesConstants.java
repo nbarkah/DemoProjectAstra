@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 7, 2022, 7:03:02 AM                     ---
+ * --- Generated at 7 Des 2022 13.49.09                         ---
  * ----------------------------------------------------------------
  */
 package org.demo.facades.constants;
