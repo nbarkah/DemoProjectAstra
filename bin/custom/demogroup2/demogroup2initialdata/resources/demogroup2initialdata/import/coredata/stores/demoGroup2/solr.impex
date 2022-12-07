@@ -140,3 +140,7 @@ INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; n
 # Price
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true];  multiValue[default = true]; facet[default = true]; facetType(code);facetSort(code);  priority; visible; categoryField[default = true]
                                  ; $solrIndexedType                          ; priceValue         ;    false                     ;                      ; MultiSelectOr  ;Alpha          ; 400      ;true; false
+
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
+                                 ; $solrIndexedType                          ; brands              ; string    ; false                          ;                      ; Refine         ; Alpha          ; 300   ; true  ; false                        ; sizeValueProvider            ;
+

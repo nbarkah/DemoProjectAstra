@@ -39,6 +39,8 @@ public class SizeValueProvider extends AbstractPropertyFieldValueProvider implem
                     indexName = product.getSizeDimension().getDimension() + " x " + product.getHeight();
                 } else if (fieldName.contains("sizeType")) {
                     indexName = product.getSizeDimension().getName();
+                } else if (fieldName.contains("brands")) {
+                    indexName = product.getBaseProduct().getName();
                 } else {
                     indexName = product.getSizeDimension().getName();
                 }
