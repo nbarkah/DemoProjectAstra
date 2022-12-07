@@ -11,7 +11,15 @@
     </div>
     <div class="row no-margin">
         <div class="col-xs-12 col-md-6 no-space">
-
+            <div class="test">
+                 <p>tess</p>
+                        <c:set var="count" value="1"/>
+                             <c:set var="count" value="1"/>
+                             <c:forEach var="person" items="${testimoni}">
+                             <span>${count}</span>
+                             <p>${person.headMsg}</p>
+                      </c:forEach>
+            </div>
             <cms:pageSlot position="Section2A" var="feature" element="div" class="row no-margin">
                 <cms:component component="${feature}" element="div" class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>
             </cms:pageSlot>

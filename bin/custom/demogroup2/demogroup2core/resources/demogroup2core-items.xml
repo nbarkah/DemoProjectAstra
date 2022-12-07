@@ -207,9 +207,25 @@
                         <modifiers optional="true"  unique="false" read="true"  write="true" />
                         <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="message" type="java.lang.String">
-                        <modifiers optional="true"  unique="false" read="true"  write="true" />
-                        <persistence type="property"/>
+                    <attribute qualifier="message" type="localized:java.lang.String">
+                        <modifiers read="true" write="true" search="true"  />
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>BLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NBLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>text</value>
+                            </columntype>
+                            <columntype database="hsqldb">
+                                <value>LONGVARCHAR</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
                     </attribute>
                     <attribute qualifier="date" type="java.lang.String">
                         <modifiers optional="true"  unique="false" read="true"  write="true" />

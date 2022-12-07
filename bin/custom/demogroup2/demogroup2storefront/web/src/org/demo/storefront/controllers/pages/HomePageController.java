@@ -10,12 +10,16 @@ import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 
+import org.demo.facades.person.PersonFacade;
+import org.demo.facades.testimoni.TestiFacade;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -25,6 +29,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/")
 public class HomePageController extends AbstractPageController
 {
+	@Resource(name = "defaultTestiFacade")
+	private TestiFacade testiFacade;
+
+	@Resource(name = "defaultPersonFacade")
+	private PersonFacade personFacade;
 	private static final String LOGOUT = "logout";
 	private static final String ACCOUNT_CONFIRMATION_SIGNOUT_TITLE = "account.confirmation.signout.title";
 	private static final String ACCOUNT_CONFIRMATION_CLOSE_TITLE = "account.confirmation.close.title";
@@ -48,7 +57,8 @@ public class HomePageController extends AbstractPageController
 		storeCmsPageInModel(model, contentPage);
 		setUpMetaDataForContentPage(model, contentPage);
 		updatePageTitle(model, contentPage);
-
+		model.addAttribute("personList", personFacade.getAllPerson());
+		model.addAttribute("testimoni",testiFacade.getAllTestimoni());
 		return getViewForPage(model);
 	}
 

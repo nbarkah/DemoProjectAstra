@@ -3,9 +3,40 @@
  <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
  <template:page pageTitle="${pageTitle}">
 
  <div class="container-md">
+
+
+        <div class="test">
+             <p>tess</p>
+                    <c:set var="count" value="1"/>
+                         <c:set var="count" value="1"/>
+                         <c:forEach var="person" items="${personList}">
+                         <span>${count}</span>
+                         <p>${person.personName}</p>
+                           <div class="bintang">
+                             <c:set var="star" value="0"/>
+                              <c:choose>
+                                 <c:when test ="${person.rating == 'BINTANGLIMA'}"> <c:set var="star" value="5"/> </c:when>
+                                 <c:when test ="${person.rating == 'BINTANGEMPAT'}"> <c:set var="star" value="4"/> </c:when>
+                                 <c:when test ="${person.rating == 'BINTANGTIGA'}"> <c:set var="star" value="3"/> </c:when>
+                                 <c:when test ="${person.rating == 'BINTANGDUA'}"> <c:set var="star" value="2"/> </c:when>
+                                 <c:when test ="${person.rating == 'BINTANGSATU'}"> <c:set var="star" value="1"/> </c:when>
+                               </c:choose>
+
+                                    <c:forEach var="i" begin ="1" end ="${star}">
+                                         <p>hehe</p>
+                                      </c:forEach>
+                                  </div>
+
+                  </c:forEach>
+        </div>
+
+
+
 
 
         <div class="heading">

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 6 Des 2022 14.10.13                         ---
+ * --- Generated at 7 Des 2022 08.04.02                         ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -10,7 +10,10 @@ import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
+import de.hybris.platform.jalo.JaloInvalidParameterException;
 import de.hybris.platform.jalo.SessionContext;
+import de.hybris.platform.jalo.c2l.C2LManager;
+import de.hybris.platform.jalo.c2l.Language;
 import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.util.BidirectionalOneToManyHandler;
@@ -223,7 +226,11 @@ public abstract class GeneratedTestimoni extends GenericItem
 	 */
 	public String getMessage(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, MESSAGE);
+		if( ctx == null || ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("GeneratedTestimoni.getMessage requires a session language", 0 );
+		}
+		return (String)getLocalizedProperty( ctx, MESSAGE);
 	}
 	
 	/**
@@ -236,12 +243,38 @@ public abstract class GeneratedTestimoni extends GenericItem
 	}
 	
 	/**
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.message</code> attribute. 
+	 * @return the localized message
+	 */
+	public Map<Language,String> getAllMessage(final SessionContext ctx)
+	{
+		return (Map<Language,String>)getAllLocalizedProperties(ctx,MESSAGE,C2LManager.getInstance().getAllLanguages());
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Testimoni.message</code> attribute. 
+	 * @return the localized message
+	 */
+	public Map<Language,String> getAllMessage()
+	{
+		return getAllMessage( getSession().getSessionContext() );
+	}
+	
+	/**
 	 * <i>Generated method</i> - Setter of the <code>Testimoni.message</code> attribute. 
 	 * @param value the message
 	 */
 	public void setMessage(final SessionContext ctx, final String value)
 	{
-		setProperty(ctx, MESSAGE,value);
+		if ( ctx == null) 
+		{
+			throw new JaloInvalidParameterException( "ctx is null", 0 );
+		}
+		if( ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("GeneratedTestimoni.setMessage requires a session language", 0 );
+		}
+		setLocalizedProperty(ctx, MESSAGE,value);
 	}
 	
 	/**
@@ -251,6 +284,24 @@ public abstract class GeneratedTestimoni extends GenericItem
 	public void setMessage(final String value)
 	{
 		setMessage( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.message</code> attribute. 
+	 * @param value the message
+	 */
+	public void setAllMessage(final SessionContext ctx, final Map<Language,String> value)
+	{
+		setAllLocalizedProperties(ctx,MESSAGE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Testimoni.message</code> attribute. 
+	 * @param value the message
+	 */
+	public void setAllMessage(final Map<Language,String> value)
+	{
+		setAllMessage( getSession().getSessionContext(), value );
 	}
 	
 	/**
