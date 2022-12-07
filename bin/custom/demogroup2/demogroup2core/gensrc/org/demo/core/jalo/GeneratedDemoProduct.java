@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 6, 2022, 10:37:49 AM                    ---
+ * --- Generated at Dec 7, 2022, 7:03:02 AM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -20,13 +20,13 @@ import org.demo.core.constants.Demogroup2CoreConstants;
 @SuppressWarnings({"deprecation","unused","cast"})
 public abstract class GeneratedDemoProduct extends Product
 {
-	/** Qualifier of the <code>DemoProduct.height</code> attribute **/
-	public static final String HEIGHT = "height";
+	/** Qualifier of the <code>DemoProduct.searchable</code> attribute **/
+	public static final String SEARCHABLE = "searchable";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>(Product.DEFAULT_INITIAL_ATTRIBUTES);
-		tmp.put(HEIGHT, AttributeMode.INITIAL);
+		tmp.put(SEARCHABLE, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -36,39 +36,76 @@ public abstract class GeneratedDemoProduct extends Product
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>DemoProduct.height</code> attribute.
-	 * @return the height - Is Height Product
+	 * <i>Generated method</i> - Getter of the <code>DemoProduct.searchable</code> attribute.
+	 * @return the searchable - Is searchable Product
 	 */
-	public String getHeight(final SessionContext ctx)
+	public Boolean isSearchable(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, HEIGHT);
+		return (Boolean)getProperty( ctx, SEARCHABLE);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>DemoProduct.height</code> attribute.
-	 * @return the height - Is Height Product
+	 * <i>Generated method</i> - Getter of the <code>DemoProduct.searchable</code> attribute.
+	 * @return the searchable - Is searchable Product
 	 */
-	public String getHeight()
+	public Boolean isSearchable()
 	{
-		return getHeight( getSession().getSessionContext() );
+		return isSearchable( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>DemoProduct.height</code> attribute. 
-	 * @param value the height - Is Height Product
+	 * <i>Generated method</i> - Getter of the <code>DemoProduct.searchable</code> attribute. 
+	 * @return the searchable - Is searchable Product
 	 */
-	public void setHeight(final SessionContext ctx, final String value)
+	public boolean isSearchableAsPrimitive(final SessionContext ctx)
 	{
-		setProperty(ctx, HEIGHT,value);
+		Boolean value = isSearchable( ctx );
+		return value != null ? value.booleanValue() : false;
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>DemoProduct.height</code> attribute. 
-	 * @param value the height - Is Height Product
+	 * <i>Generated method</i> - Getter of the <code>DemoProduct.searchable</code> attribute. 
+	 * @return the searchable - Is searchable Product
 	 */
-	public void setHeight(final String value)
+	public boolean isSearchableAsPrimitive()
 	{
-		setHeight( getSession().getSessionContext(), value );
+		return isSearchableAsPrimitive( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoProduct.searchable</code> attribute. 
+	 * @param value the searchable - Is searchable Product
+	 */
+	public void setSearchable(final SessionContext ctx, final Boolean value)
+	{
+		setProperty(ctx, SEARCHABLE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoProduct.searchable</code> attribute. 
+	 * @param value the searchable - Is searchable Product
+	 */
+	public void setSearchable(final Boolean value)
+	{
+		setSearchable( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoProduct.searchable</code> attribute. 
+	 * @param value the searchable - Is searchable Product
+	 */
+	public void setSearchable(final SessionContext ctx, final boolean value)
+	{
+		setSearchable( ctx,Boolean.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoProduct.searchable</code> attribute. 
+	 * @param value the searchable - Is searchable Product
+	 */
+	public void setSearchable(final boolean value)
+	{
+		setSearchable( getSession().getSessionContext(), value );
 	}
 	
 }
