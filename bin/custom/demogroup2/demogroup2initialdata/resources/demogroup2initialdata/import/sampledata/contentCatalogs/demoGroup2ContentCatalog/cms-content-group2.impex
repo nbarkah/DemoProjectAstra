@@ -121,8 +121,8 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;AllBedsCategoryLink;All Beds Link;/c/INTHEBOX;AllBedsCategoryLink;AllBedsCategoryLink;;INTHEBOX;;
                               ;;SpringBedCategoryLink;Spring Bed Link;/c/PROPS;SpringBedCategoryLink;SpringBedCategoryLink;;PROPS;;
                               ;;SofaBedCategoryLink;Sofa Link;/c/SOFA;SofaBedCategoryLink;SofaBedCategoryLink;;SOFA;;
-                              ;;AboutUsLink;About us Link;/testimoniPage;AboutUsLink;AboutUsLink;;;;
-                              ;;BlogsLink;Blogs Link;/Bed/Sofa/c/SOFA;BlogsLink;BlogsLink;;;;
+                              ;;AboutUsLink;About us Link;/aboutUsPage;AboutUsLink;AboutUsLink;;;;
+                              ;;BlogsLink;Blogs Link;/testimoniPage;BlogsLink;BlogsLink;;;;
                               ;;GuaranteeLink;Guarantee Link;/Bed/Sofa/c/SOFA;GuaranteeLink;GuaranteeLink;;;;
                               ;;ConfirmationLink;Guarantee Link;/Bed/Sofa/c/SOFA;ConfirmationLink;ConfirmationLink;;;;
                               ;;RecommendationLink;Recommendation Link;/testing-page;RecommendationLink;RecommendationLink;;;;
@@ -807,8 +807,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 ###  Home page splash Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;D Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
-                                             ;;DemoHompageSplashBannerComponent-2;Electronics Homepage Splash Banner Component 2;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-2
+                                             ;;DemoHompageSplashBannerComponent-1;IN THE BOX BANNER 1;/c/INTHEBOX;DemoHompageSplashBannerComponent-1
+                                             ;;DemoHompageSplashBannerComponent-2;IN THE BOX BANNER 2;/c/INTHEBOX;DemoHompageSplashBannerComponent-2
 #                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
 #                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
 

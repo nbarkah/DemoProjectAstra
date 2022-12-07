@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 5, 2022, 6:17:33 PM                     ---
+ * --- Generated at Dec 6, 2022, 3:30:58 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -24,6 +24,7 @@ import org.demo.core.jalo.DemoProduct;
 import org.demo.core.jalo.DemoSizeProduct;
 import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.jalo.ElectronicsColorVariantProduct;
+import org.demo.core.jalo.HomepageCardProductCarouselComponent;
 
 /**
  * Generated class for type <code>Demogroup2CoreManager</code>.
@@ -229,6 +230,32 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public HomepageCardProductCarouselComponent createHomepageCardProductCarouselComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( Demogroup2CoreConstants.TC.HOMEPAGECARDPRODUCTCAROUSELCOMPONENT );
+			return (HomepageCardProductCarouselComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating HomepageCardProductCarouselComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public HomepageCardProductCarouselComponent createHomepageCardProductCarouselComponent(final Map attributeValues)
+	{
+		return createHomepageCardProductCarouselComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

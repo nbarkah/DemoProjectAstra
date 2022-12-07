@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 5, 2022, 6:17:33 PM                     ---
+ * --- Generated at Dec 6, 2022, 3:30:58 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -21,12 +21,15 @@ import org.demo.core.jalo.DemoSizeProduct;
 @SuppressWarnings({"deprecation","unused","cast"})
 public abstract class GeneratedDemoVariantProduct extends VariantProduct
 {
+	/** Qualifier of the <code>DemoVariantProduct.height</code> attribute **/
+	public static final String HEIGHT = "height";
 	/** Qualifier of the <code>DemoVariantProduct.sizeDimension</code> attribute **/
 	public static final String SIZEDIMENSION = "sizeDimension";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>(VariantProduct.DEFAULT_INITIAL_ATTRIBUTES);
+		tmp.put(HEIGHT, AttributeMode.INITIAL);
 		tmp.put(SIZEDIMENSION, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
@@ -34,6 +37,42 @@ public abstract class GeneratedDemoVariantProduct extends VariantProduct
 	protected Map<String, AttributeMode> getDefaultAttributeModes()
 	{
 		return DEFAULT_INITIAL_ATTRIBUTES;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>DemoVariantProduct.height</code> attribute.
+	 * @return the height - Is Height Product
+	 */
+	public String getHeight(final SessionContext ctx)
+	{
+		return (String)getProperty( ctx, HEIGHT);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>DemoVariantProduct.height</code> attribute.
+	 * @return the height - Is Height Product
+	 */
+	public String getHeight()
+	{
+		return getHeight( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoVariantProduct.height</code> attribute. 
+	 * @param value the height - Is Height Product
+	 */
+	public void setHeight(final SessionContext ctx, final String value)
+	{
+		setProperty(ctx, HEIGHT,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoVariantProduct.height</code> attribute. 
+	 * @param value the height - Is Height Product
+	 */
+	public void setHeight(final String value)
+	{
+		setHeight( getSession().getSessionContext(), value );
 	}
 	
 	/**
