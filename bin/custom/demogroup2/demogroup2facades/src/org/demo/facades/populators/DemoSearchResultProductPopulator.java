@@ -10,5 +10,6 @@ public class DemoSearchResultProductPopulator extends SearchResultProductPopulat
     public void populate(final SearchResultValueData source, final ProductData target) throws ConversionException {
         target.setSizeDimension(this.<String>getValue(source, "sizeDimension"));
         target.setSizeType(this.<String>getValue(source, "sizeType"));
+        target.setBrands(this.<String>getValue(source, "brands"));
     }
 }

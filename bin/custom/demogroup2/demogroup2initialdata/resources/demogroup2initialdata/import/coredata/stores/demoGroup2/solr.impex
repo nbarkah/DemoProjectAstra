@@ -134,12 +134,13 @@ INSERT_UPDATE SolrSortField;sort(indexedType(identifier),code)[unique=true];fiel
 
 # Add new indexed property
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
-                                 ; $solrIndexedType                          ; sizeDimension           ; string    ; false                          ;                      ; Refine         ; Alpha          ; 300   ; true  ; false                        ; sizeValueProvider            ;
-                                 ; $solrIndexedType                          ; sizeType                ; string    ; false                          ;                      ; MultiSelectOr  ; Alpha          ; 500   ; true  ; false                        ; sizeValueProvider            ;
+                                 ; $solrIndexedType                          ; sizeDimension           ; string    ; false                          ;                      ; Refine         ; Alpha          ; 100   ; true  ; false                        ; sizeValueProvider            ;
+                                 ; $solrIndexedType                          ; sizeType                ; string    ; false                          ;                      ; MultiSelectOr  ; Alpha          ; 200   ; true  ; false                        ; sizeValueProvider            ;
 
 # Price
-INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; multiValue[default = true]; facet[default = true]; facetType(code);facetSort(code);  priority; visible; categoryField[default = true]
-                                 ; $solrIndexedType                          ; priceValue         ; false                     ;                      ; MultiSelectOr  ;Alpha          ; 400      ;true; false
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true];  multiValue[default = true]; facet[default = true]; facetType(code);facetSort(code);  priority; visible; categoryField[default = true]
+                                 ; $solrIndexedType                          ; priceValue         ;    false                     ;                      ; MultiSelectOr  ;Alpha          ; 400      ;true; false
 
-#INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); priority; visible; fieldValueProvider
-#                                 ; $solrIndexedType                          ; merk           ; string    ; false                     ;                      ; Refine         ; 600     ; true   ; springELValueProvider
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
+                                 ; $solrIndexedType                          ; brands              ; string    ; false                          ;                      ; Refine         ; Alpha          ; 300   ; true  ; false                        ; sizeValueProvider            ;
+
