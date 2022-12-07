@@ -167,11 +167,11 @@ INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]       
                                 ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-160            ;INTHEBOX Organix Plush 160 x 200  ;QueenSize          ;32 cm;"BED"             ;                    ;                             ;          ;                ;
                                 ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-180            ;INTHEBOX Organix Plush 180 x 200  ;KingSize           ;32 cm;"BED"             ;                    ;                             ;          ;                ;
                                 ; ORGANIX-PLUSH   ; ORGANIX-PLUSH-200            ;INTHEBOX Organix Plush 200 x 200  ;SuperKingSize      ;32 cm;"BED"             ;                    ;                             ;          ;                ;
-                                ; KASUR-LIPAT     ; KASUR-LIPAT-80               ;Kasur Busa Lipat Travel Mattress 80 x 200  ;          ;"BED"             ;                    ;                             ;          ;                ;
+                                ; KASUR-LIPAT     ; KASUR-LIPAT-80               ;Kasur Busa Lipat Travel Mattress 80 x 200  ;          ;;"BED"             ;                    ;                             ;          ;                ;
 
-                                ; SOFA          ; SOFA-3-SEATER                  ;INTHEBOX Sofa 3 Seater        ;         ;"SOFA"             ;                    ;                             ;          ;                ;
-                                ; SOFA          ; SOFA-3-SEATER-BLACK            ;INTHEBOX Sofa 3 Seater BLACK  ;         ;"SOFA"             ;                    ;                             ;          ;                ;
-                                ; SOFA-BED      ; SOFA-BED-100                   ;SOFA BED Super Single                  ;SuperSingleSize         ;"SOFA"             ;                    ;                             ;          ;                ;
+                                ; SOFA          ; SOFA-3-SEATER                  ;INTHEBOX Sofa 3 Seater        ;         ;;"SOFA"             ;                    ;                             ;          ;                ;
+                                ; SOFA          ; SOFA-3-SEATER-BLACK            ;INTHEBOX Sofa 3 Seater BLACK  ;         ;;"SOFA"             ;                    ;                             ;          ;                ;
+                                ; SOFA-BED      ; SOFA-BED-100                   ;SOFA BED Super Single                  ;SuperSingleSize         ;;"SOFA"             ;                    ;                             ;          ;                ;
 
-                                ; BANTAL ; BANTAL-INTHEBOX                  ;BANTAL INTHEBOX  ;         ;"PROPS"             ;                    ;                             ;          ;                ;
-                                ; GULING ; GULING-INTHEBOX                  ;Guling INTHEBOX  ;         ;"PROPS"             ;                    ;                             ;          ;                ;
+                                ; BANTAL ; BANTAL-INTHEBOX                  ;BANTAL INTHEBOX  ;         ;;"PROPS"             ;                    ;                             ;          ;                ;
+                                ; GULING ; GULING-INTHEBOX                  ;Guling INTHEBOX  ;         ;;"PROPS"             ;                    ;                             ;          ;                ;
