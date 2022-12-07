@@ -110,6 +110,8 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
                              ;PlaceholderContentSlot;;;
 
 
+
+
 # Product List / Grid are two layouts for Category Browsing pages
 
 # Product List Page Template
@@ -365,14 +367,6 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 
 # Login Page Template
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
-                             ;SiteLogo;;;logo
-                             ;HeaderLinks;;;headerlinks
-                             ;SearchBox;;;searchbox
-                             ;MiniCart;;;minicart
-                             ;NavigationBar;;;navigation
-                             ;Footer;;;footer
-                             ;TopHeaderSlot;;;wide
-                             ;BottomHeaderSlot;;;wide
                              ;LeftContentSlot;;;wide
                              ;RightContentSlot;;;wide
                              ;PlaceholderContentSlot;;;
@@ -707,15 +701,6 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-                                    ;;SiteLogo-LoginPage;SiteLogo;;SiteLogoSlot;true
-                                    ;;HomepageLink-LoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
-                                    ;;NavigationBar-LoginPage;NavigationBar;;NavigationBarSlot;true
-                                    ;;MiniCart-LoginPage;MiniCart;;MiniCartSlot;true
-                                    ;;Footer-LoginPage;Footer;;FooterSlot;true
-                                    ;;HeaderLinks-LoginPage;HeaderLinks;;HeaderLinksSlot;true
-                                    ;;SearchBox-LoginPage;SearchBox;;SearchBoxSlot;true
-                                    ;;TopHeaderSlot-LoginPage;TopHeaderSlot;;TopHeaderSlot;true
-                                    ;;BottomHeaderSlot-LoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
                                     ;;LeftContentSlot-LoginPage;LeftContentSlot;;LeftContentSlot;true
                                     ;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
                                     ;;PlaceholderContentSlot-LoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
@@ -943,3 +928,6 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
                          ;;demoGroup2-page;DemoGroup2 Page;DemoGroup2PageTemplate;demoGroup2-page
                          ;;testing-page;Testing Page;DemoGroup2PageTemplate;testing-page
+
+REMOVE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+                             ;;Footer-LoginPage;Footer;;FooterSlot;true

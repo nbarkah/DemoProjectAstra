@@ -7,33 +7,68 @@
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement"%>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 
+<style>
+    .login-image{
+        display:flex;
+        justify-content:center;
+        width:20em;
+    }
+
+    .login-headline-text{
+        font-size:0.8em;
+        margin-top:1em;
+        color:gray;
+        text-align:center;
+    }
+
+    .forget-pass{
+        text-align:right;
+    }
+
+    .form-style{
+        background-color: rgba(235, 237, 242, 0.6);
+        border:none;
+        border-radius:1em;
+        height:2.5em;
+    }
+
+    .button-login{
+        border-radius:2em;
+        height:2.5em;
+        font-size:1.2em;
+    }
+</style>
+
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:set var="hideDescription" value="checkout.login.loginAndCheckout" />
 
-<div class="login-page__headline">
-	<spring:theme code="login.title" />
+<div class="login-page__headline" >
+    <div class="login-image">
+	    <img src="https://inthebox.net/images/logo-inthebox-440x80.png" style="max-width: 300px">
+    </div>
+    <p class="login-headline-text">Masuk</p>
 </div>
 
 <c:if test="${actionNameKey ne hideDescription}">
 	<p>
-		<spring:theme code="login.description" />
+		<spring:theme code="" />
 	</p>
 </c:if>
 
 <form:form action="${action}" method="post" modelAttribute="loginForm">
 	<c:if test="${not empty message}">
-		<span class="has-error"> <spring:theme code="${message}" />
+		<span class="has-error"> <spring:theme code="${message}"/>
 		</span>
-	</c:if>	
+	</c:if>
 	
-		<formElement:formInputBox idKey="j_username" labelKey="login.email"
-			path="j_username" mandatory="true" />
+		<formElement:formInputBox idKey="j_username" labelKey="email"
+			path="j_username" mandatory="true" inputCSS="form-style" />
 		<formElement:formPasswordBox idKey="j_password"
-			labelKey="login.password" path="j_password" inputCSS="form-control"
+			labelKey="login.password" path="j_password" inputCSS="form-control form-style"
 			mandatory="true" />
 	
-			<div class="forgotten-password">
+			<div class="forgotten-password forget-pass">
 				<ycommerce:testId code="login_forgotPassword_link">
 					<a href="#" data-link="<c:url value='/login/pw/request'/>" class="js-password-forgotten" data-cbox-title="<spring:theme code="forgottenPwd.title"/>">
 						<spring:theme code="login.link.forgottenPwd" />
@@ -41,7 +76,7 @@
 				</ycommerce:testId>
 			</div>
 		<ycommerce:testId code="loginAndCheckoutButton">
-			<button type="submit" class="btn btn-primary btn-block">
+			<button type="submit" class="btn-primary btn-block button-login">
 				<spring:theme code="${actionNameKey}" />
 			</button>
 		</ycommerce:testId>

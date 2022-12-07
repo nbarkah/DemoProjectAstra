@@ -9,35 +9,59 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 
+<style>
+    .regis-image{
+       display:flex;
+       justify-content:center;
+       width:20em;
+    }
+
+    .regis-title {
+        font-size:0.8em;
+        font-weight:800;
+        color:gray;
+        text-align:center;
+        margin-top:2em;
+    }
+
+    .regis-subtitle{
+        font-size:0.6em;
+        font-weight:600;
+        text-align:center;
+    }
+</style>
+
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <spring:url value="/login/register/termsandconditions" var="getTermsAndConditionsUrl"/>
 
 <div class="user-register__headline">
-	<spring:theme code="register.new.customer" />
+	<spring:theme code="" />
+	<div class="regis-image">
+    	<img src="https://inthebox.net/images/logo-inthebox-440x80.png" style="max-width: 300px">
+    </div>
+    <h1 class="regis-title">Daftar Sekarang </p>
+    <p class="regis-subtitle">Masukan detail anda untuk menciptakan akun</p>
 </div>
-<p>
-	<spring:theme code="register.description" />
-</p>
 
-<form:form method="post" modelAttribute="registerForm" action="${action}">
+<form:form method="post" modelAttribute="registerForm" action="${action}" inputCSS="regis-width" >
 	<formElement:formSelectBoxDefaultEnabled idKey="register.title"
-		labelKey="register.title" selectCSSClass="form-control"
+		labelKey="register.title" selectCSSClass="form-control form-style"
 		path="titleCode" mandatory="true" skipBlank="false"
 		skipBlankMessageKey="form.select.none" items="${titles}" />
 	<formElement:formInputBox idKey="register.firstName"
-		labelKey="register.firstName" path="firstName" inputCSS="form-control"
+		labelKey="register.firstName" path="firstName" inputCSS="form-control form-style"
 		mandatory="true" />
 	<formElement:formInputBox idKey="register.lastName"
-		labelKey="register.lastName" path="lastName" inputCSS="form-control"
+		labelKey="register.lastName" path="lastName" inputCSS="form-control form-style"
 		mandatory="true" />
 	<formElement:formInputBox idKey="register.email"
-		labelKey="register.email" path="email" inputCSS="form-control"
+		labelKey="register.email" path="email" inputCSS="form-control form-style"
 		mandatory="true" />
 	<formElement:formPasswordBox idKey="password" labelKey="register.pwd"
-		path="pwd" inputCSS="form-control password-strength" mandatory="true" />
+		path="pwd" inputCSS="form-control password-strength form-style" mandatory="true" />
 	<formElement:formPasswordBox idKey="register.checkPwd"
-		labelKey="register.checkPwd" path="checkPwd" inputCSS="form-control"
+		labelKey="register.checkPwd" path="checkPwd" inputCSS="form-control form-style"
 		mandatory="true" />
 
     <c:if test="${ not empty consentTemplateData }">
@@ -71,7 +95,7 @@
 	<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
 	<div class="form-actions clearfix">
 		<ycommerce:testId code="register_Register_button">
-			<button type="submit" class="btn btn-default btn-block" disabled="disabled">
+			<button type="submit" class="daftar-button btn-default btn-block" disabled="disabled">
 				<spring:theme code='${actionNameKey}' />
 			</button>
 		</ycommerce:testId>
