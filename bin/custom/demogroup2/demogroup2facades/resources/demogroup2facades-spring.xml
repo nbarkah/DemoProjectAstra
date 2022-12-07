@@ -192,6 +192,9 @@
 	<alias name="testimoniPopulator" alias="testimoniPopulator"/>
 	<bean id="testimoniPopulator" class="org.demo.facades.populators.TestimoniPopulator"/>
 
+	<alias name="unboxingCarouselPopulator" alias="unboxingCarouselPopulator"/>
+	<bean id="unboxingCarouselPopulator" class="org.demo.facades.populators.UnboxingCarouselPopulator"/>
+
 	<bean id="personBasicConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
 		<property name="populators">
@@ -215,6 +218,15 @@
 		<property name="populators">
 			<list merge="true">
 				<ref bean="testimoniPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="unboxingCarouselConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.ITBCarousel.data.ITBCarouselData"/>
+		<property name="populators" >
+			<list merge="true">
+				<ref bean="unboxingCarouselPopulator" />
 			</list>
 		</property>
 	</bean>

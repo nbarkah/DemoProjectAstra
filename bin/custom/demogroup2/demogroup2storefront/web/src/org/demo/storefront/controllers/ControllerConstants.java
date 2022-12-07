@@ -17,6 +17,7 @@ import de.hybris.platform.acceleratorcms.model.components.SubCategoryListCompone
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
 import org.demo.core.model.HomepageCardProductCarouselComponentModel;
+import org.demo.core.model.HomepageUnboxingITBCarouselComponentModel;
 
 
 /**
@@ -49,6 +50,7 @@ public interface ControllerConstants
 			String ProductCarouselComponent = _Prefix + ProductCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
 
 			String HomepageCardProductCarouselComponent = _Prefix + HomepageCardProductCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
+			String HomepageUnboxingITBCarouselComponent = _Prefix + HomepageUnboxingITBCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String MiniCartComponent = _Prefix + MiniCartComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String ProductFeatureComponent = _Prefix + ProductFeatureComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String CategoryFeatureComponent = _Prefix + CategoryFeatureComponentModel._TYPECODE + _Suffix; // NOSONAR

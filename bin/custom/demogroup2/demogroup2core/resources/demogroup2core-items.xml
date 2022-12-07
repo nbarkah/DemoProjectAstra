@@ -200,6 +200,34 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="FeatureTileComponent" extends="HomepageFeaturesComponent" generate="true"
+                      autocreate="true" jaloclass="org.astra.motor.core.jalo.FeatureTileComponent">
+                <description>tile component of amanda feature</description>
+                <attributes>
+                    <attribute qualifier="description" type="java.lang.String" generate="true" autocreate="true">
+                        <description>description of the tile feature</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="HomepageFeaturesComponent" extends="SimpleCMSComponent" generate="true"
+                      autocreate="true" jaloclass="org.astra.motor.core.jalo.AstraMotorAmandaFeaturesComponent">
+                <description>feature section of amanda page</description>
+                <attributes>
+                    <attribute qualifier="title" type="java.lang.String" generate="true" autocreate="true">
+                        <description>text on the header section</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="subtitle" type="java.lang.String" generate="true" autocreate="true">
+                        <description>sub title shown below the title</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="featureTiles" type="FeatureTileComponentList" generate="true" autocreate="true">
+                        <description>list of feature tiles</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
 
         </typegroup>
 
