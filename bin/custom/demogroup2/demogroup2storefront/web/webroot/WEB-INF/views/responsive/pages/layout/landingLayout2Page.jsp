@@ -5,31 +5,15 @@
 
 <template:page pageTitle="${pageTitle}">
 
-    <div class="homepage-banner">
+    <div class="homepage-banner" style="background-color: yellow;">
         <cms:pageSlot position="Section1" var="feature">
             <cms:component component="${feature}" element="div" class="banner"/>
         </cms:pageSlot>
     </div>
 
-    <div class="row no-margin">
-        <div class="col-xs-12 col-md-6 no-space">
-            <cms:pageSlot position="Section2A" var="feature" element="div" class="row no-margin">
-                <cms:component component="${feature}" element="div" class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>
-            </cms:pageSlot>
-        </div>
-        <div class="col-xs-12 col-md-6 no-space">
-            <cms:pageSlot position="Section2B" var="feature" element="div" class="row no-margin">
-                <cms:component component="${feature}" element="div" class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>
-            </cms:pageSlot>
-        </div>
-        <div class="col-xs-12">
-            <cms:pageSlot position="Section2C" var="feature" element="div" class="landingLayout2PageSection2C">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-            </cms:pageSlot>
-        </div>
-    <div class="homepage-banner" style="background-color: yellow;">
-        <cms:pageSlot position="Section1" var="feature">
-                <cms:component component="${feature}" element="div" class="banner"/>
+    <div class="">
+        <cms:pageSlot position="Section2" var="feature" element="div" class="row no-margin">
+            <cms:component component="${feature}" element="div" class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>
         </cms:pageSlot>
     </div>
 
@@ -40,9 +24,9 @@
     </div>
 
     <div class="homepage-unboxing-itb">
-    <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
-        <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
-    </cms:pageSlot>
+        <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
+            <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
+        </cms:pageSlot>
     </div>
 
     <cms:pageSlot position="Section5" var="feature" element="div">
