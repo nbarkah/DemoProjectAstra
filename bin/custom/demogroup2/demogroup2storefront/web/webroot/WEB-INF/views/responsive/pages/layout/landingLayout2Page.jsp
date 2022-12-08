@@ -19,7 +19,7 @@
 
     <div class="homepage-card-product" style="background-color:#6086c2;">
         <cms:pageSlot position="Section3" var="feature" >
-            <cms:component component="${feature}" element="div" class="card-product"/>
+            <cms:component component="${feature}" element="div" class="card-product no-space yComponentWrapper"/>
         </cms:pageSlot>
     </div>
 
@@ -29,8 +29,10 @@
         </cms:pageSlot>
     </div>
 
-    <cms:pageSlot position="Section5" var="feature" element="div">
-        <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-    </cms:pageSlot>
+    <div class="">
+        <cms:pageSlot position="Section5" var="feature" element="div">
+            <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
+        </cms:pageSlot>
+    </div>
 
 </template:page>
