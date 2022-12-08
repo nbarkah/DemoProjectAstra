@@ -38,12 +38,4 @@
 		<property name="image" type="String"/>
 	</bean>
 
-
-
-	<bean class="org.demo.facades.ITBCarousel.data.ITBCarouselData">
-		<property name="code" type="String"/>
-		<property name="title" type="String"/>
-		<property name="description" type="String"/>
-		<property name="image" type="String"/>
-	</bean>
 </beans>
