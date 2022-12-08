@@ -177,28 +177,7 @@
             <itemtype code="HomepageCardProductCarouselComponent" generate="true" autocreate="true" extends="ProductCarouselComponent">
             </itemtype>
 
-            <itemtype code="HomepageUnboxingITBCarouselComponent" autocreate="true" generate="true">
-                <deployment table="ITBCarousel" typecode="12357"/>
-                <attributes>
-                    <attribute qualifier="code" type="java.lang.String" >
-                        <description>Code Carousel</description>
-                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
-                        <persistence type="property" />
-                    </attribute>
-                    <attribute qualifier="title" type="java.lang.String">
-                        <modifiers  read="true" write="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="description" type="java.lang.String">
-                        <modifiers   read="true" write="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="image" type="CatalogUnawareMedia">
-                        <modifiers   read="true" write="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                </attributes>
-            </itemtype>
+
 
 
             <itemtype code="HomepageFeaturesComponent" extends="SimpleCMSComponent" generate="true"
