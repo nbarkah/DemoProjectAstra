@@ -566,4 +566,13 @@
 	<bean id="defaultTestiService" class="org.demo.core.testimoni.message.service.DefaultTestiService">
 	</bean>
 
+	<!-- Dao Book -->
+	<alias name="defaultITBCarouselDao" alias="ITBCarouselDao"/>
+	<bean id="defaultITBCarouselDao" class="org.demo.core.ITBCarousel.dao.impl.DefaultITBCarouselDao">
+	</bean>
+	<!-- Service Book -->
+	<alias name="defaultITBCarouselService" alias="ITBCarouselService"/>
+	<bean id="defaultITBCarouselService" class="org.demo.core.ITBCarousel.impl.DefaultITBCarouselService">
+	</bean>
+
 </beans>

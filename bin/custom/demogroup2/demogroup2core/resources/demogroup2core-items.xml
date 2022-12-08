@@ -137,16 +137,7 @@
 
         <typegroup name="DemoGroup2">
             <itemtype code="DemoProduct" autocreate="true" generate="true" extends="Product">
-                <attributes>
-                    <attribute qualifier="searchable" type="java.lang.Boolean">
-                        <description>Is searchable Product</description>
-                        <modifiers />
-                        <defaultvalue>Boolean.valueOf(true)</defaultvalue>
-                        <persistence type="property" />
-                    </attribute>
-                </attributes>
             </itemtype>
-
             <itemtype code="DemoVariantProduct" extends="VariantProduct" autocreate="true" generate="true">
                 <attributes>
                     <attribute qualifier="height" type="java.lang.String">
@@ -185,6 +176,65 @@
 
             <itemtype code="HomepageCardProductCarouselComponent" generate="true" autocreate="true" extends="ProductCarouselComponent">
             </itemtype>
+
+            <itemtype code="HomepageUnboxingITBCarouselComponent" autocreate="true" generate="true">
+                <deployment table="ITBCarousel" typecode="12357"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String" >
+                        <description>Code Carousel</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="title" type="java.lang.String">
+                        <modifiers  read="true" write="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="description" type="java.lang.String">
+                        <modifiers   read="true" write="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="image" type="CatalogUnawareMedia">
+                        <modifiers   read="true" write="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+
+            <itemtype code="HomepageFeaturesComponent" extends="SimpleCMSComponent" generate="true"
+                      autocreate="true" >
+                <description>feature section of demo group 2 page</description>
+                <attributes>
+                    <attribute qualifier="image" type="CatalogUnawareMedia">
+                        <modifiers   read="true" write="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="title" type="java.lang.String" generate="true" autocreate="true">
+                        <description>text on the header section</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="subtitle" type="java.lang.String" generate="true" autocreate="true">
+                        <description>sub title shown below the title</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="featureTiles" type="FeatureTileComponent" generate="true" autocreate="true">
+                        <description>list of feature tiles</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="FeatureTileComponent" extends="HomepageFeaturesComponent" generate="true"
+                      autocreate="true" >
+                <description>tile component of demo group 2 feature</description>
+                <attributes>
+                    <attribute qualifier="description" type="java.lang.String" generate="true" autocreate="true">
+                        <description>description of the tile feature</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
         </typegroup>
 
         <typegroup name="TestimoniProduct">

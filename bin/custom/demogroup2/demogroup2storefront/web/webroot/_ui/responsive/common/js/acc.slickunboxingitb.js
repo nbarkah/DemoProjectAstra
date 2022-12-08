@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    $(".homepage-card-product").slick({
+    $(".homepage-unboxing-itb").slick({
       infinite: true,
       speed: 300,
-      slidesToShow: 3,
+      slidesToShow: 4,
     });
 });
 

@@ -362,6 +362,7 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;ch
 # CMS Navigation Nodes
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
                                ;SiteRootNode;;SiteRootNode;root;;SiteRootNode
+#                               ;ElectronicsNavNode;;Electronics Site;SiteRootNode;HomepageNavLink;ElectronicsNavNode
                                ;DemoNavNode;;demoGroup2s Site;SiteRootNode;HomepageNavLink;demoGroup2NavNode
                                ;AllBedsNavNode;;Beds Links;DemoNavNode;AllBedsCategoryLink;AllBedsNavNode
                                ;BrandsNavNode;;Brand Links;DemoNavNode;AllBrandsCategoryLink;BrandsNavNode
@@ -1342,8 +1343,8 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-                                ;SpringbedNavNodeEntry;;Springbed Navigation Node Entry;SpringbedNavNode;SpringBedCategoryLink;
                                 ;SofabedNavNodeEntry;;Sofabed Brand Navigation Node Entry;SofabedNavNode;SofaBedCategoryLink;
+                                ;SpringbedNavNodeEntry;;Springbed Navigation Node Entry;SpringbedNavNode;SpringBedCategoryLink;
                                 ;Rec1NavNodeEntry;;Sofabed Brand Navigation Node Entry;RecNavNode1;RecommendationLink1;
                                 ;Rec2NavNodeEntry;;Sofabed Brand Navigation Node Entry;RecNavNode2;RecommendationLink2;
 ##### Navigation Component Refactor End ######
@@ -1407,7 +1408,7 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 
 # Testing page
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;TestingBannerComponent-1;Banner Component 1;/c/INTHEBOX;TestingBannerComponent-1
+                                             ;;TestingBannerComponent-1;Banner Component 1;/c/BED;TestingBannerComponent-1
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
                          ;;MiddleContent-TestingPage;Middle Content Slot for Testing Page;true;TestingBannerComponent-1

@@ -248,11 +248,16 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
                    ;widescreen;;banner-homepage-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
                    ;widescreen;;banner-homepage-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-1400x440.png;;banner-homepage-1400x440.png;;"IN THE BOX 2"
+                   ;widescreen;;unboxing-itb-1.png;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
+                   ;widescreen;;unboxing-itb-2.png;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
+                   ;widescreen;;unboxing-itb-3.png;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
+                   ;widescreen;;unboxing-itb-4.png;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
 #                   ;widescreen;;banner-homepage-3-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
 #                   ;widescreen;;banner-homepage-4-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
                    ;widescreen;;discount-banner-1400.png;$siteResource/images/banners/homepage/responsive/discount-banner-1400.png;;discount-banner-1400.png;;"IN THE BOX"
                    ;mobile;;banner-homepage-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
                    ;mobile;;banner-homepage-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-480x320.png;;banner-homepage-480x320.png;;"IN THE BOX2"
+
 #                   ;mobile;;banner-homepage-2-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
 #                   ;mobile;;banner-homepage-4-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
                    ;mobile;;discount-banner-480.png;$siteResource/images/banners/homepage/responsive/discount-banner-480.png;;discount-banner-480.png;;"IN THE BOX"
@@ -267,17 +272,36 @@ INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=t
 #                   ;desktop;;banner-homepage-4-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
                    ;desktop;;discount-banner-960.png;$siteResource/images/banners/homepage/responsive/discount-banner-960.png;;discount-banner-960.png;;"IN THE BOX"
 
+UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang];$picture[lang=$lang];description[lang=$lang]
+                               ;;UnboxingITB1Component;Keluarkan;unboxing-itb-1.png;"Keluarkan Kasur INTHEBOX dari kemasannya secara perlahan-lahan"
+                               ;;UnboxingITB2Component;Posisikan;unboxing-itb-2.png;"Keluarkan Kasur INTHEBOX dari kemasannya secara perlahan-lahan"
+                               ;;UnboxingITB3Component;Buka Plastik;unboxing-itb-3.png;"Lepaskan Plastik Pembungkus dan Pastikan logo INTHEBOX ada di bawah"
+                               ;;UnboxingITB4Component;Tunggu Mengembang;unboxing-itb-4.png;"Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan"
+#                               ;;BlankVideoTapesFeatureComponent;Blank Video Tapes;Elec_96x96_CatVTapes_EN_01.jpg;"High quality VHS and 8mm Camcorder Tapes"
+#                               ;;CameraFlashesFeatureComponent;Camera Flashes;Elec_96x96_CatFlash_EN_01.jpg;"Bring extra quality to your pictures with a Flashgun..."
+#                               ;;CameraLensesFeatureComponent;Camera Lenses;Elec_96x96_CatLenses_EN_01.jpg;"Change lenses to suit a huge range of scenes & situations"
+#                               ;;ColourFilmsFeatureComponent;Colour Films;Elec_96x96_CatColFilm_EN_01.jpg;"Colour film to make you feel like a true photo hero"
+#                               ;;TripodFeatureComponent;Tripods;Elec_96x96_CatTripod_EN_01.jpg;"The photo and film enthusiasts 3-legged friend"
+
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-                            ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
+#                            ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
                             ;demo-homepage-spalsh-1-en;banner-homepage-2-1400x440.png,banner-homepage-2-480x320.png,banner-homepage-2-770x350.png,banner-homepage-2-960x330.png
                             ;demo-homepage-spalsh-2-en;banner-homepage-1400x440.png,banner-homepage-480x320.png,banner-homepage-770x350.png,banner-homepage-960x330.png
+                            ;demo-homepage-unboxing-itb-1-en;unboxing-itb-1.png
+                            ;demo-homepage-unboxing-itb-2-en;unboxing-itb-2.png
+                            ;demo-homepage-unboxing-itb-3-en;unboxing-itb-3.png
+                            ;demo-homepage-unboxing-itb-4-en;unboxing-itb-4.png
 #                            ;demo-homepage-spalsh-3-en;banner-3-demo-1400x440.jpg,banner-3-demo-480x320.jpg,banner-3-demo-770x350.jpg,banner-3-demo-960x330.png
 #                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-                                             ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
+ #                                            ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
                                              ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
+                                             ;;DemoHompageUnboxingITBComponent-1;demo-homepage-unboxing-itb-1-en
+                                             ;;DemoHompageUnboxingITBComponent-2;demo-homepage-unboxing-itb-2-en
+                                             ;;DemoHompageUnboxingITBComponent-3;demo-homepage-unboxing-itb-3-en
+                                             ;;DemoHompageUnboxingITBComponent-4;demo-homepage-unboxing-itb-4-en
 #                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
 #                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
 
