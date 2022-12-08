@@ -40,6 +40,13 @@
             </ycommerce:testId>
         </div>
 
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.brands}">
+                ${ycommerce:sanitizeHTML(product.brands)}</a>
+            </ycommerce:testId>
+        </div>
+
+
 
 		<div class="product__list--price-panel">
 			<c:if test="${not empty product.potentialPromotions}">

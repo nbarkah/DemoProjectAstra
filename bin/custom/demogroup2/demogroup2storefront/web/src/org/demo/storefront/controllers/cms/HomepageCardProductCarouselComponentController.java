@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -28,6 +30,7 @@ public class HomepageCardProductCarouselComponentController extends AbstractAcce
 
     @Override
     protected void fillModel(HttpServletRequest request, Model model, HomepageCardProductCarouselComponentModel component) {
+
         model.addAttribute("title", component.getTitle());
         model.addAttribute("productData", productConverter.convertAll(component.getProducts()));
     }

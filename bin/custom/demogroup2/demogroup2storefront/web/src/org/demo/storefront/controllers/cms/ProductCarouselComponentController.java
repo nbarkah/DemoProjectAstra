@@ -50,7 +50,7 @@ public class ProductCarouselComponentController extends AbstractAcceleratorCMSCo
 		products.addAll(collectSearchProducts(component));
 
 		model.addAttribute("title", component.getTitle());
-		model.addAttribute("productData", products);
+		model.addAttribute("productData", component.getProducts());
 	}
 
 	protected List<ProductData> collectLinkedProducts(final ProductCarouselComponentModel component)
