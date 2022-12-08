@@ -204,7 +204,6 @@ UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);default
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
                    ;;/images/inthebox/Navbar/header-logo-white.png;header-logo-white.png;$siteResource/images/inthebox/Navbar/header-logo-white.png;image/png;hybris In The Box;
-                   ;;/images/theme/logo-hybris_zh.png;logo-hybris_zh.png;$siteResource/images/theme/logo-hybris_zh.png;image/png;hybris Accelerator;
 
 # Site Logo Component
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
