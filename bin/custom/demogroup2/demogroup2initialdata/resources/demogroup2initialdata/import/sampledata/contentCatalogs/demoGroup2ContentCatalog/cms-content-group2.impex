@@ -200,7 +200,7 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
-              ;demoGroup2;BED;INTHEBOX-FLIP-Z;$productCatalog
+              ;demoGroup2;INTHEBOX;INTHEBOX-FLIP-Z;$productCatalog
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
@@ -216,14 +216,14 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;HomepageNavLink;Home Page Nav Link;/;HomepageNavLink;HomepageNavLink;;;;
                               ;;StoreFinderLink;Store Finder Link;/store-finder;StoreFinderLink;StoreFinderLink;;;;
                               ;;LoginLink;Login Link;/login;LoginLink;LoginLink;;;;
-                              ;;AllBrandsCategoryLink;All Brands Category Link;/c/BED;AllBrandsCategoryLink;AllBrandsCategoryLink;;BED;;
-                              ;;AllBedsCategoryLink;All Beds Link;/c/BED;AllBedsCategoryLink;AllBedsCategoryLink;;BED;;
-                              ;;SofaBedCategoryLink;Sofa Link;/c/TROUSER;SofaBedCategoryLink;SofaBedCategoryLink;;SOFA;;
-                              ;;SpringBedCategoryLink;Spring Bed Link;/c/SHIRT;SpringBedCategoryLink;SpringBedCategoryLink;;PROPS;;
-                              ;;AboutUsLink;About us Link;/Bed/Sofa/c/SOFA;AboutUsLink;AboutUsLink;;;;
-                              ;;BlogsLink;Blogs Link;/Bed/Sofa/c/SOFA;BlogsLink;BlogsLink;;;;
-                              ;;GuaranteeLink;Guarantee Link;/Bed/Sofa/c/SOFA;GuaranteeLink;GuaranteeLink;;;;
-                              ;;ConfirmationLink;Guarantee Link;/Bed/Sofa/c/SOFA;ConfirmationLink;ConfirmationLink;;;;
+                              ;;AllBrandsCategoryLink;All Brands Category Link;/c/INTHEBOX;AllBrandsCategoryLink;AllBrandsCategoryLink;;INTHEBOX;;
+                              ;;AllBedsCategoryLink;All Beds Link;/c/INTHEBOX;AllBedsCategoryLink;AllBedsCategoryLink;;INTHEBOX;;
+                              ;;SpringBedCategoryLink;Spring Bed Link;/c/PROPS;SpringBedCategoryLink;SpringBedCategoryLink;;PROPS;;
+                              ;;SofaBedCategoryLink;Sofa Link;/c/SOFA;SofaBedCategoryLink;SofaBedCategoryLink;;SOFA;;
+                              ;;AboutUsLink;About us Link;/aboutUsPage;AboutUsLink;AboutUsLink;;;;
+                              ;;BlogsLink;Blogs Link;/testimony;BlogsLink;BlogsLink;;;;
+                              ;;GuaranteeLink;Guarantee Link;/;GuaranteeLink;GuaranteeLink;;;;
+                              ;;ConfirmationLink;Guarantee Link;/;ConfirmationLink;ConfirmationLink;;;;
                               ;;RecommendationLink;Recommendation Link;/testing-page;RecommendationLink;RecommendationLink;;;;
                               ;;RecommendationLink1;Recommendation Link 1;/testing-page;RecommendationLink1;RecommendationLink1;;;;
                               ;;RecommendationLink2;Recommendation Link 2;/testing-page;RecommendationLink2;RecommendationLink2;;;;
@@ -296,7 +296,7 @@ INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true
 
 # CMS PurchasedCategorySuggestion Components
 INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
-                                                  ;;PurchasedCategorySuggestions;Purchased Category Suggestions;OTHERS;2;true;BED;PurchasedCategorySuggestions
+                                                  ;;PurchasedCategorySuggestions;Purchased Category Suggestions;OTHERS;2;true;INTHEBOX;PurchasedCategorySuggestions
 
 # CMS CartSuggestion Components
 INSERT_UPDATE CartSuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;&componentRef
@@ -370,76 +370,13 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
                                ;BlogsNavNode;;Blogs Links;DemoNavNode;BlogsLink;BlogsNavNode
                                ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
                                ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode
-
-                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SofaBedCategoryLink,SpringBedCategoryLink;BedLinksNavNode
-                               ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
+                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SpringBedCategoryLink,SofaBedCategoryLink;BedLinksNavNode
                                ;SpringbedNavNode;;Springbed Links;BedLinksNavNode;SpringBedCategoryLink;SpringbedNavNode
-
-
-#                                ;AccessoryBrandLinksNavNode;;Accessory Brand Links;BrandsNavNode;KingstonBrandCategoryLink,IciduBrandCategoryLink,TDKBrandCategoryLink,SweexBrandCategoryLink;AccessoryBrandLinksNavNode
-#                               ;DigitalCameraTypesNavNode;;Digital Camera Type Links;DigitalCamerasNavNode;DigitalCompactsCategoryLink,DigitalSLRCategoryLink;DigitalCameraTypesNavNode
-#                               ;DigitalCamerasNavNode;;Digital Cameras Category;;DigitalCamerasCategoryLink;DigitalCamerasNavNode
-#                               ;FilmCamerasNavNode;;Film Cameras Category;;FilmCamerasCategoryLink;FilmCamerasNavNode
-#                               ;WebcamsNavNode;;Webcams Category;;;WebcamsNavNode
-#                               ;CameraAccessoriesNavNode;;Camera Accessories Category;;CameraAccessoriesCategoryLink;CameraAccessoriesNavNode
-#                               ;HandheldCamcordersNavNode;;Hand-held Camcorders Category;;HandheldCamcordersCategoryLink;HandheldCamcordersNavNode
-#                               ;PowerSuppliesNavNode;;Power Supplies Category;ElectronicsNavNode;PowerSuppliesCategoryLink;PowerSuppliesNavNode
-#                               ;FlashMemoryNavNode;;Flash Memory Category;ElectronicsNavNode;FlashMemoryCategoryLink;FlashMemoryNavNode
-#                               ;AccessoriesNavNode;;Accessories Links;CameraAccessoriesNavNode;CamerasFlashesCategoryLink,TripodsCategoryLink,CameraLensesCategoryLink;AccessoriesNavNode
-#                               ;SuppliesNavNode;;Supplies Links;CameraAccessoriesNavNode;ColourFilmsCategoryLink,BlackAndWhiteFilmsCategoryLink,BlankVideotapesCategoryLink;SuppliesNavNode
-#                               ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;ElectronicsNavNode;AboutSAPCommerceLink,FAQLink;SAPCommerceNavNode
-#                               ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;ElectronicsNavNode;VisitSAPLink,ContactUsLink;SAPCustomerExperienceNavNode
-#                               ;FollowUsNavNode;;Follow Us Pages;ElectronicsNavNode;AgileCommerceBlogLink,LinkedInLink,FacebookLink,TwitterLink;FollowUsNavNode
-
-
-# Preview Image for use in the CMS Cockpit for special ContentPages
-#INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#                   ;;addEditAddressPagePreview;text/png;AddEditAddressPage.png;$jarResourceCms/preview-images/demoGroup2/AddEditAddressPage.png
-#                   ;;addressBookPagePreview;text/png;AddressBook.png;$jarResourceCms/preview-images/demoGroup2/AddressBookPage.png
-#                   ;;cartPagePreview;text/png;CartPage.png;$jarResourceCms/preview-images/demoGroup2/CartPage.png
-#                   ;;checkoutLoginPagePreview;text/png;CheckoutLoginPage.png;$jarResourceCms/preview-images/demoGroup2/CheckoutLoginPage.png
-#                   ;;multiStepCheckoutSummaryPagePreview;text/png;MultiStepCheckoutSummaryPage.png;$jarResourceCms/preview-images/demoGroup2/MultiStepCheckoutSummaryPage.png
-#                   ;;frequentlyAskedQuestionsPage;text/png;FrequentlyAskedQuestionsPage.png;$jarResourceCms/preview-images/demoGroup2/FrequentlyAskedQuestionsPage.png;;;
-#                   ;;termsAndConditionsPage;text/png;TermsAndConditionsPage.png;$jarResourceCms/preview-images/demoGroup2/TermsAndConditionsPage.png;;;
-#                   ;;homepagePreview;text/png;Homepage.png;$jarResourceCms/preview-images/demoGroup2/Homepage.png
-#                   ;;loginPagePreview;text/png;LoginPage.png;$jarResourceCms/preview-images/demoGroup2/LoginPage.png
-#                   ;;notFoundPagePreview;text/png;NotFoundPage.png;$jarResourceCms/preview-images/demoGroup2/NotFoundPage.png
-#                   ;;orderConfirmationPagePreview;text/png;OrderConfirmationPage.png;$jarResourceCms/preview-images/demoGroup2/OrderConfirmationPage.png
-#                   ;;orderDetailsPagePreview;text/png;OrderDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/OrderDetailsPage.png
-#                   ;;orderHistoryPagePreview;text/png;OrderHistoryPage.png;$jarResourceCms/preview-images/demoGroup2/OrderHistoryPage.png
-#                   ;;paymentDetailsPagePreview;text/png;PaymentDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/PaymentDetailsPage.png
-#                   ;;productDetailsPagePreview;text/png;ProductDetailsPage.png;$jarResourceCms/preview-images/demoGroup2/ProductDetailsPage.png
-#                   ;;productListPagePreview;text/png;ProductListPage.png;$jarResourceCms/preview-images/demoGroup2/ProductListPage.png
-#                   ;;searchResultsEmptyPagePreview;text/png;SearchResultsEmptyPage.png;$jarResourceCms/preview-images/demoGroup2/SearchResultsEmptyPage.png
-#                   ;;searchResultsPagePreview;text/png;SearchResultsPage.png;$jarResourceCms/preview-images/demoGroup2/SearchResultsPage.png
-#                   ;;storefinderPagePreview;text/png;StoreFinderPage.png;$jarResourceCms/preview-images/demoGroup2/StoreFinderPage.png
-#                   ;;updateForgottenPasswordPagePreview;text/png;UpdateForgottenPasswordPage.png;$jarResourceCms/preview-images/demoGroup2/UpdateForgottenPasswordPage.png
-#                   ;;productGridPagePreview;text/png;ProductGridPage.png;$jarResourceCms/preview-images/demoGroup2/ProductGridPage.png
-#                   ;;defaultCategoryPagePreview;text/png;DefaultCategoryPage.png;$jarResourceCms/preview-images/demoGroup2/DefaultCategoryPage.png
-#                   ;;orderExpiredPagePreview;text/png;OrderExpiredPage.png;$jarResourceCms/preview-images/demoGroup2/OrderExpiredPage.png;;;
+                               ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
 
 # Site-wide Homepage
 UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);linkComponents(&linkRef)
                   ;;homepage;;HomepageNavLink
-
-# Functional Content Pages
-#UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
-#                  ;;multiStepCheckoutSummaryPage;multiStepCheckoutSummaryPagePreview
-#                  ;;orderConfirmationPage;orderConfirmationPagePreview
-#                  ;;cartPage;cartPagePreview
-#                  ;;search;searchResultsPagePreview
-#                  ;;address-book;addressBookPagePreview
-#                  ;;add-edit-address;addEditAddressPagePreview
-#                  ;;payment-details;paymentDetailsPagePreview
-#                  ;;order;orderDetailsPagePreview
-#                  ;;orders;orderHistoryPagePreview
-#                  ;;storefinderPage;storefinderPagePreview
-#                  ;;checkout-login;checkoutLoginPagePreview
-#                  ;;login;loginPagePreview
-#                  ;;notFound;notFoundPagePreview
-#                  ;;searchEmpty;searchResultsEmptyPagePreview
-#                  ;;updatePassword;updateForgottenPasswordPagePreview
-#                  ;;orderExpired;orderExpiredPagePreview
 
 # Simple Content Pages
 UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);linkComponents(&linkRef)
@@ -473,27 +410,27 @@ UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];previewImage(code, 
 #                   ;;1320808-1767.jpg;$productResource/images/96Wx96H/1320808-1767.jpg;;"Kodak EASYSHARE V1253";1320808-1767.jpg
 #                   ;;1978440-Sony-DSC-H20-114081.jpg;$productResource/images/96Wx96H/1978440-Sony-DSC-H20-114081.jpg;;"Sony DSC-H20";1978440-Sony-DSC-H20-114081.jpg
 
-INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-                                   ;;BrandsGaloreBanner;Brands Galore Banner;BrandsGaloreBanner;/Brands/c/brands
-                                   ;;CamcordersBanner;Camcorders Banner;CamcordersBanner;/Open-Catalogue/Cameras/Hand-held-Camcorders/c/584
-                                   ;;LensesBanner;Lenses Banner;LensesBanner;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/Camera-Lenses/c/588
-                                   ;;NextDayDeliveryBanner;Next Day Delivery Banner;NextDayDeliveryBanner
+#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+#                                   ;;BrandsGaloreBanner;Brands Galore Banner;BrandsGaloreBanner;/Brands/c/brands
+#                                   ;;CamcordersBanner;Camcorders Banner;CamcordersBanner;/Open-Catalogue/Cameras/Hand-held-Camcorders/c/584
+#                                   ;;LensesBanner;Lenses Banner;LensesBanner;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/Camera-Lenses/c/588
+#                                   ;;NextDayDeliveryBanner;Next Day Delivery Banner;NextDayDeliveryBanner
+#
+#INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+#                             ;;CanonPowershotBannerComponent;Canon Powershot A480 Thumbnail Detail;CanonPowershotBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/PowerShot-A480/p/1934793
+#                             ;;SonyCybershotBannerComponent;Sony Cybershot DSC-S930 Thumbnail Detail;SonyCybershotBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/DSC-S930/p/1992695
+#                             ;;KodakEasyshareBannerComponent;Kodak Easyshare V1253 Thumbnail Detail;KodakEasyshareBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/EASYSHARE-V1253%2C-Black/p/1320808
+#                             ;;SonyDSCBannerComponent;Sony DSC-H20 Thumbnail Detail;SonyDSCBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/DSC-H20/p/1978440
+#                             ;;DigitalCompactCamerasBannerComponent;Digital Compact Cameras Small Detail;DigitalCompactCamerasBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/c/576
+#                             ;;DigitalSLRCamerasBannerComponent;Digital SLR Cameras Small Detail;DigitalSLRCamerasBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-SLR/c/578
+#                             ;;MemoryBannerComponent;Camera and Camcorder Memory Small Detail;MemoryBannerComponent;/Open-Catalogue/Data-storage/Flash-Memory/c/902
+#                             ;;AccessoriesBannerComponent;Camera Accessories and Supplies Small Detail;AccessoriesBannerComponent;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/c/585
+#                             ;;CarouselCyberBanner;Carousel Cyber Banner;CarouselCyberBanner;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/Cyber-shot-W55/p/676442
+#                             ;;CarouselCamcorderBanner;Carousel Camcorder Banner;CarouselCamcorderBanner;Open-Catalogue/Cameras/Hand-held-Camcorders/LEGRIA-HF-S100/p/1986316
+#                             ;;CarouselFunBanner;Carousel Fun Banner;CarouselFunBanner;/Open-Catalogue/Cameras/Film-cameras/FUN-Flash-Single-Use-Camera%2C-27%2B12-pic/p/779841
 
-INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-                             ;;CanonPowershotBannerComponent;Canon Powershot A480 Thumbnail Detail;CanonPowershotBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/PowerShot-A480/p/1934793
-                             ;;SonyCybershotBannerComponent;Sony Cybershot DSC-S930 Thumbnail Detail;SonyCybershotBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/DSC-S930/p/1992695
-                             ;;KodakEasyshareBannerComponent;Kodak Easyshare V1253 Thumbnail Detail;KodakEasyshareBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/EASYSHARE-V1253%2C-Black/p/1320808
-                             ;;SonyDSCBannerComponent;Sony DSC-H20 Thumbnail Detail;SonyDSCBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/DSC-H20/p/1978440
-                             ;;DigitalCompactCamerasBannerComponent;Digital Compact Cameras Small Detail;DigitalCompactCamerasBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/c/576
-                             ;;DigitalSLRCamerasBannerComponent;Digital SLR Cameras Small Detail;DigitalSLRCamerasBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-SLR/c/578
-                             ;;MemoryBannerComponent;Camera and Camcorder Memory Small Detail;MemoryBannerComponent;/Open-Catalogue/Data-storage/Flash-Memory/c/902
-                             ;;AccessoriesBannerComponent;Camera Accessories and Supplies Small Detail;AccessoriesBannerComponent;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/c/585
-                             ;;CarouselCyberBanner;Carousel Cyber Banner;CarouselCyberBanner;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/Cyber-shot-W55/p/676442
-                             ;;CarouselCamcorderBanner;Carousel Camcorder Banner;CarouselCamcorderBanner;Open-Catalogue/Cameras/Hand-held-Camcorders/LEGRIA-HF-S100/p/1986316
-                             ;;CarouselFunBanner;Carousel Fun Banner;CarouselFunBanner;/Open-Catalogue/Cameras/Film-cameras/FUN-Flash-Single-Use-Camera%2C-27%2B12-pic/p/779841
-
-INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;scroll(code);popup;&componentRef
-                                        ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;allVisible;false;HomepageCardProductCarouselComponent
+#INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;scroll(code);popup;&componentRef
+#                                        ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;allVisible;false;HomepageCardProductCarouselComponent
 
 #INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
 #                                     ;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
@@ -501,21 +438,21 @@ INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[u
 #INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
 #                                      ;;ElectronicsHomepageProductCarouselComponent;Electronics Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;ElectronicsHomepageProductCarouselComponent
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
-                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;HomepageCardProductCarouselComponent
-                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
-                         ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
-                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
-                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+#                         ;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
+#                         ;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
+#                         ;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
+#                         ;;Section3ASlot-Homepage;Section3A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
+#                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
+#                         ;;Section3CSlot-Homepage;Section3C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
+#                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
+#                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
-                                ;;Section2A-Homepage;Section2A;;Section2ASlot-Homepage
-                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
-                                ;;Section3A-Homepage;Section3A;;Section3ASlot-Homepage
+                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
+#                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
+                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
 #                                ;;Section3B-Homepage;Section3B;;Section3BSlot-Homepage
 #                                ;;Section3C-Homepage;Section3C;;Section3CSlot-Homepage
                                 ;;Section4-Homepage;Section4;;Section4Slot-Homepage
@@ -531,8 +468,8 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
 #                                    ;;CamerasAccessoriesAndSupplies-LandingPageRestriction;Restriction for Cameras Accessories And Supplies;585;CamerasAccessoriesAndSuppliesCategoryPage
 #
-INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;category(code, $productCV);&componentRef
-                                      ;;CameraFlashesFeatureComponent;CameraFlashesFeatureComponent;586;CameraFlashesFeatureComponent
+#INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;category(code, $productCV);&componentRef
+#                                      ;;CameraFlashesFeatureComponent;CameraFlashesFeatureComponent;586;CameraFlashesFeatureComponent
 #                                      ;;TripodFeatureComponent;TripodFeatureComponent;587;TripodFeatureComponent
 #                                      ;;CameraLensesFeatureComponent;CameraLensesFeatureComponent;588;CameraLensesFeatureComponent
 #                                      ;;ColourFilmsFeatureComponent;ColourFilmsFeatureComponent;597;ColourFilmsFeatureComponent
@@ -906,8 +843,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 ###  Home page splash Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;D Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
-                                             ;;DemoHompageSplashBannerComponent-2;Electronics Homepage Splash Banner Component 2;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-2
+                                             ;;DemoHompageSplashBannerComponent-1;IN THE BOX BANNER 1;/c/INTHEBOX;DemoHompageSplashBannerComponent-1
+                                             ;;DemoHompageSplashBannerComponent-2;IN THE BOX BANNER 2;/c/INTHEBOX;DemoHompageSplashBannerComponent-2
 #                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
 #                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
 
@@ -924,7 +861,7 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];nam
                                    ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section2ASlot-Homepage;IntheBoxTagParagraphComponent
+                         ;;Section2Slot-Homepage;IntheBoxTagParagraphComponent
 
 # Home section 2B
 #INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
@@ -939,10 +876,10 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 ## Home section 3A
 
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;CollapseParagraghComponent;Collapse Paragraph Component;CollapseParagraghComponent
+                                   ;;CollapseParagraghComponent;Demo Group2 Collapse Paragraph Component;CollapseParagraghComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#                         ;;Section3ASlot-Homepage;true;CollapseParagraghComponent
+                         ;;Section3Slot-Homepage;true;CollapseParagraghComponent
 
 ###  Home page slot 3B  ####
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -995,23 +932,23 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;MaterialParagraghComponent;Material Paragraph Component;MaterialParagraghComponent
+                                   ;;MaterialParagraghComponent;Material Group2 Paragraph Component;MaterialParagraghComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section5Slot-Homepage;true;MaterialParagraghComponent
 
 ### Section 6
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageMaterial1BannerComponent;Demo Homepage Camcorders Banner Component;;DemoHompageMaterial1BannerComponent
-                                             ;;DemoHompageMaterial2BannerComponent;Demo Homepage Camcorders Banner Component;;DemoHompageMaterial2BannerComponent
-                                             ;;DemoHompageMaterial3BannerComponent;Demo Homepage Camcorders Banner Component;;DemoHompageMaterial3BannerComponent
+                                             ;;DemoHompageMaterial1BannerComponent;Demo Group2 Homepage Camcorders Banner Component;;DemoHompageMaterial1BannerComponent
+                                             ;;DemoHompageMaterial2BannerComponent;Demo Group2 Homepage Camcorders Banner Component;;DemoHompageMaterial2BannerComponent
+                                             ;;DemoHompageMaterial3BannerComponent;Demo Group2 Homepage Camcorders Banner Component;;DemoHompageMaterial3BannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section6Slot-Homepage;true;DemoHompageMaterial3BannerComponent,DemoHompageMaterial2BannerComponent,DemoHompageMaterial1BannerComponent
 
 ### Section 7
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;StoreFinderBannerComponent;Storefinder Homepage Banner Component;/store-finder;StoreFinderBannerComponent
+                                             ;;StoreFinderBannerComponent;Storefinder Group2 Homepage Banner Component;/store-finder;StoreFinderBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section7Slot-Homepage;true;StoreFinderBannerComponent
@@ -1092,24 +1029,24 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];actio
 #INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
 #                                   ;;BuyOnlineBanner;Buy Online Banner;BuyOnlineBanner
 
-##### Section 1 ######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;ElectronicsSLRSplashBannerComponent;Electronics SLR Camera Splash Banner Component;Open-Catalogue/Cameras/Digital-Cameras/c/575;ElectronicsSLRSplashBannerComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section1Slot-SLRCameras;true;ElectronicsSLRSplashBannerComponent
-
-##### Section 2 ######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;ElectronicsCanon500DBannerComponent;Electronics Canon 500D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS-500D-%2B-18-200mm-IS/p/2054947;ElectronicsCanon500DBannerComponent
-                                             ;;ElectronicsCanon450DBannerComponent;Electronics Canon 450D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS450D-%2B-18-55-IS-Kit/p/1382080;ElectronicsCanon450DBannerComponent
-                                             ;;ElectronicsSonyA100HBannerComponent;Electronics Sony A100H Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A100H/p/816780;ElectronicsSonyA100HBannerComponent
-                                             ;;ElectronicsSonyA330BannerComponent;Electronics Sony A330 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A330-%2BDT-18---55-mm/p/2934302;ElectronicsSonyA330BannerComponent
-                                             ;;ElectronicsSonyA200BannerComponent;Electronics Sony A200 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-200/p/1391319;ElectronicsSonyA200BannerComponent
-                                             ;;ElectronicsSonyAlpha350BannerComponent;Electronics Sony Alpha 350 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-350/p/1446509;ElectronicsSonyAlpha350BannerComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section2Slot-SLRCameras;true;ElectronicsSonyA100HBannerComponent,ElectronicsCanon500DBannerComponent,ElectronicsCanon450DBannerComponent,ElectronicsSonyA330BannerComponent,ElectronicsSonyA200BannerComponent,ElectronicsSonyAlpha350BannerComponent
+###### Section 1 ######
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#                                             ;;ElectronicsSLRSplashBannerComponent;Electronics SLR Camera Splash Banner Component;Open-Catalogue/Cameras/Digital-Cameras/c/575;ElectronicsSLRSplashBannerComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#                         ;;Section1Slot-SLRCameras;true;ElectronicsSLRSplashBannerComponent
+#
+###### Section 2 ######
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#                                             ;;ElectronicsCanon500DBannerComponent;Electronics Canon 500D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS-500D-%2B-18-200mm-IS/p/2054947;ElectronicsCanon500DBannerComponent
+#                                             ;;ElectronicsCanon450DBannerComponent;Electronics Canon 450D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS450D-%2B-18-55-IS-Kit/p/1382080;ElectronicsCanon450DBannerComponent
+#                                             ;;ElectronicsSonyA100HBannerComponent;Electronics Sony A100H Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A100H/p/816780;ElectronicsSonyA100HBannerComponent
+#                                             ;;ElectronicsSonyA330BannerComponent;Electronics Sony A330 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A330-%2BDT-18---55-mm/p/2934302;ElectronicsSonyA330BannerComponent
+#                                             ;;ElectronicsSonyA200BannerComponent;Electronics Sony A200 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-200/p/1391319;ElectronicsSonyA200BannerComponent
+#                                             ;;ElectronicsSonyAlpha350BannerComponent;Electronics Sony Alpha 350 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-350/p/1446509;ElectronicsSonyAlpha350BannerComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#                         ;;Section2Slot-SLRCameras;true;ElectronicsSonyA100HBannerComponent,ElectronicsCanon500DBannerComponent,ElectronicsCanon450DBannerComponent,ElectronicsSonyA330BannerComponent,ElectronicsSonyA200BannerComponent,ElectronicsSonyAlpha350BannerComponent
 
 ##### Section 3 #####
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -1497,27 +1434,27 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
 
-##LINK TESTIMONI
-
-
-# CMS Link Components
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
-                              ;;TestimoniPageLink;Testimoni Page Link;/testimony;TestimoniPageLink;TestimoniPageLink;;;;
-
-## entries of the above navigation nodes ##
-INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-                                ;TestimoniNavNodeEntry;;Testimoni Node Entry;TestimoniNavNode;TestimoniPageLink;
-
-## level 3. children of Category Nav ##
-INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;parent(uid,$contentCV);children(uid,$contentCV);links(&linkRef);
-                               ;TestimoniNavNode;; Testimoni Nav Node;TestimoniNavNode;DemoNavNode;
-
-# CMS Link Components
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName
-                              ;;TestimoniPageLink;"Testimoni"
-
-## level 3. children of Category Nav ##
-INSERT_UPDATE CMSNavigationNode;uid[unique=true];title
-                               ;TestimoniNavNode;"Tastimoni Nav Node"
-
-
+###LINK TESTIMONI
+#
+#
+## CMS Link Components
+#INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+#                              ;;TestimoniPageLink;Testimoni Page Link;/testimony;TestimoniPageLink;TestimoniPageLink;;;;
+#
+### entries of the above navigation nodes ##
+#INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
+#                                ;TestimoniNavNodeEntry;;Testimoni Node Entry;TestimoniNavNode;TestimoniPageLink;
+#
+### level 3. children of Category Nav ##
+#INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;parent(uid,$contentCV);children(uid,$contentCV);links(&linkRef);
+#                               ;TestimoniNavNode;; Testimoni Nav Node;TestimoniNavNode;DemoNavNode;
+#
+## CMS Link Components
+#INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName
+#                              ;;TestimoniPageLink;"Testimoni"
+#
+### level 3. children of Category Nav ##
+#INSERT_UPDATE CMSNavigationNode;uid[unique=true];title
+#                               ;TestimoniNavNode;"Tastimoni Nav Node"
+#
+#
