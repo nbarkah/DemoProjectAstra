@@ -47,7 +47,7 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
-	<bean id="priceValueProvider" class="org.demo.core.provider.PriceValueProvider" parent="abstractPropertyFieldValueProvider">
+	<bean id="pricesValueProvider" class="org.demo.core.provider.PricesValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
