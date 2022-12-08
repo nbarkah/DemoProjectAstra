@@ -855,6 +855,11 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
 #                                   ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
 #
+#
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+#                                      ;;DemoHomepageProductCarouselComponent;Demo Group 2 Homepage Product Carousel;INTHEBOX-FLIP-Z-90,SPACEJAM-COLLECTION-90,KASUR-LIPAT-80,SOFA-3-SEATER,BANTAL-INTHEBOX;allVisible;false;DemoHomepageProductCarouselComponent
+
+
 #INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
 #                         ;;Section2Slot-Homepage;IntheBoxTagParagraphComponent
 
@@ -867,6 +872,9 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 #                                             ;;DemoHompageLightFamBannerComponent;Demo Homepage Light Family Banner Component;/p/SUPERKINGX;DemoHompageLightFamBannerComponent
 #
+#
+#
+#
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 #                                             ;;DemoHompageLightFamTextBannerComponent;Demo Homepage Light Family Text Banner Component;/Open-Catalogue/Cameras/CameraAccessories-%26-Supplies/CameraLenses/c/588;DemoHompageLightFamTextBannerComponent
 
@@ -875,11 +883,14 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #                                            ;;HomePageEaseOfAnyWhere2;HomePageEaseOfAnyWhere2
 #                                            ;;HomePageEaseOfAnyWhere3;HomePageEaseOfAnyWhere3
 #                                            ;;HomePageEaseOfAnyWhere4;HomePageEaseOfAnyWhere4
+#
+#INSERT_UPDATE HomepageCardProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;products(code,$productCV);scroll(code);popup;&componentRef
+#                                        ;;HomepageCardProductCarouselComponent; Homepage Card Product Carousel;Beli Kasur Inthebox;INTHEBOX-FLIP-Z-90,SPACEJAM-COLLECTION-90,KASUR-LIPAT-80,SOFA-3-SEATER,BANTAL-INTHEBOX;allVisible;false;HomepageCardProductCarouselComponent
 
-
+#
 #INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#                         ;;Section3Slot-Homepage;true;HomePageEaseOfAnyWhere1,HomePageEaseOfAnyWhere2,HomePageEaseOfAnyWhere3,HomePageEaseOfAnyWhere4
-
+#                         ;;Section3Slot-Homepage;true;HomepageCardProductCarouselComponent
+#
 #INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
 #                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
 
@@ -887,9 +898,24 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
 #                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
 #
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section4Slot-Homepage;AstraVideoLink
 
+#INSERT_UPDATE CatalogUnawareMedia;$contentCV[unique=true]; code[unique = true]                 ; mime     ; realfilename ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]; folder(qualifier)[default = 'images']
+#                                 ;; Unboxing-ITB-1    				; text/jpg ; unboxing-itb-1.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;
+#                                 ;; Unboxing-ITB-2    				; text/jpg ; unboxing-itb-2.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;
+#                                 ;; Unboxing-ITB-3    				; text/jpg ; unboxing-itb-3.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;
+#                                 ;; Unboxing-ITB-4    				; text/jpg ; unboxing-itb-4.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;
+#
+#INSERT_UPDATE HomepageFeaturesComponent   ;$contentCV[unique=true];uid[unique=true];title			            ; subtitle	        ;image(code)
+#                     ;;ITB-1                ;Keluarkan       ; Keluarkan kasur INTHEBOX dari kemasannya secara perlahan lahan		    ;Unboxing-ITB-1
+#                     ;;ITB-2                ;Posisikan       ; Keluarkan kasur INTHEBOX dari kemasannya secara perlahan lahan		    ;Unboxing-ITB-2
+#                     ;;ITB-3                ;Buka Plastik       ; Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah		    ;Unboxing-ITB-3
+#                     ;;ITB-4                ;Tunggu Mengembang       ; Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan		    ;Unboxing-ITB-4
+#
+#
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section4Slot-Homepage;ITB-1,ITB-2,ITB-3,ITB-4
+#
 #INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
 #                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
 

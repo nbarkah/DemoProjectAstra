@@ -31,6 +31,7 @@
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+
 								</div>
 							</div>
 						</c:forEach>
@@ -48,6 +49,7 @@
                                             </div>
                                             <div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
                                             <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+
                                         </div>
                                     </div>
                             </div>

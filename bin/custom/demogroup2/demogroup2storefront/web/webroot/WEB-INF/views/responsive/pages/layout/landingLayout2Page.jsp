@@ -11,13 +11,13 @@
         </cms:pageSlot>
     </div>
 
-    <div class="">
+    <div class="homepage-product-carousel">
         <cms:pageSlot position="Section2" var="feature" element="div" class="row no-margin">
             <cms:component component="${feature}" element="div" class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>
         </cms:pageSlot>
     </div>
 
-    <div class="homepage-card-product" style="background-color:#6086c2;">
+    <div class="" style="background-color:#6086c2;">
         <cms:pageSlot position="Section3" var="feature" >
             <cms:component component="${feature}" element="div" class="card-product no-space yComponentWrapper"/>
         </cms:pageSlot>
