@@ -30,8 +30,9 @@ public class HomepageCardProductCarouselComponentController extends AbstractAcce
 
     @Override
     protected void fillModel(HttpServletRequest request, Model model, HomepageCardProductCarouselComponentModel component) {
+        final List<ProductData> products = new ArrayList<>();
 
         model.addAttribute("title", component.getTitle());
-        model.addAttribute("productData", productConverter.convertAll(component.getProducts()));
+        model.addAttribute("productData", products);
     }
 }
