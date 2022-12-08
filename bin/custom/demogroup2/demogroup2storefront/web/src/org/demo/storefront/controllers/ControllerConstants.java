@@ -16,7 +16,9 @@ import de.hybris.platform.acceleratorcms.model.components.SimpleResponsiveBanner
 import de.hybris.platform.acceleratorcms.model.components.SubCategoryListComponentModel;
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
+import org.demo.core.model.FeatureTileComponentModel;
 import org.demo.core.model.HomepageCardProductCarouselComponentModel;
+import org.demo.core.model.HomepageFeaturesComponentModel;
 import org.demo.core.model.HomepageUnboxingITBCarouselComponentModel;
 
 
@@ -53,6 +55,8 @@ public interface ControllerConstants
 			String HomepageUnboxingITBCarouselComponent = _Prefix + HomepageUnboxingITBCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String MiniCartComponent = _Prefix + MiniCartComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String ProductFeatureComponent = _Prefix + ProductFeatureComponentModel._TYPECODE + _Suffix; // NOSONAR
+			String FeatureTileComponent = _Prefix + FeatureTileComponentModel._TYPECODE + _Suffix; // NOSONAR
+			String HomepageFeaturesComponent = _Prefix + HomepageFeaturesComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String CategoryFeatureComponent = _Prefix + CategoryFeatureComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String NavigationBarComponent = _Prefix + NavigationBarComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String CMSLinkComponent = _Prefix + CMSLinkComponentModel._TYPECODE + _Suffix; // NOSONAR

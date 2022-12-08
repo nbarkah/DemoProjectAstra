@@ -31,6 +31,14 @@
 		<property name="person" type="org.demo.facades.person.data.PersonData"/>
 	</bean>
 
+	<bean class="org.demo.facades.homepage.data.HomepageFeaturesData">
+		<property name="title" type="String"/>
+		<property name="subtitle" type="String"/>
+		<property name="image" type="String"/>
+	</bean>
+
+
+
 	<bean class="org.demo.facades.ITBCarousel.data.ITBCarouselData">
 		<property name="code" type="String"/>
 		<property name="title" type="String"/>
