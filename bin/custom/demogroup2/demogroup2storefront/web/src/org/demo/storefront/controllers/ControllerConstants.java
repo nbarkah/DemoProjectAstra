@@ -19,7 +19,6 @@ import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel
 import org.demo.core.model.FeatureTileComponentModel;
 import org.demo.core.model.HomepageCardProductCarouselComponentModel;
 import org.demo.core.model.HomepageFeaturesComponentModel;
-import org.demo.core.model.HomepageUnboxingITBCarouselComponentModel;
 
 
 /**
@@ -50,9 +49,7 @@ public interface ControllerConstants
 			String CartSuggestionComponent = _Prefix + CartSuggestionComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String ProductReferencesComponent = _Prefix + ProductReferencesComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String ProductCarouselComponent = _Prefix + ProductCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
-
 			String HomepageCardProductCarouselComponent = _Prefix + HomepageCardProductCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
-			String HomepageUnboxingITBCarouselComponent = _Prefix + HomepageUnboxingITBCarouselComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String MiniCartComponent = _Prefix + MiniCartComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String ProductFeatureComponent = _Prefix + ProductFeatureComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String FeatureTileComponent = _Prefix + FeatureTileComponentModel._TYPECODE + _Suffix; // NOSONAR
