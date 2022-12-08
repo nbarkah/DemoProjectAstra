@@ -205,7 +205,6 @@ UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);default
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
                    ;;/images/inthebox/Navbar/header-logo-white.png;header-logo-white.png;$siteResource/images/inthebox/Navbar/header-logo-white.png;image/png;hybris In The Box;
-                   ;;/images/theme/logo-hybris_zh.png;logo-hybris_zh.png;$siteResource/images/theme/logo-hybris_zh.png;image/png;hybris Accelerator;
 
 # Site Logo Component
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
@@ -448,17 +447,17 @@ UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];previewImage(code, 
 #                         ;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
 #                         ;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
 
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;Section1-Homepage;Section1;;Section1Slot-Homepage
-                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
-#                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
-                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
-#                                ;;Section3B-Homepage;Section3B;;Section3BSlot-Homepage
-#                                ;;Section3C-Homepage;Section3C;;Section3CSlot-Homepage
-                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
-                                ;;Section5-Homepage;Section5;;Section5Slot-Homepage
-                                ;;Section6-Homepage;Section6;;Section6Slot-Homepage
-                                ;;Section7-Homepage;Section7;;Section7Slot-Homepage
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section1-Homepage;Section1;;Section1Slot-Homepage
+#                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
+##                                ;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
+#                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
+##                                ;;Section3B-Homepage;Section3B;;Section3BSlot-Homepage
+##                                ;;Section3C-Homepage;Section3C;;Section3CSlot-Homepage
+#                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
+#                                ;;Section5-Homepage;Section5;;Section5Slot-Homepage
+#                                ;;Section6-Homepage;Section6;;Section6Slot-Homepage
+#                                ;;Section7-Homepage;Section7;;Section7Slot-Homepage
 
 ###### Electronics Camera Accessories and Supplies Category Landing Page - not used ######
 
@@ -845,43 +844,26 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
                                              ;;DemoHompageSplashBannerComponent-1;IN THE BOX BANNER 1;/c/INTHEBOX;DemoHompageSplashBannerComponent-1
                                              ;;DemoHompageSplashBannerComponent-2;IN THE BOX BANNER 2;/c/INTHEBOX;DemoHompageSplashBannerComponent-2
-#                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
-#                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageDiscountBannerComponent;Electronics Homepage Discount Banner Component;/Bed/Springbed/c/SPRINGBED;DemoHompageDiscountBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
-#                         ;;Section1Slot-Homepage;true;DemoHompageDiscountBannerComponent
 
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section1-Homepage;Section1;;Section1Slot-Homepage
 
-## Home section 2A
-INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section2Slot-Homepage;IntheBoxTagParagraphComponent
-
-# Home section 2B
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-#                                      ;;DemoGroup2HomepageProductCarouselComponent;DemoGroup2HomepageProductCarouselComponent
-#
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-#                                      ;;NewDemoGroup2HomepageProductCarouselComponent;What's New Demo Group2 Homepage Product Carousel;INTHEBOX-FLIP-Z,INTHEBOX-X,INTHEBOX-ALPHA,INTHEBOX-PRO;allVisible;false;NewDemoGroup2HomepageProductCarouselComponent
+## Home section 2
+#INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+#                                   ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
 #
 #INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section2BSlot-Homepage;DemoGroup2HomepageProductCarouselComponent,NewDemoGroup2HomepageProductCarouselComponent
+#                         ;;Section2Slot-Homepage;IntheBoxTagParagraphComponent
 
-## Home section 3A
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
 
-INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;CollapseParagraghComponent;Demo Group2 Collapse Paragraph Component;CollapseParagraghComponent
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section3Slot-Homepage;true;CollapseParagraghComponent
+## Home section 3
 
-###  Home page slot 3B  ####
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 #                                             ;;DemoHompageLightFamBannerComponent;Demo Homepage Light Family Banner Component;/p/SUPERKINGX;DemoHompageLightFamBannerComponent
 #
@@ -891,27 +873,25 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 #INSERT_UPDATE DemoEaseOfAnyWhereCMSComponent;$contentCV[unique=true];uid[unique=true];&componentRef
 #                                            ;;HomePageEaseOfAnyWhere1;HomePageEaseOfAnyWhere1
 #                                            ;;HomePageEaseOfAnyWhere2;HomePageEaseOfAnyWhere2
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#                         ;;Section3BSlot-Homepage;true;HomePageEaseOfAnyWhere1,HomePageEaseOfAnyWhere2
-#
-##### Home section 3C #######
-#INSERT_UPDATE DemoEaseOfAnyWhereCMSComponent;$contentCV[unique=true];uid[unique=true];&componentRef
 #                                            ;;HomePageEaseOfAnyWhere3;HomePageEaseOfAnyWhere3
 #                                            ;;HomePageEaseOfAnyWhere4;HomePageEaseOfAnyWhere4
-#
+
+
 #INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#                         ;;Section3CSlot-Homepage;true;,HomePageEaseOfAnyWhere3,HomePageEaseOfAnyWhere4
+#                         ;;Section3Slot-Homepage;true;HomePageEaseOfAnyWhere1,HomePageEaseOfAnyWhere2,HomePageEaseOfAnyWhere3,HomePageEaseOfAnyWhere4
 
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
 
-#### Section 4
-
-###  Home page slot 4A  ####
+###  Home page slot 4  ####
 #INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
 #                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
 #
 #INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
 #                         ;;Section4Slot-Homepage;AstraVideoLink
+
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
@@ -919,6 +899,9 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];nam
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section5Slot-Homepage;true;MaterialParagraghComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section5-Homepage;Section5;;Section5Slot-Homepage
 
 ### Section 6
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -929,6 +912,9 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section6Slot-Homepage;true;DemoHompageMaterial3BannerComponent,DemoHompageMaterial2BannerComponent,DemoHompageMaterial1BannerComponent
 
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section6-Homepage;Section6;;Section6Slot-Homepage
+
 ### Section 7
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
                                              ;;StoreFinderBannerComponent;Storefinder Group2 Homepage Banner Component;/store-finder;StoreFinderBannerComponent
@@ -936,7 +922,8 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section7Slot-Homepage;true;StoreFinderBannerComponent
 
-
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section7-Homepage;Section7;;Section7Slot-Homepage
 
 #################    HOME PAGE END       #################
 

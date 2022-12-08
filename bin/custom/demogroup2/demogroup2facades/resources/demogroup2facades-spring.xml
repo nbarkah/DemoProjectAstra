@@ -183,6 +183,19 @@
 
 	<bean id="genderData" class="org.demo.facades.product.data.GenderData" scope="prototype"/>
 
+	<!-- ######### NEW FOR GROUP 2 ######### -->
+
+	<alias name="defaultDemoSearchResultProductPopulator" alias="demoSearchResultProductPopulator"/>
+	<bean id="defaultDemoSearchResultProductPopulator"
+		  class="org.demo.facades.populators.DemoSearchResultProductPopulator"
+		  parent="defaultCommerceSearchResultProductPopulator">
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="commerceSearchResultProductConverter"/>
+		<property name="add" ref="demoSearchResultProductPopulator"/>
+	</bean>
+
 	<alias name="personBasicPopulator" alias="personBasicPopulator"/>
 	<bean id="personBasicPopulator" class="org.demo.facades.populators.PersonBasicPopulator"/>
 
@@ -191,9 +204,6 @@
 
 	<alias name="testimoniPopulator" alias="testimoniPopulator"/>
 	<bean id="testimoniPopulator" class="org.demo.facades.populators.TestimoniPopulator"/>
-
-	<alias name="unboxingCarouselPopulator" alias="unboxingCarouselPopulator"/>
-	<bean id="unboxingCarouselPopulator" class="org.demo.facades.populators.UnboxingCarouselPopulator"/>
 
 	<bean id="personBasicConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
@@ -222,19 +232,12 @@
 		</property>
 	</bean>
 
-	<bean id="unboxingCarouselConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass" value="org.demo.facades.ITBCarousel.data.ITBCarouselData"/>
-		<property name="populators" >
-			<list merge="true">
-				<ref bean="unboxingCarouselPopulator" />
-			</list>
-		</property>
-	</bean>
-
 	<alias name="defaultPersonFacade" alias="defaultPersonFacade"/>
 	<bean id="defaultPersonFacade" class="org.demo.facades.person.DefaultPersonFacade" />
 
 	<alias name="defaultTestiFacade" alias="defaultTestiFacade"/>
 	<bean id="defaultTestiFacade" class="org.demo.facades.testimoni.DefaultTestiFacade" />
+
+	<!-- ######### END FOR GROUP 2 ######### -->
 
 </beans>

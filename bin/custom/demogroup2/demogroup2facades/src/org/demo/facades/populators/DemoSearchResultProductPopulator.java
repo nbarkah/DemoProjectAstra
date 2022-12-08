@@ -26,4 +26,5 @@ public class DemoSearchResultProductPopulator extends SearchResultProductPopulat
             target.setPrice(priceData);
         }
     }
+
 }
