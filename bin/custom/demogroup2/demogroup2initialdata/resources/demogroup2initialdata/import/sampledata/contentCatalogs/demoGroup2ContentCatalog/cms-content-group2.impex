@@ -971,18 +971,23 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 
 ###  Home page slot 4A  ####
 
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                            ;;DemoHompageUnboxingITBComponent-1;Demo Homepage Unboxing ITB 1 Component;;DemoHompageUnboxingITBComponent-1
-                                            ;;DemoHompageUnboxingITBComponent-2;Demo Homepage Unboxing ITB 2 Component;;DemoHompageUnboxingITBComponent-2
-                                            ;;DemoHompageUnboxingITBComponent-3;Demo Homepage Unboxing ITB 3 Component;;DemoHompageUnboxingITBComponent-3
-                                            ;;DemoHompageUnboxingITBComponent-4;Demo Homepage Unboxing ITB 4 Component;;DemoHompageUnboxingITBComponent-4
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#                                            ;;DemoHompageUnboxingITBComponent-1;Demo Homepage Unboxing ITB 1 Component;;DemoHompageUnboxingITBComponent-1
+#                                            ;;DemoHompageUnboxingITBComponent-2;Demo Homepage Unboxing ITB 2 Component;;DemoHompageUnboxingITBComponent-2
+#                                            ;;DemoHompageUnboxingITBComponent-3;Demo Homepage Unboxing ITB 3 Component;;DemoHompageUnboxingITBComponent-3
+#                                            ;;DemoHompageUnboxingITBComponent-4;Demo Homepage Unboxing ITB 4 Component;;DemoHompageUnboxingITBComponent-4
 
-INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                      ;;UnboxingITB1Component;UnboxingITB1Component;UnboxingITB1Component
-                                      ;;UnboxingITB2Component;UnboxingITB2Component;UnboxingITB2Component
-                                      ;;UnboxingITB3Component;UnboxingITB3Component;UnboxingITB3Component
-                                      ;;UnboxingITB4Component;UnboxingITB4Component;UnboxingITB4Component
 
+
+#INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+#                                      ;;UnboxingITB1Component;UnboxingITB1Component;UnboxingITB1Component
+#                                      ;;UnboxingITB2Component;UnboxingITB2Component;UnboxingITB2Component
+#                                      ;;UnboxingITB3Component;UnboxingITB3Component;UnboxingITB3Component
+#                                      ;;UnboxingITB4Component;UnboxingITB4Component;UnboxingITB4Component
+INSERT_UPDATE CatalogUnawareMedia; code[unique = true]                 ; mime     ; realfilename ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]; folder(qualifier)[default = 'images']
+
+INSERT_UPDATE HomepageFeaturesComponent   ;code[unique=true]	        ;title			            ;subtitle           ;image(code)
+INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ; footerText        ; description                                                                ; menuImage(code, $contentCV) ; &componentRef
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
 #                         ;;Section4Slot-Homepage;UnboxingITB1Component,UnboxingITB2Component,UnboxingITB3Component,UnboxingITB4Component
 #                         ;;Section4Slot-Homepage;UnboxingITB1Component,UnboxingITB2Component,DemoHompageUnboxingITBComponent-3,DemoHompageUnboxingITBComponent-4

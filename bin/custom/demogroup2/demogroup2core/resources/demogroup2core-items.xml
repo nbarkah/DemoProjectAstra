@@ -205,6 +205,11 @@
                       autocreate="true" >
                 <description>feature section of demo group 2 page</description>
                 <attributes>
+                    <attribute qualifier="code" type="java.lang.String" >
+                        <description>Code Carousel</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
                     <attribute qualifier="image" type="CatalogUnawareMedia">
                         <modifiers   read="true" write="true"/>
                         <persistence type="property"/>
