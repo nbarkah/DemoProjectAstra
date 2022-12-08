@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <c:if test="${component.visible}">
-	<div class="container-fluid">
+	<div class="container-testimoni">
 	    <div class="footer__top">
 	        <div class="row">
 	            <div class="footer__left col-xs-12 col-sm-12 col-md-9">

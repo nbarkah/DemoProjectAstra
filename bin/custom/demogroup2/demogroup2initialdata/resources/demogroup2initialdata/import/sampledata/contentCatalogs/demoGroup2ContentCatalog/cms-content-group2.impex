@@ -16,8 +16,7 @@ $medias=medias(code, $contentCV);
 $mediaContainer=media(qualifier, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
 $product=product(code, $productCV)
-$category=category(code, $productCV)
-$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/sampledata/contentCatalogs/$contentCatalog
+$category=category(code, tslotcontentCatalogs/$contentCatalog
 $productResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/sampledata/productCatalogs/$productCatalog
 $jarResourceCms=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup2initialdata/import/sampledata/cockpits/cmscockpit
 
@@ -1350,6 +1349,10 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid,$contentCV)
                          ;;FooterSlot;FooterNavigationComponent
 
+
+
+
+
 INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef;showLanguageCurrency;navigationNode(&nodeRef)
                                        ;;FooterNavigationComponent;4;FooterNavigationComponent;true;FooterNavNode;
 
@@ -1436,4 +1439,35 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];title
                                ;TestimoniNavNode;"Tastimoni Nav Node"
 
+
+## FOOTER BARU
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid,$contentCV)
+                         ;;FooterBoxSlot;FooterBoxLinkComponent
+                         ;;FooterSlot;FooterNavigationComponent
+
+INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef;showLanguageCurrency;navigationNode(&nodeRef)
+                                ;;FooterBoxLinkComponent;4;FooterBoxLinkComponent;true;FooterNavNode;
+                                ;;FooterNavigationComponent;4;FooterNavigationComponent;true;FooterNavNode;
+# the order of children is the same as the display order on the site
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
+                               ;FooterNavNode;;Footer Pages;DemoNavNode;FooterNavNode;SAPCommerceNavNode,SAPCustomerExperienceNavNode,FollowUsNavNode
+                                ;FooterBoxNavNode;Footer In the box;DemoNavNode;FooterBoxNavNode;
+# children of FooterNavNode #
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef)
+                               ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;SAPCommerceNavNode;AboutSAPCommerceNavNode,FAQNavNode
+                               ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;SAPCustomerExperienceNavNode;AboutSAPCustomerExperienceNavNode,ContactUsNavNode,CommunityNavNode
+                               ;FollowUsNavNode;;Follow Us Pages;FollowUsNavNode;AgileCommerceBlogNavNode,LinkedInNavNode,FacebookNavNode,TwitterNavNode
+
+# children of above navigation nodes #
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
+                               ;AboutSAPCommerceNavNode;;About SAP Commerce Cloud Page;AboutSAPCommerceNavNode
+                               ;FAQNavNode;;FAQ Page;FAQNavNode
+                               ;AboutSAPCustomerExperienceNavNode;;About Hybris Page;AboutSAPCustomerExperienceNavNode
+                               ;ContactUsNavNode;;Contact Us Page;ContactUsNavNode
+                               ;CommunityNavNode;;Community Page;CommunityNavNode
+                               ;AgileCommerceBlogNavNode;;Agile Commerce Blog Page;AgileCommerceBlogNavNode
+                               ;LinkedInNavNode;;LinkedIn Page;LinkedInNavNode
+                               ;FacebookNavNode;;Facebook Page;FacebookNavNode
+                               ;TwitterNavNode;;Twitter Page;TwitterNavNode
 
