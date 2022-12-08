@@ -183,6 +183,19 @@
 
 	<bean id="genderData" class="org.demo.facades.product.data.GenderData" scope="prototype"/>
 
+	<!-- ######### NEW FOR GROUP 2 ######### -->
+
+	<alias name="defaultDemoSearchResultProductPopulator" alias="demoSearchResultProductPopulator"/>
+	<bean id="defaultDemoSearchResultProductPopulator"
+		  class="org.demo.facades.populators.DemoSearchResultProductPopulator"
+		  parent="defaultCommerceSearchResultProductPopulator">
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="commerceSearchResultProductConverter"/>
+		<property name="add" ref="demoSearchResultProductPopulator"/>
+	</bean>
+
 	<alias name="personBasicPopulator" alias="personBasicPopulator"/>
 	<bean id="personBasicPopulator" class="org.demo.facades.populators.PersonBasicPopulator"/>
 
@@ -219,11 +232,12 @@
 		</property>
 	</bean>
 
-
 	<alias name="defaultPersonFacade" alias="defaultPersonFacade"/>
 	<bean id="defaultPersonFacade" class="org.demo.facades.person.DefaultPersonFacade" />
 
 	<alias name="defaultTestiFacade" alias="defaultTestiFacade"/>
 	<bean id="defaultTestiFacade" class="org.demo.facades.testimoni.DefaultTestiFacade" />
+
+	<!-- ######### END FOR GROUP 2 ######### -->
 
 </beans>
