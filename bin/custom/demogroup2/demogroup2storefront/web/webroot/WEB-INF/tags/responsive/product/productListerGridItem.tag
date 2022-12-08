@@ -31,14 +31,14 @@
 				</a>
 			</ycommerce:testId>
 
-            <div class="price"></div>
+            <div class="size"></div>
 			<ycommerce:testId code="product_productName">
 				<a class="name" href="${fn:escapeXml(productUrl)}">
 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
 				</a>
 			</ycommerce:testId>
 
-			<div class="price"></div>
+			<div class="size"></div>
 			<ycommerce:testId code="product_productName">
 				<a class="name" href="${fn:escapeXml(productUrl)}">
 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" />
