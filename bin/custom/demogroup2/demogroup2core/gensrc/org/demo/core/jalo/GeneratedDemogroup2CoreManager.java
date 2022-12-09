@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 8, 2022, 5:52:47 AM                     ---
+ * --- Generated at Dec 9, 2022, 8:20:03 AM                     ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -24,7 +24,9 @@ import org.demo.core.jalo.DemoProduct;
 import org.demo.core.jalo.DemoSizeProduct;
 import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.jalo.ElectronicsColorVariantProduct;
+import org.demo.core.jalo.FeatureTileComponent;
 import org.demo.core.jalo.HomepageCardProductCarouselComponent;
+import org.demo.core.jalo.HomepageFeaturesComponent;
 import org.demo.core.jalo.TestiPerson;
 import org.demo.core.jalo.Testimoni;
 
@@ -234,6 +236,32 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
+	public FeatureTileComponent createFeatureTileComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( Demogroup2CoreConstants.TC.FEATURETILECOMPONENT );
+			return (FeatureTileComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating FeatureTileComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public FeatureTileComponent createFeatureTileComponent(final Map attributeValues)
+	{
+		return createFeatureTileComponent( getSession().getSessionContext(), attributeValues );
+	}
+	
 	public HomepageCardProductCarouselComponent createHomepageCardProductCarouselComponent(final SessionContext ctx, final Map attributeValues)
 	{
 		try
@@ -258,6 +286,32 @@ public abstract class GeneratedDemogroup2CoreManager extends Extension
 	public HomepageCardProductCarouselComponent createHomepageCardProductCarouselComponent(final Map attributeValues)
 	{
 		return createHomepageCardProductCarouselComponent( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public HomepageFeaturesComponent createHomepageFeaturesComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( Demogroup2CoreConstants.TC.HOMEPAGEFEATURESCOMPONENT );
+			return (HomepageFeaturesComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating HomepageFeaturesComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public HomepageFeaturesComponent createHomepageFeaturesComponent(final Map attributeValues)
+	{
+		return createHomepageFeaturesComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public Testimoni createTestimoni(final SessionContext ctx, final Map attributeValues)
