@@ -11,10 +11,9 @@
    <div class="title-container">
         <c:out escapeXml="false" value="${title}" />
    </div>
-   <div class="row">
+   <c:if test="${not empty features}">
         <c:forEach items="${features}" var="feature">
             <cms:component component="${feature}" element="div" />
         </c:forEach>
-   </div>
-
+  </c:if>
 </div>

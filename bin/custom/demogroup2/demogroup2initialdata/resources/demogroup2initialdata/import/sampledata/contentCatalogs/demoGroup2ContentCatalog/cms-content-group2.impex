@@ -41,7 +41,7 @@ INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       
                           ;                          ; AboutUsBuyIntheboxPage        ; About Us Buy Inthebox Page Template    ; layout/aboutUsBuyIntheboxPage        ; ContentPage;
 
 
-##training-fe-2
+#fe demogroup2
 UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
                    ;                          ; TestimoniPage              ;                ; $jarResourceCms/structure-view/structure_tentangPageTemplate.vm
 
@@ -59,7 +59,7 @@ UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              
                    ;                          ; AboutUsBuyIntheboxPage             ;                ; $jarResourceCms/structure-view/structure_aboutUsDetail.vm
 
 
-##training-fe-3
+#fe demogroup2-2
 INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'TestimoniPage']; validComponentTypes(code)       ; compTypeGroup(code)
                              ; SiteLogo               ;                                                                                      ;                                 ; logo
                              ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
@@ -177,7 +177,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; testimony ; Testimonioni Page ; TestimoniPage ; testimony
+                         ;                          ; testimony ; Testimoni Page ; TestimoniPage ; testimony
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
@@ -194,8 +194,7 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
                          ;                          ; aboutUsBuyIntheboxPage ; about Us Buy Inthebox Page ; AboutUsBuyIntheboxPage ; aboutUsBuyIntheboxPage
 
 
-
-
+########### END FE GROUP 2 ###########
 
 
 # CMS Site Settings
@@ -787,9 +786,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
                                              ;;BannerProductGridComponent;IN THE BOX PLP BANNER;/c/INTHEBOX;BannerProductGridComponent
 
-#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-#                                   ;;ProductGridComponent;IN THE BOX PLP BANNER;DemoBannerProductComponent;/c/INTHEBOX
-
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
                          ;;ProductGridSlot      ;Product Grid Slot for Product List;true;ProductGridComponent;;;
                          ;;Section1Slot-PLP     ;Banner Product PLP                ;true;BannerProductGridComponent;;;
@@ -878,29 +874,12 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 ###  Home page slot 3  ####
 
 
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-                   ;widescreen;;unboxing-itb-1;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
-                   ;widescreen;;unboxing-itb-2;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
-                   ;widescreen;;unboxing-itb-3;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
-                   ;widescreen;;unboxing-itb-4;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
-
-
-
-INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]       ; uid[unique = true]                                   ; name                                                  ;title;  description                                                                ; image(code, $contentCV) ; &componentRef
-                                  ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;Keluarkan ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
-                                  ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;Posisikan ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
-                                  ;                          ; unboxingBukaPlastikComponent                 ; Homepage Unboxing Buka Plastik Tile Component          ;Buka Plastik ;  Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah        ; unboxing-itb-3 ; unboxingBukaPlastikTileComponent
-                                  ;                          ; unboxingTungguMengembangComponent            ; Homepage Unboxing Tunggu Mengembang Tile Component     ;Tunggu Mengembang ;  kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan   ; unboxing-itb-4 ; unboxingTungguMengembangTileComponent
 INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ;  description                                                                ; image(code, $contentCV) ; &componentRef
                                   ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
                                   ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
                                   ;                          ; unboxingBukaPlastikComponent                 ; Homepage Unboxing Buka Plastik Tile Component          ;  Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah        ; unboxing-itb-3 ; unboxingBukaPlastikTileComponent
                                   ;                          ; unboxingTungguMengembangComponent            ; Homepage Unboxing Tunggu Mengembang Tile Component     ;  kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan   ; unboxing-itb-4 ; unboxingTungguMengembangTileComponent
 
-
-
-INSERT_UPDATE HomepageFeaturesComponent; $contentCV[unique = true]; uid[unique = true]        ; title             ; subtitle ; featureTiles(uid, $contentCV) ; &componentRef
-                                       ;                          ; HomepageFeaturesComponent ; UNBOXING INTHEBOX ;          ; unboxingKeluarkanComponent, unboxingPosisikanComponent, unboxingBukaPlastikComponent, unboxingTungguMengembangComponent ; HomepageFeaturesComponent
 
 
 INSERT_UPDATE HomepageFeaturesComponent; $contentCV[unique = true]; uid[unique = true]        ; title             ; subtitle ; featureTiles(uid, $contentCV) ; &componentRef
@@ -928,26 +907,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section4-Homepage;Section4;;Section4Slot-Homepage
 
-
-
-#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-#
-
-#INSERT_UPDATE CatalogUnawareMedia;$contentCV[unique=true]; code[unique = true]                 ; mime     ; realfilename ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]; folder(qualifier)[default = 'images']
-#                                 ;; Unboxing-ITB-1    				; text/jpg ; unboxing-itb-1.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;
-#                                 ;; Unboxing-ITB-2    				; text/jpg ; unboxing-itb-2.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;
-#                                 ;; Unboxing-ITB-3    				; text/jpg ; unboxing-itb-3.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;
-#                                 ;; Unboxing-ITB-4    				; text/jpg ; unboxing-itb-4.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;
-#
-#INSERT_UPDATE HomepageFeaturesComponent   ;$contentCV[unique=true];uid[unique=true];title			            ; subtitle	        ;image(code)
-#                     ;;ITB-1                ;Keluarkan       ; Keluarkan kasur INTHEBOX dari kemasannya secara perlahan lahan		    ;Unboxing-ITB-1
-#                     ;;ITB-2                ;Posisikan       ; Keluarkan kasur INTHEBOX dari kemasannya secara perlahan lahan		    ;Unboxing-ITB-2
-#                     ;;ITB-3                ;Buka Plastik       ; Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah		    ;Unboxing-ITB-3
-#                     ;;ITB-4                ;Tunggu Mengembang       ; Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan		    ;Unboxing-ITB-4
-#
-#
-#
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
@@ -1459,28 +1418,3 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 # Create Content Slots for Page
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
-
-###LINK TESTIMONI
-#
-#
-## CMS Link Components
-#INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
-#                              ;;TestimoniPageLink;Testimoni Page Link;/testimony;TestimoniPageLink;TestimoniPageLink;;;;
-#
-### entries of the above navigation nodes ##
-#INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-#                                ;TestimoniNavNodeEntry;;Testimoni Node Entry;TestimoniNavNode;TestimoniPageLink;
-#
-### level 3. children of Category Nav ##
-#INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;parent(uid,$contentCV);children(uid,$contentCV);links(&linkRef);
-#                               ;TestimoniNavNode;; Testimoni Nav Node;TestimoniNavNode;DemoNavNode;
-#
-## CMS Link Components
-#INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName
-#                              ;;TestimoniPageLink;"Testimoni"
-#
-### level 3. children of Category Nav ##
-#INSERT_UPDATE CMSNavigationNode;uid[unique=true];title
-#                               ;TestimoniNavNode;"Tastimoni Nav Node"
-#
-#
