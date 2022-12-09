@@ -23,7 +23,7 @@ $jarResourceCms=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup
 
 
 
-###### GROUP 2 ######
+##Testimoni########
 
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; name                              ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
                           ;                          ; TestimoniPage         ; Testimoni Page Template    ; layout/testimoniPage        ; ContentPage;
@@ -41,7 +41,7 @@ INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       
                           ;                          ; AboutUsBuyIntheboxPage        ; About Us Buy Inthebox Page Template    ; layout/aboutUsBuyIntheboxPage        ; ContentPage;
 
 
-#fe demogroup2
+##training-fe-2
 UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
                    ;                          ; TestimoniPage              ;                ; $jarResourceCms/structure-view/structure_tentangPageTemplate.vm
 
@@ -59,7 +59,7 @@ UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              
                    ;                          ; AboutUsBuyIntheboxPage             ;                ; $jarResourceCms/structure-view/structure_aboutUsDetail.vm
 
 
-#fe demogroup2-2
+##training-fe-3
 INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'TestimoniPage']; validComponentTypes(code)       ; compTypeGroup(code)
                              ; SiteLogo               ;                                                                                      ;                                 ; logo
                              ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
@@ -177,7 +177,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; testimony ; Testimoni Page ; TestimoniPage ; testimony
+                         ;                          ; testimony ; Testimonioni Page ; TestimoniPage ; testimony
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
@@ -194,7 +194,8 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
                          ;                          ; aboutUsBuyIntheboxPage ; about Us Buy Inthebox Page ; AboutUsBuyIntheboxPage ; aboutUsBuyIntheboxPage
 
 
-########### END FE GROUP 2 ###########
+
+
 
 
 # CMS Site Settings
@@ -782,16 +783,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;;ProductListSlot;Product List Slot for Product List;true;ProductListComponent;;;
 
 #### ProductGridPage
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;BannerProductGridComponent;IN THE BOX PLP BANNER;/c/INTHEBOX;BannerProductGridComponent
-
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-                         ;;ProductGridSlot      ;Product Grid Slot for Product List;true;ProductGridComponent;;;
-                         ;;Section1Slot-PLP     ;Banner Product PLP                ;true;BannerProductGridComponent;;;
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productGrid'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;Section1Slot-PLP;Section1;;Section1Slot-PLP
+                         ;;ProductGridSlot;Product Grid Slot for Product List;true;ProductGridComponent;;;
 
 #### SearchResultListPage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
@@ -858,60 +851,47 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
 
-###  Home page slot 2  ####
+## Home section 2
+#INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+#                                   ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section2Slot-Homepage;IntheBoxTagParagraphComponent
 
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;DemoHomepageProductCarouselComponent;Demo Group 2 Homepage Product Carousel;INTHEBOX-FLIP-Z-90,SPACEJAM-COLLECTION-90,KASUR-LIPAT-80,SOFA-3-SEATER,BANTAL-INTHEBOX;allVisible;false;DemoHomepageProductCarouselComponent
-
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section2Slot-Homepage;DemoHomepageProductCarouselComponent
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
 
 
-###  Home page slot 3  ####
+## Home section 3
 
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-                   ;widescreen;;unboxing-itb-1;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
-                   ;widescreen;;unboxing-itb-2;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
-                   ;widescreen;;unboxing-itb-3;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
-                   ;widescreen;;unboxing-itb-4;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#                                             ;;DemoHompageLightFamBannerComponent;Demo Homepage Light Family Banner Component;/p/SUPERKINGX;DemoHompageLightFamBannerComponent
+#
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#                                             ;;DemoHompageLightFamTextBannerComponent;Demo Homepage Light Family Text Banner Component;/Open-Catalogue/Cameras/CameraAccessories-%26-Supplies/CameraLenses/c/588;DemoHompageLightFamTextBannerComponent
 
-INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ;  description                                                                ; image(code, $contentCV) ; &componentRef
-                                  ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
-                                  ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
-                                  ;                          ; unboxingBukaPlastikComponent                 ; Homepage Unboxing Buka Plastik Tile Component          ;  Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah        ; unboxing-itb-3 ; unboxingBukaPlastikTileComponent
-                                  ;                          ; unboxingTungguMengembangComponent            ; Homepage Unboxing Tunggu Mengembang Tile Component     ;  kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan   ; unboxing-itb-4 ; unboxingTungguMengembangTileComponent
-
-
-
-INSERT_UPDATE HomepageFeaturesComponent; $contentCV[unique = true]; uid[unique = true]        ; title             ; subtitle ; featureTiles(uid, $contentCV) ; &componentRef
-                                       ;                          ; HomepageFeaturesComponent ; UNBOXING INTHEBOX ;          ; unboxingKeluarkanComponent, unboxingPosisikanComponent, unboxingBukaPlastikComponent, unboxingTungguMengembangComponent ; HomepageFeaturesComponent
+#INSERT_UPDATE DemoEaseOfAnyWhereCMSComponent;$contentCV[unique=true];uid[unique=true];&componentRef
+#                                            ;;HomePageEaseOfAnyWhere1;HomePageEaseOfAnyWhere1
+#                                            ;;HomePageEaseOfAnyWhere2;HomePageEaseOfAnyWhere2
+#                                            ;;HomePageEaseOfAnyWhere3;HomePageEaseOfAnyWhere3
+#                                            ;;HomePageEaseOfAnyWhere4;HomePageEaseOfAnyWhere4
 
 
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#                         ;;Section3Slot-Homepage;true;HomePageEaseOfAnyWhere1,HomePageEaseOfAnyWhere2,HomePageEaseOfAnyWhere3,HomePageEaseOfAnyWhere4
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section3Slot-Homepage;true;HomepageFeaturesComponent
-
-
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
-
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
 
 ###  Home page slot 4  ####
-INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
-                                 ;;HomepageTestimoniComponent;Homepage Testimoni Carousel Component;homepageTestimoniComponent.jsp;;HomepageTestimoniComponent
+#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
+#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section4Slot-Homepage;AstraVideoLink
 
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section4Slot-Homepage;HomepageTestimoniComponent
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
-
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
@@ -1359,44 +1339,89 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
 
 ###### Footer Component Refactor Start ######
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid,$contentCV)
-                         ;;FooterSlot;FooterNavigationComponent
+                         ;;FooterSlot;FooterBoxNavigationComponent
+#  ;;FooterBoxSlot;FooterBoxNavigationComponent
 
 INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef;showLanguageCurrency;navigationNode(&nodeRef)
-                                       ;;FooterNavigationComponent;4;FooterNavigationComponent;true;FooterNavNode;
+#    ;;FooterNavigationComponent   ;4;FooterNavigationComponent;true;FooterNavNode;
+                                       ;;FooterBoxNavigationComponent;6;FooterBoxNavigationComponent;true;FooterBoxNavNode;
 
 # the order of children is the same as the display order on the site
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
-                               ;FooterNavNode;;Footer Pages;DemoNavNode;FooterNavNode;SAPCommerceNavNode,SAPCustomerExperienceNavNode,FollowUsNavNode
+#  ;FooterNavNode;;Footer Pages;DemoNavNode;FooterNavNode;SAPCommerceNavNode,SAPCustomerExperienceNavNode,FollowUsNavNode
+                               ;FooterBoxNavNode;;Footer Box Pages;DemoNavNode;FooterBoxNavNode;ProductBoxNavNode,SupportNavNode,AboutNavNode
 
 # children of FooterNavNode #
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef)
-                               ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;SAPCommerceNavNode;AboutSAPCommerceNavNode,FAQNavNode
-                               ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;SAPCustomerExperienceNavNode;AboutSAPCustomerExperienceNavNode,ContactUsNavNode,CommunityNavNode
-                               ;FollowUsNavNode;;Follow Us Pages;FollowUsNavNode;AgileCommerceBlogNavNode,LinkedInNavNode,FacebookNavNode,TwitterNavNode
+#                               ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;SAPCommerceNavNode;AboutSAPCommerceNavNode,FAQNavNode
+#                               ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;SAPCustomerExperienceNavNode;AboutSAPCustomerExperienceNavNode,ContactUsNavNode,CommunityNavNode
+#                               ;FollowUsNavNode;;Follow Us Pages;FollowUsNavNode;AgileCommerceBlogNavNode,LinkedInNavNode,FacebookNavNode,TwitterNavNode
+
+                               ;ProductBoxNavNode;;Product Pages;ProductNavNode;ListProductNavNode
+                               ;SupportNavNode;;Support Pages;SupportNavNode;AktivasiNavNode,ResiNavNode,FAQBoxNavNode,BantuanNavNode,SyaratNavNode,KebijakanNavNode
+                               ;AboutNavNode;;About Pages;AboutNavNode;TentangNavNode,OfflineStoreNavNode,BlogPageNavNode,TestimoniNavNode
 
 # children of above navigation nodes #
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
-                               ;AboutSAPCommerceNavNode;;About SAP Commerce Cloud Page;AboutSAPCommerceNavNode
-                               ;FAQNavNode;;FAQ Page;FAQNavNode
-                               ;AboutSAPCustomerExperienceNavNode;;About Hybris Page;AboutSAPCustomerExperienceNavNode
-                               ;ContactUsNavNode;;Contact Us Page;ContactUsNavNode
-                               ;CommunityNavNode;;Community Page;CommunityNavNode
-                               ;AgileCommerceBlogNavNode;;Agile Commerce Blog Page;AgileCommerceBlogNavNode
-                               ;LinkedInNavNode;;LinkedIn Page;LinkedInNavNode
-                               ;FacebookNavNode;;Facebook Page;FacebookNavNode
-                               ;TwitterNavNode;;Twitter Page;TwitterNavNode
+#                               ;AboutSAPCommerceNavNode;;About SAP Commerce Cloud Page;AboutSAPCommerceNavNode
+#                               ;FAQNavNode;;FAQ Page;FAQNavNode
+#                               ;AboutSAPCustomerExperienceNavNode;;About Hybris Page;AboutSAPCustomerExperienceNavNode
+#                               ;ContactUsNavNode;;Contact Us Page;ContactUsNavNode
+#                               ;CommunityNavNode;;Community Page;CommunityNavNode
+#                               ;AgileCommerceBlogNavNode;;Agile Commerce Blog Page;AgileCommerceBlogNavNode
+#                               ;LinkedInNavNode;;LinkedIn Page;LinkedInNavNode
+#                               ;FacebookNavNode;;Facebook Page;FacebookNavNode
+#                               ;TwitterNavNode;;Twitter Page;TwitterNavNode
+
+                               ;ListProductNavNode;;Product Page;ListProductNavNode
+                               ;AktivasiNavNode;;Aktivasi Page;AktivasiNavNode
+                               ;ResiNavNode;;Resi Page;ResiNavNode
+                               ;FAQBoxNavNode;;FAQ Box Page;FAQBoxNavNode
+                               ;BantuanNavNode;;Bantuan Page;BantuanNavNode
+                               ;SyaratNavNode;;Syarat Page;SyaratNavNode
+                               ;KebijakanNavNode;;Kebijakan Page;KebijakanNavNode
+
+                               ;TentangNavNode;;About Page;TentangNavNode
+                               ;TestimoniNavNode;;Testi Page;TestimoniNavNode
+                               ;OfflineStoreNavNode;;Offline Store Page;OfflineStoreNavNode
+                               ;BlogPageNavNode;;Blog Store Page;BlogPageNavNode
 
 # entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-                                ;AboutSAPCommerceNavNodeEntry;;About SAP Commerce Cloud Navigation Node Entry;AboutSAPCommerceNavNode;AboutSAPCommerceLink;
-                                ;FAQNavNodeEntry;;FAQ Navigation Node Entry;FAQNavNode;FAQLink;
-                                ;AboutSAPCustomerExperienceNavNodeEntry;;About Hybris Navigation Node Entry;AboutSAPCustomerExperienceNavNode;VisitSAPLink;
-                                ;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
-                                ;CommunityNavNodeEntry;;Community Navigation Node Entry;CommunityNavNode;CommunityLink;
-                                ;AgileCommerceBlogNavNodeEntry;;Agile Commerce Blog Navigation Node Entry;AgileCommerceBlogNavNode;AgileCommerceBlogLink;
-                                ;LinkedInNavNodeEntry;;LinkedIn Navigation Node Entry;LinkedInNavNode;LinkedInLink;
-                                ;FacebookNavNodeEntry;;Facebook Navigation Node Entry;FacebookNavNode;FacebookLink;
-                                ;TwitterNavNodeEntry;;Twitter Navigation Node Entry;TwitterNavNode;TwitterLink;
+#                                ;AboutSAPCommerceNavNodeEntry;;About SAP Commerce Cloud Navigation Node Entry;AboutSAPCommerceNavNode;AboutSAPCommerceLink;
+#                                ;FAQNavNodeEntry;;FAQ Navigation Node Entry;FAQNavNode;FAQLink;
+#                                ;AboutSAPCustomerExperienceNavNodeEntry;;About Hybris Navigation Node Entry;AboutSAPCustomerExperienceNavNode;VisitSAPLink;
+#                                ;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
+#                                ;CommunityNavNodeEntry;;Community Navigation Node Entry;CommunityNavNode;CommunityLink;
+#                                ;AgileCommerceBlogNavNodeEntry;;Agile Commerce Blog Navigation Node Entry;AgileCommerceBlogNavNode;AgileCommerceBlogLink;
+#                                ;LinkedInNavNodeEntry;;LinkedIn Navigation Node Entry;LinkedInNavNode;LinkedInLink;
+#                                ;FacebookNavNodeEntry;;Facebook Navigation Node Entry;FacebookNavNode;FacebookLink;
+#                                ;TwitterNavNodeEntry;;Twitter Navigation Node Entry;TwitterNavNode;TwitterLink;
+
+                                ;ListProductNavNodeEntry;;Product Navigation Node Entry;ListProductNavNode;AllBrandsCategoryLink;
+                                ;AktivasiNavNodeEntry;;Aktivasi Navigation Node Entry;AktivasiNavNode;AktivasiLink;
+                                ;ResiNavNodeEntry;;Resi Commerce Blog Navigation Node Entry;ResiNavNode;ResiLink;
+                                ;FAQBoxNavNodeEntry;;FAQ Box Navigation Node Entry;FAQBoxNavNode;FAQBoxLink;
+                                ;BantuanNavNodeEntry;;Bantuan Navigation Node Entry;BantuanNavNode;BantuanLink;
+                                ;SyaratNavNodeEntry;;Syarat Navigation Node Entry;SyaratNavNode;SyaratLink;
+                                ;KebijakanNavNodeEntry;;Kebijakan Navigation Node Entry;KebijakanNavNode;KebijakanLink;
+
+                                ;TentangNavNodeEntry;;About Us Navigation Node Entry;TentangNavNode;AboutUsLink;
+                                ;TestimoniNavNodeEntry;;Blog Page Navigation Node Entry;TestimoniNavNode;BlogsLink;
+                                ;OfflineStoreNavNodeEntry;;Offline Store Navigation Node Entry;OfflineStoreNavNode;OffStoreLink;
+                                ;BlogPageNavNodeEntry;;Blog Page Navigation Node Entry;BlogPageNavNode;BlogPgeLink;
+
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+                              ;;AktivasiLink;Aktivasi Page Nav Link;/#;AktivasiLink;AktivasiLink;;;;
+                              ;;ResiLink;Resi Page Nav Link;/#;ResiLink;ResiLink;;;;
+                              ;;FAQBoxLink;FAQ Box Page Nav Link;/#;FAQBoxLink;FAQBoxLink;;;;
+                              ;;BantuanLink;Bantuan Page Nav Link;/#;BantuanLink;BantuanLink;;;;
+                              ;;SyaratLink;Syarat Page Nav Link;/#;SyaratLink;SyaratLink;;;;
+                              ;;KebijakanLink;Kebijakan Page Nav Link;/#;KebijakanLink;KebijakanLink;;;;
+                              ;;OffStoreLink;Offline Store Page Nav Link;/#;OffStoreLink;OffStoreLink;;;;
+                              ;;BlogPgeLink;Blog Page Nav Link;/#;BlogPgeLink;BlogPgeLink;;;;
+
+
 ###### Footer Component Refactor End ######
 
 ###  DemoGroup2 Page #######
@@ -1423,3 +1448,5 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 # Create Content Slots for Page
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
+
+###LINK TESTIMONI

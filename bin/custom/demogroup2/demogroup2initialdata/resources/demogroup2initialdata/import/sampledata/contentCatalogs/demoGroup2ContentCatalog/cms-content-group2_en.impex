@@ -36,7 +36,7 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
                        ;;AboutSAPCommerceLink;"About SAP Commerce Cloud"
                        ;;AgileCommerceBlogLink;"Agile Commerce Blog"
                        ;;AllBrandsCategoryLink;"Brands"
-                       ;;AllBedsCategoryLink;"PRODUCT IN THE BOX"
+                       ;;AllBedsCategoryLink;"Product"
                        ;;SofaBedCategoryLink;"SOFA"
                        ;;SpringBedCategoryLink;"PROPS"
                        ;;AboutUsLink;"About Us"
@@ -56,6 +56,14 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
                        ;;TwitterLink;"Twitter"
                        ;;VisitSAPLink;"Visit SAP"
 
+                        ;;AktivasiLink;"Warranty Activation"
+                        ;;ResiLink;"Waybill Status"
+                        ;;FAQBoxLink;"FAQ"
+                        ;;BantuanLink;"Help"
+                        ;;SyaratLink;"Terms & Condition"
+                        ;;KebijakanLink;"Privacy Policy"
+                        ;;OffStoreLink;"Offline Store"
+                        ;;BlogPgeLink;"Blog"
 # Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
                    ;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;$siteResource/images/banners/site/Elec_358x45_HomeDeliveryBanner_EN_01.gif;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;;"Group2 Order before 6pm for next day delivery"
@@ -122,6 +130,10 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
                         ;;BlogsNavNode;"Blogs"
                         ;;GuaranteeNavNode;"Guarantee"
                         ;;ConfirmationNavNode;"Confirmation"
+
+                        ;;ProductBoxNavNode;"PRODUCT"
+                        ;;SupportNavNode;"SUPPORT"
+                        ;;AboutNavNode;"ABOUT"
 
 #Bottom Header Slot
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
