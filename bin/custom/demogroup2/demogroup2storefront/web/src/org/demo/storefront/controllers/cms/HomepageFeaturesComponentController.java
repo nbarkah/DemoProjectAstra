@@ -24,8 +24,6 @@ public class HomepageFeaturesComponentController extends AbstractAcceleratorCMSC
 	@Override
 	protected void fillModel(HttpServletRequest request, Model model, HomepageFeaturesComponentModel component) {
 		model.addAttribute("title", component.getTitle());
-		model.addAttribute("subtitle", component.getSubtitle());
-		model.addAttribute("images", component.getImage());
 		model.addAttribute("features", component.getFeatureTiles());
 	}
 }
