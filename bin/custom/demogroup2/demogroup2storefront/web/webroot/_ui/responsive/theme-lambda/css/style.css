@@ -11204,8 +11204,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .carousel,
 .carousel__component--carousel {
-  width: 100%;
-  margin: 10px -10px;
+  width: 60%;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;

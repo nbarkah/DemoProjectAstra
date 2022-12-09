@@ -87,6 +87,7 @@
 		<script src="${commonResourcePathHtml}/js/acc.slickbanner.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.slickcardproduct.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.slickunboxingitb.js"></script>
+		<script src="${commonResourcePathHtml}/js/acc.slicktestimoni.js"></script>
 
 
 		<script src="${commonResourcePathHtml}/js/acc.csv-import.js"></script>

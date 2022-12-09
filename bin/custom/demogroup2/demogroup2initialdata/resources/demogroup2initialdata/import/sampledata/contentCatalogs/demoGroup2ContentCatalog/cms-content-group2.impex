@@ -891,7 +891,16 @@ INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]       ; uid[unique
                                   ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;Posisikan ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
                                   ;                          ; unboxingBukaPlastikComponent                 ; Homepage Unboxing Buka Plastik Tile Component          ;Buka Plastik ;  Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah        ; unboxing-itb-3 ; unboxingBukaPlastikTileComponent
                                   ;                          ; unboxingTungguMengembangComponent            ; Homepage Unboxing Tunggu Mengembang Tile Component     ;Tunggu Mengembang ;  kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan   ; unboxing-itb-4 ; unboxingTungguMengembangTileComponent
+INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ;  description                                                                ; image(code, $contentCV) ; &componentRef
+                                  ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
+                                  ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
+                                  ;                          ; unboxingBukaPlastikComponent                 ; Homepage Unboxing Buka Plastik Tile Component          ;  Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah        ; unboxing-itb-3 ; unboxingBukaPlastikTileComponent
+                                  ;                          ; unboxingTungguMengembangComponent            ; Homepage Unboxing Tunggu Mengembang Tile Component     ;  kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan   ; unboxing-itb-4 ; unboxingTungguMengembangTileComponent
 
+
+
+INSERT_UPDATE HomepageFeaturesComponent; $contentCV[unique = true]; uid[unique = true]        ; title             ; subtitle ; featureTiles(uid, $contentCV) ; &componentRef
+                                       ;                          ; HomepageFeaturesComponent ; UNBOXING INTHEBOX ;          ; unboxingKeluarkanComponent, unboxingPosisikanComponent, unboxingBukaPlastikComponent, unboxingTungguMengembangComponent ; HomepageFeaturesComponent
 
 
 INSERT_UPDATE HomepageFeaturesComponent; $contentCV[unique = true]; uid[unique = true]        ; title             ; subtitle ; featureTiles(uid, $contentCV) ; &componentRef
