@@ -40,9 +40,9 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
                        ;;SofaBedCategoryLink;"SOFA"
                        ;;SpringBedCategoryLink;"PROPS"
                        ;;AboutUsLink;"About Us"
-                       ;;BlogsLink;"Blogs"
-                       ;;GuaranteeLink;"Garansi"
-                       ;;ConfirmationLink;"Konfirmasi"
+                       ;;BlogsLink;"Testimony"
+                       ;;GuaranteeLink;"Guarantee"
+                       ;;ConfirmationLink;"Confirmation"
                        ;;RecommendationLink;"Rekomendasi"
                        ;;RecommendationLink1;"Rekomendasi 1"
                        ;;RecommendationLink2;"Rekomendasi 2"
@@ -58,7 +58,7 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
 
 # Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
-                   ;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;$siteResource/images/banners/site/Elec_358x45_HomeDeliveryBanner_EN_01.gif;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;;"Order before 6pm for next day delivery"
+                   ;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;$siteResource/images/banners/site/Elec_358x45_HomeDeliveryBanner_EN_01.gif;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;;"Group2 Order before 6pm for next day delivery"
 
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
                             ;;LightboxHomeDeliveryBannerComponent;Elec_358x45_HomeDeliveryBanner_EN_01.gif
@@ -118,10 +118,10 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 #                        ;;SuppliesNavNode;"Supplies"
 #                        ;;WebcamsNavNode;"Webcams"
 #
-                        ;;AboutUsNavNode;"Tentang Kami"
+                        ;;AboutUsNavNode;"About Us"
                         ;;BlogsNavNode;"Blogs"
-                        ;;GuaranteeNavNode;"Garansi"
-                        ;;ConfirmationNavNode;"Konfirmasi"
+                        ;;GuaranteeNavNode;"Guarantee"
+                        ;;ConfirmationNavNode;"Confirmation"
 
 #Bottom Header Slot
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
@@ -150,17 +150,17 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 
 # Media Content
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
-                   ;;Elec_228x178_HomeCat_Accessories_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_Accessories_EN_01.jpg;;Elec_228x178_HomeCat_Accessories_EN_01.jpg;;"Everything you need to accessorise your camera"
-                   ;;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_DigiCom_EN_01.jpg;;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;;"Find the perfect camera to capture those special moments"
-                   ;;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;;"See the latest DSLR technology from the leading brands"
-                   ;;Elec_228x178_HomeCat_Memory_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_Memory_EN_01.jpg;;Elec_228x178_HomeCat_Memory_EN_01.jpg;;"Exclusive discounts on our memory cards"
-                   ;;Elec_228x228_HomeCamcorders_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x228_HomeCamcorders_EN_01.jpg;;Elec_228x228_HomeCamcorders_EN_01.jpg;;"Camcorders. HD fun in the palm of your hand >"
-                   ;;Elec_228x228_HomeLenses_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x228_HomeLenses_EN_01.jpg;;Elec_228x228_HomeLenses_EN_01.jpg;;"Lenses"
-                   ;;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;;"New - Ignite your passion for film with the latest HD camcorder..."
-                   ;;Elec_468x418_HomeCarouselCyber_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselCyber_EN_01.jpg;;Elec_468x418_HomeCarouselCyber_EN_01.jpg;;"What colour are you? Sony Cybershot - a colour for any mood."
-                   ;;Elec_468x418_HomeCarouselFun_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselFun_EN_01.jpg;;Elec_468x418_HomeCarouselFun_EN_01.jpg;;"Fun on the run  - Never miss a memory!"
-                   ;;Elec_948x60_HomeBrandsGalore_EN_01.jpg;$siteResource/images/banners/homepage/Elec_948x60_HomeBrandsGalore_EN_01.jpg;;Elec_948x60_HomeBrandsGalore_EN_01.jpg;;"Brands Galore"
-                   ;;Elec_948x60_HomeDeliveryBanner_EN_01.jpg;$siteResource/images/banners/homepage/Elec_948x60_HomeDeliveryBanner_EN_01.jpg;;Elec_948x60_HomeDeliveryBanner_EN_01.jpg;;"Order before 6pm for next day delivery >"
+                   ;;Elec_228x178_HomeCat_Accessories_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_Accessories_EN_01.jpg;;Elec_228x178_HomeCat_Accessories_EN_01.jpg;;"Group2 Everything you need to accessorise your camera"
+                   ;;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_DigiCom_EN_01.jpg;;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;;"Group2 Find the perfect camera to capture those special moments"
+                   ;;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;;"Group2 See the latest DSLR technology from the leading brands"
+                   ;;Elec_228x178_HomeCat_Memory_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_Memory_EN_01.jpg;;Elec_228x178_HomeCat_Memory_EN_01.jpg;;"Group2 Exclusive discounts on our memory cards"
+                   ;;Elec_228x228_HomeCamcorders_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x228_HomeCamcorders_EN_01.jpg;;Elec_228x228_HomeCamcorders_EN_01.jpg;;"Group2 Camcorders. HD fun in the palm of your hand >"
+                   ;;Elec_228x228_HomeLenses_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x228_HomeLenses_EN_01.jpg;;Elec_228x228_HomeLenses_EN_01.jpg;;"Group2 Lenses"
+                   ;;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;;"Group2 New - Ignite your passion for film with the latest HD camcorder..."
+                   ;;Elec_468x418_HomeCarouselCyber_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselCyber_EN_01.jpg;;Elec_468x418_HomeCarouselCyber_EN_01.jpg;;"Group2 What colour are you? Sony Cybershot - a colour for any mood."
+                   ;;Elec_468x418_HomeCarouselFun_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselFun_EN_01.jpg;;Elec_468x418_HomeCarouselFun_EN_01.jpg;;"Group2 Fun on the run  - Never miss a memory!"
+                   ;;Elec_948x60_HomeBrandsGalore_EN_01.jpg;$siteResource/images/banners/homepage/Elec_948x60_HomeBrandsGalore_EN_01.jpg;;Elec_948x60_HomeBrandsGalore_EN_01.jpg;;"Group2 Brands Galore"
+                   ;;Elec_948x60_HomeDeliveryBanner_EN_01.jpg;$siteResource/images/banners/homepage/Elec_948x60_HomeDeliveryBanner_EN_01.jpg;;Elec_948x60_HomeDeliveryBanner_EN_01.jpg;;"Group2 Order before 6pm for next day delivery >"
 
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
                             ;;BrandsGaloreBanner;Elec_948x60_HomeBrandsGalore_EN_01.jpg
@@ -191,13 +191,13 @@ UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$l
 
 # Media Content
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];folder(qualifier)[default='images'];altText
-                   ;;Elec_788x120_Save_EN_01.jpg;$siteResource/images/banners/homepage/Elec_788x120_Save_EN_01.jpg;;;"Buy online & save. Look out for huge savings across our store"
-                   ;;Elec_96x96_CatBWFilm_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatBWFilm_EN_01.jpg;;;""
-                   ;;Elec_96x96_CatColFilm_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatColFilm_EN_01.jpg;;;""
-                   ;;Elec_96x96_CatFlash_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatFlash_EN_01.jpg;;;""
-                   ;;Elec_96x96_CatLenses_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatLenses_EN_01.jpg;;;""
-                   ;;Elec_96x96_CatTripod_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatTripod_EN_01.jpg;;;""
-                   ;;Elec_96x96_CatVTapes_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatVTapes_EN_01.jpg;;;""
+                   ;;Elec_788x120_Save_EN_01.jpg;$siteResource/images/banners/homepage/Elec_788x120_Save_EN_01.jpg;;;"Group2 Buy online & save. Look out for huge savings across our store"
+                   ;;Elec_96x96_CatBWFilm_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatBWFilm_EN_01.jpg;;;"Group2"
+                   ;;Elec_96x96_CatColFilm_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatColFilm_EN_01.jpg;;;"Group2"
+                   ;;Elec_96x96_CatFlash_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatFlash_EN_01.jpg;;;"Group2"
+                   ;;Elec_96x96_CatLenses_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatLenses_EN_01.jpg;;;"Group2"
+                   ;;Elec_96x96_CatTripod_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatTripod_EN_01.jpg;;;"Group2"
+                   ;;Elec_96x96_CatVTapes_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatVTapes_EN_01.jpg;;;"Group2"
 
 UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang];$picture[lang=$lang];description[lang=$lang]
 #                               ;;BlackAndWhiteFilmsFeatureComponent;Black & White Films;Elec_96x96_CatBWFilm_EN_01.jpg;"Find the right film for authentic photo art"
@@ -214,8 +214,8 @@ UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[l
 
 # Media Content
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];folder(qualifier)[default='images'];altText
-                   ;;Elec_148x300_Sec4_LensesBanner_EN_01.jpg;$siteResource/images/banners/site/Elec_148x300_Sec4_LensesBanner_EN_01.jpg;;;"SLR Lenses - Professional lenses for all occasions"
-                   ;;Elec_788x120_DigiSLR_EN_01.jpg;$siteResource/images/banners/site/Elec_788x120_DigiSLR_EN_01.jpg;;;"Get the perfect picture everytime with a digital SLR camera"
+                   ;;Elec_148x300_Sec4_LensesBanner_EN_01.jpg;$siteResource/images/banners/site/Elec_148x300_Sec4_LensesBanner_EN_01.jpg;;;"Group2 SLR Lenses - Professional lenses for all occasions"
+                   ;;Elec_788x120_DigiSLR_EN_01.jpg;$siteResource/images/banners/site/Elec_788x120_DigiSLR_EN_01.jpg;;;"Group2 Get the perfect picture everytime with a digital SLR camera"
 
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
                             ;;PerfectPictureBanner;Elec_788x120_DigiSLR_EN_01.jpg
@@ -242,64 +242,88 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 
 #above is the desktop data, below is the responsive data
 
+# PLP Grid Banner
+
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;banner-plp-1400x440.png;$siteResource/images/inthebox/PLP/banner-plp-1400x440.png;;banner-plp-1400x440.png;;"IN THE BOX BANNER PLP"
+                   ;mobile;;banner-plp-480x320.png;$siteResource/images/inthebox/PLP/banner-plp-480x320.png;;banner-plp-480x320.png;;"IN THE BOX BANNER PLP"
+                   ;tablet;;banner-plp-770x350.png;$siteResource/images/inthebox/PLP/banner-plp-770x350.png;;banner-plp-770x350.png;;"IN THE BOX BANNER PLP"
+                   ;desktop;;banner-plp-960x330.png;$siteResource/images/inthebox/PLP/banner-plp-960x330.png;;banner-plp-960x330.png;;"IN THE BOX BANNER PLP"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;plp-en;banner-plp-1400x440.png,banner-plp-480x320.png,banner-plp-770x350.png,banner-plp-960x330.png
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;BannerProductGridComponent;plp-en
+
+#INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];folder(qualifier)[default='images'];altText
+#                   ;;banner-plp-1400x440.png;$siteResource/images/inthebox/PLP/banner-plp-1400x440.png;;;"IN THE BOX BANNER PLP"
+#                   ;;banner-plp-480x320.png;$siteResource/images/inthebox/PLP/banner-plp-480x320.png;;;"IN THE BOX BANNER PLP"
+#                   ;;banner-plp-770x350.png;$siteResource/images/inthebox/PLP/banner-plp-770x350.png;;;"IN THE BOX BANNER PLP"
+#                   ;;banner-plp-960x330.png;$siteResource/images/inthebox/PLP/banner-plp-960x330.png;;;"IN THE BOX BANNER PLP"
+
+#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
+#                                   ;;ProductGridComponent;banner-plp-1400x440.png
+
+
 # Home Page Splash
 
 # Media Content
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
                    ;widescreen;;banner-homepage-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
                    ;widescreen;;banner-homepage-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-1400x440.png;;banner-homepage-1400x440.png;;"IN THE BOX 2"
-#                   ;widescreen;;banner-homepage-3-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
-#                   ;widescreen;;banner-homepage-4-2-1400x440.png;$siteResource/images/inthebox/homepage/banner-homepage-2-1400x440.png;;banner-homepage-2-1400x440.png;;"IN THE BOX"
-                   ;widescreen;;discount-banner-1400.png;$siteResource/images/banners/homepage/responsive/discount-banner-1400.png;;discount-banner-1400.png;;"IN THE BOX"
+                   ;widescreen;;unboxing-itb-1;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
+                   ;widescreen;;unboxing-itb-2;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
+                   ;widescreen;;unboxing-itb-3;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
+                   ;widescreen;;unboxing-itb-4;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
                    ;mobile;;banner-homepage-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
                    ;mobile;;banner-homepage-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-480x320.png;;banner-homepage-480x320.png;;"IN THE BOX2"
-#                   ;mobile;;banner-homepage-2-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
-#                   ;mobile;;banner-homepage-4-2-480x320.png;$siteResource/images/inthebox/homepage/banner-homepage-2-480x320.png;;banner-homepage-2-480x320.png;;"IN THE BOX"
-                   ;mobile;;discount-banner-480.png;$siteResource/images/banners/homepage/responsive/discount-banner-480.png;;discount-banner-480.png;;"IN THE BOX"
                    ;tablet;;banner-homepage-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
                    ;tablet;;banner-homepage-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-770x350.png;;banner-homepage-770x350.png;;"IN THE BOX 2"
-#                   ;tablet;;banner-homepage-3-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
-#                   ;tablet;;banner-homepage-4-2-770x350.png;$siteResource/images/inthebox/homepage/banner-homepage-2-770x350.png;;banner-homepage-2-770x350.png;;"IN THE BOX"
-                   ;tablet;;discount-banner-770.png;$siteResource/images/banners/homepage/responsive/discount-banner-770.png;;discount-banner-770.png;;"IN THE BOX"
                    ;desktop;;banner-homepage-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
                    ;desktop;;banner-homepage-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-960x330.png;;banner-homepage-960x330.png;;"IN THE BOX 2"
-#                   ;desktop;;banner-homepage-3-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
-#                   ;desktop;;banner-homepage-4-2-960x330.png;$siteResource/images/inthebox/homepage/banner-homepage-2-960x330.png;;banner-homepage-2-960x330.png;;"IN THE BOX"
-                   ;desktop;;discount-banner-960.png;$siteResource/images/banners/homepage/responsive/discount-banner-960.png;;discount-banner-960.png;;"IN THE BOX"
+
+#UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang];$picture[lang=$lang];description[lang=$lang]
+#                               ;;UnboxingITB1Component;Keluarkan;unboxing-itb-1.png;"Keluarkan Kasur INTHEBOX dari kemasannya secara perlahan-lahan"
+#                               ;;UnboxingITB2Component;Posisikan;unboxing-itb-2.png;"Keluarkan Kasur INTHEBOX dari kemasannya secara perlahan-lahan"
+#                               ;;UnboxingITB3Component;Buka Plastik;unboxing-itb-3.png;"Lepaskan Plastik Pembungkus dan Pastikan logo INTHEBOX ada di bawah"
+#                               ;;UnboxingITB4Component;Tunggu Mengembang;unboxing-itb-4.png;"Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan"
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-                            ;demo-homepage-discount-en;discount-banner-1400.png,discount-banner-960.png,discount-banner-770.png,discount-banner-480.png
                             ;demo-homepage-spalsh-1-en;banner-homepage-2-1400x440.png,banner-homepage-2-480x320.png,banner-homepage-2-770x350.png,banner-homepage-2-960x330.png
                             ;demo-homepage-spalsh-2-en;banner-homepage-1400x440.png,banner-homepage-480x320.png,banner-homepage-770x350.png,banner-homepage-960x330.png
-#                            ;demo-homepage-spalsh-3-en;banner-3-demo-1400x440.jpg,banner-3-demo-480x320.jpg,banner-3-demo-770x350.jpg,banner-3-demo-960x330.png
-#                            ;demo-homepage-spalsh-4-en;banner-4-demo-1400x440.jpg,banner-4-demo-480x320.jpg,banner-4-demo-770x350.jpg,banner-4-demo-960x330.png
+                            ;demo-homepage-unboxing-itb-1-en;unboxing-itb-1
+                            ;demo-homepage-unboxing-itb-2-en;unboxing-itb-2
+                            ;demo-homepage-unboxing-itb-3-en;unboxing-itb-3
+                            ;demo-homepage-unboxing-itb-4-en;unboxing-itb-4
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-                                             ;;DemoHompageDiscountBannerComponent;demo-homepage-discount-en
                                              ;;DemoHompageSplashBannerComponent-1;demo-homepage-spalsh-1-en
                                              ;;DemoHompageSplashBannerComponent-2;demo-homepage-spalsh-2-en
-#                                             ;;DemoHompageSplashBannerComponent-3;demo-homepage-spalsh-3-en
-#                                             ;;DemoHompageSplashBannerComponent-4;demo-homepage-spalsh-4-en
+#                                             ;;DemoHompageUnboxingITBComponent-1;demo-homepage-unboxing-itb-1-en
+#                                             ;;DemoHompageUnboxingITBComponent-2;demo-homepage-unboxing-itb-2-en
+#                                             ;;DemoHompageUnboxingITBComponent-3;demo-homepage-unboxing-itb-3-en
+#                                             ;;DemoHompageUnboxingITBComponent-4;demo-homepage-unboxing-itb-4-en
 
-#UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-#                               ;;NewDemoGroup2HomepageProductCarouselComponent;What's New
-
-# Home page slot 2A
+# Home page slot 2 BUAT PRODUCT
 
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
 
-# Home Section 3A
-INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
-
-# Home page slot 3B
+# Home Section 3 BUAT UNBOXING ITB
 # Media Content
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-                   ;tablet;;keluarkan.png;$siteResource/images/banners/homepage/responsive/keluarkan.png;;keluarkan.png;;"Keluarkan"
-                   ;tablet;;posisikan.png;$siteResource/images/banners/homepage/responsive/posisikan.png;;posisikan.png;;"posisikan"
+#INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+#                   ;widescreen;;unboxing-itb-1.png;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
+#                   ;widescreen;;unboxing-itb-2.png;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
+#                   ;widescreen;;unboxing-itb-3.png;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
+#                   ;widescreen;;unboxing-itb-4.png;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
 
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-                            ;demo-homepage-light-fam-en;keluarkan.png
-                            ;demo-homepage-light-text-en;posisikan.png
+#INSERT_UPDATE CatalogUnawareMedia; code[unique = true]                 ; mime     ; realfilename ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]; folder(qualifier)[default = 'images']
+#; SCIENCE-01    				; text/jpg ; unboxing-itb-1.png     ;$siteResource/science-1.png
+#INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+#                            ;demo-homepage-light-fam-en;keluarkan.png
+#                            ;demo-homepage-light-text-en;posisikan.png
+#                            ;demo-homepage-springbed-03-en;bukaplastik.png
+#                            ;demo-homepage-springbed-04-en;tunggumengembang.png
 
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
 #                                             ;;DemoHompageLightFamBannerComponent;demo-homepage-light-fam-en
@@ -308,21 +332,10 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
 #INSERT_UPDATE DemoEaseOfAnyWhereCMSComponent;$contentCV[unique=true];uid[unique=true];$backGroundImage;$hoverOverImage;title;footerUrl;footerUrlName;description[lang=$lang];&componentRef
 #                                            ;;HomePageEaseOfAnyWhere1;keluarkan.png;keluarkan.png;Keluarkan;/sevaservice/credit-calculator/;Keluarkan;Keluarkan kasur INTHEBOX dari kemasannya secara perlahan-lahan;HomePageEaseOfAnyWhere1
 #                                            ;;HomePageEaseOfAnyWhere2;posisikan.png;posisikan.png;Posisikan;https://seva.id/cariparkir/;Posisikan;Posisikan kasur INTHEBOX di atas permukaan tempat tidur atau divan;HomePageEaseOfAnyWhere2
-
-# Home section 3C
-# Media Content
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-                   ;tablet;;bukaplastik.png;$siteResource/images/banners/homepage/responsive/bukaplastik.png;;bukaplastik.png;;"Buka Plastik"
-                   ;tablet;;tunggumengembang.png;$siteResource/images/banners/homepage/responsive/tunggumengembang.png;;tunggumengembang.png;;"Tunggu Mengembang"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-                            ;demo-homepage-springbed-03-en;bukaplastik.png
-                            ;demo-homepage-springbed-04-en;tunggumengembang.png
-
-
-#INSERT_UPDATE DemoEaseOfAnyWhereCMSComponent;$contentCV[unique=true];uid[unique=true];$backGroundImage;$hoverOverImage;title;footerUrl;footerUrlName;description[lang=$lang];&componentRef
 #                                            ;;HomePageEaseOfAnyWhere3;bukaplastik.png;bukaplastik.png;Buka Plastik;/sevaservice/book-service/;Buka Plastik;Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan.;HomePageEaseOfAnyWhere3
 #                                            ;;HomePageEaseOfAnyWhere4;tunggumengembang.png;tunggumengembang.png;Tunggu Mengembang;/sevaservice/book-service/;Tunggu Mengembang;Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan.;HomePageEaseOfAnyWhere4
+
+# Home Section 4 BUAT TESTI
 
 # Home Section 5
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
@@ -568,7 +581,7 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
-                                ;;FooterNavigationComponent;"Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
+                                ;;FooterNavigationComponent;"Copyright © 2019-2022 PT Duta Mas Mandiri."
 
 # Traning Paragraph Component
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en]

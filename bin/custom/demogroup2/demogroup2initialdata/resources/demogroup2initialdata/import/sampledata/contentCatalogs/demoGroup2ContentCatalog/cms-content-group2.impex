@@ -783,8 +783,19 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;;ProductListSlot;Product List Slot for Product List;true;ProductListComponent;;;
 
 #### ProductGridPage
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;BannerProductGridComponent;IN THE BOX PLP BANNER;/c/INTHEBOX;BannerProductGridComponent
+
+#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+#                                   ;;ProductGridComponent;IN THE BOX PLP BANNER;DemoBannerProductComponent;/c/INTHEBOX
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-                         ;;ProductGridSlot;Product Grid Slot for Product List;true;ProductGridComponent;;;
+                         ;;ProductGridSlot      ;Product Grid Slot for Product List;true;ProductGridComponent;;;
+                         ;;Section1Slot-PLP     ;Banner Product PLP                ;true;BannerProductGridComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productGrid'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section1Slot-PLP;Section1;;Section1Slot-PLP
 
 #### SearchResultListPage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
