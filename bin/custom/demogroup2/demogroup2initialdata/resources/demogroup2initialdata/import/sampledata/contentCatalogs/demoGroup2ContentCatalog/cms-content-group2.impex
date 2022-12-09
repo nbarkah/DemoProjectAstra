@@ -866,15 +866,6 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 
 ###  Home page slot 3  ####
 
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-                   ;widescreen;;unboxing-itb-1;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;unboxing-itb-1.png;;"UNBOXING ITB 1"
-                   ;widescreen;;unboxing-itb-2;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
-                   ;widescreen;;unboxing-itb-3;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
-                   ;widescreen;;unboxing-itb-4;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
-
-
-
 INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]       ; uid[unique = true]                                   ; name                                                  ;title;  description                                                                ; image(code, $contentCV) ; &componentRef
                                   ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;Keluarkan ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
                                   ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;Posisikan ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
@@ -909,25 +900,6 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
                                 ;;Section4-Homepage;Section4;;Section4Slot-Homepage
 
 
-
-#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-#
-
-#INSERT_UPDATE CatalogUnawareMedia;$contentCV[unique=true]; code[unique = true]                 ; mime     ; realfilename ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]; folder(qualifier)[default = 'images']
-#                                 ;; Unboxing-ITB-1    				; text/jpg ; unboxing-itb-1.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-1.png;;
-#                                 ;; Unboxing-ITB-2    				; text/jpg ; unboxing-itb-2.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;
-#                                 ;; Unboxing-ITB-3    				; text/jpg ; unboxing-itb-3.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;
-#                                 ;; Unboxing-ITB-4    				; text/jpg ; unboxing-itb-4.png     ;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;
-#
-#INSERT_UPDATE HomepageFeaturesComponent   ;$contentCV[unique=true];uid[unique=true];title			            ; subtitle	        ;image(code)
-#                     ;;ITB-1                ;Keluarkan       ; Keluarkan kasur INTHEBOX dari kemasannya secara perlahan lahan		    ;Unboxing-ITB-1
-#                     ;;ITB-2                ;Posisikan       ; Keluarkan kasur INTHEBOX dari kemasannya secara perlahan lahan		    ;Unboxing-ITB-2
-#                     ;;ITB-3                ;Buka Plastik       ; Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah		    ;Unboxing-ITB-3
-#                     ;;ITB-4                ;Tunggu Mengembang       ; Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan		    ;Unboxing-ITB-4
-#
-#
-#
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef

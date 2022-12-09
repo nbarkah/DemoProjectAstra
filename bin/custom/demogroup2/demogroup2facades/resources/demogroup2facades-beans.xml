@@ -35,7 +35,13 @@
 	<bean class="org.demo.facades.homepage.data.HomepageFeaturesData">
 		<property name="title" type="String"/>
 		<property name="subtitle" type="String"/>
-		<property name="image" type="String"/>
+	</bean>
+
+	<bean class="org.demo.facades.homepage.data.FeatureTileData">
+		<property name="title" type="String"/>
+		<property name="subtitle" type="String"/>
+		<property name="images" type="String"/>
+		<property name="description" type="String"/>
 	</bean>
 
 </beans>
