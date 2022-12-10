@@ -7,16 +7,17 @@
 
  <template:page pageTitle="${pageTitle}">
 
- <div class="container-testimoni">
+ <div class="container testii">
 
         <div class="heading">
-            <div class="header text-center">
+            <div class="headertesti text-center">
+            <div class="headertesti text-center">
                 <h1>TESTIMONI PEMBELI INTHEBOX</h1>
                 <p>Banyak pembeli yang merasa puas dengan kualitas kasur INTHEBOX</p>
             </div>
             <div class="head-msg">
-                <p>Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.</p>
-                <p>Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya. Kami paham bahwa istirahat yang cukup dan tidur berkualitas adalah hal yang penting. Oleh karena itu, kami selalu menggunakan material berkualitas premium, namun kamu bisa memilikinya dengan harga terjangkau.
+                <p>Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.<br/><br/>
+                Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya. Kami paham bahwa istirahat yang cukup dan tidur berkualitas adalah hal yang penting. Oleh karena itu, kami selalu menggunakan material berkualitas premium, namun kamu bisa memilikinya dengan harga terjangkau.
                 </p>
             </div>
         </div>
@@ -68,5 +69,6 @@
                                       Halaman Berikutnya <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
                                   </button>
                                </div>
+                    </div>
                     </div>
 </template:page>

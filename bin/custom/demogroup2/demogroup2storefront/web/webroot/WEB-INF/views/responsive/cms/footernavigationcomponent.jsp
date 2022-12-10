@@ -36,7 +36,7 @@
 	               </c:if>
 	            </div>
 	            <div class="footer__left col-xs-12 col-sm-12 col-md-6">
-	                <div class="row">
+	                <div class="row nav-bot">
 	                	<c:forEach items="${component.navigationNode.children}" var="childLevel1">
 		                	<c:forEach items="${childLevel1.children}" step="${component.wrapAfter}" varStatus="i">
 							   <div class="footer__nav--container col-xs-12 col-sm-3">
