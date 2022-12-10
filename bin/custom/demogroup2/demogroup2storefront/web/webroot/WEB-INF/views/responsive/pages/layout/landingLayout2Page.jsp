@@ -17,13 +17,13 @@
         </cms:pageSlot>
     </div>
 
-    <div class="">
+    <div class="homepage-unboxing" style="background-color:#d4effc;">
         <cms:pageSlot position="Section3" var="feature" >
             <cms:component component="${feature}" element="div" class="card-product no-space yComponentWrapper"/>
         </cms:pageSlot>
     </div>
 
-    <div class="" style="background-color:#f3f4f4">
+    <div class="homepage-testimoni" style="background-color:#f3f4f4">
         <cms:pageSlot position="Section4" var="feature" element="div" class="no-margin">
             <cms:component component="${feature}" element="div" class=" no-space yComponentWrapper"/>
         </cms:pageSlot>
