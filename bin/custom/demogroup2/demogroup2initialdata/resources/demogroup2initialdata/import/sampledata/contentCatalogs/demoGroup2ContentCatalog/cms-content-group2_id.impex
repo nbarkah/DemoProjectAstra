@@ -63,15 +63,9 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
                         ;;KebijakanLink;"Kebijakan Privasi"
                         ;;OffStoreLink;"Toko Offline"
                         ;;BlogPgeLink;"Blog"
+                        ;;BlogHeadLink;"Blog"
 
-                        ;;AktivasiLink;"Aktivasi Garansi"
-                        ;;ResiLink;"Cek Resi"
-                        ;;FAQBoxLink;"FAQ"
-                        ;;BantuanLink;"Bantuan"
-                        ;;SyaratLink;"Syarat & Ketentuan"
-                        ;;KebijakanLink;"Kebijakan Privasi"
-                        ;;OffStoreLink;"Toko Offline"
-                        ;;BlogPgeLink;"Blog"
+
 
 # Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
@@ -137,12 +131,7 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 #
                         ;;AboutUsNavNode;"Tentang Kami"
                         ;;BlogsNavNode;"Blogs"
-                        ;;GuaranteeNavNode;"Garansi"
-                        ;;ConfirmationNavNode;"Konfirmasi"
 
-                    ;;ProductBoxNavNode;"PRODUK"
-                    ;;SupportNavNode;"SUPPORT"
-                    ;;AboutNavNode;"ABOUT"
 
                         ;;ProductBoxNavNode;"PRODUK"
                         ;;SupportNavNode;"SUPPORT"
