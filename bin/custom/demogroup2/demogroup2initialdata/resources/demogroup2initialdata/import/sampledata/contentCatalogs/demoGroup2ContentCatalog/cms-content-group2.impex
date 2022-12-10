@@ -237,7 +237,7 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;LinkedInLink;Linked In Link;"http://www.linkedin.com/groups/5063400";LinkedInLink;LinkedInLink;newWindow;;;
                               ;;FAQLink;FAQ Link;/faq;FAQLink;FAQLin;;;;
                               ;;TermsAndConditionsLink;Terms and Conditions Link;/termsAndConditions;TermsAndConditionsLink;TermsAndConditionsLink;;;;
-
+                              ;;BlogHeadLink;Blogs Head Link;/#;BlogHeadLink;BlogHeadLink;;;;
 # Lightbox Banner for Mini Cart
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
                                    ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
@@ -1299,6 +1299,8 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
                                ;GuaranteeNavNode;;Guarantee Links;GuaranteeNavNode;;
                                ;ConfirmationNavNode;;Confirmation Links;ConfirmationNavNode;;
                                ;RecommendationNavNode;;Recommendation Links;RecommendationNavNode;RecomLinksNavNode;
+                               ;BlogHeadNavNode;;Blog Head Links;BlogHeadNavNode;;
+
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
@@ -1309,6 +1311,7 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
                                 ;GuaranteeNavNodeEntry;;Quarantee Navigation Node Entry;GuaranteeNavNode;GuaranteeLink;
                                 ;ConfirmationNavNodeEntry;;Confirmation Navigation Node Entry;ConfirmationNavNode;ConfirmationLink;
                                 ;RecommendationNavNodeEntry;;Recommendation Navigation Node Entry;RecommendationNavNode;RecommendationLink;
+                                ;BlogHeadNavNodeEntry;;Blog Head Links;BlogHeadNavNode;BlogHeadLink;
 
 # CMS Link Components
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
@@ -1450,3 +1453,6 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
 
 ###LINK TESTIMONI
+REMOVE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+                               ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
+                               ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode
