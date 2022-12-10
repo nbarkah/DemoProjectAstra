@@ -18954,29 +18954,20 @@ select[multiple].input-sm {
     height: 320px;
   }
 }
-.container-testimoni {
-  margin: 0 auto;
-  width: 60%;
-}
-@media only screen and (min-width: 1238px) {
-  .container-testimoni {
-    width: 60%;
-  }
-}
 @media only screen and (max-width: 1241px) {
-  .container-testimoni {
-    width: 90%;
-  }
   .main-testi {
     width: 100%;
   }
 }
-p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
+.testii {
+  font-size: 15.6px;
 }
 .head-msg {
   text-align: justify;
+}
+.headertesti {
+  font-family: Bw-Gradual;
+  margin-top: 50px;
 }
 .nama {
   margin: 0;
@@ -19040,6 +19031,10 @@ p {
 @font-face {
   font-family: 'Brown';
   src: url('../fonts/Font-brown.ttf');
+}
+@font-face {
+  font-family: 'Bw-Gradual';
+  src: url('../fonts/BwGradual-Bold.ttf');
 }
 a,
 p {
@@ -19136,6 +19131,18 @@ footer {
 .input-email input:focus {
   outline: none;
 }
+@media only screen and (max-width: 1240px) {
+  .contactc {
+    justify-content: space-between;
+  }
+  #lang-form {
+    width: 50% !important;
+    margin-bottom: 15px;
+  }
+  .nav-bot {
+    justify-content: center;
+  }
+}
 .htop {
   display: flex;
   justify-content: space-between;
@@ -19213,6 +19220,10 @@ footer {
   text-decoration: none;
   color: #fff;
   font-size: 15.5px;
+}
+.mid-head {
+  display: flex;
+  justify-content: space-between;
 }
 .mid-head a {
   font-size: 17px !important;
