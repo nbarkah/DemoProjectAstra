@@ -23,7 +23,7 @@ $jarResourceCms=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup
 
 
 
-##Testimoni########
+###### GROUP 2 ######
 
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; name                              ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
                           ;                          ; TestimoniPage         ; Testimoni Page Template    ; layout/testimoniPage        ; ContentPage;

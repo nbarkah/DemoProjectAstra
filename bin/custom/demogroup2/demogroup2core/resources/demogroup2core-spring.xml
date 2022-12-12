@@ -566,5 +566,14 @@
 	<bean id="defaultTestiService" class="org.demo.core.testimoni.message.service.DefaultTestiService">
 	</bean>
 
+	<!-- Dao Demo Variant Product -->
+	<alias alias="demoProductDao" name="defaultDemoProductDao"/>
+	<bean id="defaultDemoProductDao" class="org.demo.core.dao.impl.DemoProductDaoImpl" parent="abstractItemDao" >
+	</bean>
 
+	<!-- ApprovalJob DemoGroup2 -->
+	<bean id="approvalJobPerformable"
+		  class="org.demo.core.job.ApprovalJobPerformable"
+		  parent="abstractJobPerformable">
+	</bean>
 </beans>
