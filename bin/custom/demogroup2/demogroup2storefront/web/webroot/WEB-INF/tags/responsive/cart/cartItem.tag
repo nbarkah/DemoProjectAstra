@@ -101,6 +101,12 @@
                     </div>
                 </div>
 
+                <%-- price --%>
+                <div class="item__price" style="color: #6086c2">
+                    <span class="visible-xs visible-sm"><spring:theme code="basket.page.itemPrice"/>: </span>
+                    <strong><format:price priceData="${entry.basePrice}" displayFreeForZero="true"/></strong>
+                </div>
+
                 <c:if test="${ycommerce:doesPotentialPromotionExistForOrderEntryOrOrderEntryGroup(cartData, entry)}">
                     <c:forEach items="${cartData.potentialProductPromotions}" var="promotion">
                         <c:set var="displayed" value="false"/>
@@ -169,10 +175,7 @@
             </div>
 
             <%-- price --%>
-            <div class="item__price">
-                <span class="visible-xs visible-sm"><spring:theme code="basket.page.itemPrice"/>: </span>
-                <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
-            </div>
+
 
             <%-- quantity --%>
             <div class="item__quantity hidden-xs hidden-sm">
@@ -210,26 +213,11 @@
             </div>
 
             <%-- delivery --%>
-            <div class="item__delivery">
-                <c:if test="${entry.product.purchasable}">
-                    <c:if test="${not empty entryStock and entryStock ne 'outOfStock'}">
-                        <c:if test="${entry.deliveryPointOfService eq null or not entry.product.availableForPickup}">
-                            <span class="item__delivery--label"><spring:theme code="basket.page.shipping.ship"/></span>
-                        </c:if>
-                    </c:if>
-                    <c:if test="${not empty entry.deliveryPointOfService.name}">
-                        <span class="item__delivery--label"><spring:theme code="basket.page.shipping.pickup"/></span>
-                    </c:if>
 
-                    <c:if test="${entry.product.availableForPickup and not empty entry.deliveryPointOfService.name}">
-                        <div class="item__delivery--store">${fn:escapeXml(entry.deliveryPointOfService.name)}</div>
-                    </c:if>
-                </c:if>
-            </div>
 
             <%-- total --%>
             <ycommerce:testId code="cart_totalProductPrice_label">
-                <div class="item__total js-item-total hidden-xs hidden-sm">
+                <div class="item__total js-item-total hidden-xs hidden-sm" style="color: #6086c2">
                     <format:price priceData="${entry.totalPrice}" displayFreeForZero="true"/>
                 </div>
             </ycommerce:testId>
