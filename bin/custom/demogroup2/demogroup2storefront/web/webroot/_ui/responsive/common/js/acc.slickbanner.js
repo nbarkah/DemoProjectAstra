@@ -3,7 +3,8 @@ $(document).ready(function(){
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000,
-      dots: true,
+      autoplaySpeed: 1500,
+      adaptiveHeight: true,
+      dots: true
     });
 });
