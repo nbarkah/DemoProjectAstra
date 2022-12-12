@@ -29,7 +29,11 @@ import javax.annotation.Resource;
 @RequestMapping("/")
 public class HomePageController extends AbstractPageController
 {
+	@Resource(name = "defaultTestiFacade")
+	private TestiFacade testiFacade;
 
+	@Resource(name = "defaultPersonFacade")
+	private PersonFacade personFacade;
 	private static final String LOGOUT = "logout";
 	private static final String ACCOUNT_CONFIRMATION_SIGNOUT_TITLE = "account.confirmation.signout.title";
 	private static final String ACCOUNT_CONFIRMATION_CLOSE_TITLE = "account.confirmation.close.title";
@@ -53,6 +57,8 @@ public class HomePageController extends AbstractPageController
 		storeCmsPageInModel(model, contentPage);
 		setUpMetaDataForContentPage(model, contentPage);
 		updatePageTitle(model, contentPage);
+		model.addAttribute("personList", personFacade.getAllPerson());
+		model.addAttribute("testimoni",testiFacade.getAllTestimoni());
 		return getViewForPage(model);
 	}
 
