@@ -30,7 +30,11 @@
                      <div class="w-full space-y-5 xl:space-y-28 md:pr-10 xl:pr-32">
                          <h1 class="text-2xl font-semibold xl:text-5xl">Apa Itu Kasur INTHEBOX?</h1>
                          <p class="text-md xl:text-3xl">Kasur INTHEBOX adalah spring bed yang dikemas dalam box dan akan langsung mengembang sempurna ketika dibuka. Kini sudah ada banyak pilihan produk dengan harga yang terjangkau. Ketahui lebih lanjut agar kamu bisa memiliki tidur yang berkualitas.</p>
-                         <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                         <div>
+                            <a href="aboutUsDetailIntheboxPage">
+                               <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                            </a>
+                         </div>
                      </div>
                  </div>
                  <div class="w-full space-y-5 flex flex-col md:flex-row">
@@ -39,7 +43,11 @@
                      <div class="w-full space-y-5 xl:space-y-28 md:pr-10 xl:pl-32">
                           <h1 class="text-2xl font-semibold xl:text-5xl">Kenapa Harus Pilih INTHEBOX?</h1>
                           <p class="text-md xl:text-3xl">Ada banyak kelebihan kasur INTHEBOX, khususnya bisa meningkatkan kualitas tidur dan istirahat kamu. Semua produk INTHEBOX dibuat dengan material premium, teknologi modern, dan desain yang elegan. Bisa dapat bantal gratis, free ongkir, dan garansi 10 tahun.</p>
-                         <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                          <div>
+                              <a href="aboutUsWhyIntheboxPage">
+                                  <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                              </a>
+                          </div>
                      </div>
                  </div>
                   <div class="w-full space-y-5 flex flex-col md:flex-row-reverse">
@@ -48,7 +56,11 @@
                                       <div class="w-full space-y-5 xl:space-y-28 md:pr-10 xl:pr-32">
                                           <h1 class="text-2xl font-semibold xl:text-5xl">Cara Beli Kasur INTHEBOX</h1>
                                           <p class="text-md xl:text-3xl">Bisa dibeli melalui website dengan cara cek daftar produk, masukkan ke keranjang, dan lakukan pembayaran. Mau lebih praktis? Segera WhatsApp ke 0819234659. Bisa juga dibeli online di marketplace kesayangan kamu atau langsung ke supermarket besar di kotamu.</p>
-                                          <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                          <div>
+                                                                        <a href="aboutUsBuyIntheboxPage">
+                                                                            <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                                                        </a>
+                                                                    </div>
                                       </div>
                                   </div>
              </div>
