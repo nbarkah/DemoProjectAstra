@@ -6906,7 +6906,7 @@ button.close {
   right: -25px;
 }
 .slick-prev:before {
-  content: "←";
+  content: "�?";
 }
 [dir="rtl"] .slick-prev:before {
   content: "→";
@@ -6922,7 +6922,7 @@ button.close {
   content: "→";
 }
 [dir="rtl"] .slick-next:before {
-  content: "←";
+  content: "�?";
 }
 /* Dots */
 .slick-dotted .slick-slider {
