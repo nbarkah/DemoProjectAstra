@@ -124,9 +124,11 @@
 
 .carousel,
 .carousel__component--carousel {
-	width: 100%;
-	margin: (@grid-gutter-width/2) -(@grid-gutter-width/2);
+	width: 60%;
+	margin: 0 auto;
 	text-align: center;
+	display:flex;
+	justify-content:center;
 
 	.item,
 	.carousel__item{
@@ -136,19 +138,35 @@
 		padding:0 0 (@grid-gutter-width/2) 0;
 		border-radius:10px;
 
+		.btn,
+		.carousel__item--btn {
+		    display:inline-block;
+		    margin :30px;
+		    text-decoration:none;
+		    background-color: #6086c2;
+		    color:#fff;
+		    padding:10px;
+		    font-weight:800;
+		}
+
+		.carousel__item--btn:hover {
+		    text-decoration:none;
+		    background-color:#d4effc;
+		    color:#6086c2;
+		}
+
      	.thumb,
 		.carousel__item--thumb {
         	margin:0 0 20px 0;
-        	height: 140px;
         	width: 100%;
 
 			img {
-			  max-width: 140px;
-			  max-height: 140px;
+			  width: 100%;
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
-			  object-fit: fill;
+			  object-position: 100%;
+			  border-radius:10px 10px 0 0;
 			}
 		}
 
@@ -164,42 +182,27 @@
 
 		.item__name,
 		.carousel__item--name{
-			margin-top: (@grid-gutter-width/1.5);
-			margin-bottom: 11px;
-			text-transform: uppercase;
+			margin: 0 auto;
+			width:60%;
 			text-align: center;
+			text-transform: uppercase;
 			line-height: 1.2em;
-			overflow: hidden;
+
 			position: relative;
-			height: 2.4em;
+			height: 4em;
 			font-weight: 600;
 			font-size: 16px;
 			color: @headline-color;
+			display:block;
 
-          &:before {
-            background: #FFF none repeat scroll 0 0;
-            bottom: 0;
-            position: absolute;
-            right: 0;
-            content: '\2026';
-          }
-
-          &:after {
-            content: "";
-            background: #FFF none repeat scroll 0% 0%;
-            position: absolute;
-            height: 50px;
-            width: 100%;
-            z-index: 1;
-          }
 		}
 
 		.item__price,
 		.carousel__item--price {
-		  margin: (@grid-gutter-width/2);
-		  color: @text-color;
+		  margin: (@grid-gutter-width);
+		  color: #7fc5f9;
 		  text-align: center;
-		  font-size: 24px;
+		  font-size: 40px;
 		  font-weight: 600;
 		  margin: 0;
 		}
@@ -211,13 +214,20 @@
 
 .carousel-component,
 .carousel__component {
-  	padding: 0 20px;
-  	margin: @grid-gutter-width+15 0 (@grid-gutter-width - 5);
+  	padding: 50px 20px;
+
 	.clearfix;
 
+	.carousel__component--subtitle {
+	    margin:0 auto;
+	    text-align:center;
+	    color:#fff;
+	    margin:30px 0;
+	}
+
 	.carousel__component--headline {
-	  color: @headline-color;
-      font-size: 28px;
+	  color: #fff;
+      font-size: 36px;
       margin: 10px 0 20px;
       text-align: center;
       font-weight: bold;
@@ -225,7 +235,7 @@
 	}
 
  	&:first-child {
-    	margin: 50px 0 22px;
+
   	}
 
 	+ .carousel-component,

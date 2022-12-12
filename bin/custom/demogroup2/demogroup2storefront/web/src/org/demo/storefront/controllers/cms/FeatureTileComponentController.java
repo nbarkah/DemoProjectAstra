@@ -30,8 +30,9 @@ public class FeatureTileComponentController extends AbstractAcceleratorCMSCompon
 
 	@Override
 	protected void fillModel(HttpServletRequest request, Model model, FeatureTileComponentModel component) {
-		model.addAttribute("images", component.getImage());
 		model.addAttribute("title", component.getTitle());
+		model.addAttribute("subtitle", component.getSubtitle());
 		model.addAttribute("description", component.getDescription());
+		model.addAttribute("images", component.getImage());
 	}
 }
