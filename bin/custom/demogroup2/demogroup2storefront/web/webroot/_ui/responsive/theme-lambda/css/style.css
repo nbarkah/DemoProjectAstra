@@ -6906,7 +6906,7 @@ button.close {
   right: -25px;
 }
 .slick-prev:before {
-  content: "�?";
+  content: "←";
 }
 [dir="rtl"] .slick-prev:before {
   content: "→";
@@ -6922,7 +6922,7 @@ button.close {
   content: "→";
 }
 [dir="rtl"] .slick-next:before {
-  content: "�?";
+  content: "←";
 }
 /* Dots */
 .slick-dotted .slick-slider {
@@ -11109,7 +11109,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .carousel,
 .carousel__component--carousel {
-  width: auto;
+  width: 100%;
   margin: 10px -10px;
   text-align: center;
 }
@@ -11119,7 +11119,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .carousel__item {
   display: block;
   background-color: #ffffff;
-  margin: 0 20px;
+  margin: 0 10px;
   padding: 0 0 10px 0;
   border-radius: 10px;
 }
