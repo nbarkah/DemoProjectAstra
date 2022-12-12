@@ -11301,7 +11301,6 @@ fieldset[disabled] .btn-primary.active {
   text-transform: uppercase;
   line-height: 1.2em;
   position: relative;
-  height: 4em;
   font-weight: 600;
   font-size: 16px;
   color: #3c3c3c;
@@ -11318,9 +11317,16 @@ fieldset[disabled] .btn-primary.active {
   margin: 20px;
   color: #7fc5f9;
   text-align: center;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 600;
   margin: 0;
+  padding: 0 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .carousel,
+  .carousel__component--carousel {
+    width: 80%;
+  }
 }
 .carousel-component,
 .carousel__component {
@@ -19134,6 +19140,41 @@ p {
   text-decoration: none;
   background-color: #d4effc;
   color: #6086c2;
+}
+.container-unboxing-homepage {
+  margin: 0 auto;
+  width: 60%;
+  padding: 30px 0 50px 0;
+  color: #6086c2;
+}
+@media only screen and (min-width: 1238px) {
+  .container-unboxing-homepage {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1241px) {
+  .container-unboxing-homepage {
+    width: 90%;
+  }
+}
+.unboxing-title {
+  font-weight: bold;
+}
+.unboxing-tile-homepage {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.tile-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.tile-desc {
+  font-weight: 600;
+  line-height: 1.5em;
+  width: 80%;
+  margin: 0 auto;
 }
 .skip,
 .skiptocontent,

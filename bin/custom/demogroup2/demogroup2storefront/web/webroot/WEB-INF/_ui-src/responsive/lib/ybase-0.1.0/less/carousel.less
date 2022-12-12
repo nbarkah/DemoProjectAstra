@@ -122,6 +122,8 @@
 }
 
 
+
+
 .carousel,
 .carousel__component--carousel {
 	width: 60%;
@@ -129,6 +131,8 @@
 	text-align: center;
 	display:flex;
 	justify-content:center;
+
+
 
 	.item,
 	.carousel__item{
@@ -187,9 +191,7 @@
 			text-align: center;
 			text-transform: uppercase;
 			line-height: 1.2em;
-
 			position: relative;
-			height: 4em;
 			font-weight: 600;
 			font-size: 16px;
 			color: @headline-color;
@@ -202,12 +204,20 @@
 		  margin: (@grid-gutter-width);
 		  color: #7fc5f9;
 		  text-align: center;
-		  font-size: 40px;
+		  font-size: 3rem;
 		  font-weight: 600;
 		  margin: 0;
+		  padding:0 5px;
 		}
 
 	}
+}
+
+@media only screen and (max-width: 1024px) {
+.carousel,
+.carousel__component--carousel {
+    width: 80%;
+}
 }
 
 
