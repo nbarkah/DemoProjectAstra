@@ -3,8 +3,9 @@
  <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
  <template:page pageTitle="${pageTitle}">
 
  <div class="container testii">
@@ -28,7 +29,7 @@
                                 <div class="testi-container">
                                     <div class="head-testi">
                                         <p class="nama">${person.personName}</p>
-                                        <img src="https://inthebox.net/images/review-avatar.png" data-src="https://inthebox.net/images/review-avatar.png" class="avatar" alt="Avatar">
+                                        <img src="${fn:escapeXml(commonResourcePath)}/images/avatar.png" class="avatar"/>
                                     </div>
                                     <div class="bintang">
 
@@ -47,10 +48,10 @@
                                            <c:when test ="${person.rating == 'BINTANGSATUSTG'}"> <c:set var="star" value="1"/> <c:set var="half" value="1"/></c:when>
                                          </c:choose>
                                              <c:forEach var="i" begin ="1" end ="${star}">
-                                                 <img src="https://inthebox.net/images/star-full.png" data-src="https://inthebox.net/images/star-full.png" class=" star" alt="Star">
-                                             </c:forEach>
+                                            <img src="${fn:escapeXml(commonResourcePath)}/images/star-full.png" class="star"/>
+                                         </c:forEach>
                                           <c:choose>
-                                              <c:when test="${half == 1}"> <img src="https://inthebox.net/images/star-half.png" data-src="https://inthebox.net/images/star-half.png" class="star" alt="Star"></c:when>
+                                              <c:when test="${half == 1}">  <img src="${fn:escapeXml(commonResourcePath)}/images/star-half.png" class="star"/>   </c:when>
                                           </c:choose>
                                 </div>
                                     <c:forEach var="testimoni" items="${person.testi}">
