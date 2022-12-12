@@ -11,6 +11,9 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
+<cms:pageSlot position="TopHeaderSlot" var="component" element="div" >
+	<cms:component component="${component}" />
+</cms:pageSlot>
 
 <header class="js-mainHeader">
 

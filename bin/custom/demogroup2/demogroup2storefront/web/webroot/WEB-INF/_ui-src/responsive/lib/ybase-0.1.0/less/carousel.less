@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'PalmerLakePrint';
+  src: url('../fonts/PalmerLakePrint-Regular.ttf');
+}
+
 .owl-carousel{
 	.clearfix;
 
@@ -192,6 +197,7 @@
 			height: 4em;
 			font-weight: 600;
 			font-size: 16px;
+			font-size: 16px;
 			color: @headline-color;
 			display:block;
 
@@ -202,9 +208,10 @@
 		  margin: (@grid-gutter-width);
 		  color: #7fc5f9;
 		  text-align: center;
-		  font-size: 40px;
-		  font-weight: 600;
+		  font-size: 65px;
+		  font-weight: 400;
 		  margin: 0;
+		  font-family:PalmerLakePrint;
 		}
 
 	}
@@ -233,6 +240,12 @@
       font-weight: bold;
       text-transform: @carousel-font-style;
 	}
+		.carousel__component--headline span {
+            font-family:PalmerLakePrint;
+            font-size:117px;
+            color:#7fc5f9;
+            font-weight:400;
+    	}
 
  	&:first-child {
 
