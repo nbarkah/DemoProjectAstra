@@ -12,8 +12,12 @@
 	<c:when test="${not empty productData}">
 		<div class="carousel__component">
 			<div class="carousel__component--headline">
-			    BELI KASUR INTHEBOX
+			    BELI <span style="color:#d4effc"> KASUR </span> INTHEBOX
 			</div>
+			<h4 class="carousel__component--subtitle">
+			    Tersedia beragam jenis kasur INTHEBOX dengan kualitas premium. </br>
+			    Pilih spring bed berkualitas dengan ukuran kasur sesuai kebutuhan.
+			</h4>
 
 			<c:choose>
 				<c:when test="${component.popup}">
@@ -33,7 +37,9 @@
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-
+                                    <a href="${productUrl}" class="carousel__item--btn">
+                                       Beli Sekarang
+                                    </a>
 								</div>
 							</div>
 						</c:forEach>
@@ -45,13 +51,15 @@
                             <div>
                                 <c:url value="${product.url}" var="productUrl"/>
                                     <div class="carousel__item">
-                                        <div href="${productUrl}">
+                                        <div >
                                             <div class="carousel__item--thumb">
                                                 <product:productPrimaryImage  product="${product}" format="product"/>
                                             </div>
                                             <div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
                                             <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-
+                                            <a href="${productUrl}" class="carousel__item--btn">
+                                               Beli Sekarang
+                                            </a>
                                         </div>
                                     </div>
                             </div>

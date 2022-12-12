@@ -232,6 +232,7 @@
 		</property>
 	</bean>
 
+
 	<alias name="defaultPersonFacade" alias="defaultPersonFacade"/>
 	<bean id="defaultPersonFacade" class="org.demo.facades.person.DefaultPersonFacade" />
 
