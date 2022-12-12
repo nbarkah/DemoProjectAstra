@@ -11056,6 +11056,10 @@ fieldset[disabled] .btn-primary.active {
   text-align: right;
   font-weight: bold;
 }
+@font-face {
+  font-family: 'PalmerLakePrint';
+  src: url('../fonts/PalmerLakePrint-Regular.ttf');
+}
 .owl-carousel {
   display: none;
   position: relative;
@@ -11204,9 +11208,11 @@ fieldset[disabled] .btn-primary.active {
 }
 .carousel,
 .carousel__component--carousel {
-  width: 100%;
-  margin: 10px -10px;
+  width: 60%;
+  margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .carousel .item,
 .carousel__component--carousel .item,
@@ -11218,6 +11224,30 @@ fieldset[disabled] .btn-primary.active {
   padding: 0 0 10px 0;
   border-radius: 10px;
 }
+.carousel .item .btn,
+.carousel__component--carousel .item .btn,
+.carousel .carousel__item .btn,
+.carousel__component--carousel .carousel__item .btn,
+.carousel .item .carousel__item--btn,
+.carousel__component--carousel .item .carousel__item--btn,
+.carousel .carousel__item .carousel__item--btn,
+.carousel__component--carousel .carousel__item .carousel__item--btn {
+  display: inline-block;
+  margin: 30px;
+  text-decoration: none;
+  background-color: #6086c2;
+  color: #fff;
+  padding: 10px;
+  font-weight: 800;
+}
+.carousel .item .carousel__item--btn:hover,
+.carousel__component--carousel .item .carousel__item--btn:hover,
+.carousel .carousel__item .carousel__item--btn:hover,
+.carousel__component--carousel .carousel__item .carousel__item--btn:hover {
+  text-decoration: none;
+  background-color: #d4effc;
+  color: #6086c2;
+}
 .carousel .item .thumb,
 .carousel__component--carousel .item .thumb,
 .carousel .carousel__item .thumb,
@@ -11227,7 +11257,6 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item .carousel__item--thumb,
 .carousel__component--carousel .carousel__item .carousel__item--thumb {
   margin: 0 0 20px 0;
-  height: 140px;
   width: 100%;
 }
 .carousel .item .thumb img,
@@ -11238,12 +11267,12 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item .carousel__item--thumb img,
 .carousel .carousel__item .carousel__item--thumb img,
 .carousel__component--carousel .carousel__item .carousel__item--thumb img {
-  max-width: 140px;
-  max-height: 140px;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  object-fit: fill;
+  object-position: 100%;
+  border-radius: 10px 10px 0 0;
 }
 .carousel .item a,
 .carousel__component--carousel .item a,
@@ -11270,46 +11299,17 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item .carousel__item--name,
 .carousel .carousel__item .carousel__item--name,
 .carousel__component--carousel .carousel__item .carousel__item--name {
-  margin-top: 13.33333333px;
-  margin-bottom: 11px;
-  text-transform: uppercase;
+  margin: 0 auto;
+  width: 60%;
   text-align: center;
+  text-transform: uppercase;
   line-height: 1.2em;
-  overflow: hidden;
   position: relative;
-  height: 2.4em;
+  height: 4em;
   font-weight: 600;
   font-size: 16px;
   color: #3c3c3c;
-}
-.carousel .item .item__name:before,
-.carousel__component--carousel .item .item__name:before,
-.carousel .carousel__item .item__name:before,
-.carousel__component--carousel .carousel__item .item__name:before,
-.carousel .item .carousel__item--name:before,
-.carousel__component--carousel .item .carousel__item--name:before,
-.carousel .carousel__item .carousel__item--name:before,
-.carousel__component--carousel .carousel__item .carousel__item--name:before {
-  background: #FFF none repeat scroll 0 0;
-  bottom: 0;
-  position: absolute;
-  right: 0;
-  content: '\2026';
-}
-.carousel .item .item__name:after,
-.carousel__component--carousel .item .item__name:after,
-.carousel .carousel__item .item__name:after,
-.carousel__component--carousel .carousel__item .item__name:after,
-.carousel .item .carousel__item--name:after,
-.carousel__component--carousel .item .carousel__item--name:after,
-.carousel .carousel__item .carousel__item--name:after,
-.carousel__component--carousel .carousel__item .carousel__item--name:after {
-  content: "";
-  background: #FFF none repeat scroll 0% 0%;
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  z-index: 1;
+  display: block;
 }
 .carousel .item .item__price,
 .carousel__component--carousel .item .item__price,
@@ -11319,17 +11319,17 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item .carousel__item--price,
 .carousel .carousel__item .carousel__item--price,
 .carousel__component--carousel .carousel__item .carousel__item--price {
-  margin: 10px;
-  color: #3c3c3c;
+  margin: 20px;
+  color: #7fc5f9;
   text-align: center;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 65px;
+  font-weight: 400;
   margin: 0;
+  font-family: PalmerLakePrint;
 }
 .carousel-component,
 .carousel__component {
-  padding: 0 20px;
-  margin: 35px 0 15px;
+  padding: 50px 20px;
 }
 .carousel-component:before,
 .carousel__component:before,
@@ -11352,19 +11352,29 @@ fieldset[disabled] .btn-primary.active {
 .carousel-component:after,
 .carousel__component:after {
   clear: both;
+}
+.carousel-component .carousel__component--subtitle,
+.carousel__component .carousel__component--subtitle {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  margin: 30px 0;
 }
 .carousel-component .carousel__component--headline,
 .carousel__component .carousel__component--headline {
-  color: #3c3c3c;
-  font-size: 28px;
+  color: #fff;
+  font-size: 36px;
   margin: 10px 0 20px;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
 }
-.carousel-component:first-child,
-.carousel__component:first-child {
-  margin: 50px 0 22px;
+.carousel-component .carousel__component--headline span,
+.carousel__component .carousel__component--headline span {
+  font-family: PalmerLakePrint;
+  font-size: 117px;
+  color: #7fc5f9;
+  font-weight: 400;
 }
 .carousel-component + .carousel-component,
 .carousel__component + .carousel-component,
@@ -19227,6 +19237,112 @@ footer {
   .navigation {
     display: block !important;
   }
+}
+.container-testimoni-homepage {
+  margin: 0 auto;
+  width: 60%;
+  padding: 50px 0;
+}
+@media only screen and (min-width: 1238px) {
+  .container-testimoni-homepage {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1241px) {
+  .container-testimoni-homepage {
+    width: 90%;
+  }
+  .main-testi {
+    width: 100%;
+  }
+}
+.testi-headline {
+  color: #6086c2;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.testi-subheadline {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  font-weight: 600;
+}
+.star-reviews {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.text-reviews {
+  color: #6086c2;
+  margin: 0 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.testi-person--name {
+  margin: 0;
+  color: #6086c2;
+  font-size: 18.2px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.head-msg {
+  text-align: justify;
+}
+.avatar {
+  width: 40px;
+}
+.star-homepage {
+  width: 20px;
+  margin: 0 2px;
+}
+.card-testi-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.main-testi {
+  padding: 10px 0px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.testi-homepage-head-msg {
+  font-weight: bold;
+  margin: 40px 0 20px 0;
+}
+.testi-msg-homepage {
+  margin: 10px 0 20px 0;
+  line-height: 2em;
+  font-weight: 600;
+  height: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+.testi-date-homepage {
+  color: #aaa;
+  font-weight: 600;
+}
+.next-page-homepage {
+  text-align: center;
+  margin: 30px 0;
+}
+.btn-testi-homepage {
+  background-color: #6086c2;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.btn-testi-homepage:hover {
+  text-decoration: none;
+  background-color: #d4effc;
+  color: #6086c2;
 }
 .skip,
 .skiptocontent,
