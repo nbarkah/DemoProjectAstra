@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 8, 2022, 5:52:47 AM                     ---
+ * --- Generated at Dec 9, 2022, 7:13:34 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.demogroup2backoffice.jalo;
