@@ -9,6 +9,9 @@ $contentCatalogName=Demo Group2 Content Catalog
 $productCatalog=demoGroup2ProductCatalog
 $productCatalogName=Demo Group2 Product Catalog
 
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 
@@ -291,6 +294,14 @@ INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true
                                         ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
                                         ;;Others;Others;OTHERS;5;Others
                                         ;;Similar;Similar;SIMILAR;5;Similar
+
+INSERT_UPDATE ProductReference; source(code, $catalogVersion)[unique = true]; target(code, $catalogVersion)[unique = true]; referenceType(code); active[default = true]; preselected[default = true]
+                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-100                                        ; SIMILAR
+                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-120                                        ; SIMILAR
+                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-140                                        ; SIMILAR
+                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-160                                        ; SIMILAR
+                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-180                                        ; SIMILAR
+                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-200                                        ; SIMILAR
 
 # CMS PurchasedCategorySuggestion Components
 INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
