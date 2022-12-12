@@ -15,7 +15,7 @@
 </div>
 <div class="row justify-center">
     <div class="col-xs-12 col-md-7 col-lg-6">
-        <div class="cart-totals">
+        <div class="cart-totals ">
             <cart:cartTotals cartData="${cartData}" showTax="false"/>
         </div>
     </div>

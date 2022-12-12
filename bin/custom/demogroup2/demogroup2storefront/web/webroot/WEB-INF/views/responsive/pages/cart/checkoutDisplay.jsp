@@ -9,7 +9,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <c:url value="/cart/checkout" var="checkoutUrl" scope="session"/>
 
-<div class="cart__actions ">
+<div class="cart__actions  ">
     <div class="row justify-center">
         <div class="col-sm-4 col-md-3 pull-right">
             <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}">

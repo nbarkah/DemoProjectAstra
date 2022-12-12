@@ -10,7 +10,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="js-cart-totals row">
+<div class="js-cart-totals row ">
     <div class="col-xs-6 cart-totals-left" style="color: #6086c2"><spring:theme code="basket.page.totals.subtotal"/></div>
     <div class="col-xs-6 cart-totals-right text-right" style="color: #6086c2"><ycommerce:testId code="Order_Totals_Subtotal"><format:price priceData="${cartData.subTotal}"/></ycommerce:testId></div>
 
