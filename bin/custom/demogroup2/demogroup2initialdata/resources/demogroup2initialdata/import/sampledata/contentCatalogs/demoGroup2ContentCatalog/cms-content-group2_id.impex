@@ -242,6 +242,20 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 
 #above is the desktop data, below is the responsive data
 
+#Banner PLP
+
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;banner-plp-1400x440.png;$siteResource/images/inthebox/PLP/banner-plp-1400x440.png;;banner-plp-1400x440.png;;"BANNER PLP"
+                   ;mobile;;banner-plp-480x320.png;$siteResource/images/inthebox/PLP/banner-plp-480x320.png;;banner-plp-480x320.png;;"BANNER PLP"
+                   ;tablet;;banner-plp-770x350.png;$siteResource/images/inthebox/PLP/banner-plp-770x350.png;;banner-plp-770x350.png;;"BANNER PLP"
+                   ;desktop;;banner-plp-960x330.png;$siteResource/images/inthebox/PLP/banner-plp-960x330.png;;banner-plp-960x330.png;;"BANNER PLP"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;demo-banner-plp;banner-plp-1400x440.png,banner-plp-480x320.png,banner-plp-770x350.png,banner-plp-960x330.png
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;BannerProductGridComponent;demo-banner-plp
+
 # Home Page Splash
 
 # Media Content
