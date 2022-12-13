@@ -8,7 +8,7 @@ import org.springframework.util.Assert;
 
 import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNullStandardMessage;
 
-public class CustomerFacadeGroup2 extends DefaultCustomerFacade {
+public class Group2CustomerFacade extends DefaultCustomerFacade {
     @Override
     public void register(final RegisterData registerData) throws DuplicateUidException
     {
