@@ -11168,7 +11168,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item .carousel__item--thumb img,
 .carousel .carousel__item .carousel__item--thumb img,
 .carousel__component--carousel .carousel__item .carousel__item--thumb img {
-  width: 100%;
+  width: 70%;
   display: block;
   margin-left: auto;
   margin-right: auto;

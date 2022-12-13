@@ -4,12 +4,15 @@
 -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
 
+	<enum class="de.hybris.platform.commercefacades.product.ProductOption" >
+		<value>SIZE_DIMENSION</value>
+	</enum>
+
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;org.demo.facades.product.data.GenderData>"/>
 		<property name="sizeDimension" type="String"/>
 		<property name="sizeType" type="String"/>
 		<property name="brands" type="String"/>
-		<property name="pictures" type="String"/>
 <!--		<property name="price" type="Double"/>-->
 	</bean>
 
@@ -33,19 +36,5 @@
 		<property name="person" type="org.demo.facades.person.data.PersonData"/>
 	</bean>
 
-	<bean class="org.demo.facades.pdp.data.ProductData">
-		<property name="code" type="String"/>
-		<property name="name" type="String"/>
-		<property name="description" type="String"/>
-	</bean>
-
-	<bean class="org.demo.facades.pdp.IntheboxVariantPoductData">
-		<property name="code" type="String"/>
-		<property name="size" type="String"/>
-		<property name="dimension" type="String"/>
-		<property name="height" type="String"/>
-		<property name="picture" type="String"/>
-		<property name="price" type="de.hybris.platform.commercefacades.product.data.PriceData"/>
-	</bean>
 
 </beans>

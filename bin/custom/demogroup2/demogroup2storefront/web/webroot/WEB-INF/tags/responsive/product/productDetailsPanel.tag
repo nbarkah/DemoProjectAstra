@@ -49,8 +49,12 @@
 <c:forEach items="${upsellProduct}" var="product">
 
     <h1>${product.code}</h1>
-    <h1>${product.name}</h1>
-    <h1>${product.sizeDimension}</h1>
-    <h1>${product.sizeType}</h1>
-    <img src=${product.pictures} />
+    <h2>${product.name}</h2>
+    <h3>${product.sizeDimension}</h3>
+    <h4>${product.sizeType}</h4>
+     <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+     <div class="carousel__item--thumb">
+        <product:productPrimaryImage  product="${product}" format="product"/>
+    </div>
+
 </c:forEach>
