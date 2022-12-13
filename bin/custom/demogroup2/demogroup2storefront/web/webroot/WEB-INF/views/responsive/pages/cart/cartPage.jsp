@@ -14,7 +14,7 @@
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
-	<div class="px-[25em]">
+	<div class="xl:px-[15em]">
 		<div>
             <cms:pageSlot position="TopContent" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
