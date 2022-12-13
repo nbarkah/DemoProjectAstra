@@ -10,11 +10,10 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}">
-
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
-	<div class="xl:px-[15em]">
+	<div class="w-full">
 		<div>
             <cms:pageSlot position="TopContent" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
