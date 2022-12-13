@@ -32,7 +32,4 @@
 			</div>
 		</div>
 	</div>
-	<c:forEach items="${searchPageData.results}" var="product" varStatus="status">
-        <product:productListerGridItem product="${product}" />
-    </c:forEach>
 </div>
