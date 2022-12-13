@@ -17,9 +17,7 @@ public class DefaultPdpDao implements PdpDao {
     private FlexibleSearchService flexibleSearchService;
     @Override
     public List<DemoVariantProductModel> getVariantProductPdp(final String code) {
-        final String query = "select {v.pk} from {variantproduct as v JOIN product as p ON {v.baseproduct} = {p.pk} " +
-                "JOIN catalogversion as cv ON {v.catalogversion} = {cv.pk}} where {p.code} = '?code' " +
-                "AND {cv.version}= 'Online'";
+        final String query = "select {pk} from {DemoVariantProduct} where {code} like concat(substring(?code,1,11),'%')";
         final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(query);
         flexibleSearchQuery.addQueryParameter("code", code);
         final SearchResult<DemoVariantProductModel> searchResult = flexibleSearchService.search(flexibleSearchQuery);

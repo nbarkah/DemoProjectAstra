@@ -287,13 +287,13 @@ INSERT_UPDATE CMSActionRestriction;$contentCV[unique=true];uid[unique=true];name
 
 INSERT_UPDATE PickUpInStoreAction;$contentCV[unique=true];uid[unique=true];url;name;&actionRef
                                  ;;PickUpInStoreAction;/store-pickup/{productCode}/pointOfServices;Pickup in Store Action;PickUpInStoreAction
-
-# CMS ProductReferences Components
+#
+## CMS ProductReferences Components
 INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;&componentRef
-                                        ;;accessories;Accessories;ACCESSORIES;5;accessories
-                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
-                                        ;;Others;Others;OTHERS;5;Others
-                                        ;;Similar;Similar;SIMILAR;5;Similar
+#                                        ;;accessories;Accessories;ACCESSORIES;5;accessories
+#                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
+#                                        ;;Others;Others;OTHERS;5;Others
+                                        ;;Similar;Similar;SIMILAR;6;Similar
 
 INSERT_UPDATE ProductReference; source(code, $catalogVersion)[unique = true]; target(code, $catalogVersion)[unique = true]; referenceType(code); active[default = true]; preselected[default = true]
                               ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-100                                        ; SIMILAR
@@ -302,6 +302,12 @@ INSERT_UPDATE ProductReference; source(code, $catalogVersion)[unique = true]; ta
                               ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-160                                        ; SIMILAR
                               ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-180                                        ; SIMILAR
                               ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-200                                        ; SIMILAR
+                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-100                                        ; SIMILAR
+                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-120                                        ; SIMILAR
+                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-140                                        ; SIMILAR
+                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-160                                        ; SIMILAR
+                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-180                                        ; SIMILAR
+                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-200                                        ; SIMILAR
 
 # CMS PurchasedCategorySuggestion Components
 INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
@@ -957,9 +963,20 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
                                 ;;Section7-Homepage;Section7;;Section7Slot-Homepage
 
 #################    HOME PAGE END       #################
-
-
-
+#
+####  Product Detail slot 4  ####
+#INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+#                                 ;;ProductSuggestionComponent;Product Upsell PDP Component;ProductUpsellComponent.jsp;;ProductSuggestionComponent
+#
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section4Slot-productDetails;ProductSuggestionComponent
+#
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productDetails'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;Section4-productDetails;Section4;;Section4Slot-productDetails
+#
+#
+#
 
 #################    MY ACCOUNT START    #################
 

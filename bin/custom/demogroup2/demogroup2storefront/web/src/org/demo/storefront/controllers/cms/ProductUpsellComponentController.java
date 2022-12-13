@@ -44,7 +44,7 @@ public class ProductUpsellComponentController extends AbstractAcceleratorCMSComp
                 }
             }
 
-                    model.addAttribute("upsellProducts", products);
+            model.addAttribute("upsellProducts", products);
 
         }
 

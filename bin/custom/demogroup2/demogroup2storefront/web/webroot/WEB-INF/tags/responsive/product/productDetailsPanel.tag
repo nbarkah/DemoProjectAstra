@@ -3,6 +3,10 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="format" tagdir="/WEB-INF/tags/shared/format" %>
+<%@ taglib prefix="component" tagdir="/WEB-INF/tags/shared/component" %>
 
 <div class="product-details page-title">
 	<ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
@@ -41,3 +45,9 @@
 
 	</div>
 </div>
+
+<c:forEach items="${upsellProduct}" var="product">
+
+    <h1>${product.code}</h1>
+    <img src=${product.pictures} />
+</c:forEach>
