@@ -27,7 +27,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.demo.storefront.controllers.pages.registerstuff.AbstractRegisterGroup2;
 import org.demo.storefront.controllers.pages.registerstuff.FormGroup2;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;

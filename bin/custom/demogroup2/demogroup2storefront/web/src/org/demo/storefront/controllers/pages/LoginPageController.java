@@ -30,7 +30,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
-import org.demo.storefront.controllers.pages.registerstuff.AbstractLoginPageControllerGroup2;
 import org.demo.storefront.controllers.pages.registerstuff.FormGroup2;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
