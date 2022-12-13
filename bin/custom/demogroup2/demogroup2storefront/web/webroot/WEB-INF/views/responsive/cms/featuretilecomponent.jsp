@@ -7,8 +7,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
-<div class="tile-container">
-   <img src=${images.url} title="${title}" alt="${title}" />
-   <div class="tile-title" ><c:out escapeXml="false" value="${ycommerce:sanitizeHTML(title)}" /></div>
-   <p><c:out escapeXml="false" value="${ycommerce:sanitizeHTML(description)}" /></p>
+<div class="text-center">
+   <img src=${images.url} title="${title}" alt="${title}" style="width:100%;margin:0 auto;"/>
+   <h4 class="tile-title" ><c:out escapeXml="false" value="${ycommerce:sanitizeHTML(title)}" /></h4>
+   <h5 class="tile-desc"><c:out escapeXml="false" value="${ycommerce:sanitizeHTML(description)}" /></h5>
 </div>
