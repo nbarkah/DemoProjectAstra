@@ -44,7 +44,8 @@
     <p class="regis-subtitle">Masukan detail anda untuk menciptakan akun</p>
 </div>
 
-<form:form method="post" modelAttribute="registerForm" action="${action}" inputCSS="regis-width" >
+
+<form:form method="post" modelAttribute="formGroup2" action="${action}" inputCSS="regis-width" >
 	<formElement:formSelectBoxDefaultEnabled idKey="register.title"
 		labelKey="register.title" selectCSSClass="form-control form-style"
 		path="titleCode" mandatory="true" skipBlank="false"
@@ -58,6 +59,9 @@
 	<formElement:formInputBox idKey="register.email"
 		labelKey="register.email" path="email" inputCSS="form-control form-style"
 		mandatory="true" />
+    <formElement:formInputBox idKey="register.userID"
+        labelKey="register.userID" path="userID" inputCSS="form-control form-style"
+        mandatory="true" />
 	<formElement:formPasswordBox idKey="password" labelKey="register.pwd"
 		path="pwd" inputCSS="form-control password-strength form-style" mandatory="true" />
 	<formElement:formPasswordBox idKey="register.checkPwd"
