@@ -49,5 +49,8 @@
 <c:forEach items="${upsellProduct}" var="product">
 
     <h1>${product.code}</h1>
+    <h1>${product.name}</h1>
+    <h1>${product.sizeDimension}</h1>
+    <h1>${product.sizeType}</h1>
     <img src=${product.pictures} />
 </c:forEach>
