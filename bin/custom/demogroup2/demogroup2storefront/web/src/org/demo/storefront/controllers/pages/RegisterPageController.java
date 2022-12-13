@@ -102,14 +102,13 @@ public class RegisterPageController extends AbstractRegisterPageController
 	}
 
 
-
-//	@RequestMapping(value = "/register", method = RequestMethod.POST)
-//	public String doRegister(@RequestHeader(value = "referer", required = false)final String referer, final FormGroup2 form, final BindingResult bindingResult, final Model model,
-//							 final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException
-//	{
-//		getRegistrationValidator().validate(form, bindingResult);
-//		return processRegisterUserRequest(referer, form, bindingResult, model, request, response, redirectModel);
-//	}
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String doRegister(@RequestHeader(value = "referer", required = false)final String referer, final FormGroup2 form, final BindingResult bindingResult, final Model model,
+							 final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException
+	{
+		getRegistrationValidator().validate(form, bindingResult);
+		return processRegisterUserRequest(referer, form, bindingResult, model, request, response, redirectModel);
+	}
 
 	protected String getDefaultRegistrationPage(final Model model) throws CMSItemNotFoundException
 	{

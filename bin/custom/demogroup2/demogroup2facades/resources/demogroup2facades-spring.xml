@@ -241,5 +241,5 @@
 
 	<!-- ######### END FOR GROUP 2 ######### -->
 	<alias name="customerFacadeGroup2" alias="customerFacade"/>
-	<bean id="customerFacadeGroup2" class="org.demo.facades.register.CustomerFacadeGroup2" parent="defaultCustomerFacade"/>
+	<bean id="customerFacadeGroup2" class="org.demo.facades.register.Group2CustomerFacade" parent="defaultCustomerFacade"/>
 </beans>
