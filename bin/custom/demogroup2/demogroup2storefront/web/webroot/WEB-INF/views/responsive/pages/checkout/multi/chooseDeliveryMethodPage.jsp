@@ -9,7 +9,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
-
+<script src="https://cdn.tailwindcss.com"></script>
 <div class="row">
     <div class="col-sm-6">
         <div class="checkout-headline">
@@ -35,7 +35,9 @@
 							<p>${ycommerce:sanitizeHTML(deliveryMethodMessageHtml)}</p>
 						</div>
 					</div>
-					<button id="deliveryMethodSubmit" type="button" class="btn btn-primary btn-block checkout-next"><spring:theme code="checkout.multi.deliveryMethod.continue"/></button>
+				    <button id="deliveryMethodSubmit" type="button" class="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-8">
+                        <spring:theme code="checkout.multi.deliveryMethod.continue"/>
+                    </button>
 				</ycommerce:testId>
 			</jsp:body>
 		</multi-checkout:checkoutSteps>

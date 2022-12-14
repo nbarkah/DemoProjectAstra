@@ -13,7 +13,7 @@
 <spring:url value="/checkout/multi/termsAndConditions" var="getTermsAndConditionsUrl" htmlEscape="false"/>
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
-
+<script src="https://cdn.tailwindcss.com"></script>
 <div class="row">
     <div class="col-sm-6">
     	<div class="checkout-headline">
@@ -36,8 +36,8 @@
                             </label>
                         </div>
 
-                        <button id="placeOrder" type="submit" class="btn btn-primary btn-place-order btn-block">
-                            <spring:theme code="checkout.summary.placeOrder" text="Place Order"/>
+                        <button id="placeOrder" type="submit" class="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-8">
+                             <spring:theme code="checkout.summary.placeOrder" text="Place Order"/>
                         </button>
                     </form:form>
                 </div>

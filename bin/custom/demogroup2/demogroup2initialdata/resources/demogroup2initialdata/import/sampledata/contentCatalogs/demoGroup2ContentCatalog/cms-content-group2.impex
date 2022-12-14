@@ -26,7 +26,7 @@ $jarResourceCms=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demogroup
 
 
 
-##Testimoni########
+###### GROUP 2 ######
 
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; name                              ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
                           ;                          ; TestimoniPage         ; Testimoni Page Template    ; layout/testimoniPage        ; ContentPage;
@@ -583,6 +583,7 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 # CMSParagraphComponent
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;;;;
                                    ;;faqMenuParagraph;FAQ Menu Paragraph;FAQMenuParagraph;;;;
+                                   ;;faqTextParagraph;FAQ Text Paragraph;FAQTextParagraph;;;;
 
 # ContentSlot
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
@@ -963,20 +964,9 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
                                 ;;Section7-Homepage;Section7;;Section7Slot-Homepage
 
 #################    HOME PAGE END       #################
-#
-####  Product Detail slot 4  ####
-#INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
-#                                 ;;ProductSuggestionComponent;Product Upsell PDP Component;ProductUpsellComponent.jsp;;ProductSuggestionComponent
-#
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section4Slot-productDetails;ProductSuggestionComponent
-#
-#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productDetails'];contentSlot(uid,$contentCV)[unique=true]
-#                                ;;Section4-productDetails;Section4;;Section4Slot-productDetails
-#
-#
-#
+
+
+
 
 #################    MY ACCOUNT START    #################
 

@@ -12,7 +12,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
-
+<script src="https://cdn.tailwindcss.com"></script>
 <div class="row">
     <div class="col-sm-6">
 	    <div class="checkout-headline">
@@ -61,7 +61,7 @@
                                                                 ${fn:escapeXml(deliveryAddress.postalCode)}
                                                             </li>
                                                         </ul>
-                                                        <button type="submit" class="btn btn-primary btn-block">
+                                                        <button type="submit" class="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-8">
                                                             <spring:theme code="checkout.multi.deliveryAddress.useThisAddress" />
                                                         </button>
                                                     </form>
@@ -75,9 +75,9 @@
                                 <multi-checkout:pickupGroups cartData="${cartData}" />
                     </div>
 
-
-                    <button id="addressSubmit" type="button"
-                        class="btn btn-primary btn-block checkout-next"><spring:theme code="checkout.multi.deliveryAddress.continue"/></button>
+                <button id="addressSubmit" type="button" class="w-full mt-8 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-8">
+                    <spring:theme code="checkout.multi.deliveryAddress.continue"/>
+                </button>
                 </ycommerce:testId>
             </jsp:body>
         </multi-checkout:checkoutSteps>

@@ -8,7 +8,7 @@
 	<cms:pageSlot position="Section1" var="feature" element="div" class="product-grid-section1-slot">
 		<cms:component component="${feature}" element="div" class="yComponentWrapper map product-grid-section1-component"/>
 	</cms:pageSlot>
-	
+
 	<div class="row">
 		<div class="col-xs-3">
 			<cms:pageSlot position="ProductLeftRefinements" var="feature" element="div" class="product-grid-left-refinements-slot">
