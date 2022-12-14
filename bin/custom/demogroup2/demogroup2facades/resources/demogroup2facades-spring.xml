@@ -2,6 +2,8 @@
 <!--
  Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 -->
+
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -205,6 +207,18 @@
 	<alias name="testimoniPopulator" alias="testimoniPopulator"/>
 	<bean id="testimoniPopulator" class="org.demo.facades.populators.TestimoniPopulator"/>
 
+	<alias name="demoGroup2ProductPopulator" alias="demoGroup2ProductPopulator"/>
+	<bean id="demoGroup2ProductPopulator" class="org.demo.facades.populators.DemoGroup2ProductPopulator"/>
+
+
+	<bean parent="configurablePopulatorModification">
+		<property name="target" ref="productConfiguredPopulator" />
+		<property name="keyType"
+				  value="de.hybris.platform.commercefacades.product.ProductOption" />
+		<property name="key" value="SIZE_DIMENSION" />
+		<property name="add" ref="demoGroup2ProductPopulator" />
+	</bean>
+
 	<bean id="personBasicConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.demo.facades.person.data.PersonData"/>
 		<property name="populators">
@@ -232,12 +246,27 @@
 		</property>
 	</bean>
 
+	<bean id="demoGroup2ProductConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.product.data.ProductData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="demoGroup2ProductPopulator"/>
+			</list>
+		</property>
+	</bean>
+
 
 	<alias name="defaultPersonFacade" alias="defaultPersonFacade"/>
 	<bean id="defaultPersonFacade" class="org.demo.facades.person.DefaultPersonFacade" />
 
 	<alias name="defaultTestiFacade" alias="defaultTestiFacade"/>
 	<bean id="defaultTestiFacade" class="org.demo.facades.testimoni.DefaultTestiFacade" />
+
+	<alias name="defaultProductUpsellFacade" alias="defaultProductUpsellFacade"/>
+	<bean id="defaultProductUpsellFacade" class="org.demo.facades.productUpsellComponent.impl.DefaultProductUpsellFacade" />
+
+	<alias name="defaultProductCarouselHomepageFacade" alias="productCarouselFacade"/>
+	<bean id="defaultProductCarouselHomepageFacade" class="org.demo.facades.productCarouselHomepage.DefaultProductCarouselHomepageFacade" parent="defaultProductCarouselFacade" />
 
 	<!-- ######### END FOR GROUP 2 ######### -->
 	<alias name="customerFacadeGroup2" alias="customerFacade"/>
