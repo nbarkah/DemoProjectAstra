@@ -290,6 +290,10 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="ProductUpsellComponent" extends="SimpleCMSComponent" generate="true" autocreate="true">
+                <description>Product Upsell Component for product suggestion in PDP</description>
+            </itemtype>
+
         </typegroup>
 
 

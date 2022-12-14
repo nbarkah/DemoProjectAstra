@@ -1,3 +1,60 @@
+.catalog-product{
+    padding-top: 20px !important;
+    .container{
+        .row{
+            justify-content : center;
+        }
+    }
+    .catalog-product-block{
+        padding : 20px !important;
+       .product-details-image{
+            padding-bottom: 12px;
+            max-width : 300px;
+            .thumb{
+                width : 300px;
+
+            img{
+                width : 100% !important;
+                }
+           }
+
+       }
+       h2.product-details-name{
+            width: 280px;
+            margin-top : 2px ;
+            font-size : 17px;
+            margin-bottom : 0 ;
+            font-weight: 700;
+       }
+       p {
+            margin-top : 8px;
+       }
+       .name {
+           color :  #000;
+       }
+       .name:hover {
+           color : #6086c2;
+       }
+       h3.product-details-price{
+             margin-top : 2px ;
+             margin-bottom : 0;
+             font-size : 18px
+       }
+    }
+}
+.btn-brand{
+    margin: 210px;
+    background-color: #6086c2;
+    border: none;
+    color: #fff!important;
+    font-weight: 700;
+    padding: 11px 25px 8px;
+    font-family: inherit;
+}
+.link-product{
+    margin-top : 25px;
+    margin-bottom : 25px;
+}
 .image-gallery__image{
 	cursor: pointer;
 }
@@ -18,6 +75,43 @@
 	  padding-right: 30px;
 	}
   }
+}
+
+
+.container-pdp-button {
+    display:flex;
+    width:100%;
+}
+
+.add-to-cart-button {
+   width:100%;
+   background-color:white;
+   color:#a7abc3;
+   border: 1px solid #e8ecfa;
+}
+
+.add-to-cart-button:hover {
+   background-color:#7fc5f9;
+   color:white;
+}
+
+.buy-now-container {
+    margin:0 auto;
+    width:100%;
+}
+
+.buy-now-button {
+    background-color: #6086c2;
+    color:white;
+    width:100%;
+    margin-left:2em;
+    padding:0.8em;
+    border:2px solid transparent;
+}
+
+.buy-now-button:hover {
+   background-color:#7fc5f9;
+   color:#6086c2;
 }
 
 .product-details,
@@ -61,11 +155,26 @@
       color: @item-promo-color;
   }
 
+  .headline {
+      font-weight:700;
+  }
+
+  .sub-headline {
+      font-weight:600;
+  }
+
+  .size-dimension {
+      margin:30px 0;
+      font-weight:600;
+  }
+
   .description{
-      padding: (@grid-gutter-width/2) 0 25px;
+      line-height:1.5em;
+      font-weight:600;
   }
 
   .price{
+      color:#6086c2;
       font-size: 25px;
       font-weight: bold;
   }
@@ -73,6 +182,7 @@
   .stock-status{
       font-weight: 300;
   }
+
 }
 
 @media (max-width: @screen-md-max) {

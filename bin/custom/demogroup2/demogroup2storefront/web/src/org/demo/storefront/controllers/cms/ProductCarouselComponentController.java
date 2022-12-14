@@ -41,6 +41,7 @@ public class ProductCarouselComponentController extends AbstractAcceleratorCMSCo
 	@Resource(name = "productCarouselFacade")
 	private ProductCarouselFacade productCarouselFacade;
 
+
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final ProductCarouselComponentModel component)
 	{

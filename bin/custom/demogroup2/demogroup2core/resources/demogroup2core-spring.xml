@@ -599,4 +599,15 @@
 		  class="org.demo.core.job.ApprovalJobPerformable"
 		  parent="abstractJobPerformable">
 	</bean>
+	<!--PDP Dao-->
+	<alias name="defaultPdpDao" alias="pdpDao"/>
+	<bean id="defaultPdpDao" class="org.demo.core.pdp.dao.impl.DefaultPdpDao">
+	</bean>
+
+	<!--PDP Service-->
+	<alias name="defaultPdpService" alias="pdpService"/>
+	<bean id="defaultPdpService" class="org.demo.core.pdp.service.impl.DefaultPdpService">
+	</bean>
+
+
 </beans>
