@@ -10648,12 +10648,27 @@ fieldset[disabled] .btn-primary.active {
 .product-details-price .promotion {
   color: #00A651;
 }
+.product-details .headline,
+.product-details-price .headline {
+  font-weight: 700;
+}
+.product-details .sub-headline,
+.product-details-price .sub-headline {
+  font-weight: 600;
+}
+.product-details .size-dimension,
+.product-details-price .size-dimension {
+  margin: 30px 0;
+  font-weight: 600;
+}
 .product-details .description,
 .product-details-price .description {
-  padding: 10px 0 25px;
+  line-height: 1.5em;
+  font-weight: 600;
 }
 .product-details .price,
 .product-details-price .price {
+  color: #6086c2;
   font-size: 25px;
   font-weight: bold;
 }
@@ -10958,7 +10973,6 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 .image-gallery img {
-  width: 100%;
   height: auto;
   -webkit-touch-callout: none;
 }
@@ -11014,18 +11028,37 @@ fieldset[disabled] .btn-primary.active {
 #add_to_cart_storepickup_form .qty-selector .input-group-btn,
 .addtocart-component .qty-selector .btn,
 #add_to_cart_storepickup_form .qty-selector .btn {
-  width: 48px;
+  background-color: white;
+  color: #6086c2;
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 10px ;
+  font-size: 25px;
+  border: 2px solid white;
+  border-radius: 100%;
+}
+.addtocart-component .qty-selector .input-group-btn,
+#add_to_cart_storepickup_form .qty-selector .input-group-btn,
+.addtocart-component .qty-selector .btn:hover,
+#add_to_cart_storepickup_form .qty-selector .btn:hover {
+  background-color: #6086c2;
+  color: white;
+}
+.addtocart-component .qty-selector .input-group-btn,
+#add_to_cart_storepickup_form .qty-selector .input-group-btn,
+.addtocart-component .qty-selector .btn:disabled,
+#add_to_cart_storepickup_form .qty-selector .btn:disabled {
+  background-color: #fff;
+  color: #6086c2;
 }
 .addtocart-component .qty-selector .form-control,
 #add_to_cart_storepickup_form .qty-selector .form-control {
-  width: 50px;
+  width: 100%;
   height: 48px;
   text-align: center;
-  font-size: 13px;
+  font-size: 25px;
   font-weight: bold;
+  border: 2px solid white;
+  color: #6086c2;
 }
 @media (max-width: 1023px) {
   .addtocart-component {
@@ -11429,7 +11462,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 0;
 }
 .image-gallery .image-gallery__image .owl-item img {
-  width: 100%;
+  width: 50%;
   height: auto;
   max-width: none;
   max-height: none;
@@ -22572,6 +22605,8 @@ hidden-sm .cpq-overview-messages {
 }
 @media (max-width: 639px) {
   .cpq-backToConfig {
+    border-bottom: 1px solid #ddd;
+  background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding-top: 30px;
     padding-bottom: 30px;

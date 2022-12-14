@@ -9,7 +9,6 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <div class="image-gallery js-gallery">
-
     <c:choose>
         <c:when test="${galleryImages == null || galleryImages.size() == 0}">
             <div class="carousel image-gallery__image js-gallery-image">
@@ -38,18 +37,18 @@
         </c:when>
         <c:otherwise>
 
-            <div class="carousel image-gallery__image js-gallery-image">
+            <div class="js-gallery-image">
                 <c:forEach items="${galleryImages}" var="container" varStatus="varStatus">
                     <div class="item">
                         <div>
                             <img class="lazyOwl" data-src="${fn:escapeXml(container.product.url)}"
                                  data-zoom-image="${fn:escapeXml(container.superZoom.url)}"
-                                 alt="${fn:escapeXml(container.thumbnail.altText)}" >
+                                 alt="${fn:escapeXml(container.thumbnail.altText)}">
                         </div>
                     </div>
                 </c:forEach>
             </div>
-            <product:productGalleryThumbnail galleryImages="${galleryImages}" />
+
         </c:otherwise>
     </c:choose>
 </div>
