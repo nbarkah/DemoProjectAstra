@@ -45,11 +45,12 @@ public class ApprovalJobPerformable extends AbstractJobPerformable<CronJobModel>
                     LOG.info(productModel.getApprovalStatus());
                     approvalProduct(productModel);
                 }
-                LOG.info("Sync Starting At" + dtf.format(now));
+                LOG.info("------ Sync Starting At " + dtf.format(now));
                 setupSyncJobService.createProductCatalogSyncJob(PRODUCT_CATALOG);
                 setupSyncJobService.executeCatalogSyncJob(PRODUCT_CATALOG);
                 setupSyncJobService.createProductCatalogSyncJob(CONTENT_CATALOG);
                 setupSyncJobService.executeCatalogSyncJob(CONTENT_CATALOG);
+                LOG.info("------ Index Starting At " + dtf.format(now));
                 setupSolrIndexerService.createSolrIndexerCronJobs(FACET_CONFIG);
                 setupSolrIndexerService.executeSolrIndexerCronJob(FACET_CONFIG, true);
             }

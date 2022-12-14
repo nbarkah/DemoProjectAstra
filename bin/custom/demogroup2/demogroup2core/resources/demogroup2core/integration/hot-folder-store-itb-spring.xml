@@ -40,6 +40,15 @@
         <property name="storeBaseDirectory" ref="baseDirectoryDemoGroup2" />
     </bean>
 
+    <bean id="batchTransformerTask"
+          class="de.hybris.platform.acceleratorservices.dataimport.batch.task.ImpexTransformerTask"
+          init-method="initConvertersMap">
+        <property name="fieldSeparator" value=";"/>
+        <property name="encoding" value="UTF-8"/>
+        <property name="linesToSkip" value="1"/>
+        <property name="cleanupHelper" ref="cleanupHelper"/>
+    </bean>
+
     <!-- Transformer converters mappings -->
     <bean id="batchDemoGroup2DemoProductConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
@@ -61,6 +70,11 @@
           p:mapping="price_product"
           p:converter-ref="batchDemoGroup2PriceRowConverter"/>
 
+    <bean id="batchDemoGroup2StockLevelConverterMapping"
+          class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+          p:mapping="stock_level"
+          p:converter-ref="batchDemoGroup2StockLevelConverter"/>
+
     <bean id="batchDemoGroup2StockLevelProductConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
           p:mapping="stock_level_product"
@@ -68,41 +82,51 @@
 
     <bean id="batchDemoGroup2MediaConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="inthebox_media"
+          p:mapping="media"
           p:converter-ref="batchDemoGroup2MediaConverter"/>
 
     <bean id="batchDemoGroup2MediaContainerConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="inthebox_media_container"
+          p:mapping="media_container"
           p:converter-ref="batchDemoGroup2MediaContainerConverter"/>
 
     <bean id="batchDemoGroup2ProductMediaConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="inthebox_product_media"
+          p:mapping="media_product"
           p:converter-ref="batchDemoGroup2ProductMediaConverter"/>
+
+    <bean id="batchDemoGroup2TestimoniPersonConverterMapping"
+          class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+          p:mapping="testimoni_person"
+          p:converter-ref="batchDemoGroup2TestimoniPersonConverter"/>
+
+    <bean id="batchDemoGroup2TestimoniConverterMapping"
+          class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+          p:mapping="testimoni"
+          p:converter-ref="batchDemoGroup2TestimoniConverter"/>
 
     <bean id="demoGroup2ProductImpexHeader" class="java.lang.String">
         <constructor-arg>
             <value>
                 #{defaultImpexProductHeader}
-                $productCatalog = demoGroup2ProductCatalog
-                $productCatalogName = Demo Group2 Product Catalog
-                $catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
-                $supercategories = supercategories(code, $catalogVersion)
-                $baseProduct = baseProduct(code, $catalogVersion)
-                $approved = approvalstatus(code)[default='approved']
+                $productCatalog=demoGroup2ProductCatalog
+                $productCatalogName=Demo Group2 Product Catalog
+                $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+                $supercategories=supercategories(code, $catalogVersion)
+                $baseProduct=baseProduct(code,$catalogVersion)
+                $approved=approvalstatus(code)[default='approved']
                 $vendor = demoGroup2
-                $media = @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
-                $thumbnail = thumbnail(code, $catalogVersion)
-                $picture = picture(code, $catalogVersion)
-                $thumbnails = thumbnails(code, $catalogVersion)
-                $detail = detail(code, $catalogVersion)
-                $normal = normal(code, $catalogVersion)
-                $others = others(code, $catalogVersion)
-                $data_sheet = data_sheet(code, $catalogVersion)
-                $medias = medias(code, $catalogVersion)
-                $galleryImages = galleryImages(qualifier, $catalogVersion)
-                $siteResource = jar:com.hybris.demogroup2.initialdata.setup.InitialDataSystemSetup&amp;/demogroup2initialdata/import/sampledata/productCatalogs/catalogName
+                $media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+                $thumbnail=thumbnail(code, $catalogVersion)
+                $picture=picture(code, $catalogVersion)
+                $thumbnails=thumbnails(code, $catalogVersion)
+                $detail=detail(code, $catalogVersion)
+                $normal=normal(code, $catalogVersion)
+                $others=others(code, $catalogVersion)
+                $data_sheet=data_sheet(code, $catalogVersion)
+                $medias=medias(code, $catalogVersion)
+                $galleryImages=galleryImages(qualifier, $catalogVersion)
+                $siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&amp;/demogroup2initialdata/import/sampledata/productCatalogs/$productCatalog/images/product
             </value>
         </constructor-arg>
     </bean>
@@ -143,7 +167,7 @@
                 #{demoGroup2ProductImpexHeader}
 
                 # Insert Products
-                INSERT_UPDATE DemoVariantProduct; $baseProduct; code[unique = true]; name; name[lang=en]; sizeDimension(code); height; $supercategories; description; unit(code)[default = pieces]; $approved; $catalogVersion
+                INSERT_UPDATE DemoVariantProduct; $baseProduct; code[unique = true]; name; name[lang=en]; sizeDimension(code); height; $supercategories; description; description[lang = en]; unit(code)[default = pieces]; $approved; $catalogVersion
             </value>
         </property>
         <property name="impexRow">
@@ -154,9 +178,10 @@
 
     <bean id="batchDemoGroup2PriceRowConverter" parent="abstractDefaultImpexConverter">
         <property name="header">
-            <value>#{demoGroup2ProductImpexHeader}
+            <value>
+                #{demoGroup2ProductImpexHeader}
                 # Insert Products
-                INSERT_UPDATE PriceRow;product(code, $catalogVersion)[unique = true];price[translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.PriceTranslator];currency(isocode)[unique = true][default = IDR];$catalogVersion;unit(code[unique = true, default = pieces])
+                INSERT_UPDATE PriceRow; product(code, $catalogVersion)[unique = true]; price[translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.PriceTranslator]; currency(isocode)[unique = true][default = IDR]; $catalogVersion; unit(code[unique = true, default = pieces])
             </value>
         </property>
         <property name="impexRow">
@@ -167,9 +192,10 @@
 
     <bean id="batchDemoGroup2StockLevelConverter" parent="abstractDefaultImpexConverter">
         <property name="header">
-            <value>#{demoGroup2ProductImpexHeader}
+            <value>
+                #{demoGroup2ProductImpexHeader}
                 # Insert Products
-                INSERT_UPDATE StockLevel;available;warehouse(code)[unique = true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique = true];reserved
+                INSERT_UPDATE StockLevel; available; warehouse(code)[unique = true]; inStockStatus(code); maxPreOrder; maxStockLevelHistoryCount; overSelling; preOrder; productCode[unique = true]; reserved
             </value>
         </property>
         <property name="impexRow">
@@ -178,11 +204,11 @@
         <property name="type" value="StockLevel"/>
     </bean>
 
-    <bean id="batchDemoGroup2StockProductConverter" parent="abstractDefaultImpexConverter">
+    <bean id="batchDemoGroup2StockLevelProductConverter" parent="abstractDefaultImpexConverter">
         <property name="header">
             <value>#{demoGroup2ProductImpexHeader}
                 # Insert Products
-                UPDATE Product; code[unique = true]; stockLevels(productCode, warehouse(code)); vendors(code); $catalogVersion
+                UPDATE Product; code[unique = true]; $catalogVersion; stockLevels(productCode, warehouse(code)); vendors(code)
             </value>
         </property>
         <property name="impexRow">
@@ -195,11 +221,18 @@
         <property name="header">
             <value>#{demoGroup2ProductImpexHeader}
                 # Insert Media
-                INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]; $media; folder(qualifier); mime[default = 'image/jpeg']; $catalogVersion
+                INSERT_UPDATE Media ;mediaFormat(qualifier) ;code[unique=true] ;$media ;mime[default='image/jpeg'] ;$catalogVersion;folder(qualifier)
             </value>
         </property>
         <property name="impexRow">
-            <value>;{+0};{1};{2};images</value>
+            <value>
+                ;1200Wx1200H;{+1};$siteResource/1200Wx1200H/{+1};;;{2}
+                ;515Wx515H;{+1};$siteResource/515Wx515H/{+1};;;{2}
+                ;300Wx300H;{+1};$siteResource/300Wx300H/{+1};;;{2}
+                ;96Wx96H;{+1};$siteResource/96Wx96H/{+1};;;{2}
+                ;65Wx65H;{+1};$siteResource/65Wx65H/{+1};;;{2}
+                ;30Wx30H;{+1};$siteResource/30Wx30H/{+1};;;{2}
+            </value>
         </property>
         <property name="type" value="Media"/>
     </bean>
@@ -208,11 +241,11 @@
         <property name="header">
             <value>#{demoGroup2ProductImpexHeader}
                 # Insert Media
-                INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias; $catalogVersion
+                INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
             </value>
         </property>
         <property name="impexRow">
-            <value>;{+0};{1}</value>
+            <value>;{1};/1200Wx1200H/{1},/515Wx515H/{1},/300Wx300H/{1},/96Wx96H/{1},/65Wx65H/{1},/30Wx30H/{1}</value>
         </property>
         <property name="type" value="MediaContainer"/>
     </bean>
@@ -221,12 +254,38 @@
         <property name="header">
             <value>#{demoGroup2ProductImpexHeader}
                 # Insert Media
-                UPDATE Product; code[unique = true]; $picture; $thumbnail; $detail; $others; $normal; $thumbnails; $galleryImages; $catalogVersion
+                UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
             </value>
         </property>
         <property name="impexRow">
-            <value>;{+0};{1};{2};{3};{4};{5};{6};{7}</value>
+            <value>;{+0};/300Wx300H/{1};/96Wx96H/{1};/1200Wx1200H/{1};/515Wx515H/{1},/96Wx96H/{1},/30Wx30H/{1};/300Wx300H/{1};/96Wx96H/{1};{1};{S}</value>
         </property>
         <property name="type" value="Product"/>
+    </bean>
+
+    <bean id="batchDemoGroup2TestimoniPersonConverter" parent="abstractDefaultImpexConverter">
+        <property name="header">
+            <value>#{demoGroup2ProductImpexHeader}
+                # Insert Products
+                INSERT_UPDATE TestiPerson;idPerson[unique=true];personName;rating(code)
+            </value>
+        </property>
+        <property name="impexRow">
+            <value>;{+0};{1};{2}</value>
+        </property>
+        <property name="type" value="TestiPerson"/>
+    </bean>
+
+    <bean id="batchDemoGroup2TestimoniConverter" parent="abstractDefaultImpexConverter">
+        <property name="header">
+            <value>#{demoGroup2ProductImpexHeader}
+                # Insert Products
+                INSERT_UPDATE Testimoni;idTesti[unique=true];person(idPerson);headMsg;message;date
+            </value>
+        </property>
+        <property name="impexRow">
+            <value>;{+0};{1};{2};{3};{4}</value>
+        </property>
+        <property name="type" value="Testimoni"/>
     </bean>
 </beans>
