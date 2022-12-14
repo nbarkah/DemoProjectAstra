@@ -16,7 +16,17 @@
 </cms:pageSlot>
 
 <header class="js-mainHeader">
+<%-- a hook for the my account links in desktop/wide desktop--%>
+<div class="hidden-xs hidden-sm js-secondaryNavAccount collapse" id="accNavComponentDesktopOne">
+    <ul class="nav__links">
 
+    </ul>
+</div>
+<div class="hidden-xs hidden-sm js-secondaryNavCompany collapse" id="accNavComponentDesktopTwo">
+    <ul class="nav__links js-nav__links">
+
+    </ul>
+</div>
 	<a id="skiptonavigation"></a>
 	<nav:topNavigation />
 
