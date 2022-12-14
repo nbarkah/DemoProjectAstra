@@ -15142,10 +15142,10 @@ form .forgotten-password {
   background-color: #f4f4f4;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading {
-  background-color: #142939 !important;
+  background-color: #7fc5f9 !important;
   color: #ffffff;
   padding: 15px 20px;
-  border-bottom: 1px solid #142939;
+  border-bottom: 1px solid #7fc5f9;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading > div {
   float: left;

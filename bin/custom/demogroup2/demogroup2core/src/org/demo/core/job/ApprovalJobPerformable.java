@@ -1,5 +1,6 @@
 package org.demo.core.job;
 
+import de.hybris.platform.commerceservices.setup.SetupSolrIndexerService;
 import de.hybris.platform.commerceservices.setup.SetupSyncJobService;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.cronjob.enums.CronJobResult;
@@ -26,9 +27,12 @@ public class ApprovalJobPerformable extends AbstractJobPerformable<CronJobModel>
     DemoProductDao demoProductDao;
     @Resource
     private SetupSyncJobService setupSyncJobService;
+    @Resource
+    private SetupSolrIndexerService setupSolrIndexerService;
     private static final Logger LOG = Logger.getLogger(ApprovalJobPerformable.class);
     private static final String PRODUCT_CATALOG = "demoGroup2ProductCatalog";
     private static final String CONTENT_CATALOG = "demoGroup2ContentCatalog";
+    private static final String FACET_CONFIG = "demoGroup2Index";
 
     @Override
     public PerformResult perform(CronJobModel cronJobModel) {
@@ -41,11 +45,14 @@ public class ApprovalJobPerformable extends AbstractJobPerformable<CronJobModel>
                     LOG.info(productModel.getApprovalStatus());
                     approvalProduct(productModel);
                 }
-                LOG.info("sync start at" + dtf.format(now));
+                LOG.info("------ Sync Starting At " + dtf.format(now));
                 setupSyncJobService.createProductCatalogSyncJob(PRODUCT_CATALOG);
                 setupSyncJobService.executeCatalogSyncJob(PRODUCT_CATALOG);
                 setupSyncJobService.createProductCatalogSyncJob(CONTENT_CATALOG);
                 setupSyncJobService.executeCatalogSyncJob(CONTENT_CATALOG);
+                LOG.info("------ Index Starting At " + dtf.format(now));
+                setupSolrIndexerService.createSolrIndexerCronJobs(FACET_CONFIG);
+                setupSolrIndexerService.executeSolrIndexerCronJob(FACET_CONFIG, true);
             }
         } catch (Error err) {
             LOG.error(err);
