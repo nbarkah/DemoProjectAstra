@@ -60,7 +60,7 @@
 		labelKey="register.email" path="email" inputCSS="form-control form-style"
 		mandatory="true" />
     <formElement:formInputBox idKey="register.userID"
-        labelKey="register.userID" path="userID" inputCSS="form-control form-style"
+        labelKey="USER ID" path="userID" inputCSS="form-control form-style"
         mandatory="true" />
 	<formElement:formPasswordBox idKey="password" labelKey="register.pwd"
 		path="pwd" inputCSS="form-control password-strength form-style" mandatory="true" />

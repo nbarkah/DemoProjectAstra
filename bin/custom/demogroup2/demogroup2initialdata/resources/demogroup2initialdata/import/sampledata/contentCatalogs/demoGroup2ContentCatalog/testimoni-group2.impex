@@ -13,6 +13,25 @@ INSERT_UPDATE TestiPerson;idPerson[unique=true];personName;rating(code);
                          ;07         ;Andika R ;BINTANGLIMA;
                          ;08         ;rinaldo fitra ;BINTANGEMPAT;
                          ;09         ;Yunni Hikmah  ;BINTANGLIMA;
+                        ;10         ;Wulan Permatasari ;BINTANGSEMPATSTG;
+                        ;11         ;Feni Rizona;BINTANGLIMA;
+                        ;12         ;Salwa unknown;BINTANGLIMA;
+                        ;13         ;tiara larasati ;BINTANGLIMA;
+                        ;14         ;Nisky Kiki rasuk ;BINTANGLIMA;
+                        ;15         ;Rany May ;BINTANGLIMA;
+                        ;16         ;Maya Sartika ;BINTANGLIMA;
+                        ;17         ;Maya Sartika ;BINTANGEMPAT;
+                        ;18         ;Maya Sartika ;BINTANGLIMA;
+                        ;19         ;Wahyuningsih Wahyuningsih;BINTANGEMPAT;
+                        ;20         ;Aulia Dwi Oktavia;BINTANGLIMA;
+                        ;21         ;Agung Wisaksono Pangestu;BINTANGLIMA;
+                        ;22         ;Ceria Nur Rohmah ;BINTANGLIMA;
+                        ;23         ;Dani Rachman ;BINTANGLIMA;
+                        ;24         ;Renni Pirma;BINTANGEMPAT;
+                        ;25         ;Yoselita Kusumaningrum ;BINTANGLIMA;
+                        ;26         ;olivia natalis;BINTANGLIMA;
+                        ;27         ;angeline ngan ;BINTANGLIMA;
+
 
 
 INSERT_UPDATE Testimoni;idTesti[unique=true];person(idPerson);headMsg;message;date;
@@ -25,6 +44,24 @@ INSERT_UPDATE Testimoni;idTesti[unique=true];person(idPerson);headMsg;message;da
                         ;07;07;Mantap!!;Kasur dan bantalnya empuk...Dan sejauh ini hanya in.the.box yang menyediakan kasur dengan teknologi pocket spring dengan harga yang sangat terjangkau.;7 Oct 2018 - 12:34 pm;
                         ;08;08;Matras lembut, bantal empuk;matras busa, empuk lembut, enak dipakai tidur, tapi jangan duduk karena langsung terbenam. di dalam matrasnya ada per jadi ada support sehingga ketika dipakai tidur tidak terbenam dan sebelah bergerak gerak kita tidak terganggu. saya beli king size, ternyata beratnya minta ampun, perlu 2 org untuk menggotong boxnya. Dapat 2 bantal empuk sebagai bonus, dan gratis ongkos kirim. Sejauh ini puas dengan kualitas dan harganya. Ini bukan Kasur busa biasa .. top deh;27 Sep 2018 - 1:28 pm;
                         ;09;09;Ga pake ribet;Bingung cari matras yang nyaman....pas nemu bedinthebox...langsung pesan...praktis, cepat sampai, gratis ongkir....ga pakai ribet....;24 Aug 2018 - 4:46 pm;
+                        ;10;10;Top banget;puas bgt sama pelayanan in the box, order jumat payment sabtu dan minggu udah sampai rumah barang aman dan rapih dan setelah unboxing, matrasnya emang bener bener empuk dibanding yg lain;6 Aug 2018 - 8:57 am
+                        ;11;11;Top;Udah ga usah ragu-ragu lagi beli spring bed inthebox..top markotop...;14 May 2018 - 10:10 am;
+                        ;12;12;Nyamann;Nyamann Banget;22 Apr 2018 - 10:09 pm;
+                        ;13;13;Amazing.. .;Bedinthebox oke bgt deh.. Awalnya sempet ragu sempet deg2an beli disini (online) atau di offline store aja.. Tapi akhirnya mutusin pesen di bedinthebox karna penasaran juga. Dan hasilnya amazing puasssss bangeett.. Pengirimnya cepett, operatornya baik ramahhhh banget. Padah bisa dibilang saya cost yg lumayan bawell nanya2 mulu.. HeheheTapi setelah pesenam dateng hasilnya puas banget nget nget gk nyesell pesen disinii... Love.. Love...;28 Mar 2018 - 1:48 pm;
+                        ;14;14;Bed in the box ... oke...;Nggak nyangka... kasur sesuai harapan... kasur nyaman... recommanded bngit... sering2 diskon n bonus ya... hihihi... the best bed in the box.;27 Jan 2018 - 9:23 pm;
+                        ;15;15;Puass..Semoga selalu Awettt..;Springbednya KECE KEKINIAN;28 Dec 2017 - 2:10 pm;
+                        ;16;16;Gulingnya mantabs;Guling in the box mantabs, begitu dibuka plastik pembungkusnya, langsung mengembang, empuk dan bahannya nyaman gak bikin bersin.;26 Dec 2017 - 9:39 am;
+                        ;17;17;Bantal VIP;Ibu saya biasa pakai bantal kapuk Dan dakron, setelah coba bantal bonus dari in the box,serasa bantal VIP katanya;26 Dec 2017 - 9:35 am;
+                        ;18;18;Unboxing seru keren abis!!!;Saat unboxing bikin penasaran seisi rumah....pengalaman seru...awalnya semua ragu apakah sesuai iklan....ternyata hasilnya keren!!!Kasur,bantal, dan guling mengembang dengan cepat saat plastik pembungkus dibuka. Andai saja ada pilihan warna kain matrasnya, pasti jadi lebih keren.;26 Dec 2017 - 9:30 am;
+                        ;19;19;terima kasih ya...;Baru pertama belanja lewat web... tadinya dag dig dug ko udah 1minggu lebih belum sampe... t tapi alhamdulillah setelah 9 hari barangnya sampe dan memuaskan... operatornya juga ramah dan pelayanan 24 jam... tingkatkan waktu pengirimanya ya agar ga trlalu lama... makasih...;22 Dec 2017 - 1:20 pm;
+                        ;20;20;Kasur apaan nih?;A few weeks ago, my father called me by shouting from outside. I was very surprised because he bought me a new mattress. Yea, this inthebox bed. I thought it was just like an ordinary mattress, but I was wrong. I never imagined this mattress was the most comfort I've ever had. Plus, I got the bonus pillow for free haha. Thank you, you made my day.;20 Dec 2017 - 3:35 am;
+                        ;21;21;Mantap;Pelayanan dan kualias produk tidak mengecewakan pelanggan. Recomended seller and product.Andai ada inovasi produk baru seperti sova in.the.box;20 Nov 2017 - 9:55 pm;
+                        ;22;22;Mantap jiwa;Terimakasih, matrasnya sudah sampai. kini aku&suami jd lebih nyaman tidurnya. Empuknya tuuuuuh nyummy bgt ,...;4 Nov 2017 - 5:07 am
+                        ;23;23;Magic & comfortable;hahaha nyaman daaaaan.. MAGIC!! udah gitu aja..;8 Sep 2017 - 1:25 pm;
+                        ;24;24;Terima Kasih inthebox.id !!;Terima Kasih inthebox.id, kasurnya mantap banget dan nanti saya belanja lagi di inthebox.id.;25 Apr 2017 - 4:00 pm;
+                        ;25;25;Gak Salah Milih Kasur;Sebelum memutuskan membeli kasur ini, sempat bertanya ke admin, mengenai tinggi kasur dan ternyata cukup tinggi juga sesuailah sama pemiliknya besar - besar.Senin kasur datang, ketika mengembang saya ukur. Loh 20cm. Tapi tiap hari iseng memperhatikan kok makin lama makin ngembang kasurnya.Hari ini iseng ukur lagi dan benar benar 24cm. Sang kasur sudah mengembang maksimal.Yang amazing lagi, ketika suami saya yg berbadan besar nyusul naik ke kasur, saya tidak merasakannya dan anteng aja kasurnya ga ikut meyat meyot kayak yang sebelumnya.Tidur nyenyak, hati senang.;25 Apr 2017 - 3:31 pm;
+                        ;26;26;happy parents;saya membeli bed in the box ini di hypermart solo untuk orang tua saya. org tua saya happy sekali krn barangnya bisa langsung dibawa pulang, takjub dengan packagingnya yang compact, suka sekali dengan kenyamanan kasurnya ( pemakaian 6 hari).;20 Apr 2017 - 10:10 am
+                        ;27;27;Welcoming my new mattress for guest's bedroom !;Welcoming my new mattress for guest's bedroom ! Thank you inthebox.id for wonderful shopping experience, your customer service is top notch! Fast, reliable and very helpful. Love the compact packaging, moving and unpacking to 2nd floor was a breeze. Mattress is soft yet firm, my daughter cannot wait to hop and sleep in it;7 Apr 2017 - 4:14 pm
 
 
 

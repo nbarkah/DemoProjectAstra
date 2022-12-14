@@ -8,13 +8,19 @@
 @slick-arrow-color: white;
 @slick-dot-color: black;
 @slick-dot-color-active: @slick-dot-color;
-@slick-prev-character: "←";
-@slick-next-character: "→";
+@slick-prev-character: "<";
+@slick-next-character: ">";
 @slick-dot-character: "•";
 @slick-dot-size: 6px;
 @slick-opacity-default: 0.75;
 @slick-opacity-on-hover: 1;
 @slick-opacity-not-active: 0.25;
+
+
+@font-face {
+  font-family: 'Sansita';
+  src: url('../fonts/Sansita-Regular.ttf');
+}
 
 /* Slider */
 .slick-loading .slick-list{
@@ -37,6 +43,10 @@
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+            -webkit-transform: scale(2, 3);
+            -moz-transform: scale(2, 3);
+            -o-transform: scale(2, 3);
+            transform: scale(2, 3);
     padding: 0;
     border: none;
     outline: none;
@@ -54,7 +64,7 @@
 }
 
 .slick-prev:before, .slick-next:before {
-    font-family: @slick-font-family;
+   font-family: 'Sansita', sans-serif;
     font-size: 20px;
     line-height: 1;
     color: @slick-arrow-color;
@@ -66,7 +76,7 @@
         /* Icons */
         @font-face {
             font-family: 'slick';
-            font-weight: normal;
+            font-weight: 100;
             font-style: normal;
             src: url('@{slick-font-path}slick.eot');
             src: url('@{slick-font-path}slick.eot?#iefix') format('embedded-opentype'), url('@{slick-font-path}slick.woff') format('woff'), url('@{slick-font-path}slick.ttf') format('truetype'), url('@{slick-font-path}slick.svg#slick') format('svg');

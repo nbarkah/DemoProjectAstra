@@ -41,7 +41,7 @@ INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       
                           ;                          ; AboutUsBuyIntheboxPage        ; About Us Buy Inthebox Page Template    ; layout/aboutUsBuyIntheboxPage        ; ContentPage;
 
 
-##training-fe-2
+#fe demogroup2
 UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
                    ;                          ; TestimoniPage              ;                ; $jarResourceCms/structure-view/structure_tentangPageTemplate.vm
 
@@ -59,7 +59,7 @@ UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              
                    ;                          ; AboutUsBuyIntheboxPage             ;                ; $jarResourceCms/structure-view/structure_aboutUsDetail.vm
 
 
-##training-fe-3
+#fe demogroup2-2
 INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'TestimoniPage']; validComponentTypes(code)       ; compTypeGroup(code)
                              ; SiteLogo               ;                                                                                      ;                                 ; logo
                              ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
@@ -177,7 +177,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; testimony ; Testimonioni Page ; TestimoniPage ; testimony
+                         ;                          ; testimony ; Testimoni Page ; TestimoniPage ; testimony
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; name                     ; masterTemplate(uid, $contentCV) ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
@@ -194,8 +194,7 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     ; n
                          ;                          ; aboutUsBuyIntheboxPage ; about Us Buy Inthebox Page ; AboutUsBuyIntheboxPage ; aboutUsBuyIntheboxPage
 
 
-
-
+########### END FE GROUP 2 ###########
 
 
 # CMS Site Settings
@@ -237,7 +236,7 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;LinkedInLink;Linked In Link;"http://www.linkedin.com/groups/5063400";LinkedInLink;LinkedInLink;newWindow;;;
                               ;;FAQLink;FAQ Link;/faq;FAQLink;FAQLin;;;;
                               ;;TermsAndConditionsLink;Terms and Conditions Link;/termsAndConditions;TermsAndConditionsLink;TermsAndConditionsLink;;;;
-
+                              ;;BlogHeadLink;Blogs Head Link;/#;BlogHeadLink;BlogHeadLink;;;;
 # Lightbox Banner for Mini Cart
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
                                    ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
@@ -783,8 +782,16 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;;ProductListSlot;Product List Slot for Product List;true;ProductListComponent;;;
 
 #### ProductGridPage
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;BannerProductGridComponent;IN THE BOX PLP BANNER;/c/INTHEBOX;BannerProductGridComponent
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-                         ;;ProductGridSlot;Product Grid Slot for Product List;true;ProductGridComponent;;;
+                         ;;ProductGridSlot      ;Product Grid Slot for Product List;true;ProductGridComponent;;;
+                         ;;Section1Slot-PLP     ;Banner Product PLP                ;true;BannerProductGridComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productGrid'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section1Slot-PLP;Section1;;Section1Slot-PLP
 
 #### SearchResultListPage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
@@ -851,47 +858,55 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1-Homepage;Section1;;Section1Slot-Homepage
 
-## Home section 2
-#INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-#                                   ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section2Slot-Homepage;IntheBoxTagParagraphComponent
+###  Home page slot 2  ####
 
-#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-#                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+                                      ;;DemoHomepageProductCarouselComponent;Demo Group 2 Homepage Product Carousel;INTHEBOX-FLIP-Z-90,SPACEJAM-COLLECTION-90,KASUR-LIPAT-80,SOFA-3-SEATER,BANTAL-INTHEBOX;allVisible;false;DemoHomepageProductCarouselComponent
 
 
-## Home section 3
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+                         ;;Section2Slot-Homepage;DemoHomepageProductCarouselComponent
 
-#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-#                                             ;;DemoHompageLightFamBannerComponent;Demo Homepage Light Family Banner Component;/p/SUPERKINGX;DemoHompageLightFamBannerComponent
-#
-#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-#                                             ;;DemoHompageLightFamTextBannerComponent;Demo Homepage Light Family Text Banner Component;/Open-Catalogue/Cameras/CameraAccessories-%26-Supplies/CameraLenses/c/588;DemoHompageLightFamTextBannerComponent
-
-#INSERT_UPDATE DemoEaseOfAnyWhereCMSComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-#                                            ;;HomePageEaseOfAnyWhere1;HomePageEaseOfAnyWhere1
-#                                            ;;HomePageEaseOfAnyWhere2;HomePageEaseOfAnyWhere2
-#                                            ;;HomePageEaseOfAnyWhere3;HomePageEaseOfAnyWhere3
-#                                            ;;HomePageEaseOfAnyWhere4;HomePageEaseOfAnyWhere4
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section2-Homepage;Section2;;Section2Slot-Homepage
 
 
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#                         ;;Section3Slot-Homepage;true;HomePageEaseOfAnyWhere1,HomePageEaseOfAnyWhere2,HomePageEaseOfAnyWhere3,HomePageEaseOfAnyWhere4
+###  Home page slot 3  ####
 
-#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-#                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
+
+INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ;  description                                                                ; image(code, $contentCV) ; &componentRef
+                                  ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
+                                  ;                          ; unboxingPosisikanComponent                   ; Homepage Unboxing Posisikan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-2 ; unboxingPosisikanTileComponent
+                                  ;                          ; unboxingBukaPlastikComponent                 ; Homepage Unboxing Buka Plastik Tile Component          ;  Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah        ; unboxing-itb-3 ; unboxingBukaPlastikTileComponent
+                                  ;                          ; unboxingTungguMengembangComponent            ; Homepage Unboxing Tunggu Mengembang Tile Component     ;  kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan   ; unboxing-itb-4 ; unboxingTungguMengembangTileComponent
+
+
+
+INSERT_UPDATE HomepageFeaturesComponent; $contentCV[unique = true]; uid[unique = true]        ; title             ; subtitle ; featureTiles(uid, $contentCV) ; &componentRef
+                                       ;                          ; HomepageFeaturesComponent ; UNBOXING INTHEBOX ;          ; unboxingKeluarkanComponent, unboxingPosisikanComponent, unboxingBukaPlastikComponent, unboxingTungguMengembangComponent ; HomepageFeaturesComponent
+
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+                         ;;Section3Slot-Homepage;true;HomepageFeaturesComponent
+
+
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
+
 
 ###  Home page slot 4  ####
-#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#                         ;;Section4Slot-Homepage;AstraVideoLink
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;HomepageTestimoniComponent;Homepage Testimoni Carousel Component;homepageTestimoniComponent.jsp;;HomepageTestimoniComponent
 
-#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-#                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+                         ;;Section4Slot-Homepage;HomepageTestimoniComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section4-Homepage;Section4;;Section4Slot-Homepage
+
 
 #### Home section 5 #######
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
@@ -1450,3 +1465,6 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
 
 ###LINK TESTIMONI
+REMOVE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+                               ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
+                               ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode

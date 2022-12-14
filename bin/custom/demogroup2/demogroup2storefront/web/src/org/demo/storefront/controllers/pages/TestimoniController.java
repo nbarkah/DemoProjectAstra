@@ -7,6 +7,7 @@ import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import org.demo.facades.person.PersonFacade;
+import org.demo.facades.person.data.PersonData;
 import org.demo.facades.testimoni.TestiFacade;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -33,7 +36,8 @@ public class TestimoniController extends AbstractPageController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String testi(@RequestParam(value = WebConstants.CLOSE_ACCOUNT, defaultValue = "false") final boolean closeAcc,
-                       @RequestParam(value = LOGOUT, defaultValue = "false") final boolean logout, final Model model,
+                       @RequestParam(value = LOGOUT, defaultValue = "false") final boolean logout,@RequestParam(value = "page", defaultValue = "1") String number,
+                        final Model model,
                        final RedirectAttributes redirectModel) throws CMSItemNotFoundException
     {
         if (logout)
@@ -50,6 +54,23 @@ public class TestimoniController extends AbstractPageController {
         storeCmsPageInModel(model, contentPage);
         setUpMetaDataForContentPage(model, contentPage);
         updatePageTitle(model, contentPage);
+
+        List<PersonData> personList = personFacade.getAllPerson();
+        List<PersonData> demoList = new ArrayList<>();
+        int thisPage = Integer.parseInt(number);
+        int dataSize = personList.size();
+        int j = 9 * thisPage;
+        for(int i = 9 * (thisPage - 1); i < dataSize; i++) {
+            if(j==i) {
+                break;
+            }
+            demoList.add(personList.get(i));
+
+        }
+        model.addAttribute("newTesti",personList);
+        model.addAttribute("testiData",demoList);
+        model.addAttribute("number",thisPage);
+        model.addAttribute("max",(dataSize/9));
         model.addAttribute("personList", personFacade.getAllPerson());
         model.addAttribute("testimoni",testiFacade.getAllTestimoni());
         return getViewForPage(model);
