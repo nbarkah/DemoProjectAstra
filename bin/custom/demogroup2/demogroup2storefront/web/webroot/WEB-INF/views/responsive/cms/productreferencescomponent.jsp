@@ -13,7 +13,7 @@
 	<c:when test="${not empty productReferences and component.maximumNumberProducts > 0}">
 		<div class="carousel-component">
 
-			<div class="headline">${fn:escapeXml(component.title)}</div>
+
 
 			<div class="carousel js-owl-carousel js-owl-lazy-reference js-owl-carousel-reference">
 				
