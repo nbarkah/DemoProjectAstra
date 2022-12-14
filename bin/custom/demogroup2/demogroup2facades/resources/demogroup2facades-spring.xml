@@ -265,6 +265,9 @@
 	<alias name="defaultProductUpsellFacade" alias="defaultProductUpsellFacade"/>
 	<bean id="defaultProductUpsellFacade" class="org.demo.facades.productUpsellComponent.impl.DefaultProductUpsellFacade" />
 
+	<alias name="defaultProductCarouselHomepageFacade" alias="productCarouselFacade"/>
+	<bean id="defaultProductCarouselHomepageFacade" class="org.demo.facades.productCarouselHomepage.DefaultProductCarouselHomepageFacade" parent="defaultProductCarouselFacade" />
+
 	<!-- ######### END FOR GROUP 2 ######### -->
 	<alias name="customerFacadeGroup2" alias="customerFacade"/>
 	<bean id="customerFacadeGroup2" class="org.demo.facades.register.Group2CustomerFacade" parent="defaultCustomerFacade"/>

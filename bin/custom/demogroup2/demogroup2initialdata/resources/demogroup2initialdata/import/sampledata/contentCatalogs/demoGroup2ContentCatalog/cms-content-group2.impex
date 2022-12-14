@@ -9,6 +9,9 @@ $contentCatalogName=Demo Group2 Content Catalog
 $productCatalog=demoGroup2ProductCatalog
 $productCatalogName=Demo Group2 Product Catalog
 
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 
@@ -284,13 +287,27 @@ INSERT_UPDATE CMSActionRestriction;$contentCV[unique=true];uid[unique=true];name
 
 INSERT_UPDATE PickUpInStoreAction;$contentCV[unique=true];uid[unique=true];url;name;&actionRef
                                  ;;PickUpInStoreAction;/store-pickup/{productCode}/pointOfServices;Pickup in Store Action;PickUpInStoreAction
-
-# CMS ProductReferences Components
+#
+## CMS ProductReferences Components
 INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;&componentRef
-                                        ;;accessories;Accessories;ACCESSORIES;5;accessories
-                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
-                                        ;;Others;Others;OTHERS;5;Others
-                                        ;;Similar;Similar;SIMILAR;5;Similar
+#                                        ;;accessories;Accessories;ACCESSORIES;5;accessories
+#                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
+##                                        ;;Others;Others;OTHERS;5;Others
+#                                        ;;Similar;Similar;SIMILAR;6;Similar
+#
+#INSERT_UPDATE ProductReference; source(code, $catalogVersion)[unique = true]; target(code, $catalogVersion)[unique = true]; referenceType(code); active[default = true]; preselected[default = true]
+#                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-100                                        ; SIMILAR
+#                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-120                                        ; SIMILAR
+#                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-140                                        ; SIMILAR
+#                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-160                                        ; SIMILAR
+#                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-180                                        ; SIMILAR
+#                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-200                                        ; SIMILAR
+#                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-100                                        ; SIMILAR
+#                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-120                                        ; SIMILAR
+#                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-140                                        ; SIMILAR
+#                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-160                                        ; SIMILAR
+#                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-180                                        ; SIMILAR
+#                              ; INTHEBOX-X-100                                       ; INTHEBOX-X-200                                        ; SIMILAR
 
 # CMS PurchasedCategorySuggestion Components
 INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
@@ -566,6 +583,7 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 # CMSParagraphComponent
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;;;;
                                    ;;faqMenuParagraph;FAQ Menu Paragraph;FAQMenuParagraph;;;;
+                                   ;;faqTextParagraph;FAQ Text Paragraph;FAQTextParagraph;;;;
 
 # ContentSlot
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
@@ -883,6 +901,7 @@ INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=t
                    ;widescreen;;unboxing-itb-2;$siteResource/images/inthebox/homepage/unboxing-itb-2.png;;unboxing-itb-2.png;;"UNBOXING ITB 2"
                    ;widescreen;;unboxing-itb-3;$siteResource/images/inthebox/homepage/unboxing-itb-3.png;;unboxing-itb-3.png;;"UNBOXING ITB 3"
                    ;widescreen;;unboxing-itb-4;$siteResource/images/inthebox/homepage/unboxing-itb-4.png;;unboxing-itb-4.png;;"UNBOXING ITB 4"
+
 
 INSERT_UPDATE FeatureTileComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ;  description                                                                ; image(code, $contentCV) ; &componentRef
                                   ;                          ; unboxingKeluarkanComponent                   ; Homepage Unboxing Keluarkan Tile Component             ;  Keluarkan kasur INTHEBOx dari kemasannya secara perlahan lahan             ; unboxing-itb-1 ; unboxingKeluarkanTileComponent
