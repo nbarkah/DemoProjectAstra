@@ -23,35 +23,15 @@
 		<a class="thumb" href="${fn:escapeXml(productUrl)}" title="${fn:escapeXml(product.name)}">
 			<product:productPrimaryImage product="${product}" format="product"/>
 		</a>
-		<div class="details">
-
-			<ycommerce:testId code="product_productName">
+		<div class="details" style = "text-align : left">
 				<a class="name" href="${fn:escapeXml(productUrl)}">
 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.name)}" />
-				</a>
-			</ycommerce:testId>
-
-            <div class="size"></div>
-			<ycommerce:testId code="product_productName">
-				<a class="name" href="${fn:escapeXml(productUrl)}">
+					<p>
 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
+					<br>
+					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" /></p>
+					<div class="price"><product:productListerItemPrice product="${product}"/></div>
 				</a>
-			</ycommerce:testId>
-
-			<div class="size"></div>
-			<ycommerce:testId code="product_productName">
-				<a class="name" href="${fn:escapeXml(productUrl)}">
-					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" />
-				</a>
-			</ycommerce:testId>
-
-			<div class="size"></div>
-			<ycommerce:testId code="product_productName">
-				<a class="name" href="${fn:escapeXml(productUrl)}">
-					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.brands)}" />
-				</a>
-			</ycommerce:testId>
-
 			<c:if test="${not empty product.potentialPromotions}">
 				<div class="promo">
 					<c:forEach items="${product.potentialPromotions}" var="promotion">
@@ -59,10 +39,6 @@
 					</c:forEach>
 				</div>
 			</c:if>
-			
-			<ycommerce:testId code="product_productPrice">
-				<div class="price"><product:productListerItemPrice product="${product}"/></div>
-			</ycommerce:testId>
 			<c:forEach var="variantOption" items="${product.variantOptions}">
 				<c:forEach items="${variantOption.variantOptionQualifiers}" var="variantOptionQualifier">
 					<c:if test="${variantOptionQualifier.qualifier eq 'rollupProperty'}">

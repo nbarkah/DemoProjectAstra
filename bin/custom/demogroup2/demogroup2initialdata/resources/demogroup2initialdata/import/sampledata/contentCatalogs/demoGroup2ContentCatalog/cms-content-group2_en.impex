@@ -428,6 +428,9 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
                             ;;DemoGroup2ParagraphComponent;"Test DemoGroup2 Page"
                             ;;DemoGroup2ParagraphComponent2;"Test DemoGroup2 Page - Bottom Slot"
 
+UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
+                            ;;TitleParagraphProductGridComponent;"<h1>PILIHAN PRODUK INTHEBOX</h1>"
+
 # Media Content
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
                    ;widescreen;;banner-testing-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Testing Banner"
