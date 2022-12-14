@@ -19298,15 +19298,20 @@ footer {
     width: 180 px !important;
   }
   .loginlink a {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
-.mid-head {
-  display: none;
+@media (max-width: 1023px) {
+  .mid-head {
+    display: none;
+  }
+  .burger-button {
+    width: 25px;
+  }
 }
-.burger-button {
-  width: 25px;
-}
+/*mobilee
+
+    */
 .container-testimoni-homepage {
   margin: 0 auto;
   width: 60%;
