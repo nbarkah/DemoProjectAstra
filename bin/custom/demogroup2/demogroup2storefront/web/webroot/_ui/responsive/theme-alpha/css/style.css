@@ -6931,10 +6931,7 @@ button.close {
 }
 @font-face {
   font-family: 'Sansita';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/sansita/v10/QldONTRRphEb_-V7HBk.ttf) format('truetype');
+  src: url('../fonts/Sansita-Regular.ttf');
 }
 /* Slider */
 .slick-loading .slick-list {
@@ -19258,6 +19255,57 @@ footer {
 .nav__links {
   font-family: brown !important;
   color: #fff !important;
+}
+.navigation {
+  display: block !important;
+}
+@media only screen and (max-width: 1023px) {
+  .navigation--bottom {
+    width: 100% !important;
+    position: static !important;
+    left: 0px !important;
+    z-index: 999 !important;
+  }
+}
+@media (max-width: 1023px) {
+  .navigation--bottom .navigation__overflow {
+    height: 89px !important;
+  }
+}
+@media (max-width: 1023px) {
+  .navigation--bottom .nav__links--products {
+    background-color: transparent !important;
+  }
+  .navigation--bottom .nav__links--products li {
+    border-bottom: none !important;
+    background-color: transparent !important;
+  }
+  .navigation--bottom .nav__links--products li a {
+    color: #fff !important;
+    padding: 10px 25px 20px 25px !important;
+  }
+  .head-nav {
+    align-items: stretch !important;
+  }
+  .head-main {
+    align-items: stretch !important;
+  }
+  .mid-head a {
+    font-size: 15px !important;
+  }
+  .simple-banner-component img,
+  .banner__component img {
+    width: 180 px !important;
+  }
+  .loginlink a {
+    font-size: 15px;
+  }
+}
+.mid-head {
+  display: none;
+}
+.burger-button {
+  width: 25px;
 }
 .container-testimoni-homepage {
   margin: 0 auto;

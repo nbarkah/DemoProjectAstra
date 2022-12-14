@@ -70,7 +70,7 @@ public class TestimoniController extends AbstractPageController {
         model.addAttribute("newTesti",personList);
         model.addAttribute("testiData",demoList);
         model.addAttribute("number",thisPage);
-        model.addAttribute("max",(dataSize/9+1));
+        model.addAttribute("max",(dataSize/9));
         model.addAttribute("personList", personFacade.getAllPerson());
         model.addAttribute("testimoni",testiFacade.getAllTestimoni());
         return getViewForPage(model);
