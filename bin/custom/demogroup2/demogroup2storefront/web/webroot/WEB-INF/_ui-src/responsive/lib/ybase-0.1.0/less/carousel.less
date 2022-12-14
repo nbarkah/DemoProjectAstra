@@ -127,6 +127,8 @@
 }
 
 
+
+
 .carousel,
 .carousel__component--carousel {
 	width: 60%;
@@ -134,6 +136,8 @@
 	text-align: center;
 	display:flex;
 	justify-content:center;
+
+
 
 	.item,
 	.carousel__item{
@@ -192,7 +196,6 @@
 			text-align: center;
 			text-transform: uppercase;
 			line-height: 1.2em;
-
 			position: relative;
 			height: 4em;
 			font-weight: 600;
@@ -215,6 +218,13 @@
 		}
 
 	}
+}
+
+@media only screen and (max-width: 1024px) {
+.carousel,
+.carousel__component--carousel {
+    width: 80%;
+}
 }
 
 

@@ -18,6 +18,7 @@
  --%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
+<script src="https://cdn.tailwindcss.com"></script>
 
 <c:set var="errorStatus" value="<%= de.hybris.platform.catalog.enums.ProductInfoStatus.valueOf(\"ERROR\") %>" />
 <c:set var="entryNumberHtml" value="${fn:escapeXml(entry.entryNumber)}"/>
@@ -49,7 +50,7 @@
         <c:set var="showEditableGridClass" value=""/>
         <c:url value="${entry.product.url}" var="productUrl"/>
 
-        <li class="item__list--item">
+        <li class="item__list--item  ">
             <%-- chevron for multi-d products --%>
             <div class="hidden-xs hidden-sm item__toggle">
                 <c:if test="${entry.product.multidimensional}" >
@@ -62,20 +63,20 @@
             </div>
 
             <%-- product image --%>
-            <div class="item__image">
+            <div class="w-80 p-0">
                 <a href="${fn:escapeXml(productUrl)}"><product:productPrimaryImage product="${entry.product}" format="thumbnail"/></a>
             </div>
 
             <%-- product name, code, promotions --%>
-            <div class="item__info">
+            <div class="item__info flex flex-col space-y-2 ">
                 <ycommerce:testId code="cart_product_name">
-                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name">${fn:escapeXml(entry.product.name)}</span></a>
+                    <a href="${fn:escapeXml(productUrl)}"><span class="text-4xl font-semibold">${fn:escapeXml(entry.product.name)}</span></a>
                 </ycommerce:testId>
 
-                <div class="item__code">${productCodeHtml}</div>
+                <div class="item__code text-3xl">${productCodeHtml}</div>
 
                 <%-- availability --%>
-                <div class="item__stock">
+                <div class="item__stock ">
                     <c:set var="entryStock" value="${entry.product.stock.stockLevelStatus.code}"/>
                     <c:forEach items="${entry.product.baseOptions}" var="option">
                         <c:if test="${not empty option.selected and option.selected.url eq entry.product.url}">
@@ -89,16 +90,22 @@
                         </c:if>
                     </c:forEach>
 
-                    <div>
+                    <div class="mb-10">
                         <c:choose>
                             <c:when test="${not empty entryStock and entryStock ne 'outOfStock' or entry.product.multidimensional}">
-                                <span class="stock"><spring:theme code="product.variants.in.stock"/></span>
+                                <span class="stock text-3xl"><spring:theme code="product.variants.in.stock"/> </span>
                             </c:when>
                             <c:otherwise>
                                 <span class="out-of-stock"><spring:theme code="product.variants.out.of.stock"/></span>
                             </c:otherwise>
                         </c:choose>
                     </div>
+                </div>
+
+                <%-- price --%>
+                <div class="item__price text-3xl " style="color: #6086c2">
+                    <span class="visible-xs visible-sm text-3xl"><spring:theme code="basket.page.itemPrice"/>: </span>
+                    <strong><format:price priceData="${entry.basePrice}" displayFreeForZero="true"/></strong>
                 </div>
 
                 <c:if test="${ycommerce:doesPotentialPromotionExistForOrderEntryOrOrderEntryGroup(cartData, entry)}">
@@ -169,13 +176,10 @@
             </div>
 
             <%-- price --%>
-            <div class="item__price">
-                <span class="visible-xs visible-sm"><spring:theme code="basket.page.itemPrice"/>: </span>
-                <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
-            </div>
+
 
             <%-- quantity --%>
-            <div class="item__quantity hidden-xs hidden-sm">
+            <div class="item__quantity hidden-xs hidden-sm ">
                 <c:choose>
                     <c:when test="${not entry.product.multidimensional}" >
                         <c:url value="/cart/update" var="cartUpdateFormAction" />
@@ -210,26 +214,11 @@
             </div>
 
             <%-- delivery --%>
-            <div class="item__delivery">
-                <c:if test="${entry.product.purchasable}">
-                    <c:if test="${not empty entryStock and entryStock ne 'outOfStock'}">
-                        <c:if test="${entry.deliveryPointOfService eq null or not entry.product.availableForPickup}">
-                            <span class="item__delivery--label"><spring:theme code="basket.page.shipping.ship"/></span>
-                        </c:if>
-                    </c:if>
-                    <c:if test="${not empty entry.deliveryPointOfService.name}">
-                        <span class="item__delivery--label"><spring:theme code="basket.page.shipping.pickup"/></span>
-                    </c:if>
 
-                    <c:if test="${entry.product.availableForPickup and not empty entry.deliveryPointOfService.name}">
-                        <div class="item__delivery--store">${fn:escapeXml(entry.deliveryPointOfService.name)}</div>
-                    </c:if>
-                </c:if>
-            </div>
 
             <%-- total --%>
-            <ycommerce:testId code="cart_totalProductPrice_label">
-                <div class="item__total js-item-total hidden-xs hidden-sm">
+            <ycommerce:testId code="cart_totalProductPrice_label ">
+                <div class="item__total js-item-total hidden-xs hidden-sm " style="color: #6086c2; font-size:20px;">
                     <format:price priceData="${entry.totalPrice}" displayFreeForZero="true"/>
                 </div>
             </ycommerce:testId>
@@ -289,7 +278,7 @@
                 </c:if>
             </div>
 
-            <div class="item__quantity__total visible-xs visible-sm">
+            <div class="item__quantity__total visible-xs visible-sm ">
                 <c:if test="${entry.product.multidimensional}" >
                     <ycommerce:testId code="cart_product_updateQuantity">
                         <c:set var="showEditableGridClass" value="js-show-editable-grid"/>
@@ -376,7 +365,7 @@
             </div>
         </li>
 
-        <li class="item__list--comment">
+        <li class="item__list--comment ">
             <div class="item__comment quote__comments">
                 <c:if test="${not empty cartData.quoteData}">
                     <c:choose>

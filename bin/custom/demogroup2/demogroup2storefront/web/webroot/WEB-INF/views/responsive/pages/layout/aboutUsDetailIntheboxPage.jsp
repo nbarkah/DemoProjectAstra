@@ -70,21 +70,33 @@
                                 <img src="https://inthebox.net/images/layout-v2/about-image-2.png">
                                 <h1 class="text-3xl xl:text-4xl font-semibold text-center">Kenapa Harus Pilih INTHEBOX?</h1>
                                 <div class="flex justify-center">
-                                    <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                    <div>
+                                                                <a href="aboutUsWhyIntheboxPage">
+                                                                   <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                                                </a>
+                                                             </div>
                                 </div>
                             </div>
                             <div class="xl:w-1/3 space-y-8 flex flex-col justify-center">
                                  <img src="https://inthebox.net/images/layout-v2/about-image-3.png">
                                  <h1 class="text-3xl xl:text-4xl font-semibold text-center">Cara Beli Kasur INTHEBOX</h1>
                                  <div class="flex justify-center">
-                                     <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                    <div>
+                                                                <a href="aboutUsBuyIntheboxPage">
+                                                                   <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                                                </a>
+                                                             </div>
                                  </div>
                             </div>
                             <div class="xl:w-1/3 space-y-8 flex flex-col justify-center">
                                  <img src="https://inthebox.net/images/layout-v2/about-image-0.png">
                                  <h1 class="text-3xl xl:text-4xl font-semibold text-center">Tentang INTHEBOX</h1>
                                  <div class="flex justify-center">
-                                    <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                    <div>
+                                                                <a href="aboutUsPage">
+                                                                   <button class="p-2 xl:p-5 xl:px-10 px-5 rounded-full bg-blue-400 text-white hover:bg-white font-semibold hover:text-blue-500 xl:text-2xl">Selengkapnya</button>
+                                                                </a>
+                                                             </div>
                                  </div>
                             </div>
                         </div>

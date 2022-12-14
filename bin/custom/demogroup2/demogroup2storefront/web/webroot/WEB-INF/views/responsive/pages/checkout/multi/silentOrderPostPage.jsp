@@ -12,7 +12,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-
+<script src="https://cdn.tailwindcss.com"></script>
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
 <div class="row">
     <div class="col-sm-6">
@@ -44,7 +44,9 @@
 						
 									<div class="form-group">
 										<c:if test="${not empty paymentInfos}">
-											<button type="button" class="btn btn-default btn-block js-saved-payments"><spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useSavedCard"/></button>
+											<button type="button" class="js-saved-payments w-full mt-2 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-2">
+                                                <spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useSavedCard"/>
+                                            </button>
 										</c:if>	
 									</div>
 
@@ -139,8 +141,9 @@
 							</ycommerce:testId>
                          </div>
                     </div>
-
-                    <button type="button" class="btn btn-primary btn-block submit_silentOrderPostForm checkout-next"><spring:theme code="checkout.multi.paymentMethod.continue"/></button>
+                    <button type="button" class="submit_silentOrderPostForm w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-8">
+                        <spring:theme code="checkout.multi.paymentMethod.continue"/>
+                    </button>
                 </c:if>
 
 				<c:if test="${not empty paymentInfos}">
@@ -167,7 +170,9 @@
 												${fn:escapeXml(paymentInfo.billingAddress.town)}&nbsp; ${fn:escapeXml(paymentInfo.billingAddress.region.isocodeShort)}<br/>
 												${fn:escapeXml(paymentInfo.billingAddress.postalCode)}&nbsp; ${fn:escapeXml(paymentInfo.billingAddress.country.isocode)}<br/>
 											</ul>
-											<button type="submit" class="btn btn-primary btn-block" tabindex="${fn:escapeXml((status.count * 2) - 1)}"><spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useThesePaymentDetails"/></button>
+									        <button type="submit" tabindex="${fn:escapeXml((status.count * 2) - 1)}" class="w-full mt-2 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center mr-2 mb-2">
+                                                <spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useThesePaymentDetails"/>
+                                            </button>
 									</form>
 								</div>
 							</c:forEach>

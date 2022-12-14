@@ -1,10 +1,11 @@
 $(document).ready(function(){
     $(".homepage-banner").slick({
-      dots: true,
-      infinite: true,
-      speed: 300,
       slidesToShow: 1,
-      adaptiveHeight: true
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      adaptiveHeight: true,
+      dots: true
     });
 
 
