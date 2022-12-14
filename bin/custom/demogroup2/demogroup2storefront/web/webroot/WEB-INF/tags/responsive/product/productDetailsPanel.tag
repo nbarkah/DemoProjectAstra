@@ -32,12 +32,8 @@
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
 					</cms:pageSlot>
 				</div>
-
-
-
 			</div>
 		</div>
-
 	</div>
 </div>
 

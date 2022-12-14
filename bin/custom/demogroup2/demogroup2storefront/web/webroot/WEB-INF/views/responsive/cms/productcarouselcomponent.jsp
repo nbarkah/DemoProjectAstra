@@ -36,6 +36,7 @@
 										<product:productPrimaryReferenceImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
+                                    <div >${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
                                     <a href="${productUrl}" class="carousel__item--btn">
                                        Beli Sekarang
@@ -56,6 +57,7 @@
                                                 <product:productPrimaryImage  product="${product}" format="product"/>
                                             </div>
                                             <div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
+                                            <div >${fn:escapeXml(product.description)}</div>
                                             <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
                                             <a href="${productUrl}" class="carousel__item--btn">
                                                Beli Sekarang
