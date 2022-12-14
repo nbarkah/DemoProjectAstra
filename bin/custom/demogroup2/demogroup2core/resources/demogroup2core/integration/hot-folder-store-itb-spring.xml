@@ -77,7 +77,7 @@
 
     <bean id="batchDemoGroup2StockLevelProductConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="stock_level_product"
+          p:mapping="product_stock"
           p:converter-ref="batchDemoGroup2StockLevelProductConverter"/>
 
     <bean id="batchDemoGroup2MediaConverterMapping"
@@ -87,17 +87,17 @@
 
     <bean id="batchDemoGroup2MediaContainerConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="media_container"
+          p:mapping="container_media"
           p:converter-ref="batchDemoGroup2MediaContainerConverter"/>
 
     <bean id="batchDemoGroup2ProductMediaConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="media_product"
+          p:mapping="update_product_media"
           p:converter-ref="batchDemoGroup2ProductMediaConverter"/>
 
     <bean id="batchDemoGroup2TestimoniPersonConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-          p:mapping="testimoni_person"
+          p:mapping="testi_person"
           p:converter-ref="batchDemoGroup2TestimoniPersonConverter"/>
 
     <bean id="batchDemoGroup2TestimoniConverterMapping"
