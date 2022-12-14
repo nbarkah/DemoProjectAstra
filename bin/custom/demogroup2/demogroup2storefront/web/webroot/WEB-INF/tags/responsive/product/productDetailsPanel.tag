@@ -7,6 +7,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="format" tagdir="/WEB-INF/tags/shared/format" %>
 <%@ taglib prefix="component" tagdir="/WEB-INF/tags/shared/component" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 
 <div class="row" style="width:80%; justify-content:center;margin:0 auto;">
@@ -26,7 +27,6 @@
 						<h4 class="description" style="">${ycommerce:sanitizeHTML(product.description)}</h4>
 					</div>
 				</div>
-
 				<div class="col-sm-12 col-md-12 col-lg-12">
 					<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
@@ -37,15 +37,41 @@
 	</div>
 </div>
 
-<c:forEach items="${upsellProduct}" var="product">
 
-    <h1>${product.code}</h1>
-    <h2>${product.name}</h2>
-    <h3>${product.sizeDimension}</h3>
-    <h4>${product.sizeType}</h4>
-     <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-     <div class="carousel__item--thumb">
-        <product:productPrimaryImage  product="${product}" format="product"/>
+<div class = "catalog-product">
+    <div class="container" >
+        <div class = "row">
+            <c:forEach items="${upsellProduct}" var="product">
+               <div class="catalog-product-block" >
+                    <c:url value="/p/${product.code}" var="pdp"/>
+                    <div class="product-details-image">
+                        <a class="thumb" href="${pdp}">
+                            <product:productPrimaryImage product="${product}" format="product"/>
+                        </a>
+                    </div>
+                    <h2 class="product-details-name" >
+                        <a class="name" href="${pdp}" >
+                            <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.name)}" />
+                            <p>
+                            <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
+                            <br>
+                            <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" /></p>
+                        </a>
+                    </h2>
+                    <h3 class="product-details-price" style = "">
+                        <ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
+                            <product:productPricePanel product="${product}" />
+                        </ycommerce:testId>
+                    </h3>
+               </div>
+           </c:forEach>
+        </div>
     </div>
+</div>
 
-</c:forEach>
+<div class="next-page-homepage">
+    <c:url value="/c/INTHEBOX" var="plp"/>
+    <a class="btn-testi-homepage"  href="${plp}">
+        Lihat Semua Produk
+    </a>
+</div>
