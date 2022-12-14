@@ -147,8 +147,9 @@
 								</c:if>
 							</ul>
 							<div class="logocart">
-								<a href=#>
-								<img src="${fn:escapeXml(commonResourcePath)}/images/cart-icon.png"/>
+							    <c:url value="/cart" var="cart" />
+								<a href="${cart}">
+								    <img src="${fn:escapeXml(commonResourcePath)}/images/cart-icon.png"/>
 								</a>
 							</div>
 						</div>
