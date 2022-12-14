@@ -4,6 +4,10 @@
 -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
 
+	<enum class="de.hybris.platform.commercefacades.product.ProductOption" >
+		<value>SIZE_DIMENSION</value>
+	</enum>
+
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;org.demo.facades.product.data.GenderData>"/>
 		<property name="sizeDimension" type="String"/>
