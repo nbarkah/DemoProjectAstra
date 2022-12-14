@@ -34,17 +34,25 @@
 #add_to_cart_storepickup_form {
 	.qty-selector{
 		.input-group-btn,.btn{
-			width: 5em;
+
 			background-color:white;
 			color:#6086c2;
 			margin: 0;
-			padding-left: 0;
-			padding-right: 0;
+			padding: 10px ;
 			font-size: 25px;
 			border: 2px solid white;
-
-
+			border-radius:100%;
 		}
+
+		.input-group-btn,.btn:hover{
+            background-color:#6086c2;
+            color:white;
+        		}
+
+        .input-group-btn,.btn:disabled{
+            background-color:#fff;
+            color:#6086c2;
+        }
 
 		.form-control{
 			width: 100%;
