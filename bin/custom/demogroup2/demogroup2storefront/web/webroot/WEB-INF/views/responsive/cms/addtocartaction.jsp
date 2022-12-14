@@ -63,14 +63,19 @@
 			</button>
 		</c:when>
 		<c:otherwise>
-			<ycommerce:testId code="addToCartButton">
-				<button id="addToCartButton" type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
-					<spring:theme code="basket.add.to.basket"/>
-				</button>
-				<button id="addToCartButton" type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
-					<spring:theme code="basket.add.to.basket"/>
-				</button>
-			</ycommerce:testId>
+			<div class="container-pdp-button">
+			    <div class="add-to-cart-button">
+                <ycommerce:testId code="addToCartButton">
+                    <button id="addToCartButton" type="${buttonType}" class="btn btn-block add-to-cart-button js-enable-btn " disabled="disabled">
+                        <spring:theme code="basket.add.to.basket"/>
+                    </button>
+                </ycommerce:testId>
+                </div>
+			    <div class="buy-now-container">
+			        <c:url value="/cart" var="keranjang" />
+			        <button onclick="location.href='${keranjang}'" class="buy-now-button">Beli Sekarang</button>
+			    </div>
+			</div>
 		</c:otherwise>
 	</c:choose>
 </c:if>
