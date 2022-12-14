@@ -146,7 +146,7 @@
 		.btn,
 		.carousel__item--btn {
 		    display:inline-block;
-		    margin :30px;
+		    margin :10px;
 		    text-decoration:none;
 		    background-color: #6086c2;
 		    color:#fff;
@@ -166,12 +166,13 @@
         	width: 100%;
 
 			img {
-			  width: 80%;
+			  width: 90%;
+			  padding-top:1.5em;
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
 			  object-position: 100%;
-			  border-radius:10px 10px 0 0;
+			  border-radius:10px;
 			}
 		}
 
@@ -192,22 +193,31 @@
 			text-align: center;
 			text-transform: uppercase;
 			line-height: 1.2em;
-
 			position: relative;
-			height: 4em;
 			font-weight: 600;
 			font-size: 16px;
 			color: @headline-color;
 			display:block;
-
 		}
+
+		.carousel__item--desc{
+            margin: 0 auto;
+            width:60%;
+            text-align: center;
+            line-height: 1.5em;
+            position: relative;
+            font-size: 14px;
+            color: @headline-color;
+            display:block;
+            padding-top:2em;
+        		}
 
 		.item__price,
 		.carousel__item--price {
 		  margin: (@grid-gutter-width);
 		  color: #7fc5f9;
 		  text-align: center;
-		  font-size: 65px;
+		  font-size: 4em;
 		  font-weight: 400;
 		  margin: 0;
 		  font-family:PalmerLakePrint;
