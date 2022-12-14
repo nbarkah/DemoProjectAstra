@@ -8,7 +8,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-
+<script src="https://cdn.tailwindcss.com"></script>
 <spring:theme code="text.addToCart" var="addToCartText"/>
 <spring:theme code="text.popupCartTitle" var="popupCartTitleText"/>
 <c:url value="/cart" var="cartUrl"/>
@@ -81,12 +81,16 @@
 							<div class="key"><spring:theme code="popup.cart.total"/></div>
 							<div class="value"><format:price priceData="${cartData.totalPrice}"/></div>
 						</div>
-						<a href="${fn:escapeXml(cartUrl)}" class="btn btn-primary btn-block mini-cart-checkout-button">
-							<spring:theme code="${miniCartProceed }" />
-						</a>
-						<a href="" class="btn btn-default btn-block js-mini-cart-close-button">
-							<spring:theme code="cart.page.continue"/>
-						</a>
+						<a href="${fn:escapeXml(cartUrl)}" class="w-full relative inline-flex items-center justify-center p-0.5 mb-5 overflow-hidden text-3xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                          <span class="w-full text-center relative px-5 py-5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                              <spring:theme code="${miniCartProceed }" />
+                          </span>
+                        </a>
+                        <a href="" class="js-mini-cart-close-button w-full relative inline-flex items-center justify-center p-0.5 mb-5 overflow-hidden text-3xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-500 to-gray-500 group-hover:from-gray-500 group-hover:to-gray-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800">
+                          <span class="w-full text-center relative px-5 py-5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                              <spring:theme code="cart.page.continue"/>
+                          </span>
+                        </a>
 				</c:when>
 
 				<c:otherwise>

@@ -12,8 +12,10 @@
 <div class="cart__actions  ">
     <div class="row justify-center">
         <div class="col-sm-4 col-md-3 pull-right">
-            <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}">
-                <spring:theme code="cart.page.continue"/>
+            <button data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}" class="js-continue-shopping-button w-full relative inline-flex items-center justify-center p-0.5 overflow-hidden text-2xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#7fc5f9] to-[#7fc5f9] group-hover:from-[#7fc5f9] group-hover:to-[#7fc5f9] hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-[#7fc5f9] dark:focus:ring-[#7fc5f9]">
+              <span class="w-full relative px-5 py-4 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  <spring:theme code="cart.page.continue"/>
+              </span>
             </button>
         </div>
 
@@ -29,7 +31,7 @@
 
         <div class="col-sm-4 col-md-3 pull-right">
             <ycommerce:testId code="checkoutButton">
-                <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}">
+                <button data-checkout-url="${fn:escapeXml(checkoutUrl)}" class="js-continue-checkout-button w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-2xl px-5 py-[1.1rem] text-center">
                     <spring:theme code="checkout.checkout"/>
                 </button>
             </ycommerce:testId>
