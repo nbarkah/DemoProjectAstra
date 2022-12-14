@@ -27,15 +27,11 @@
 						<h4 class="description" style="">${ycommerce:sanitizeHTML(product.description)}</h4>
 					</div>
 				</div>
-
 				<div class="col-sm-12 col-md-12 col-lg-12">
 					<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
 					</cms:pageSlot>
 				</div>
-
-
-
 			</div>
 		</div>
 	</div>
@@ -88,4 +84,10 @@
            </c:forEach>
         </div>
     </div>
+</div>
+
+<div class="link text-center">
+    <a class="carousel__item--btn" href="${productUrl}">
+        Lihat Semua Produk
+    </a>
 </div>
