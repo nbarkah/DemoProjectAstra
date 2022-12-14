@@ -115,12 +115,12 @@ INSERT_UPDATE SolrIndexerQuery;solrIndexedType(identifier)[unique=true];identifi
                         ) tbl ORDER BY tbl.code" ; anonymous
 
 # Define the available sorts
-INSERT_UPDATE SolrSort;&sortRefID;indexedType(identifier)[unique=true];code[unique=true];useBoost
-                        ; sortRef1  ; $solrIndexedType                      ; relevance          ; false
-                        ; sortRef3  ; $solrIndexedType                      ; name-asc           ; false
-                        ; sortRef4  ; $solrIndexedType                      ; name-desc          ; false
-                        ; sortRef5  ; $solrIndexedType                      ; price-asc          ; false
-                        ; sortRef6  ; $solrIndexedType                      ; price-desc         ; false
+INSERT_UPDATE SolrSort;&sortRefID;indexedType(identifier)[unique=true];code[unique=true];name;useBoost
+                        ; sortRef1  ; $solrIndexedType                      ; relevance   ; By Relevance       ; false
+                        ; sortRef3  ; $solrIndexedType                      ; name-asc    ; By Name Ascending      ; false
+                        ; sortRef4  ; $solrIndexedType                      ; name-desc   ; By Name Descending      ; false
+                        ; sortRef5  ; $solrIndexedType                      ; price-asc   ; By Price Ascending      ; false
+                        ; sortRef6  ; $solrIndexedType                      ; price-desc  ; By Price Descending      ; false
 
 # Define the sort fields
 INSERT_UPDATE SolrSortField;sort(indexedType(identifier),code)[unique=true];fieldName[unique=true];ascending[unique=true]
