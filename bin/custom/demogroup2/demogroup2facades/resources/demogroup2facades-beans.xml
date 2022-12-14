@@ -36,5 +36,10 @@
 		<property name="person" type="org.demo.facades.person.data.PersonData"/>
 	</bean>
 
+	<bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
+		<property name="userID" type="String"/>
+	</bean>
+
+
 
 </beans>

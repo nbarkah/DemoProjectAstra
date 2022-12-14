@@ -1,0 +1,52 @@
+.nav-ban {
+    width:52px;
+    margin:0 10px;
+    background-color:transparent !important;
+    border:none !important;
+    opacity:0.5;
+}
+.nav-ban:hover {
+    opacity:1;
+}
+
+.nav-container {
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    position:absolute;
+    z-index:10;
+    top:50%;
+
+
+}
+.banner-container {
+    position:relative;
+}
+.homepage-banner .slick-prev {
+    left:30px;
+    z-index:10;
+
+}
+
+.homepage-banner .slick-next{
+    right:30px;
+    z-index:10;
+}
+
+.homepage-banner .slick-next:before,.homepage-banner .slick-prev:before{
+    align-items:stretch;
+    display:flex;
+    border:2px solid #fff;
+    border-radius:100%;
+    color:#fff !important;
+    flex-wrap:wrap;
+    align-content:flex-end;
+    justify-content:space-around;
+    width:17px;
+    height:16px;
+    font-size:15px !important;
+    opacity:0.5;
+}
+.homepage .slick-next:hover, .homepage.banner .slick-prev:hover {
+    opacity:1 !important;
+}

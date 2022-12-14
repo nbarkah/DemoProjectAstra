@@ -68,7 +68,7 @@ ACC.navigation = {
         var oMMainNavDesktop = $(".js-secondaryNavAccount > ul");
 
         //offcanvas menu for tablet/mobile
-        var oMainNav = $(".navigation--bottom > ul.nav__links.nav__links--products");
+
 
         if(oMyAccountData){
             var aLinks = oMyAccountData.find("a");

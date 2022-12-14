@@ -7,6 +7,7 @@
 <div class="container-fluid">
     <div class="footer__top">
         <div class="row">
+
             <div class="footer__left col-xs-12 col-sm-12 col-md-9">
                 <div class="row">
                     <c:forEach items="${navigationNodes}" var="node">
@@ -48,7 +49,6 @@
         </div>
     </div>
 </div>
-
 <div class="footer__bottom">
     <div class="footer__copyright">
         <div class="container">${fn:escapeXml(notice)}</div>
