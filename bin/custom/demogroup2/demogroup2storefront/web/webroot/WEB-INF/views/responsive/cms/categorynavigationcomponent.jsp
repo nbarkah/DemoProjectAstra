@@ -44,10 +44,12 @@
            	</ul>
 
 	<div class="head-main">
+		<div class="burger-button " onclick="navMobile()">
+    			    	<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+    				</div>
 				<div class="left-head">
-				<div class="burger-button">
-			    	<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-				</div>
+
+
 					<cms:pageSlot position="SiteLogo" var="feature">
 						<cms:component component="${feature}" element="img" class="banner"/>
 					</cms:pageSlot>
@@ -153,7 +155,44 @@
 					</div>
 				</div>
 			</div>
+		
+		
 		</div>
+		
 		</div>
+		<div id="togle" class="nav-burger">
+			<ul class="nav__links nav__links--products js-offcanvas-links">
+
+
+				<c:forEach items="${component.navigationNode.children}" var="childLevel1">
+					
+					<li class="auto nav__links--primary <c:if test="${not empty childLevel1.children}">nav__links--primary-has__sub js-enquire-has-sub</c:if>">
+
+						<c:forEach items="${childLevel1.entries}" var="childlink1">
+							<cms:component component="${childlink1.item}" evaluateRestriction="true" element="p" class="nav__link js_nav__link" />
+						</c:forEach>
+
+						<%-- Calculate how many sub columns are needed -- Start --%>
+	
+
+					</li>
+				</c:forEach>
+
+
+			</ul>
+		</div>
+		<script>
+
+
+        function navMobile() {
+                   var x = document.getElementById("togle");
+                   if (x.style.display === "none") {
+                     x.style.display = "block";
+                   } else {
+                     x.style.display = "none";
+   }
+        }
+        </script>
+
 	</div>
 

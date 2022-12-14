@@ -19294,11 +19294,40 @@ footer {
   .loginlink a {
     font-size: 15px;
   }
-  .mid-head {
+  .nav-burger {
     display: none;
   }
+}
+.burger-button {
+  display: none;
+  width: 25px;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+.nav-burger {
+  font-size: 50px;
+  z-index: 15;
+  position: absolute;
+  height: 348px;
+  background: #7fc5f9;
+  width: 100%;
+  /* top: 0; */
+  left: 0;
+  text-align: center;
+  display: none;
+}
+.burger-button svg {
+  fill: white;
+}
+@media (max-width: 639px) {
   .burger-button {
-    width: 25px;
+    display: block;
+  }
+  .head-nav {
+    display: none;
+  }
+  .navigation--bottom {
+    height: 89px !important;
   }
 }
 .container-testimoni-homepage {
