@@ -6,41 +6,17 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-
+<script src="https://cdn.tailwindcss.com"></script>
 <c:url value="/cart/checkout" var="checkoutUrl" scope="session"/>
-<div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6 pull-right cart-actions--print">
-        <div class="express-checkout">
-            <div class="headline"><spring:theme code="text.expresscheckout.header"/></div>
-            <strong><spring:theme code="text.expresscheckout.title"/></strong>
-            <ul>
-                <li><spring:theme code="text.expresscheckout.line1"/></li>
-                <li><spring:theme code="text.expresscheckout.line2"/></li>
-                <li><spring:theme code="text.expresscheckout.line3"/></li>
-            </ul>
-            <sec:authorize access="isFullyAuthenticated()">
-                <c:if test="${expressCheckoutAllowed}">
-                    <div class="checkbox">
-                        <label>
-                            <c:url value="/checkout/multi/express" var="expressCheckoutUrl" scope="session"/>
-                            <input type="checkbox" class="express-checkout-checkbox" data-express-checkout-url="${fn:escapeXml(expressCheckoutUrl)}">
-                            <spring:theme text="I would like to Express checkout" code="cart.expresscheckout.checkbox"/>
-                        </label>
-                     </div>
-                </c:if>
-           </sec:authorize>
-        </div>
-    </div>
-</div>
 
-<div class="cart__actions">
-    <div class="row">
+<div class="cart__actions  ">
+    <div class="row justify-center">
         <div class="col-sm-4 col-md-3 pull-right">
-            <ycommerce:testId code="checkoutButton">
-                <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}">
-                    <spring:theme code="checkout.checkout"/>
-                </button>
-            </ycommerce:testId>
+            <button data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}" class="js-continue-shopping-button w-full relative inline-flex items-center justify-center p-0.5 overflow-hidden text-2xl font-medium text-[#a7abc3] rounded-lg group bg-gradient-to-br from-[#7fc5f9] to-[#7fc5f9] group-hover:from-[#7fc5f9] group-hover:to-[#7fc5f9] hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-[#7fc5f9] dark:focus:ring-[#7fc5f9]">
+              <span class="w-full relative px-5 py-4 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  <spring:theme code="cart.page.continue"/>
+              </span>
+            </button>
         </div>
 
         <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
@@ -54,34 +30,11 @@
         </sec:authorize>
 
         <div class="col-sm-4 col-md-3 pull-right">
-            <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}">
-                <spring:theme code="cart.page.continue"/>
-            </button>
+            <ycommerce:testId code="checkoutButton">
+                <button data-checkout-url="${fn:escapeXml(checkoutUrl)}" class="js-continue-checkout-button w-full mr-5 bg-[#6086c2] hover:bg-[#7fc5f9] hover:text-[#6086c2] border border-[#6086c2] text-white font-bold py-4 px-6 rounded-lg">
+                  <spring:theme code="checkout.checkout"/>
+                </button>
+            </ycommerce:testId>
         </div>
     </div>
 </div>
-
-
-<c:if test="${showCheckoutStrategies && not empty cartData.entries}" >
-    <div class="cart__actions">
-        <div class="row">
-            <div class="col-xs-12 col-sm-5 col-md-3 col-lg-2 pull-right">
-                <input type="hidden" name="flow" id="flow"/>
-                <input type="hidden" name="pci" id="pci"/>
-                <select id="selectAltCheckoutFlow" class="doFlowSelectedChange form-control">
-                    <option value="select-checkout"><spring:theme code="checkout.checkout.flow.select"/></option>
-                    <option value="multistep"><spring:theme code="checkout.checkout.multi"/></option>
-                    <option value="multistep-pci"><spring:theme code="checkout.checkout.multi.pci"/></option>
-                </select>
-                <select id="selectPciOption" class="display-none">
-                    <option value=""><spring:theme code="checkout.checkout.multi.pci.select"/></option>
-                    <c:if test="${!isOmsEnabled}">
-                        <option value="default"><spring:theme code="checkout.checkout.multi.pci-ws"/></option>
-                        <option value="hop"><spring:theme code="checkout.checkout.multi.pci-hop"/></option>
-                    </c:if>
-                    <option value="sop"><spring:theme code="checkout.checkout.multi.pci-sop" text="PCI-SOP" /></option>
-                </select>
-            </div>
-        </div>
-    </div>
-</c:if>
