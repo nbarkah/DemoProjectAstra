@@ -4,12 +4,16 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
 <template:page pageTitle="${pageTitle}">
+    <div class="banner-container">
+
 
     <div class="homepage-banner" style="background-color: #6086c2;">
         <cms:pageSlot position="Section1" var="feature">
             <cms:component component="${feature}" element="div" class="banner"/>
         </cms:pageSlot>
     </div>
+
+
 
     <div class="homepage-product-carousel" style="background-color:#6086c2;">
         <cms:pageSlot position="Section2" var="feature" element="div" class="no-margin">

@@ -239,7 +239,7 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
                               ;;LinkedInLink;Linked In Link;"http://www.linkedin.com/groups/5063400";LinkedInLink;LinkedInLink;newWindow;;;
                               ;;FAQLink;FAQ Link;/faq;FAQLink;FAQLin;;;;
                               ;;TermsAndConditionsLink;Terms and Conditions Link;/termsAndConditions;TermsAndConditionsLink;TermsAndConditionsLink;;;;
-
+                              ;;BlogHeadLink;Blogs Head Link;/#;BlogHeadLink;BlogHeadLink;;;;
 # Lightbox Banner for Mini Cart
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
                                    ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
@@ -1377,44 +1377,89 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
 
 ###### Footer Component Refactor Start ######
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid,$contentCV)
-                         ;;FooterSlot;FooterNavigationComponent
+                         ;;FooterSlot;FooterBoxNavigationComponent
+#  ;;FooterBoxSlot;FooterBoxNavigationComponent
 
 INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef;showLanguageCurrency;navigationNode(&nodeRef)
-                                       ;;FooterNavigationComponent;4;FooterNavigationComponent;true;FooterNavNode;
+#    ;;FooterNavigationComponent   ;4;FooterNavigationComponent;true;FooterNavNode;
+                                       ;;FooterBoxNavigationComponent;6;FooterBoxNavigationComponent;true;FooterBoxNavNode;
 
 # the order of children is the same as the display order on the site
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
-                               ;FooterNavNode;;Footer Pages;DemoNavNode;FooterNavNode;SAPCommerceNavNode,SAPCustomerExperienceNavNode,FollowUsNavNode
+#  ;FooterNavNode;;Footer Pages;DemoNavNode;FooterNavNode;SAPCommerceNavNode,SAPCustomerExperienceNavNode,FollowUsNavNode
+                               ;FooterBoxNavNode;;Footer Box Pages;DemoNavNode;FooterBoxNavNode;ProductBoxNavNode,SupportNavNode,AboutNavNode
 
 # children of FooterNavNode #
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef)
-                               ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;SAPCommerceNavNode;AboutSAPCommerceNavNode,FAQNavNode
-                               ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;SAPCustomerExperienceNavNode;AboutSAPCustomerExperienceNavNode,ContactUsNavNode,CommunityNavNode
-                               ;FollowUsNavNode;;Follow Us Pages;FollowUsNavNode;AgileCommerceBlogNavNode,LinkedInNavNode,FacebookNavNode,TwitterNavNode
+#                               ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;SAPCommerceNavNode;AboutSAPCommerceNavNode,FAQNavNode
+#                               ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;SAPCustomerExperienceNavNode;AboutSAPCustomerExperienceNavNode,ContactUsNavNode,CommunityNavNode
+#                               ;FollowUsNavNode;;Follow Us Pages;FollowUsNavNode;AgileCommerceBlogNavNode,LinkedInNavNode,FacebookNavNode,TwitterNavNode
+
+                               ;ProductBoxNavNode;;Product Pages;ProductNavNode;ListProductNavNode
+                               ;SupportNavNode;;Support Pages;SupportNavNode;AktivasiNavNode,ResiNavNode,FAQBoxNavNode,BantuanNavNode,SyaratNavNode,KebijakanNavNode
+                               ;AboutNavNode;;About Pages;AboutNavNode;TentangNavNode,OfflineStoreNavNode,BlogPageNavNode,TestimoniNavNode
 
 # children of above navigation nodes #
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
-                               ;AboutSAPCommerceNavNode;;About SAP Commerce Cloud Page;AboutSAPCommerceNavNode
-                               ;FAQNavNode;;FAQ Page;FAQNavNode
-                               ;AboutSAPCustomerExperienceNavNode;;About Hybris Page;AboutSAPCustomerExperienceNavNode
-                               ;ContactUsNavNode;;Contact Us Page;ContactUsNavNode
-                               ;CommunityNavNode;;Community Page;CommunityNavNode
-                               ;AgileCommerceBlogNavNode;;Agile Commerce Blog Page;AgileCommerceBlogNavNode
-                               ;LinkedInNavNode;;LinkedIn Page;LinkedInNavNode
-                               ;FacebookNavNode;;Facebook Page;FacebookNavNode
-                               ;TwitterNavNode;;Twitter Page;TwitterNavNode
+#                               ;AboutSAPCommerceNavNode;;About SAP Commerce Cloud Page;AboutSAPCommerceNavNode
+#                               ;FAQNavNode;;FAQ Page;FAQNavNode
+#                               ;AboutSAPCustomerExperienceNavNode;;About Hybris Page;AboutSAPCustomerExperienceNavNode
+#                               ;ContactUsNavNode;;Contact Us Page;ContactUsNavNode
+#                               ;CommunityNavNode;;Community Page;CommunityNavNode
+#                               ;AgileCommerceBlogNavNode;;Agile Commerce Blog Page;AgileCommerceBlogNavNode
+#                               ;LinkedInNavNode;;LinkedIn Page;LinkedInNavNode
+#                               ;FacebookNavNode;;Facebook Page;FacebookNavNode
+#                               ;TwitterNavNode;;Twitter Page;TwitterNavNode
+
+                               ;ListProductNavNode;;Product Page;ListProductNavNode
+                               ;AktivasiNavNode;;Aktivasi Page;AktivasiNavNode
+                               ;ResiNavNode;;Resi Page;ResiNavNode
+                               ;FAQBoxNavNode;;FAQ Box Page;FAQBoxNavNode
+                               ;BantuanNavNode;;Bantuan Page;BantuanNavNode
+                               ;SyaratNavNode;;Syarat Page;SyaratNavNode
+                               ;KebijakanNavNode;;Kebijakan Page;KebijakanNavNode
+
+                               ;TentangNavNode;;About Page;TentangNavNode
+                               ;TestimoniNavNode;;Testi Page;TestimoniNavNode
+                               ;OfflineStoreNavNode;;Offline Store Page;OfflineStoreNavNode
+                               ;BlogPageNavNode;;Blog Store Page;BlogPageNavNode
 
 # entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-                                ;AboutSAPCommerceNavNodeEntry;;About SAP Commerce Cloud Navigation Node Entry;AboutSAPCommerceNavNode;AboutSAPCommerceLink;
-                                ;FAQNavNodeEntry;;FAQ Navigation Node Entry;FAQNavNode;FAQLink;
-                                ;AboutSAPCustomerExperienceNavNodeEntry;;About Hybris Navigation Node Entry;AboutSAPCustomerExperienceNavNode;VisitSAPLink;
-                                ;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
-                                ;CommunityNavNodeEntry;;Community Navigation Node Entry;CommunityNavNode;CommunityLink;
-                                ;AgileCommerceBlogNavNodeEntry;;Agile Commerce Blog Navigation Node Entry;AgileCommerceBlogNavNode;AgileCommerceBlogLink;
-                                ;LinkedInNavNodeEntry;;LinkedIn Navigation Node Entry;LinkedInNavNode;LinkedInLink;
-                                ;FacebookNavNodeEntry;;Facebook Navigation Node Entry;FacebookNavNode;FacebookLink;
-                                ;TwitterNavNodeEntry;;Twitter Navigation Node Entry;TwitterNavNode;TwitterLink;
+#                                ;AboutSAPCommerceNavNodeEntry;;About SAP Commerce Cloud Navigation Node Entry;AboutSAPCommerceNavNode;AboutSAPCommerceLink;
+#                                ;FAQNavNodeEntry;;FAQ Navigation Node Entry;FAQNavNode;FAQLink;
+#                                ;AboutSAPCustomerExperienceNavNodeEntry;;About Hybris Navigation Node Entry;AboutSAPCustomerExperienceNavNode;VisitSAPLink;
+#                                ;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
+#                                ;CommunityNavNodeEntry;;Community Navigation Node Entry;CommunityNavNode;CommunityLink;
+#                                ;AgileCommerceBlogNavNodeEntry;;Agile Commerce Blog Navigation Node Entry;AgileCommerceBlogNavNode;AgileCommerceBlogLink;
+#                                ;LinkedInNavNodeEntry;;LinkedIn Navigation Node Entry;LinkedInNavNode;LinkedInLink;
+#                                ;FacebookNavNodeEntry;;Facebook Navigation Node Entry;FacebookNavNode;FacebookLink;
+#                                ;TwitterNavNodeEntry;;Twitter Navigation Node Entry;TwitterNavNode;TwitterLink;
+
+                                ;ListProductNavNodeEntry;;Product Navigation Node Entry;ListProductNavNode;AllBrandsCategoryLink;
+                                ;AktivasiNavNodeEntry;;Aktivasi Navigation Node Entry;AktivasiNavNode;AktivasiLink;
+                                ;ResiNavNodeEntry;;Resi Commerce Blog Navigation Node Entry;ResiNavNode;ResiLink;
+                                ;FAQBoxNavNodeEntry;;FAQ Box Navigation Node Entry;FAQBoxNavNode;FAQBoxLink;
+                                ;BantuanNavNodeEntry;;Bantuan Navigation Node Entry;BantuanNavNode;BantuanLink;
+                                ;SyaratNavNodeEntry;;Syarat Navigation Node Entry;SyaratNavNode;SyaratLink;
+                                ;KebijakanNavNodeEntry;;Kebijakan Navigation Node Entry;KebijakanNavNode;KebijakanLink;
+
+                                ;TentangNavNodeEntry;;About Us Navigation Node Entry;TentangNavNode;AboutUsLink;
+                                ;TestimoniNavNodeEntry;;Blog Page Navigation Node Entry;TestimoniNavNode;BlogsLink;
+                                ;OfflineStoreNavNodeEntry;;Offline Store Navigation Node Entry;OfflineStoreNavNode;OffStoreLink;
+                                ;BlogPageNavNodeEntry;;Blog Page Navigation Node Entry;BlogPageNavNode;BlogPgeLink;
+
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+                              ;;AktivasiLink;Aktivasi Page Nav Link;/#;AktivasiLink;AktivasiLink;;;;
+                              ;;ResiLink;Resi Page Nav Link;/#;ResiLink;ResiLink;;;;
+                              ;;FAQBoxLink;FAQ Box Page Nav Link;/#;FAQBoxLink;FAQBoxLink;;;;
+                              ;;BantuanLink;Bantuan Page Nav Link;/#;BantuanLink;BantuanLink;;;;
+                              ;;SyaratLink;Syarat Page Nav Link;/#;SyaratLink;SyaratLink;;;;
+                              ;;KebijakanLink;Kebijakan Page Nav Link;/#;KebijakanLink;KebijakanLink;;;;
+                              ;;OffStoreLink;Offline Store Page Nav Link;/#;OffStoreLink;OffStoreLink;;;;
+                              ;;BlogPgeLink;Blog Page Nav Link;/#;BlogPgeLink;BlogPgeLink;;;;
+
+
 ###### Footer Component Refactor End ######
 
 ###  DemoGroup2 Page #######
@@ -1441,3 +1486,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 # Create Content Slots for Page
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
+
+###LINK TESTIMONI
+REMOVE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+                               ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
+                               ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode

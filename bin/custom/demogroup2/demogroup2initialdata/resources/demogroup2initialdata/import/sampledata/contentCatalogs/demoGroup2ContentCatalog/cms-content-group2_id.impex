@@ -35,10 +35,10 @@ UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[l
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
                        ;;AboutSAPCommerceLink;"About SAP Commerce Cloud"
                        ;;AgileCommerceBlogLink;"Agile Commerce Blog"
-                       ;;AllBrandsCategoryLink;"Brands"
-                       ;;AllBedsCategoryLink;"PRODUCT IN THE BOX"
+                       ;;AllBrandsCategoryLink;"Produk"
+                       ;;AllBedsCategoryLink;"Produk"
                        ;;SofaBedCategoryLink;"SOFA"
-                       ;;SpringBedCategoryLink;"LAINNYA"
+                       ;;SpringBedCategoryLink;"PROPS"
                        ;;AboutUsLink;"Tentang Kami"
                        ;;BlogsLink;"Testimoni"
                        ;;GuaranteeLink;"Garansi"
@@ -55,6 +55,17 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
                        ;;LinkedInLink;"Linked In"
                        ;;TwitterLink;"Twitter"
                        ;;VisitSAPLink;"Visit SAP"
+                        ;;AktivasiLink;"Aktivasi Garansi"
+                        ;;ResiLink;"Cek Resi"
+                        ;;FAQBoxLink;"FAQ"
+                        ;;BantuanLink;"Bantuan"
+                        ;;SyaratLink;"Syarat & Ketentuan"
+                        ;;KebijakanLink;"Kebijakan Privasi"
+                        ;;OffStoreLink;"Toko Offline"
+                        ;;BlogPgeLink;"Blog"
+                        ;;BlogHeadLink;"Blog"
+
+
 
 # Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
@@ -118,10 +129,13 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 #                        ;;SuppliesNavNode;"Supplies"
 #                        ;;WebcamsNavNode;"Webcams"
 #
-                        ;;AboutUsNavNode;"About Us"
+                        ;;AboutUsNavNode;"Tentang Kami"
                         ;;BlogsNavNode;"Blogs"
-                        ;;GuaranteeNavNode;"Guarantee"
-                        ;;ConfirmationNavNode;"Confirmation"
+
+
+                        ;;ProductBoxNavNode;"PRODUK"
+                        ;;SupportNavNode;"SUPPORT"
+                        ;;AboutNavNode;"ABOUT"
 
 #Bottom Header Slot
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
