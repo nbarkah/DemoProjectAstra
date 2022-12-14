@@ -19,7 +19,7 @@
 
 <div class="addtocart-component">
 		<c:if test="${empty showAddToCart ? true : showAddToCart}">
-		<div class="qty-selector input-group js-qty-selector">
+		<div class="qty-selector input-group js-qty-selector" style="width:100%;">
 			<span class="input-group-btn">
 				<button class="btn btn-default js-qty-selector-minus" type="button" <c:if test="${qtyMinus <= 1}"><c:out value="disabled='disabled'"/></c:if> ><span class="glyphicon glyphicon-minus" aria-hidden="true" ></span></button>
 			</span>
