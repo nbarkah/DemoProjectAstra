@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'PalmerLakePrint';
+  src: url('../fonts/PalmerLakePrint-Regular.ttf');
+}
+
 .owl-carousel{
 	.clearfix;
 
@@ -161,11 +166,11 @@
 
      	.thumb,
 		.carousel__item--thumb {
-        	margin:0 0 20px 0;
+        	margin:0px 0 20px 0;
         	width: 100%;
 
 			img {
-			  width: 100%;
+			  width: 80%;
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
@@ -192,7 +197,9 @@
 			text-transform: uppercase;
 			line-height: 1.2em;
 			position: relative;
+			height: 4em;
 			font-weight: 600;
+			font-size: 16px;
 			font-size: 16px;
 			color: @headline-color;
 			display:block;
@@ -204,10 +211,10 @@
 		  margin: (@grid-gutter-width);
 		  color: #7fc5f9;
 		  text-align: center;
-		  font-size: 3rem;
-		  font-weight: 600;
+		  font-size: 65px;
+		  font-weight: 400;
 		  margin: 0;
-		  padding:0 5px;
+		  font-family:PalmerLakePrint;
 		}
 
 	}
@@ -243,6 +250,12 @@
       font-weight: bold;
       text-transform: @carousel-font-style;
 	}
+		.carousel__component--headline span {
+            font-family:PalmerLakePrint;
+            font-size:117px;
+            color:#7fc5f9;
+            font-weight:400;
+    	}
 
  	&:first-child {
 

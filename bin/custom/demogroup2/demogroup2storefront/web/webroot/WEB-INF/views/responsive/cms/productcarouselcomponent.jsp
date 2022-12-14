@@ -12,7 +12,7 @@
 	<c:when test="${not empty productData}">
 		<div class="carousel__component">
 			<div class="carousel__component--headline">
-			    BELI <span style="color:#d4effc"> KASUR </span> INTHEBOX
+			    BELI <span> KASUR</span> INTHEBOX
 			</div>
 			<h4 class="carousel__component--subtitle">
 			    Tersedia beragam jenis kasur INTHEBOX dengan kualitas premium. </br>

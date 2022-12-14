@@ -7,4 +7,6 @@ $(document).ready(function(){
       adaptiveHeight: true,
       dots: true
     });
+
+
 });
