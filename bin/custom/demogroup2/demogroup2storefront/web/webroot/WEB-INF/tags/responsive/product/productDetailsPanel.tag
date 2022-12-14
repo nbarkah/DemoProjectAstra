@@ -43,51 +43,35 @@
         <div class = "row">
             <c:forEach items="${upsellProduct}" var="product">
                <div class="catalog-product-block" >
+                    <c:url value="/p/${product.code}" var="pdp"/>
                     <div class="product-details-image">
-                        <a class="thumb" href="${fn:escapeXml(productUrl)}">
+                        <a class="thumb" href="${pdp}">
                             <product:productPrimaryImage product="${product}" format="product"/>
                         </a>
                     </div>
-                        <h2 class="product-details-name" style = "width: 390px; margin-top : 2px ; font-size : 25px; margin-bottom : 0">
-                            <ycommerce:testId code="product_productName">
-                                <a class="name" href="${fn:escapeXml(productUrl)}" style = "color : black">
-                                    <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.name)}" />
-                                </a>
-                            </ycommerce:testId>
-                        </h2>
-                    <div class="product-details-size">
-                        <h4 style = "width: 390px; margin-top : 2px ; margin-bottom : 0 ">
-                           <ycommerce:testId code="product_productName">
-                               <a class="name" href="${fn:escapeXml(productUrl)}">
-                                   <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
-                               </a>
-                           </ycommerce:testId>
-                        </h4>
-                    </div>
-                    <div class="product-details-size">
-                        <h4 style = "width: 390px; margin-top : 2px ; margin-bottom : 0 ">
-                            <ycommerce:testId code="product_productName">
-                                <a class="name" href="${fn:escapeXml(productUrl)}">
-                                    <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" />
-                                </a>
-                            </ycommerce:testId>
-                        </h4>
-                    </div>
-                    <div class="product-details-price">
-                        <h3 style = "width: 390px; margin-top : 2px ; margin-bottom : 0; font-size : 20px">
+                    <h2 class="product-details-name" >
+                        <a class="name" href="${pdp}" >
+                            <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.name)}" />
+                            <p>
+                            <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
+                            <br>
+                            <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" /></p>
+                        </a>
+                    </h2>
+                    <h3 class="product-details-price" style = "">
                         <ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
                             <product:productPricePanel product="${product}" />
                         </ycommerce:testId>
-                        </h2>
-                    </div>
+                    </h3>
                </div>
            </c:forEach>
         </div>
     </div>
 </div>
 
-<div class="link text-center">
-    <a class="carousel__item--btn" href="${productUrl}">
+<div class="next-page-homepage">
+    <c:url value="/c/INTHEBOX" var="plp"/>
+    <a class="btn-testi-homepage"  href="${plp}">
         Lihat Semua Produk
     </a>
 </div>

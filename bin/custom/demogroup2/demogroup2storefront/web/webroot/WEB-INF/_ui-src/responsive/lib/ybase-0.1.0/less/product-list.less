@@ -278,13 +278,12 @@
 		display: block;
 		margin-bottom: (@grid-gutter-width/2);
 		text-align: center;
-		height: 180px;
 		overflow: hidden;
 
 		img {
 		  width: 100%;
 		  height: auto;
-		  max-width: 140px;
+
 		}
 
 	  }
@@ -301,16 +300,24 @@
 
 		.name {
 		  margin: 0;
-		  font-weight: 600;
+		  font-weight: 700;
 		  font-size: 16px;
 		  padding-bottom: (@grid-gutter-width/2);
 		  height: 70px;
 		  overflow: hidden;
 		  color: @headline-color;
 		}
+		.name:hover {
+		  color : #6086c2;
+		}
+		a.name{
+		    max-width : 200px;
+		}
 
 		.price {
-		  font-size: 18px;
+		  color: #6086c2;
+          font-size: 17px;
+          font-weight: bold;
 		}
 
 		.promo {
@@ -407,4 +414,8 @@
 
 .search-results-highlight {
 	font-weight: bold;
+}
+.title-product{
+    font-weight: bold;
+    font-size : 20px;
 }

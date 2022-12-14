@@ -802,12 +802,18 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
                                              ;;BannerProductGridComponent;IN THE BOX PLP BANNER;/c/INTHEBOX;BannerProductGridComponent
 
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+                                   ;;TitleParagraphProductGridComponent;Title Paragraph Product Grid Component;  TitleParagraphProductGridComponent
+
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
                          ;;ProductGridSlot      ;Product Grid Slot for Product List;true;ProductGridComponent;;;
                          ;;Section1Slot-PLP     ;Banner Product PLP                ;true;BannerProductGridComponent;;;
+                         ;;Section2Slot-PLP     ;Title Product PLP                ;true;TitleParagraphProductGridComponent;;;
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productGrid'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;Section1Slot-PLP;Section1;;Section1Slot-PLP
+                                ;;Section2Slot-PLP;SectionTitle;;Section2Slot-PLP
 
 #### SearchResultListPage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
@@ -1451,3 +1457,4 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 # Create Content Slots for Page
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
+
