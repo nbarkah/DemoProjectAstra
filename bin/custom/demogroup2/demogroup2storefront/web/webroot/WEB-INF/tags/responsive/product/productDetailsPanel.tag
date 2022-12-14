@@ -21,14 +21,12 @@
 					<div class="product-details">
 						<product:productPromotionSection product="${product}"/>
 						<div class="name">${ycommerce:sanitizeHTML(product.name)}</div>
-                        <div class="name">${ycommerce:sanitizeHTML(product.sizeDimension)}</div>
+                        <div class="name">${product.sizeDimension}</div>
 						<ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
 							<product:productPricePanel product="${product}" />
 						</ycommerce:testId>
 						<div class="description">${ycommerce:sanitizeHTML(product.description)}</div>
 					</div>
-				</div>
-				<div class="col-sm-12 col-md-9 col-lg-6">
 					<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
 					</cms:pageSlot>
@@ -39,15 +37,50 @@
 </div>
 
 
-<c:forEach items="${upsellProduct}" var="product">
-
-    <h1>${product.code}</h1>
-    <h2>${product.name}</h2>
-    <h3>${product.sizeDimension}</h3>
-    <h4>${product.sizeType}</h4>
-     <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-     <div class="carousel__item--thumb">
-        <product:productPrimaryImage  product="${product}" format="product"/>
+<div class = "catalog-product">
+    <div class="container" >
+        <div class = "row">
+            <c:forEach items="${upsellProduct}" var="product">
+               <div class="catalog-product-block" >
+                    <div class="product-details-image">
+                        <a class="thumb" href="${fn:escapeXml(productUrl)}">
+                            <product:productPrimaryImage product="${product}" format="product"/>
+                        </a>
+                    </div>
+                        <h2 class="product-details-name" style = "width: 390px; margin-top : 2px ; font-size : 25px; margin-bottom : 0">
+                            <ycommerce:testId code="product_productName">
+                                <a class="name" href="${fn:escapeXml(productUrl)}" style = "color : black">
+                                    <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.name)}" />
+                                </a>
+                            </ycommerce:testId>
+                        </h2>
+                    <div class="product-details-size">
+                        <h4 style = "width: 390px; margin-top : 2px ; margin-bottom : 0 ">
+                           <ycommerce:testId code="product_productName">
+                               <a class="name" href="${fn:escapeXml(productUrl)}">
+                                   <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeDimension)}" />
+                               </a>
+                           </ycommerce:testId>
+                        </h4>
+                    </div>
+                    <div class="product-details-size">
+                        <h4 style = "width: 390px; margin-top : 2px ; margin-bottom : 0 ">
+                            <ycommerce:testId code="product_productName">
+                                <a class="name" href="${fn:escapeXml(productUrl)}">
+                                    <c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.sizeType)}" />
+                                </a>
+                            </ycommerce:testId>
+                        </h4>
+                    </div>
+                    <div class="product-details-price">
+                        <h3 style = "width: 390px; margin-top : 2px ; margin-bottom : 0; font-size : 20px">
+                        <ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
+                            <product:productPricePanel product="${product}" />
+                        </ycommerce:testId>
+                        </h2>
+                    </div>
+               </div>
+           </c:forEach>
+        </div>
     </div>
-
-</c:forEach>
+</div>
