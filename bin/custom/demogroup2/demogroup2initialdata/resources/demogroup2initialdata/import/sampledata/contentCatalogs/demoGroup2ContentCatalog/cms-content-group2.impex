@@ -1388,7 +1388,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef;showLanguageCurrency;navigationNode(&nodeRef)
 #    ;;FooterNavigationComponent   ;4;FooterNavigationComponent;true;FooterNavNode;
-                                       ;;FooterBoxNavigationComponent;6;FooterBoxNavigationComponent;true;FooterBoxNavNode;
+                                    ;;FooterBoxNavigationComponent;6;FooterBoxNavigationComponent;true;FooterBoxNavNode;
 
 # the order of children is the same as the display order on the site
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)

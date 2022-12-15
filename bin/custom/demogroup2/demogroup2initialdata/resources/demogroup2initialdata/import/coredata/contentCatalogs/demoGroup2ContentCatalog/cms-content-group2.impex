@@ -91,7 +91,7 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
                              ;Section4;;;wide
                              ;VariantSelector;;ProductVariantSelectorComponent;narrow
                              ;AddToCart;;ProductAddToCartComponent;narrow
-                             ;Similar;;ProductReference;narrow
+                             ;Similar;;ProductReferencesComponent;narrow
                              ;CrossSelling;;ProductReferencesComponent;narrow
                              ;UpSelling;;ProductReferencesComponent;narrow
                              ;Footer;;;footer

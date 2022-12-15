@@ -8,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="text-center text-5xl mt-24 mb-24">
+<div class="head-cart text-center text-5xl mt-24 mb-24">
     <spring:theme code="text.title.cart"/>
 </div>
 
