@@ -11348,6 +11348,12 @@ fieldset[disabled] .btn-primary.active {
   padding: 0 0 10px 0;
   border-radius: 10px;
 }
+.carousel .item .text-card-product-homepage,
+.carousel__component--carousel .item .text-card-product-homepage,
+.carousel .carousel__item .text-card-product-homepage,
+.carousel__component--carousel .carousel__item .text-card-product-homepage {
+  height: 15em;
+}
 .carousel .item .btn,
 .carousel__component--carousel .item .btn,
 .carousel .carousel__item .btn,
@@ -11357,7 +11363,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item .carousel__item--btn,
 .carousel__component--carousel .carousel__item .carousel__item--btn {
   display: inline-block;
-  margin: 30px;
+  margin: 10px;
   text-decoration: none;
   background-color: #6086c2;
   color: #fff;
@@ -11391,12 +11397,13 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item .carousel__item--thumb img,
 .carousel .carousel__item .carousel__item--thumb img,
 .carousel__component--carousel .carousel__item .carousel__item--thumb img {
-  width: 80%;
+  width: 90%;
+  padding-top: 1.5em;
   display: block;
   margin-left: auto;
   margin-right: auto;
   object-position: 100%;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
 }
 .carousel .item a,
 .carousel__component--carousel .item a,
@@ -11429,11 +11436,24 @@ fieldset[disabled] .btn-primary.active {
   text-transform: uppercase;
   line-height: 1.2em;
   position: relative;
-  height: 4em;
   font-weight: 600;
   font-size: 16px;
   color: #154259;
   display: block;
+}
+.carousel .item .carousel__item--desc,
+.carousel__component--carousel .item .carousel__item--desc,
+.carousel .carousel__item .carousel__item--desc,
+.carousel__component--carousel .carousel__item .carousel__item--desc {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  line-height: 1.5em;
+  position: relative;
+  font-size: 14px;
+  color: #154259;
+  display: block;
+  padding-top: 2em;
 }
 .carousel .item .item__price,
 .carousel__component--carousel .item .item__price,
@@ -11446,10 +11466,58 @@ fieldset[disabled] .btn-primary.active {
   margin: 20px;
   color: #7fc5f9;
   text-align: center;
-  font-size: 65px;
+  font-size: 4em;
   font-weight: 400;
   margin: 0;
   font-family: PalmerLakePrint;
+}
+@media only screen and (max-width: 480px) {
+  .carousel,
+  .carousel__component--carousel {
+    width: 90%;
+  }
+  .carousel .item .text-card-product-homepage,
+  .carousel__component--carousel .item .text-card-product-homepage,
+  .carousel .carousel__item .text-card-product-homepage,
+  .carousel__component--carousel .carousel__item .text-card-product-homepage {
+    height: 20em;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 820px) {
+  .carousel,
+  .carousel__component--carousel {
+    width: 80%;
+  }
+  .carousel .item .text-card-product-homepage,
+  .carousel__component--carousel .item .text-card-product-homepage,
+  .carousel .carousel__item .text-card-product-homepage,
+  .carousel__component--carousel .carousel__item .text-card-product-homepage {
+    height: 20em;
+  }
+}
+@media only screen and (min-width: 820px) and (max-width: 1024px) {
+  .carousel,
+  .carousel__component--carousel {
+    width: 90%;
+  }
+  .carousel .item .text-card-product-homepage,
+  .carousel__component--carousel .item .text-card-product-homepage,
+  .carousel .carousel__item .text-card-product-homepage,
+  .carousel__component--carousel .carousel__item .text-card-product-homepage {
+    height: 23em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .carousel,
+  .carousel__component--carousel {
+    width: 60%;
+  }
+  .carousel .item .text-card-product-homepage,
+  .carousel__component--carousel .item .text-card-product-homepage,
+  .carousel .carousel__item .text-card-product-homepage,
+  .carousel__component--carousel .carousel__item .text-card-product-homepage {
+    height: 20em;
+  }
 }
 .carousel-component,
 .carousel__component {
@@ -11483,12 +11551,15 @@ fieldset[disabled] .btn-primary.active {
   text-align: center;
   color: #fff;
   margin: 30px 0;
+  line-height: 1.5em;
+  font-weight: 600;
 }
 .carousel-component .carousel__component--headline,
 .carousel__component .carousel__component--headline {
   color: #fff;
   font-size: 36px;
-  margin: 10px 0 20px;
+  margin-top: -60px;
+  margin-bottom: -50px;
   text-align: center;
   font-weight: bold;
   text-transform: normal;

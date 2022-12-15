@@ -290,11 +290,11 @@ INSERT_UPDATE PickUpInStoreAction;$contentCV[unique=true];uid[unique=true];url;n
 #
 ## CMS ProductReferences Components
 INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;&componentRef
-#                                        ;;accessories;Accessories;ACCESSORIES;5;accessories
-#                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
-##                                        ;;Others;Others;OTHERS;5;Others
-#                                        ;;Similar;Similar;SIMILAR;6;Similar
-#
+                                        ;;accessories;Accessories;ACCESSORIES;5;accessories
+                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
+                                       ;;Others;Others;OTHERS;5;Others
+                                        ;;Similar;Similar;SIMILAR;6;Similar
+
 #INSERT_UPDATE ProductReference; source(code, $catalogVersion)[unique = true]; target(code, $catalogVersion)[unique = true]; referenceType(code); active[default = true]; preselected[default = true]
 #                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-100                                        ; SIMILAR
 #                              ; INTHEBOX-FLIP-Z-90                                       ; INTHEBOX-FLIP-Z-120                                        ; SIMILAR
