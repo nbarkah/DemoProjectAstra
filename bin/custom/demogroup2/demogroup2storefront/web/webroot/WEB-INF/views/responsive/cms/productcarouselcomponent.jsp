@@ -56,9 +56,11 @@
                                             <div class="carousel__item--thumb">
                                                 <product:productPrimaryImage  product="${product}" format="product"/>
                                             </div>
+                                            <div class="text-card-product-homepage">
                                             <div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
-                                            <div >${fn:escapeXml(product.description)}</div>
+                                            <div  class="carousel__item--desc">${fn:escapeXml(product.description)}</div>
                                             <div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+                                            </div>
                                             <a href="${productUrl}" class="carousel__item--btn">
                                                Beli Sekarang
                                             </a>
